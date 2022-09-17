@@ -1,0 +1,146 @@
+﻿<UserControl x:Class="MGMartys_MakeNBreak_Win11.View.ServicesView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:viewmodel="clr-namespace:MGMartys_MakeNBreak_Win11.ViewModel"
+             d:DataContext="{d:DesignInstance Type={x:Type viewmodel:ServicesViewModel}}"
+             mc:Ignorable="d" 
+             d:DesignWidth="1070"
+             d:DesignHeight="630">
+    
+    
+    <!--Fade In Animation-->
+
+    <UserControl.Style>
+        <Style>
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="UserControl.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity"
+                                             From="0.0"
+                                             To="1.0"
+                                             Duration="0:0:0.5"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Style>
+
+    <Grid>
+        <Grid Background="#000000">
+
+            <Border BorderBrush="#00FF00" BorderThickness="0,0,0,0">
+                <StackPanel Name="Service_Page" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                    
+                    <Border Name="ServicesApplications_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="4">
+                        <StackPanel Name="ServicesApplications_Header" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Label Name="ServicesApplications_Label" Content="Applications" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"  />
+                            <StackPanel Name="ServicesApplications_Content" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
+                                    <StackPanel Margin="5">
+                                        <CheckBox Content="Disable 'Application Layer Gateway Service'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxServicesApplicationLayerGatewayService}" Style="{StaticResource AppsCheckboxStyle}"/>
+                                        <CheckBox Content="Disable 'Application Management'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxServicesApplicationManagement}" Style="{StaticResource AppsCheckboxStyle}"/>
+                                        <CheckBox Content="Disable 'Program Compatibility Assistant Service'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxServicesProgramCompatibilityAssistantService}" Style="{StaticResource AppsCheckboxStyle}"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Name="ServicesDemo_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="4">
+                        <StackPanel Name="ServicesDemo_Header" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Label Name="ServicesDemo_Label" Content="Demo" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"  />
+                            <StackPanel Name="ServicesDemo_Content" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
+                                <StackPanel Margin="5">
+                                        <CheckBox Content="Disable 'Retail Demo Service'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxServicesRetailDemoService}"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Name="ServicesLocation_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="4">
+                        <StackPanel Name="ServicesLocation_Header" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Label Name="ServicesLocation_Label" Content="Locations" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"  />
+                            <StackPanel Name="ServicesLocation_Content" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
+                                <StackPanel Margin="5">
+                                        <CheckBox Content="Disable 'Geolocation Service'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxServicesGeolocationService}"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Name="ServicesMaps_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="4">
+                        <StackPanel Name="ServicesMaps_Header" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Label Name="ServicesMaps_Label" Content="Maps" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"  />
+                            <StackPanel Name="ServicesMaps_Content" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
+                                <StackPanel Margin="5">
+                                        <CheckBox Content="Disable 'Downloaded Maps Manager'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxServicesDownloadedMapsManager}"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+
+                        
+
+                    </StackPanel>
+
+                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+
+                        <Border Name="ServicesPrinters_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="4">
+                            <StackPanel Name="ServicesPrinters_Header" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Label Name="ServicesPrinters_Label" Content="Printers" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"  />
+                                <StackPanel Name="ServicesPrinters_Content" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
+                                    <StackPanel Margin="5">
+                                        <CheckBox Content="Disable 'PrintSpooler'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxServicesPrintSpooler}"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+
+                        <Border Name="ServicesPrivacy_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="4">
+                            <StackPanel Name="ServicesPrivacy_Header" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Label Name="ServicesPrivacy_Label" Content="Privacy" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"  />
+                                <StackPanel Name="ServicesPrivacy_Content" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
+                                    <StackPanel Margin="5">
+                                        <CheckBox Content="Disable 'Connected User Experiences and Telemetry'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxServicesConnectedUserExperiencesAndTelemetry}"/>
+                                        <CheckBox Content="Disable 'Device Management Wireless Application Protocol (WAP) Push message Routing Service'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxServicesDeviceManagementWirelessApplicationProtocolWAPPushMessageRoutingService}"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+
+                        <Border Name="ServicesSearch_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="4">
+                            <StackPanel Name="ServicesSearch_Header" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Label Name="ServicesSearch_Label" Content="Search" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"  />
+                                <StackPanel Name="ServicesSearch_Content" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
+                                    <StackPanel Margin="5">
+                                        <CheckBox Content="Disable 'Windows Search'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxServicesWindowsSearch}"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+
+                        <Border Name="ServicesSysmain_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="4">
+                            <StackPanel Name="ServicesSysmain_Header" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Label Name="ServicesSysmain_Label" Content="Sysmain" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"  />
+                                <StackPanel Name="ServicesSysmain_Content" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
+                                    <StackPanel Margin="5">
+                                        <CheckBox Content="Disable 'SysMain' (Old Superfetch)" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxServicesSysMain}"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+
+                    </StackPanel>
+
+                </StackPanel>
+            </Border>
+
+        </Grid>
+    </Grid>
+
+</UserControl>
+

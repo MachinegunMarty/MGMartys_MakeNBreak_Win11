@@ -1,0 +1,625 @@
+﻿<UserControl x:Class="MGMartys_MakeNBreak_Win11.View.SettingsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MGMartys_MakeNBreak_Win11.View"
+             xmlns:viewmodel="clr-namespace:MGMartys_MakeNBreak_Win11.ViewModel"
+             d:DataContext="{d:DesignInstance Type={x:Type viewmodel:SettingsViewModel}}"
+             mc:Ignorable="d" 
+             d:DesignWidth="1070"
+             d:DesignHeight="630">
+    
+    
+    <UserControl.Style>
+        <Style>
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="UserControl.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity"
+                                             From="0.0"
+                                             To="1.0"
+                                             Duration="0:0:0.5" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Style.Triggers>
+        </Style>
+        </UserControl.Style>
+
+        <Grid>
+
+            <Grid Background="#000000">
+                <TabControl Background="#000000" BorderThickness="0" Margin="1,1,1,1">
+
+<!--#region Tab: System -->
+
+                    <TabItem>
+                        <TabItem.Header>
+                            <StackPanel Orientation="Horizontal" >
+                                <Image Source="/Resources/Icons/Desktop_Icon.png" Height="20" Width="20" Margin="0,0,5,0"/>
+                                <TextBlock Text="System" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            </StackPanel>
+                        </TabItem.Header>
+
+
+
+                        <TabItem.Content>
+                            <Border BorderBrush="#00FF00" BorderThickness="0,0,0,0">
+                                <WrapPanel Name="Notifications_Content" VerticalAlignment="Center" HorizontalAlignment="Center">
+
+                                <Border Name="SystemNotifications_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="4">
+                                    <StackPanel Name="SystemNotifications_Header" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <Label Name="SystemNotifications_Label" Content="Notifications" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"/>
+                                        <StackPanel Name="SystemNotifications_Content" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
+                                                <StackPanel Margin="5">
+                                                    <CheckBox Content="Turn 'Get Notifications from Apps and other senders' - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxSystemNotificationsGetNotificationsFromAppsAndOtherSendersOff}"/>
+                                                    <CheckBox Content="Turn 'Allow notifcations to play sounds' - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxSystemNotificationsAllowNotificationsToPlaySoundsOff}"/>
+                                                    <CheckBox Content="Turn 'Show notifications on the lock screen' - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxSystemNotificationsShowNotificationsOnTheLockScreenOff}"/>
+                                                    <CheckBox Content="Turn 'Show reminders and Incoming VOIP calls on the lock screen' - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxSystemNotificationsShowRemindersAndIncomingVOIPCallsOnTheLockScreen}"/>
+                                            </StackPanel>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </Border>
+
+                                <Border Name="SystemPowerBattery_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="4">
+                                    <StackPanel Name="SystemPowerBatterye_Header" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <Label Name="SystemPowerBattery_Label" Content="Power and Battery" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"/>
+                                            <StackPanel Name="SystemPowerBattery_Content" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
+                                                <StackPanel Margin="5">
+                                                    <CheckBox Content="On battery power, turn off my screen after - 3 min." Foreground="Lime"  Margin="5" IsChecked="{Binding ChckbxSystemPowerScreenAndSleepOnBatteryPowerTurnOffScreenAfter}"/>
+                                                    <CheckBox Content="When plugged in, turn off my screen after - Never" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxSystemPowerScreenAndSleepWhenPluggedInTurnOffMyScreenAfter}"/>
+                                                    <CheckBox Content="On battery power, put my device to sleep after" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxSystemPowerScreenAndSleepOnBatteryPowerPutMyDeviceToSleepAfter}"/>
+                                                    <CheckBox Content="When plugged in, put my device to sleep after - Never" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxSystemPowerScreenAndSleepWhenPluggedInPutMyDeviceToSleepAfter}"/>
+                                                    <CheckBox Content="Optimize your device based on power use and performance - High Performance" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxSystemPowerModeOptimizeYourDeviceBasedOnPowerUseAndPerformance}"/>
+                                                </StackPanel>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </Border>
+
+                                <Border Name="SystemStorage_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="4">
+                                    <StackPanel Name="SystemStorage_Header" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <Label Name="SystemStorage_Label" Content="Storage" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"/>
+                                        <StackPanel Name="SystemStorage_Content" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
+                                                <StackPanel Margin="5">
+                                                <CheckBox Content="Turn 'Storage Sense' - Off" Foreground="Lime"  Margin="5" IsChecked="{Binding ChckbxSystemStorageStorageSense}"/>
+                                                </StackPanel>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </Border>
+
+                                <Border Name="SystemRemoteDesktop_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="4">
+                                    <StackPanel Name="SystemRemoteDesktop_Header" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <Label Name="SystemRemoteDesktop_Label" Content="Remote Desktop" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"/>
+                                        <StackPanel Name="SystemRemoteDesktop_Content" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
+                                                <StackPanel Margin="5">
+                                                    <CheckBox Content="Turn 'Remote Desktop' - Off" Foreground="Lime"  Margin="5" IsChecked="{Binding ChckbxSystemRemoteDesktop}"/>
+                                                </StackPanel>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </Border>
+
+                            </WrapPanel>
+                            </Border>
+                        </TabItem.Content>
+                    </TabItem>
+
+                    <!--#endregion-->
+
+<!--#region Tab: Bluetooth & Devices -->
+
+                <TabItem>
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal" >
+                            <Image Source="/Resources/Icons/Bluetooth_Icon.png" Height="20" Width="20" Margin="0,0,5,0"/>
+                            <TextBlock Text="Bluetooth and Devices" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </TabItem.Header>
+
+                    <TabItem.Content>
+                        <Border BorderBrush="#00FF00" BorderThickness="0,0,0,0">
+                            <WrapPanel Name="BluetoothAndDevices_Content" VerticalAlignment="Center" HorizontalAlignment="Center" >
+
+                                <Border Name="BluetoothAndDevicesAutoplay_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="4">
+                                    <StackPanel Name="BluetoothAndDevicesAutoplay_Header" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <Label Name="BluetoothAndDevicesAutoplay_Label" Content="Autoplay" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"/>
+                                        <StackPanel Name="BluetoothAndDevicesAutoplay_Content" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
+                                            <StackPanel Margin="5">
+                                                <CheckBox Content="Turn 'Use Autoplay for all media and devices' - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxBluetoothAndDevicesAutoplay}"/>
+                                                
+                                                
+                                                
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Border>
+
+                            </WrapPanel>
+                        </Border>
+                    </TabItem.Content>
+                </TabItem>
+
+                <!--#endregion-->
+                    
+<!--#region Tab: Network and Internet -->
+
+                <TabItem>
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal" >
+                            <Image Source="/Resources/Icons/NetworkAndInternet_Icon.png" Height="20" Width="20" Margin="0,0,5,0"/>
+                            <TextBlock Text="Network and Internet" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </TabItem.Header>
+
+                    <TabItem.Content>
+                        <Border BorderBrush="#00FF00" BorderThickness="0,0,0,0">
+                            <WrapPanel Name="NetworkAndInternet_Content" VerticalAlignment="Center" HorizontalAlignment="Center">
+
+                                <Border Name="NetworkAndInternetAdvancedSharingSettings_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="4">
+                                    <StackPanel Name="NetworkAndInternetAdvancedSharingSettings_Header" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <Label Name="NetworkAndInternetAdvancedSharingSettings_Label" Content="Advanced Sharing Settings" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"/>
+                                        <StackPanel Name="NetworkAndInternetAdvancedSharingSettings_Content" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
+                                            <StackPanel Margin="5">
+                                                <CheckBox Content="Turn 'Your PC can find and be found by other devices on the network' - On" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxNetworkAndInternetAdvancedSharingSettingsNetworkDiscovery}"/>
+                                                <CheckBox Content="Turn 'Allow others on the network to acces shared files and printers on this device' - On" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxNetworkAndInternetAdvancedSharingSettingsFileAndPrinterSharing}"/>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Border>
+
+                            </WrapPanel>
+                        </Border>
+                    </TabItem.Content>
+                </TabItem>
+
+                <!--#endregion-->
+
+<!--#region Tab: Personalization -->
+
+                <TabItem>
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal" >
+                            <Image Source="/Resources/Icons/Personalization_Icon.png" Height="20" Width="20" Margin="0,0,5,0"/>
+                            <TextBlock Text="Personalization" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </TabItem.Header>
+
+                    <TabItem.Content>
+                        <Border BorderBrush="#00FF00" BorderThickness="0,0,0,0">
+                            <WrapPanel Name="Personalization_Content" VerticalAlignment="Center" HorizontalAlignment="Center">
+
+                                <Border x:Name="Colors_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" CornerRadius="4">
+                                    <StackPanel x:Name="Colors" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                                        <Label x:Name="ColorsLabel" Content="Colors" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"/>
+                                        <StackPanel x:Name="ColorsPanel_1" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
+                                            <GroupBox Header="Set Taskbar and Startmenu to" Foreground="Lime" Margin="5">
+                                                <StackPanel Margin="5">
+                                                    <RadioButton Content="Light Theme" Foreground="Lime" Command="{Binding RbtnTaskbarLight, Mode=OneWay}"/>
+                                                    <RadioButton Content="Dark Theme" Foreground="Lime" Command="{Binding RbtnTaskbarDark, Mode=OneWay}"/>
+                                                </StackPanel>
+                                            </GroupBox>
+                                            <GroupBox Header="Set Apps to" Foreground="Lime" Margin="5">
+                                                <StackPanel Margin="5">
+                                                    <RadioButton Content="Light Theme" Foreground="Lime" Command="{Binding RbtnAppsLight, Mode=OneWay}"/>
+                                                    <RadioButton Content="Dark Theme" Foreground="Lime" Command="{Binding RbtnAppsDark, Mode=OneWay}"/>
+                                                </StackPanel>
+                                            </GroupBox>
+                                            <GroupBox Header="Effects" Foreground="Lime" Margin="5">
+                                                <StackPanel Margin="5">
+                                                    <CheckBox Content="Turn 'Transparency Effects' - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxPersonalizationColorsTransparancyEffects}"/>
+                                                    <CheckBox Content="Show accent color on Start and taskbar" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxPersonalizationColorsShowAccentColorOnStartAndTaskbar}"/>
+                                                    <CheckBox Content="Show accent color on title bars and windows borders" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxPersonalizationsColorsShowAccentColorOnTitleBarsAndWindowsBorders}"/>
+                                                </StackPanel>
+                                            </GroupBox>
+                                        </StackPanel>
+
+                                        <StackPanel x:Name="ColorsPanel_2" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal" >
+                                            <StackPanel x:Name="ChangeAccentColorButton" Margin="5,5,157,5" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                                <Button x:Name="BtnChangeAccentColor" Content="Change Accent Color" FontSize="13" FontWeight="Bold" Command="{Binding BtnChangeAccentColor}"/>
+                                            </StackPanel>
+                                            
+                                            <Grid x:Name="ChangePcName" Height="40" Width="180">
+                                                <TextBox x:Name="NewPcNameBox" Text="{Binding ChangedPcName, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ChangePcNameBoxStyle}"/>
+                                                <TextBlock Text="Type New PC Name" Style="{StaticResource ChangePcNameTextStyle}"/>
+                                            </Grid>
+
+                                            <StackPanel x:Name="ChangePcNameButton" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                                <Button x:Name="BtnChangePcName" Content="Change PC Name" FontSize="13" FontWeight="Bold" Command="{Binding BtnChangePcName}"/>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Border>
+
+
+                                <Border x:Name="Start_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="4">
+                                    <StackPanel x:Name="Start_Content" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                                        <Label x:Name="Start_Label" Content="Start" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"/>
+                                        <StackPanel x:Name="Start_Header" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
+
+                                            <GroupBox Header="Disable in 'Start'" Foreground="Lime" Margin="5">
+                                                <StackPanel Margin="5">
+                                                    <CheckBox Content="Turn 'Show recently added apps' - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxPersonalizationStartShowRecentlyAddedApps}"/>
+                                                    <CheckBox Content="Turn 'Show most used apps' - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxPersonalizationStartShowMostUsedApps}"/>
+                                                    <CheckBox Content="Turn 'Show recently opened items in Start, Jump Lists and File Explorer' - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxPersonalizationStartShowRecentlyOpenedItemsInJumpList}"/>
+                                                </StackPanel>
+                                            </GroupBox>
+
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Border>
+
+
+                                <Border x:Name="Taskbar_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="4">
+                                    <StackPanel x:Name="Taskbar" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <Label x:Name="Taskbar_Label" Content="Taskbar" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"/>
+                                        <StackPanel x:Name="Taskbar_Panel" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
+
+                                            <GroupBox Header="Hide 'Taskbar Items'" Foreground="Lime" Margin="5">
+                                                <StackPanel Margin="5">
+                                                    <CheckBox Content="Search" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxPersonalizationTaskbarHideSearch}"/>
+                                                    <CheckBox Content="Task View" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxPersonalizationTaskbarHideTaskView}"/>
+                                                    <CheckBox Content="Widgets" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxPersonalizationTaskbarHideWidgets}"/>
+                                                    <CheckBox Content="Chat" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxPersonalizationTaskbarHideChat}"/>
+                                                </StackPanel>
+                                            </GroupBox>
+
+                                            <GroupBox Header="Hide 'System Tray Icons'" Foreground="Lime" Margin="5">
+                                                <StackPanel Margin="5">
+                                                    <CheckBox Content="Pen Menu" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxPersonalizationTaskbarHidePenMenu}"/>
+                                                    <CheckBox Content="Touch Keyboard" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxPersonalizationTaskbarHideTouchKeyboard}"/>
+                                                    <CheckBox Content="Virtual Touchpad" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxPersonalizationTaskbarHideVirtualTouchpad}"/>
+                                                </StackPanel>
+                                            </GroupBox>
+
+                                            <GroupBox Header="Taskbar Behaviors" Foreground="Lime" Margin="5">
+                                                <StackPanel Margin="5">
+                                                    <CheckBox Content="Taskbar Alignment - Left" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxPersonalizationTaskbarBehaviorsTaskbarAlignment}"/>
+                                                    <CheckBox Content="Turn 'Automatically hide the taskbar' - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxPersonalizationTaskbarBehaviorsAutomaticlyHideTheTaskbar}"/>
+                                                </StackPanel>
+                                            </GroupBox>
+
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Border>
+
+                            </WrapPanel>
+                        </Border>
+                    </TabItem.Content>
+                </TabItem>
+
+                <!--#endregion-->
+
+<!--#region Tab: Apps-->
+
+                <TabItem>
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal" >
+                            <Image Source="/Resources/Icons/Apps_Icon.png" Height="20" Width="20" Margin="0,0,5,0"/>
+                            <TextBlock Text="Apps" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </TabItem.Header>
+
+                    <TabItem.Content>
+                        <Border BorderBrush="#00FF00" BorderThickness="0,0,0,0">
+                            <WrapPanel Name="AppsOfflineMaps_Content" VerticalAlignment="Center" HorizontalAlignment="Center">
+
+                                <Border Name="AppsOfflineMaps_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="4">
+                                    <StackPanel Name="AppsOfflineMaps_Header" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <Label Name="AppsOfflineMaps_Label" Content="Offline Maps" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"/>
+                                        <StackPanel Name="AppsOfflineMaps_Panel" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
+                                            <StackPanel Margin="5">
+                                                <CheckBox Content="Turn 'Update automatically when plugged in and on Wi-Fi' - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxAppsOfflineMapsUpdateAutomaticallyWhenPluggedInAndOnWifi}"/>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Border>
+
+                            </WrapPanel>
+                        </Border>
+                    </TabItem.Content>
+                </TabItem>
+
+                <!--#endregion-->
+
+<!--#region Tab: Gaming-->
+
+                <TabItem>
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal" >
+                            <Image Source="/Resources/Icons/Gaming_Icon.png" Height="20" Width="20" Margin="0,0,5,0"/>
+                            <TextBlock Text="Gaming" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </TabItem.Header>
+
+                    <TabItem.Content>
+                        <Border BorderBrush="#00FF00" BorderThickness="0,0,0,0">
+                            <WrapPanel Name="GamingCaptures_Content" VerticalAlignment="Center" HorizontalAlignment="Center">
+
+                                <Border Name="GamingCaptures_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="4">
+                                    <StackPanel Name="GamingCaptures_Header" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <Label Name="GamingCaptures_Label" Content="Captures" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"/>
+                                        <StackPanel Name="GamingCaptures_Panel" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
+                                            <StackPanel Margin="5">
+                                                <CheckBox Content="Turn 'When something cool happened in your game, press Windows logo key + Alt + G to capture the moment' - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxGamingCapturesWhenSomethingCoolHappenedInYourGame}"/>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Border>
+
+                            </WrapPanel>
+                        </Border>
+                    </TabItem.Content>
+                </TabItem>
+
+                <!--#endregion-->
+                    
+<!--#region Tab: Privacy and Security-->
+
+                <TabItem>
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal" >
+                            <Image Source="/Resources/Icons/PrivacyAndSecurity_Icon.png" Height="20" Width="20" Margin="0,0,5,0"/>
+                            <TextBlock Text="Privacy and Security" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </TabItem.Header>
+
+                    <TabItem.Content>
+                        <Border BorderBrush="#00FF00" BorderThickness="0,0,0,0">
+                            <WrapPanel Name="PrivacyAndSecurityGeneral_Content" VerticalAlignment="Center" HorizontalAlignment="Center">
+
+                                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                                    <Border Name="PrivacyAndSecurityGeneral_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="4">
+                                        <StackPanel Name="PrivacyAndSecurityGeneral_Header" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                            <Label Name="PrivacyAndSecurityGeneral_Label" Content="General" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"/>
+                                            <StackPanel Name="PrivacyAndSecurityGeneral_Panel" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
+                                                <StackPanel Margin="5">
+                                                    <CheckBox Content="Turn 'Let websites show me locally relevant content by accessing my language List' - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxPrivacyAndSecurityGeneralLetWebsitesShowMeLocallyRelevantContentByAccessingMyLanguageList}"/>
+                                                    <CheckBox Content="Turn 'Let Windows improve Start and search results by tracking app launches' - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxPrivacyAndSecurityGeneralLetWindowsImproveStartAndSearchResultsByTrackingAppLaunches}"/>
+                                                    <CheckBox Content="Turn 'Show me suggested content in the Settings app' - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxPrivacyAndSecurityGeneralShowMeSuggestedContentInTheSettingsApp}"/>
+                                                </StackPanel>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </Border>
+
+                                    <Border Name="PrivacyAndSecurityInkingAndTypingPersonalization_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="4">
+                                        <StackPanel Name="PrivacyAndSecurityInkingAndTypingPersonalization_Header" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                            <Label Name="PrivacyAndSecurityInkingAndTypingPersonalization_Label" Content="Inking and Typing Personalization" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"/>
+                                            <StackPanel Name="PrivacyAndSecurityInkingAndTypingPersonalization_Panel" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
+                                                <StackPanel Margin="5">
+                                                    <CheckBox Content="Turn 'Personal Inking and Typing Dictionary' - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxPrivacyAndSecurityInkingAndTypeingPersonalizationPersonalInkingAndTypingDictionary}"/>
+                                                </StackPanel>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </Border>
+
+                                    <Border Name="PrivacyAndSecurityActivityHistory_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="4">
+                                        <StackPanel Name="PrivacyAndSecurityActivityHistory_Header" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                            <Label Name="PrivacyAndSecurityActivityHistory_Label" Content="Activity History" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"/>
+                                            <StackPanel Name="PrivacyAndSecurityActivityHistory_Panel" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
+                                                <StackPanel Margin="5">
+                                                    <CheckBox Content="Turn 'Store my activity history on this device' - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxPrivacyAndSecurityActivityHistoryStoreMyActivationHistoryOnThisDevice}"/>
+                                                </StackPanel>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </Border>
+
+                                
+
+                                
+
+                                    <Border Name="PrivacyAndSecuritySearchPermission_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="4">
+                                    <StackPanel Name="PrivacyAndSecuritySearchPermission_Header" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <Label Name="PrivacyAndSecuritySearchPermission_Label" Content="Search Permissions" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"/>
+                                        <StackPanel Name="PrivacyAndSecuritySearchPermission_Panel" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
+                                            <StackPanel Margin="5">
+                                                <CheckBox Content="Turn 'SafeSearch' - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxPrivacyAndSecuritySearchPermissionsTurnSafeSearchOff}"/>
+                                                <CheckBox Content="Turn 'Cloud Content Search - Microsoft account' - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxPrivacyAndSecuritySearchPermissionsCloudContentSearchMicrosoftAccount}"/>
+                                                <CheckBox Content="Turn 'Cloud Content Search - Work or School account' - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxPrivacyAndSecuritySearchPermissionsCloudContentSearchWorkOrSchoolAccount}"/>
+                                                <CheckBox Content="Turn 'History - Search history on this device' - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxPrivacyAndSecuritySearchPermissionsHistorySearchHistoryOnThisDevice}"/>
+                                                <CheckBox Content="Turn 'More Settings - Show search highlights' - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxPrivacyAndSecuritySearchPermissionsMoreSettingsShowSearchHighlights}"/>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Border>
+
+                                    </StackPanel>
+
+
+                                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                                    <Border Name="PrivacyAndSecurityAppPermissions_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="4">
+                                    <StackPanel Name="PrivacyAndSecurityAppPermissions_Header" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <Label Name="PrivacyAndSecurityAppPermissions_Label" Content="App Permissions" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"/>
+
+                                      
+                                            <StackPanel Name="PrivacyAndSecurityAppPermissions_Panel" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
+
+                                            
+                                            
+                                            <GroupBox Header="Voice Activation" Foreground="Lime" Margin="3">
+                                                <StackPanel >
+                                                    <CheckBox Content="Let apps acces 'Voice Activation Services' - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxAppPermissionsVoiceActivationLetAppsAccesVoiceActivationServicesOff}"/>
+                                                    <CheckBox Content="Let apps use 'Voice Activation' when device is locked - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxAppPermissionsVoiceActivationLetAppsUseVoiceActivationWhenDeviceIsLockedOff}"/>
+                                                </StackPanel>
+                                            </GroupBox>
+
+                                            <GroupBox Header="Notifications" Foreground="Lime" Margin="3">
+                                                <StackPanel>
+                                                    <CheckBox Content="Let apps acces your 'Notification' - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxAppPermissionsNotificationsLetAppsAccesYourNotifications}"/>
+                                                </StackPanel>
+                                            </GroupBox>
+
+                                            <GroupBox Header="Account Info" Foreground="Lime" Margin="3">
+                                                <StackPanel >
+                                                    <CheckBox Content="Let apps acces your 'Account Info' - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxAppPermissionsAccountInfoLetAppsAccesYourAccountInfo}"/>
+                                                </StackPanel>
+                                            </GroupBox>
+
+                                            <GroupBox Header="Contacts" Foreground="Lime" Margin="3">
+                                                <StackPanel >
+                                                    <CheckBox Content="Let apps acces your 'Contacts' - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxAppPermissionsContactsLetAppsAccesYourContacts}"/>
+                                                </StackPanel>
+                                            </GroupBox>
+
+                                            <GroupBox Header="Calendar" Foreground="Lime" Margin="3">
+                                                <StackPanel >
+                                                    <CheckBox Content="Let apps acces your 'Calendar' - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxAppPermissionsCalendarLetAppsAccesYourCalendar}"/>
+                                                </StackPanel>
+                                            </GroupBox>
+
+                                            <GroupBox Header="Phone Calls" Foreground="Lime" Margin="3">
+                                                <StackPanel >
+                                                    <CheckBox Content="Let apps make 'Phone Calls' - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxAppPermissionsPhoneCallsLetAppsMakePhoneCalls}"/>
+                                                </StackPanel>
+                                            </GroupBox>
+
+                                            <GroupBox Header="Call history" Foreground="Lime" Margin="3">
+                                                <StackPanel >
+                                                    <CheckBox Content="Let apps access your 'Call History' - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxAppPermissionsCallHistoryLetAppsAccesYourCallHistory}"/>
+                                                </StackPanel>
+                                            </GroupBox>
+
+                                            <GroupBox Header="Email" Foreground="Lime" Margin="3">
+                                                <StackPanel >
+                                                    <CheckBox Content="Let apps access your 'Email' - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxAppPermissionsEmailLetAppsAccesYourEmail}"/>
+                                                </StackPanel>
+                                            </GroupBox>
+
+                                            <GroupBox Header="Tasks" Foreground="Lime" Margin="3">
+                                                <StackPanel >
+                                                    <CheckBox Content="Let apps access your 'Tasks' - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxAppPermissionsTasksLetAppsAccesYourTasks}"/>
+                                                </StackPanel>
+                                            </GroupBox>
+
+                                            <GroupBox Header="Messaging" Foreground="Lime" Margin="3">
+                                                <StackPanel >
+                                                    <CheckBox Content="Let apps read 'Messages' - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxAppPermissionsMessagingLetAppsReadYourMessages}"/>
+                                                </StackPanel>
+                                            </GroupBox>
+
+                                            <GroupBox Header="Radios" Foreground="Lime" Margin="3">
+                                                <StackPanel >
+                                                    <CheckBox Content="Let apps control device 'Radios' - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxAppPermissionsRadiosLetAppsControlDeviceRadios}"/>
+                                                </StackPanel>
+                                            </GroupBox>
+
+                                            <GroupBox Header="Other Devices" Foreground="Lime" Margin="3">
+                                                <StackPanel >
+                                                    <CheckBox Content="Communicate with 'Unpaired Devices' - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxAppPermissionsOtherDevicesCommunicateWithUnpairedDevices}"/>
+                                                </StackPanel>
+                                            </GroupBox>
+
+                                            <GroupBox Header="App Diagnostics" Foreground="Lime" Margin="3">
+                                                <StackPanel >
+                                                    <CheckBox Content="Allow apps to acces diagnostic info about your other apps - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxAppPermissionsAppDiagnosticsAllowAppsToAccesDiagnosticsInfoAboutYourOtherApps}"/>
+                                                </StackPanel>
+                                            </GroupBox>
+
+                                            <GroupBox Header="Documents" Foreground="Lime" Margin="3">
+                                                <StackPanel >
+                                                    <CheckBox Content="Let Apps acces your 'Documents Library' - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxAppPermissionsDocumentsAllowAppsToAccesYourDocumentsLibrary}"/>
+                                                </StackPanel>
+                                            </GroupBox>
+
+                                            <GroupBox Header="Downloads Folder" Foreground="Lime" Margin="3">
+                                                <StackPanel >
+                                                    <CheckBox Content="Let Apps acces your 'Documents Library' - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxAppPermissionsDownloadsFolderAllowAppsToAccesYourDownloadsFolder}"/>
+                                                </StackPanel>
+                                            </GroupBox>
+
+                                            <GroupBox Header="Music Library" Foreground="Lime" Margin="3">
+                                                <StackPanel >
+                                                    <CheckBox Content="Allow apps to acces your 'Music Library' - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxAppPermissionsMusicLibraryAllowAppsToAccesYourMusicLibrary}"/>
+                                                </StackPanel>
+                                            </GroupBox>
+
+                                            <GroupBox Header="Pictures" Foreground="Lime" Margin="3">
+                                                <StackPanel >
+                                                    <CheckBox Content="Let Apps acces your 'Pictures Library' - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxAppPermissionsPicturesAllowAppsToAccesYourPicturesLibrary}"/>
+                                                </StackPanel>
+                                            </GroupBox>
+
+                                            <GroupBox Header="Videos" Foreground="Lime" Margin="3">
+                                                <StackPanel >
+                                                    <CheckBox Content="Let Apps acces your 'Videos Library' - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxAppPermissionsVideosAllowAppsToAccesYourVideosLibrary}"/>
+                                                </StackPanel>
+                                            </GroupBox>
+
+                                            <GroupBox Header="File System" Foreground="Lime" Margin="3">
+                                                <StackPanel >
+                                                    <CheckBox Content="Let Apps acces your 'File System' - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxAppPermissionsFileSystemLetAppsAccesYourFileSystem}"/>
+                                                </StackPanel>
+                                            </GroupBox>
+
+                                            <GroupBox Header="Screenshot Borders" Foreground="Lime" Margin="3">
+                                                <StackPanel >
+                                                    <CheckBox Content="Let Apps turn off the 'Screenshot Border' - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxAppPermissionsScreenshotBordersLetAppsTurnOffTheScreenshotBorder}"/>
+                                                    <CheckBox Content="Let desktop apps turn off the 'Screenshot Border' - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxAppPermissionsScreenshotBordersLetDesktopAppsTakeScreenshotsOfVariousWindowsAndDisplays}"/>
+                                                </StackPanel>
+                                            </GroupBox>
+
+                                            <GroupBox Header="Other Devices" Foreground="Lime" Margin="3">
+                                                <StackPanel >
+                                                    <CheckBox Content="Let Apps take 'Screenshots' of various windows and displays - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxAppPermissionsScreenshotsAndAppsLetAppsTakeScreenshotsOfVariousWindowsAndDisplays}"/>
+                                                    <CheckBox Content="Let desktop apps take 'Screenshots' of various windows and displays - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxAppPermissionsScreenshotsAndAppsLetDesktopAppsTakeScreenshotsOfVariousWindowsAndDisplays}"/>
+                                                </StackPanel>
+                                            </GroupBox>
+
+
+
+                                        </StackPanel>
+                                       
+
+
+                                    </StackPanel>
+                                </Border>
+                                </ScrollViewer>
+
+
+
+                            </WrapPanel>
+                        </Border>
+                    </TabItem.Content>
+                </TabItem>
+
+                <!--#endregion-->
+
+<!--#region Tab: Windows Update-->
+
+                <TabItem>
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/Resources/Icons/WindowsUpdate_Icon.png" Height="20" Width="20" Margin="0,0,5,0"/>
+                            <TextBlock Text="Windows Update" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </TabItem.Header>
+
+                    <TabItem.Content>
+                        <Border BorderBrush="#00FF00" BorderThickness="0,0,0,0">
+                            <WrapPanel Name="SettingsWindowsUpdate_Content" VerticalAlignment="Center" HorizontalAlignment="Center">
+
+                                <Border Name="SettingsWindowsUpdate_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="4">
+                                    <StackPanel Name="SettingsWindowsUpdate_Header" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <Label Name="SettingsWindowsUpdate_Label" Content="Delivery optimizations" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"/>
+                                        <StackPanel Name="SettingsWindowsUpdate_Panel" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
+                                            <StackPanel Margin="5">
+                                                <CheckBox Content="Turn 'Allow downloads from other pc's' - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxWindowsUpdateAllowDownloadsFromOtherPCs}"/>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Border>
+
+                            </WrapPanel>
+                        </Border>
+                    </TabItem.Content>
+                    </TabItem>
+                    <!--#endregion-->
+
+            </TabControl>
+            </Grid>
+
+        </Grid>
+
+</UserControl>

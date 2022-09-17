@@ -1,0 +1,132 @@
+﻿<UserControl x:Class="MGMartys_MakeNBreak_Win11.View.AppsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:viewmodel="clr-namespace:MGMartys_MakeNBreak_Win11.ViewModel"
+             d:DataContext="{d:DesignInstance Type={x:Type viewmodel:AppsViewModel}}"
+             mc:Ignorable="d" 
+             d:DesignWidth="1070"
+             d:DesignHeight="730">
+    
+    
+    <!--Fade In Animation-->
+
+    <UserControl.Style>
+        <Style>
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="UserControl.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity"
+                                             From="0.0"
+                                             To="1.0"
+                                             Duration="0:0:0.5"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Style>
+
+    <Grid>
+        <Grid Background="#000000">
+
+            <Border BorderBrush="#00FF00" BorderThickness="0,0,0,0">
+                <WrapPanel Name="Apps_Page" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                    <ScrollViewer VerticalScrollBarVisibility="Auto" Height="Auto" Width="Auto">
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" >
+
+                        <Border Name="Apps_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="4">
+                            <StackPanel Name="Apps_Header" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Label Name="Apps_Label" Content="Remove Apps" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1" BorderBrush="Lime"/>
+
+                                
+                                    <StackPanel Name="Apps_Panel" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
+                                    
+                                        
+                                        <StackPanel Width="Auto" Orientation="Vertical">
+                                            <TextBlock Text="   Name" Foreground="#FFFFFF"/>
+                                            <TextBlock Text="----------------------------------------------" Foreground="#FFFFFF"/>
+                                            <CheckBox Content="ClipChamp" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallClipChamp}" Style="{StaticResource AppsCheckboxStyle}"/>
+                                            <CheckBox Content="Cortana" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallCortana}" Style="{StaticResource AppsCheckboxStyle}"/>
+                                            <CheckBox Content="Microsoft News" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallMicrosoftNews}" Style="{StaticResource AppsCheckboxStyle}"/>
+                                            <CheckBox Content="MSN Weather" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallMSNWeather}" Style="{StaticResource AppsCheckboxStyle}"/>
+                                            <CheckBox Content="Get Help" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallGetHelp}" Style="{StaticResource AppsCheckboxStyle}"/>
+                                            <CheckBox Content="Microsoft Tips" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallMicrosoftTips}" Style="{StaticResource AppsCheckboxStyle}"/>
+                                            <CheckBox Content="Office" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallOffice}" Style="{StaticResource AppsCheckboxStyle}"/>
+                                            <CheckBox Content="Microsoft Solitaire Collection" Margin="3" Foreground="#FFFFFF" IsChecked="{Binding ChckbxUninstallMicrosoftSolitaireCollection}" Style="{StaticResource AppsCheckboxStyle}"/>
+                                            <CheckBox Content="Microsoft OneDrive" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallMicrosoftOneDrive}" Style="{StaticResource AppsCheckboxStyle}"/>
+                                            <CheckBox Content="OneDrive" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallOneDrive}" Style="{StaticResource AppsCheckboxStyle}"/>
+                                            <CheckBox Content="Microsoft People" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallMicrosoftPeople}" Style="{StaticResource AppsCheckboxStyle}"/>
+                                            <CheckBox Content="Store Experience Host" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallStoreExperienceHost}" Style="{StaticResource AppsCheckboxStyle}"/>
+                                            <CheckBox Content="Microsoft To Do" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallMicrosoftToDo}" Style="{StaticResource AppsCheckboxStyle}"/>
+                                            <CheckBox Content="Windows Camera" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallWindowsCamera}" Style="{StaticResource AppsCheckboxStyle}"/>
+                                            <CheckBox Content="Mail and Calendar" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallMailAndCalendar}" Style="{StaticResource AppsCheckboxStyle}"/>
+                                            <CheckBox Content="Feedback Hub" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallFeedbackHub}" Style="{StaticResource AppsCheckboxStyle}"/>
+                                            <CheckBox Content="Windows Maps" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallWindowsMaps}" Style="{StaticResource AppsCheckboxStyle}"/>
+                                            <CheckBox Content="Windows Voice Recorder" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallWindowsVoiceRecorder}" Style="{StaticResource AppsCheckboxStyle}"/>
+                                            <CheckBox Content="Phone Link" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallPhoneLink}" Style="{StaticResource AppsCheckboxStyle}"/>
+                                            <CheckBox Content="Windows Media Player" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallWindowsMediaPlayer}" Style="{StaticResource AppsCheckboxStyle}"/>
+                                            <CheckBox Content="Movies and TV" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallMoviesAndTV}" Style="{StaticResource AppsCheckboxStyle}"/>
+                                            <CheckBox Content="Quick Assist" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallQuickAssist}" Style="{StaticResource AppsCheckboxStyle}"/>
+                                            <CheckBox Content="Microsoft Teams (Chat)" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallMicrosoftTeams}" Style="{StaticResource AppsCheckboxStyle}"/>
+                                            <CheckBox Content="Windows Web Experience Pack (widgets)" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallWindowsWebExperiencePack}" Style="{StaticResource AppsCheckboxStyle}"/>
+                                            
+                                            
+                                            
+
+                                            
+                                        </StackPanel>
+
+                                        <StackPanel >
+                                            <TextBlock Text="App Name" Foreground="#FFFFFF"/>
+                                            <TextBlock Text="--------------------------------------------------------------------" Foreground="#FFFFFF" />
+                                            <TextBlock Text="Clipchamp.Clipchamp" Foreground="#FFFFFF" Margin="5"/>
+                                            <TextBlock Text="Microsoft.549981C3F5F10" Foreground="#FFFFFF" Margin="5"/>
+                                            <TextBlock Text="Microsoft.BingNews" Foreground="#FFFFFF" Margin="5"/>
+                                            <TextBlock Text="Microsoft.BingWeather" Foreground="#FFFFFF" Margin="5"/>
+                                            <TextBlock Text="Microsoft.GetHelp" Foreground="#FFFFFF" Margin="5"/>
+                                            <TextBlock Text="Microsoft.Getstarted" Foreground="#FFFFFF" Margin="5"/>
+                                            <TextBlock Text="Microsoft.MicrosoftOfficeHub" Foreground="#FFFFFF" Margin="5"/>
+                                            <TextBlock Text="Microsoft.MicrosoftSolitaireCollection" Foreground="#FFFFFF" Margin="5"/>
+                                            <TextBlock Text="Microsoft.OneDrive" Foreground="#FFFFFF" Margin="5"/>
+                                            <TextBlock Text="Microsoft.OneDriveSync" Foreground="#FFFFFF" Margin="5"/>
+                                            <TextBlock Text="Microsoft.People" Foreground="#FFFFFF" Margin="5"/>
+                                            <TextBlock Text="Microsoft.StorePurchaseApp" Foreground="#FFFFFF" Margin="5"/>
+                                            <TextBlock Text="Microsoft.Todos" Foreground="#FFFFFF" Margin="5"/>
+                                            <TextBlock Text="Microsoft.WindowsCamera" Foreground="#FFFFFF" Margin="5"/>
+                                            <TextBlock Text="microsoft.windowscommunicationsapps" Foreground="#FFFFFF" Margin="5"/>
+                                            <TextBlock Text="Microsoft.WindowsFeedbackHub" Foreground="#FFFFFF" Margin="5"/>
+                                            <TextBlock Text="Microsoft.WindowsMaps" Foreground="#FFFFFF" Margin="5"/>
+                                            <TextBlock Text="Microsoft.WindowsSoundRecorder" Foreground="#FFFFFF" Margin="5"/>
+                                            <TextBlock Text="Microsoft.YourPhone" Foreground="#FFFFFF" Margin="5"/>
+                                            <TextBlock Text="Microsoft.ZuneMusic" Foreground="#FFFFFF" Margin="5"/>
+                                            <TextBlock Text="Microsoft.ZuneVideo" Foreground="#FFFFFF" Margin="5"/>
+                                            <TextBlock Text="MicrosoftCorporationII.QuickAssist" Foreground="#FFFFFF" Margin="5"/>
+                                            <TextBlock Text="MicrosoftTeams" Foreground="#FFFFFF" Margin="5"/>
+                                            <TextBlock Text="MicrosoftWindows.Client.WebExperience" Foreground="#FFFFFF" Margin="5"/>
+                                            
+                                            
+                                        </StackPanel>
+
+                                   
+
+                                     
+                                </StackPanel>
+                                
+
+                            </StackPanel>
+                        </Border>
+
+                    </StackPanel>
+                    </ScrollViewer>
+
+                </WrapPanel>
+            </Border>
+
+        </Grid>
+    </Grid>
+
+</UserControl>

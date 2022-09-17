@@ -1,0 +1,316 @@
+﻿<UserControl x:Class="MGMartys_MakeNBreak_Win11.View.SoftwareView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:viewmodel="clr-namespace:MGMartys_MakeNBreak_Win11.ViewModel"
+             d:DataContext="{d:DesignInstance Type={x:Type viewmodel:SoftwareViewModel}}"
+             mc:Ignorable="d" 
+             d:DesignWidth="1070"
+             d:DesignHeight="630"
+             >
+
+    <!--Fade In Animation-->
+
+    <UserControl.Style>
+        <Style>
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="UserControl.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity"
+                                             From="0.0"
+                                             To="1.0"
+                                             Duration="0:0:0.5"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Style>
+
+    <Grid>
+        <Grid Background="#000000">
+
+            <Border BorderBrush="#00FF00" BorderThickness="0,0,0,0">
+                <StackPanel Name="Programs_Page" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    
+                    <Border Name="Runtime_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="4">
+                        <StackPanel Name="Runtime_Header" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Label Name="Runtime_Label" Content="Runtimes" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"/>
+                            <StackPanel Name="Runtime_Content" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="3">
+                                <StackPanel>
+                                        <CheckBox Content=".Net Core Runtime 3.1" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxInstallNet31}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/NETCore_Icon.png" ToolTip="Install 'Microsoft .NET ASP.NET Core Runtime 3.1'"/>
+                                        <CheckBox Content=".Net Framework 3.5" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxInstallNet35}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/NETFramework35_Icon.png" ToolTip="Install 'Microsoft .NET Framework 3.5'"/>
+                                        <CheckBox Content=".Net Framework 4.8" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxInstallNet48}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/NETFramework48_Icon.png" ToolTip="Install 'Microsoft .NET Framework 4.8'"/>
+                                        <CheckBox Content=".Net Core Runtime 5.0" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxInstallNet50}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/NETCore_Icon.png" ToolTip="Install 'Microsoft .NET ASP.NET Core Runtime 5.0'"/>
+                                        <CheckBox Content=".Net Core Runtime 6.0" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxInstallNet60}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/NETCore_Icon.png" ToolTip="Install 'Microsoft .NET ASP.NET Core Runtime 6.0'"/>
+                                        <CheckBox Content="Java 8" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxInstallJava8}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/EclipseAdoptium_Icon.png" ToolTip="Install 'Eclipse Adoptium Temurin JRE 8'"/>
+                                        <CheckBox Content="Java 11" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxInstallJava11}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/EclipseAdoptium_Icon.png" ToolTip="Install 'Eclipse Adoptium Temurin JRE 11'"/>
+                                        <CheckBox Content="Java 17" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxInstallJava17}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/EclipseAdoptium_Icon.png" ToolTip="Install 'Eclipse Adoptium Temurin JRE 17'"/>
+                                        <CheckBox Content="DirectX Web Setup" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxInstallDirectX}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/DirectX_Icon.png" ToolTip="Install 'Microsoft DirectX Web Setup'"/>
+                                        <CheckBox Content="Visual C++ 2005" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxInstallVisualC2005}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/VisualCPlusPlus_Icon.png" ToolTip="Install 'Microsoft Visual C++ 2005 Redistributable (x86 + x64)'"/>
+                                        <CheckBox Content="Visual C++ 2008" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxInstallVisualC2008}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/VisualCPlusPlus_Icon.png" ToolTip="Install 'Microsoft Visual C++ 2008 Redistributable (x86 + x64)'"/>
+                                        <CheckBox Content="Visual C++ 2010" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxInstallVisualC2010}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/VisualCPlusPlus_Icon.png" ToolTip="Install 'Microsoft Visual C++ 2010 Redistributable (x86 + x64)'"/>
+                                        <CheckBox Content="Visual C++ 2012" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxInstallVisualC2012}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/VisualCPlusPlus_Icon.png" ToolTip="Install 'Microsoft Visual C++ 2012 Redistributable (x86 + x64)'"/>
+                                        <CheckBox Content="Visual C++ 2013" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxInstallVisualC2013}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/VisualCPlusPlus_Icon.png" ToolTip="Install 'Microsoft Visual C++ 2013 Redistributable (x86 + x64)'"/>
+                                        <CheckBox Content="Visual C++ 2015-2019" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxInstallVisualC2015171922}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/VisualCPlusPlus_Icon.png" ToolTip="Install 'Microsoft Visual C++ 2015-2019 Redistributable (x86 + x64)'"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                        
+                    </StackPanel>
+
+                    
+                    
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" >
+                    
+                    <Border Name="Browsers_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Top" CornerRadius="4">
+                        <StackPanel Name="Browsers_Header" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Label Name="Browsers_Label" Content="Browsers" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1" />
+                            <StackPanel Name="Browsers_Content" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="3">
+                                <StackPanel>
+                                        <CheckBox Content="Brave" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxInstallBrave}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/Brave_Icon.png"/>
+                                        <CheckBox Content="Chrome" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxInstallChrome}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/Chrome_Icon.png"/>
+                                        <CheckBox Content="Firefox" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxInstallFirefox}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/Firefox_Icon.png"/>
+                                        <CheckBox Content="Opera" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxInstallOpera}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/Opera_Icon.png"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+
+                        <Border Name="Compression_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="4">
+                            <StackPanel Name="Compression_Header" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Label Name="Compression_Label" Content="Compression" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1" />
+                                <StackPanel Name="Compression_Content" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="3">
+                                    <StackPanel>
+                                        <CheckBox Content="7-Zip" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxInstall7Zip}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/7Zip_Icon.png"/>
+                                        <CheckBox Content="WinRAR" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxInstallWinRAR}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/WinRAR_Icon.png"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+
+                        
+
+                        <Border Name="Editors_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="4">
+                            <StackPanel Name="Editors_Header" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Label Name="Editors_Label" Content="Editors" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1" />
+                                <StackPanel Name="Editors_Panel" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="3">
+                                    <StackPanel>
+                                        <CheckBox Content="Notepad++" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxInstallNotepadPlusPlus}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/NotepadPlusPlus_Icon.png"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+
+                        <Border Name="Entertainment_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="4">
+                            <StackPanel Name="Entertainment_Header" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Label Name="Entertainment_Label" Content="Entertainment" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"/>
+                                <StackPanel Name="Entertainment_Panel" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="3">
+                                    <StackPanel Margin="5">
+                                        <CheckBox Content="Dopamine" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxInstallDopamine}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/Dopamine_Icon.png"/>
+                                        <CheckBox Content="VLC" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxInstallDopamine}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/VLC_Icon.png"/>
+                                        <CheckBox Content="Winamp" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxInstallWinamp}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/Winamp_Icon.png"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+
+                    </StackPanel>
+
+
+
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" >
+
+                        
+
+                        <Border Name="GameClients_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="4">
+                            <StackPanel Name="GameClients_Header" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Label Name="GameClients_Label" Content="Game Clients" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1" />
+                                <StackPanel Name="GameClients_Content" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="3">
+                                    <StackPanel Margin="5">
+                                        <CheckBox Content="EA App" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxInstallEAApp}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/EAApp_Icon.png"/>
+                                        <CheckBox Content="Epic Games Launcher " Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxInstallEpic}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/EpicGames_Icon.png"/>
+                                        <CheckBox Content="GOG Galaxy" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxInstallGOGGalaxy}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/GOGGalaxy_Icon.png"/>
+                                        <CheckBox Content="Minecraft Launcher" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxInstallMinecraftLauncher}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/Minecraft_Icon.png"/>
+                                        <CheckBox Content="Steam" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxInstallSteam}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/Steam_Icon.png"/>
+                                        <CheckBox Content="Ubisoft Connect" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxInstallUbisoft}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/UbisoftConnect_Icon.png"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+
+                        <Border Name="Graphics_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="4">
+                            <StackPanel Name="Graphics_Header" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Label Name="Graphics_Label" Content="Graphics" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1" />
+                                <StackPanel Name="Graphics_Panel" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="3">
+                                    <StackPanel Margin="5">
+                                        <CheckBox Content="GIMP" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxInstallGIMP}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/GIMP_Icon.png"/>
+                                        <CheckBox Content="IrfanView" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxInstallIrfanView}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/IrfanView_Icon.png"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+
+                        <Border Name="Imaging_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="4">
+                            <StackPanel Name="Imaging_Header" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Label Name="Imaging_Label" Content="Imaging" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1" />
+                                <StackPanel Name="Imaging_Panel" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="3">
+                                    <StackPanel Margin="5">
+                                        <CheckBox Content="ImgBurn" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxInstallImgBurn}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/ImgBurn_Icon.png"/>
+                                        <CheckBox Content="Rufus" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxInstallRufus}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/Rufus_Icon.png"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+
+
+                        <Border Name="Office_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="4">
+                            <StackPanel Name="Office_Header" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Label Name="Office_Label" Content="Office" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1" />
+                                <StackPanel Name="Office_Panel" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="3">
+                                    <StackPanel Margin="5">
+                                        <CheckBox Content="Libre Office" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxInstallLibreOffice}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/LibreOffice_Icon.png"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+                        
+                       
+
+                       
+
+                    </StackPanel>
+
+
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" >
+
+                        <Border Name="Readers_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="4">
+                            <StackPanel Name="Readers_Header" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Label Name="Readers_Label" Content="Readers" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1" />
+                                <StackPanel Name="Readers_Panel" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="3">
+                                    <StackPanel Margin="5">
+                                        <CheckBox Content="INFekt NFO Viewer" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxInstalliNFektNFOViewer}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/INFektNFOViewer_Icon.png"/>
+                                        
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+                        
+                        <Border Name="RemoteManagement_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="4">
+                            <StackPanel Name="RemoteManagement_Header" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Label Name="RemoteManagement_Label" Content="Remote Management" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1" />
+                                <StackPanel Name="RemoteManagement_Panel" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="3">
+                                    <StackPanel Margin="5" >
+                                        <CheckBox Content="Putty" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxInstallPutty}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/Putty_Icon.png"/>
+                                        <CheckBox Content="TeamViewer" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxInstallTeamViewer}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/TeamViewer_Icon.png"/>
+                                        <CheckBox Content="WinSCP" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxInstallWinSCP}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/WinSCP_Icon.png"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+
+                        <Border Name="Streaming_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="4">
+                            <StackPanel Name="Streaming_Header" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Label Name="Streaming_Label" Content="Streaming" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1" />
+                                <StackPanel Name="Streaming_Panel" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="3">
+                                    <StackPanel Margin="5">
+                                        <CheckBox Content="OBS Studio" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxInstallOBSStudio}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/OBSStudio_Icon.png"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+
+                        <Border Name="VoiceChat_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="4">
+                            <StackPanel Name="VoiceChat_Header" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Label Name="VoiceChat_Label" Content="Voice Chat" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1" />
+                                <StackPanel Name="VoiceChat_Panel" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="3">
+                                    <StackPanel Margin="5">
+                                        <CheckBox Content="Discord" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxInstallDiscord}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/Discord_Icon.png"/>
+                                        <CheckBox Content="Element" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxInstallElement}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/Element_Icon.png"/>
+                                        <CheckBox Content="Guilded" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxInstallGuilded}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/Guilded_Icon.png"/>
+                                        <CheckBox Content="TeamSpeak" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxInstallTeamSpeak}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/TeamSpeak_Icon.png"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+
+                        
+
+
+
+                    </StackPanel>
+                    
+                    
+
+                                        
+                    
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" >
+
+                        <Border Name="Work_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <StackPanel Name="Work_Header" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Label Name="Work_Label" Content="Work" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1" BorderBrush="Lime"/>
+                                <StackPanel Name="Work_Panel" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="3">
+                                    <StackPanel Margin="5">
+
+                                        <CheckBox Content="Microsoft Teams" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxInstallMicrosoftTeams}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/MicrosoftTeams_Icon.png"/>
+                                        <CheckBox Content="VMWare Horizon Client" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxInstallHorizonClient}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/VMWareHorizon_Icon.png"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+
+                        <Border Name="XtraAudioTools_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="4">
+                            <StackPanel Name="XtraAudioTools_Header" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Label Name="XtraAudioTools_Label" Content="Xtra Audio Tools" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1" />
+                                <StackPanel Name="XtraAudioTools_Panel" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="3">
+                                    <StackPanel Margin="5">
+                                        <CheckBox Content="Audacity" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxInstallAudacity}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/Audacity_Icon.png"/>
+                                        <CheckBox Content="Voicemeeter Potato" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxInstallVoicemeeterPotato}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/VoiceMeeter_Icon.png"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+
+                        <Border Name="XtraDeveloperTools_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="4">
+                            <StackPanel Name="XtraDeveloperTools_Header" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Label Name="XtraDeveloperTools_Label" Content="Xtra Developer Tools" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1" />
+                                <StackPanel Name="XtraDeveloperTools_Panel" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="3">
+                                    <StackPanel Margin="5">
+                                        <CheckBox Content="Oracle VM VirtualBox" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxInstallOracleVMVirtualBox}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/VisualStudio_Icon.png"/>
+                                        <CheckBox Content="Visual Studio Community 2022" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxInstallVisualStudio2022Community}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/VisualStudio_Icon.png"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+
+                        <Border Name="XtraVideoTools_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="4">
+                            <StackPanel Name="XtraVideoTools_Header" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Label Name="XtraVideoTools_Label" Content="Xtra Video Tools" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1" />
+                                <StackPanel Name="XtraVideoTools_Panel" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="3">
+                                    <StackPanel Margin="5" >
+                                        <CheckBox Content="FileBot" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxInstallFileBot}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/FileBot_Icon.png"/>
+                                        <CheckBox Content="Handbrake" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxInstallHandbrake}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/Handbrake_Icon.png"/>
+                                        <CheckBox Content="MKVToolnix" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxInstallMKVToolNix}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/MKVToolNix_Icon.png"/>
+                                        <CheckBox Content="Rename My TV Series" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxInstallRenameMyTVSeries}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/RenameMyTvSeries_Icon.png"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+
+                        
+                    </StackPanel>
+
+                    
+
+                </StackPanel>
+            </Border>
+
+        </Grid>
+    </Grid>
+
+</UserControl>

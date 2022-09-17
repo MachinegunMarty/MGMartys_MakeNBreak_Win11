@@ -1,0 +1,424 @@
+﻿<UserControl x:Class="MGMartys_MakeNBreak_Win11.View.ControlPanelView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:viewmodel="clr-namespace:MGMartys_MakeNBreak_Win11.ViewModel"
+             d:DataContext="{d:DesignInstance Type={x:Type viewmodel:ControlPanelViewModel}}"
+             mc:Ignorable="d" 
+             d:DesignWidth="1070"
+             d:DesignHeight="630"
+             >
+
+    <UserControl.Style>
+        <Style>
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="UserControl.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity"
+                                             From="0.0"
+                                             To="1.0"
+                                             Duration="0:0:0.5" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Style>
+
+    <Grid>
+
+        <Grid Background="#000000">
+            <TabControl Background="#000000" BorderThickness="0" Margin="1,1,1,1">
+
+<!--#region Tab: Ease of Acces -->
+
+                <TabItem>
+                        <TabItem.Header>
+                            <StackPanel Orientation="Horizontal" >
+                            <Image Source="/Resources/Icons/EaseOfAccesCenter_Icon.png" Height="20" Width="20" Margin="0,0,5,0"/>
+                                <TextBlock Text="Ease of Acces Center" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            </StackPanel>
+                        </TabItem.Header>
+
+
+
+                        <TabItem.Content>
+                            <Border BorderBrush="#00FF00" BorderThickness="0,0,0,0">
+                            <WrapPanel Name="EaseOfAccesPage_Content" VerticalAlignment="Center" HorizontalAlignment="Center">
+
+                                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                                    <Border Name="MakeYourComputerEasierToUse_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="4">
+                                        <StackPanel Name="MakeYourComputerEasierToUse_Header" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                            <Label Name="MakeYourComputerEasierToUse_Label" Content="Make Your Computer Easier To Use" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"/>
+                                            <StackPanel Name="MakeYourComputerEasierToUse_Content" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
+                                                <StackPanel Margin="5">
+                                                    <CheckBox Content="Disable 'Always read this section aloud'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxMakeTheComputerEasierToUseDisableAlwaysReadThisSectionAloud}"/>
+                                                    <CheckBox Content="Disable 'Always scan this section'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxMakeTheComputerEasierToUseDisableAlwaysScanThisSection}"/>
+                                                </StackPanel>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </Border>
+
+                                    <Border Name="MakeYourComputerEasierToSee_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="4">
+                                        <StackPanel Name="MakeYourComputerEasierToSee_Header" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                            <Label Name="MakeYourComputerEasierToSee_Label" Content="Make Your Computer Easier To See" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"/>
+                                            <StackPanel Name="MakeYourComputerEasierToSee_Content" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
+                                                <StackPanel Margin="5">
+                                                    <CheckBox Content="Disable 'High Contrast when left ALT + left SHIFT + PRINT SCREEN is pressed" Foreground="Lime"  Margin="5" IsChecked="{Binding ChckbxMakeTheComputerEasierToSeeTurnOffHighContrast}"/>
+                                                    <CheckBox Content="Disable 'Display a Warning Message When Turning A Setting On'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxMakeTheComputerEasierToSeeDisableDisplayAWarningMessageWhenTurningASettingOn}"/>
+                                                    <CheckBox Content="Disable 'Make A Sound When Turning A Setting On or Off'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxMakeTheComputerEasierToSeeDisableMakeASoundWhenTurningASettingOnOrOff}"/>
+                                                    <CheckBox Content="Enable 'Turn off all unneccassary animations (when possible)'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxMakeTheComputerEasierToSeeTurnOffAllUnneccassaryAnimations}"/>
+                                                </StackPanel>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </Border>
+
+                                    <Border Name="MakeTheKeyboardEasierToUse_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="4">
+                                        <StackPanel Name="MakeTheKeyboardEasierToUse_Header" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                            <Label Name="MakeTheKeyboardEasierToUse_Label" Content="Make the keyboard easier to use" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"/>
+                                            <StackPanel Name="MakeTheKeyboardEasierToUse_Content" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
+                                                <StackPanel Margin="5">
+                                                    <CheckBox Content="Disable 'Turn on Toggle Keys by holding down the NUM-LOCK key for 5 Seconds'" Foreground="Lime"  Margin="5" IsChecked="{Binding ChckbxMakeTheKeyboardEasierToUseDisableTurnOnToggleKeysByHoldingDownNumLock}"/>
+                                                </StackPanel>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </Border>
+
+                                </StackPanel>
+
+                                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                                    <Border Name="UseTextOrVisualAlternativesForSound_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="4">
+                                        <StackPanel Name="UseTextOrVisualAlternativesForSound_Header" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                            <Label Name="UseTextOrVisualAlternativesForSound_Label" Content="Use text or visual alternatives for sound" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"/>
+                                            <StackPanel Name="UseTextOrVisualAlternativesForSound_Content" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
+                                                <StackPanel Margin="5">
+                                                    <CheckBox Content="Choose visual warning - None" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxUseTextOrVisualAlternativesForSoundChooseVisualWarning}"/>
+                                                </StackPanel>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </Border>
+
+                                    <Border Name="MakeTouchAndTabletsEasierToUse_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="4">
+                                        <StackPanel Name="akeTouchAndTabletsEasierToUse_Header" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                            <Label Name="akeTouchAndTabletsEasierToUse_Label" Content="Make touch and tablets easier to use" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"/>
+                                            <StackPanel Name="akeTouchAndTabletsEasierToUse_Content" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
+                                                <StackPanel Margin="5">
+                                                    <CheckBox Content="Launching common tools - None" Foreground="Lime"  Margin="5" IsChecked="{Binding ChckbxMakeTouchAndTabletsEasierToUseLaunchingCommonTools}"/>
+                                                </StackPanel>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </Border>
+
+                                </StackPanel>
+
+                            </WrapPanel>
+                            </Border>
+                    </TabItem.Content>        
+                </TabItem>
+ 
+<!--#endregion-->
+
+<!--#region Tab: File Explorer Options-->
+
+                <TabItem>
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal" Height="30" Width="Auto">
+                            <Image Source="/Resources/Icons/FileExplorerOptions_Icon.png" Height="20" Width="20" Margin="0,0,5,0"/>
+                            <TextBlock Text="File Explorer Options" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </TabItem.Header>
+
+
+                    <TabItem.Content>
+                        <Border BorderBrush="#00FF00" BorderThickness="0,0,0,0">
+                            <StackPanel Name="FileExplorerOptions_Content" VerticalAlignment="Center" HorizontalAlignment="Center">
+
+                                <Border Name="FolderOptionsGeneral_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="4">
+                                    <StackPanel Name="FolderOptionsGeneral_Header" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <Label Name="FolderOptionsGeneral_Label" Content="General" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"/>
+                                        <StackPanel Name="FolderOptionsGeneral_Content" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
+                                                <StackPanel Margin="5">
+                                                    <CheckBox Content="Open File Explorer to: 'This PC' instead of 'Quick Acces'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxFolderOptionsGeneralFileExplorerToThisPc}"/>
+                                                    <CheckBox Content="Disable 'Show recently used files in Quick Access'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxFolderOptionsGeneralShowRecentlyUsedFiles}"/>
+                                                    <CheckBox Content="Disable 'Show frequently used folders in Quick Accesss'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxFolderOptionsGeneralShowFrequentlyUsedFolders}"/>
+                                                    <CheckBox Content="Disable 'Show files from Office.com'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxFolderOptionsGeneralShowFilesFromOffice}"/>
+                                                </StackPanel>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Border>
+
+                                <Border Name="FolderOptionsView_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="4">
+                                    <StackPanel Name="FolderOptionsView_Header" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <Label Name="FolderOptionsView_Label" Content="View" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"/>
+                                        <StackPanel Name="FolderOptionsView_Content" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
+                                            <StackPanel Margin="5">
+                                                <CheckBox Content="Show hidden files, folders and drives" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxFolderOptionViewShowHiddenFiles}"/>
+                                                <CheckBox Content="Disable 'Hide file extensions for known file types'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxFolderOptionViewHideFileExtensions}"/>
+                                            </StackPanel>
+                                    </StackPanel>
+                                    </StackPanel>
+                                </Border>
+
+                                <Border Name="FolderOptionsSearch_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="4">
+                                    <StackPanel Name="FolderOptionsSearch_Header" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <Label Name="FolderOptionsSearch_Label" Content="Search" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"/>
+                                        <StackPanel Name="FolderOptionsSearch_Content" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
+                                            <StackPanel Margin="5">
+                                                <CheckBox Content="Enable 'Don't use the index when searching in file folders for system files'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxSearchDontUseTheIndexWhenSearchingInFileFoldersForFileSystem}"/>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Border>
+
+                            </StackPanel>
+                        </Border>
+                    </TabItem.Content>
+
+                </TabItem>
+                
+         <!--#endregion-->
+
+<!--#region Tab: Mouse -->
+
+                <TabItem>
+
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal" >
+                            <Image Source="/Resources/Icons/Mouse_Icon.png" Height="20" Width="20" Margin="0,0,5,0"/>
+                            <TextBlock Text="Mouse" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </TabItem.Header>
+
+                    <TabItem.Content>
+                        <Border BorderBrush="#00FF00" BorderThickness="0,0,0,0">
+                            <WrapPanel Name="Mouse_Content" VerticalAlignment="Center" HorizontalAlignment="Center">
+
+                                <Border Name="PointerOptions_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="4">
+                                    <StackPanel Name="PointerOptions_Header" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <Label Name="PointerOptions_Label" Content="Pointer Options" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"/>
+                                        <StackPanel Name="PointerOptions_Content" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
+                                            <StackPanel Margin="5">
+                                                <CheckBox Content="Disable 'Enhance Pointer Precision'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxMouseDisableEnhancedPointerPrecision}"/>
+                                                <CheckBox Content="Disable 'Mouse Smoothing and Acceleration'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxMouseDisableMouseSmoothingAndAccelaration}"/>
+                                                <CheckBox Content="Show popups faster when hovering over an item" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxMouseShowPopupsFasterWhenHoveringOverAnItem}"/>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Border>
+
+                                
+
+                            </WrapPanel>
+                        </Border>
+                    </TabItem.Content>
+
+                </TabItem>
+
+                <!--#endregion-->
+
+<!--#region Tab: Power Options -->
+
+                <TabItem>
+                    
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal" Height="30" Width="Auto">
+                            <Image Source="/Resources/Icons/PowerOptions_Icon.png" Height="20" Width="20" Margin="0,0,5,0"/>
+                            <TextBlock Text="Power Options" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </TabItem.Header>
+
+                        <TabItem.Content>
+                        <Border BorderBrush="#00FF00" BorderThickness="0,0,0,0">
+                                <StackPanel Name="PowerOptions_Content" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+
+
+                                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                                    <Border Name="ChoosePowerPlan_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="4">
+                                        <StackPanel Name="ChoosePowerPlan_Header" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                            <Label Name="ChoosePowerPlan_Label" Content="Choose a Power Plan" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"/>
+                                            <StackPanel Name="ChoosePowerPlan_Content" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
+                                                <StackPanel Margin="5">
+                                                    <CheckBox Content="Change to 'Ultimate Performance'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxPowerOptionsChangePowerPlanToUltimatePerformance}"/>
+                                                </StackPanel>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </Border>
+
+                                    <Border Name="SystemSettings_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="4">
+                                        <StackPanel Name="SystemSettings_Header" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                            <Label Name="SystemSettings_Label" Content="System Options" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"/>
+                                            <StackPanel Name="SystemSettings_Content" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
+                                                <StackPanel Margin="5">
+                                                    <CheckBox Content="Disable 'Fast Startup'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxPowerOptionsDisableFastStartup}"/>
+                                                </StackPanel>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </Border>
+
+                                </StackPanel>
+
+                                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                                    <Border Name="AdvancedPowerSettings_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="4">
+                                        <StackPanel Name="AdvancedPowerSettings_Header" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                            <Label Name="AdvancedPowerSettings_Label" Content="Advanced Power Settings" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"/>
+                                            <StackPanel Name="AdvancedPowerSettings_Content" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
+                                                <StackPanel Margin="5">
+                                                    <CheckBox Content="Hard disk - Turn off hard disk after - Never" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxPowerOptionsTurnOffHardDiskAfterNever}"/>
+                                                    <CheckBox Content="Sleep - Put the computer to sleep after - Never" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxPowerOptionsPutTheComputerToSleepAfterNever}"/>
+                                                    <CheckBox Content="USB settings - USB selective suspend settings - Disabled" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxPowerOptionsUSBSelectiveSuspendSettings}"/>
+                                                    <CheckBox Content="PCI Express - Link State Power Management - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxPowerOptionLinkStatPowerManagement}"/>
+                                                    <CheckBox Content="Display - Turn off the display after - Never" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxPowerOptionsTurnDisplayOffAfter}"/>
+                                                </StackPanel>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </Border>
+
+                                </StackPanel>
+
+                                </StackPanel>
+                        </Border>
+                    </TabItem.Content>
+                    
+                </TabItem>
+
+        <!--#endregion-->
+
+<!--#region Tab: Security And Maintenance -->
+
+                <TabItem>
+
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal" >
+                            <Image Source="/Resources/Icons/SecurityAndMaintenance_Icon.png" Height="20" Width="20" Margin="0,0,5,0"/>
+                            <TextBlock Text="Security and Maintenance" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </TabItem.Header>
+
+                    <TabItem.Content>
+                        <Border BorderBrush="#00FF00" BorderThickness="0,0,0,0">
+                            <WrapPanel Name="SecurityAndMaintenance_Content" VerticalAlignment="Center" HorizontalAlignment="Center">
+
+                                <Border Name="UserAccountControl_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="4">
+                                    <StackPanel Name="UserAccountControl_Header" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <Label Name="UserAccountControl_Label" Content="User Account Control Settings" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"/>
+                                        <StackPanel Name="UserAccountControlSettings_Content" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
+                                            <StackPanel Margin="5">
+                                                <CheckBox Content="Set UAC slider to 'Never Notify'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxSecurityAndMaintenanceSetUACSliderToNeverNotify}"/>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Border>
+
+
+
+                            </WrapPanel>
+                        </Border>
+                    </TabItem.Content>
+
+                </TabItem>
+
+<!--#endregion-->
+
+<!--#region Tab: System -->
+
+                <TabItem>
+
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal" >
+                            <Image Source="/Resources/Icons/System_Icon.png" Height="20" Width="20" Margin="0,0,5,0"/>
+                            <TextBlock Text="System" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </TabItem.Header>
+
+                    <TabItem.Content>
+                        <Border BorderBrush="#00FF00" BorderThickness="0,0,0,0">
+                            <WrapPanel Name="System_Content" VerticalAlignment="Center" HorizontalAlignment="Center">
+
+                                <Border Name="AdvancedSystemSettingsAdvanced_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="4">
+                                    <StackPanel Name="AdvancedSystemSettingsAdvanced_Header" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <Label Name="AdvancedSystemSettingsAdvanced_Label" Content="Advanced System Settings - Tab: Advanced" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"/>
+                                        <StackPanel Name="AdvancedSystemSettingsAdvanced_Content" Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
+                                            <GroupBox Header="Performance" Foreground="Lime" Margin="5" >
+                                                <StackPanel Margin="5">
+                                                    <CheckBox Content="Set 'Performance Options' to 'Custom'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxSystemAdvancedSystemSettingsAdvancedPerformanceTabVisualCustom}"/>
+                                                </StackPanel>
+                                            </GroupBox>
+                                            <GroupBox Header="Startup and Recovery" Foreground="Lime" Margin="5">
+                                                <StackPanel Margin="5">
+                                                    <CheckBox Content="Time to display list of operating systems - 0 Seconds" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxSystemAdvancedSystemSettingsAdvancedStartupAndRecoveryTimeToDisplayListOfOS}"/>
+                                                    <CheckBox Content="Enable F8 During Boot" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxSystemAdvancedSystemSettingsAdvancedStartupAndRecoveryEnableF8DuringBoot}"/>
+                                                </StackPanel>
+                                            </GroupBox>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Border>
+
+                                <Border Name="AdvancedSystemSettingsRemote_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="4">
+                                    <StackPanel Name="AdvancedSystemSettingsRemote_Header" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <Label Name="AdvancedSystemSettingsRemote_Label" Content="Advanced System Settings - Tab: Remote" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"/>
+                                        <StackPanel Name="AdvancedSystemSettingsRemote_Content" Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
+                                            <GroupBox Header="Remote Assistance" Foreground="Lime" Margin="5">
+                                                <StackPanel Margin="5">
+                                                    <CheckBox Content="Disable 'Allow Remote Assistance Connections to this computer'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxSystemAdvancedSystemSettingsRemoteRemoteAssistanceDisableAllowRemoteAssistance}"/>
+                                                </StackPanel>
+                                            </GroupBox>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Border>
+
+                            </WrapPanel>
+                        </Border>
+                    </TabItem.Content>
+
+                </TabItem>
+
+<!--#endregion-->
+
+<!--#region Tab: Windows Defender Firewall -->
+
+                <TabItem>
+
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal" >
+                            <Image Source="/Resources/Icons/WindowsDefenderFirewall_Icon.png" Height="20" Width="20" Margin="0,0,5,0"/>
+                            <TextBlock Text="Windows Defender Firewall" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </TabItem.Header>
+
+                    <TabItem.Content>
+                        <Border BorderBrush="#00FF00" BorderThickness="0,0,0,0">
+                            <WrapPanel Name="WindowsDefenderFirewall_Content" VerticalAlignment="Center" HorizontalAlignment="Center">
+
+                                <Border Name="TurnWindowsDefenderFirewallOnOff_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="4">
+                                    <StackPanel Name="TurnWindowsDefenderFirewallOnOff_Header" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <Label Name="TurnWindowsDefenderFirewallOnOff_Label" Content="Turn 'Windows Defender Firewall' On or Off" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"/>
+                                        <StackPanel Name="TurnWindowsDefenderFirewallOnOff_Content" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
+                                            <StackPanel Margin="5">
+                                                <CheckBox Content="Turn Off - Windows Defender Firewall - On All Profiles" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxWindowsDefenderFirewallTurnOffOnAllProfiles}"/>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Border>
+
+
+
+                            </WrapPanel>
+                        </Border>
+                    </TabItem.Content>
+
+                </TabItem>
+
+<!--#endregion-->
+
+            </TabControl>
+        </Grid>
+        
+    </Grid>
+    
+</UserControl>
