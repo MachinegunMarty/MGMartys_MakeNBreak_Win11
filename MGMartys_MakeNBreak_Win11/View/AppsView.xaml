@@ -35,49 +35,54 @@
             <Border BorderBrush="#00FF00" BorderThickness="0,0,0,0">
                 <WrapPanel Name="Apps_Page" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
 
+
+                    <Border Name="PrivacyAndSecurityInkingAndTypingPersonalization_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="4">
+                        <StackPanel Name="PrivacyAndSecurityInkingAndTypingPersonalization_Header" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Label Name="PrivacyAndSecurityInkingAndTypingPersonalization_Label" Content="Hidden App Settings" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"/>
+                            <StackPanel Name="PrivacyAndSecurityInkingAndTypingPersonalization_Panel" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
+                                <StackPanel Margin="5">
+                                    <CheckBox Content="Preinstalled Apps Enabled - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxHiddenAppSettingsPreinstalledAppsEnabled}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                    <CheckBox Content="Quitly reinstall Apps - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxHiddenAppSettingsQuitlyReinstallApps}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+
                     <ScrollViewer VerticalScrollBarVisibility="Auto" Height="Auto" Width="Auto">
                     <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" >
 
                         <Border Name="Apps_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="4">
                             <StackPanel Name="Apps_Header" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
                                 <Label Name="Apps_Label" Content="Remove Apps" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1" BorderBrush="Lime"/>
-
                                 
                                     <StackPanel Name="Apps_Panel" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
-                                    
-                                        
                                         <StackPanel Width="Auto" Orientation="Vertical">
                                             <TextBlock Text="   Name" Foreground="#FFFFFF"/>
                                             <TextBlock Text="----------------------------------------------" Foreground="#FFFFFF"/>
-                                            <CheckBox Content="ClipChamp" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallClipChamp}" Style="{StaticResource AppsCheckboxStyle}"/>
-                                            <CheckBox Content="Cortana" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallCortana}" Style="{StaticResource AppsCheckboxStyle}"/>
-                                            <CheckBox Content="Microsoft News" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallMicrosoftNews}" Style="{StaticResource AppsCheckboxStyle}"/>
-                                            <CheckBox Content="MSN Weather" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallMSNWeather}" Style="{StaticResource AppsCheckboxStyle}"/>
-                                            <CheckBox Content="Get Help" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallGetHelp}" Style="{StaticResource AppsCheckboxStyle}"/>
-                                            <CheckBox Content="Microsoft Tips" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallMicrosoftTips}" Style="{StaticResource AppsCheckboxStyle}"/>
-                                            <CheckBox Content="Office" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallOffice}" Style="{StaticResource AppsCheckboxStyle}"/>
-                                            <CheckBox Content="Microsoft Solitaire Collection" Margin="3" Foreground="#FFFFFF" IsChecked="{Binding ChckbxUninstallMicrosoftSolitaireCollection}" Style="{StaticResource AppsCheckboxStyle}"/>
-                                            <CheckBox Content="Microsoft OneDrive" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallMicrosoftOneDrive}" Style="{StaticResource AppsCheckboxStyle}"/>
-                                            <CheckBox Content="OneDrive" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallOneDrive}" Style="{StaticResource AppsCheckboxStyle}"/>
-                                            <CheckBox Content="Microsoft People" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallMicrosoftPeople}" Style="{StaticResource AppsCheckboxStyle}"/>
-                                            <CheckBox Content="Store Experience Host" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallStoreExperienceHost}" Style="{StaticResource AppsCheckboxStyle}"/>
-                                            <CheckBox Content="Microsoft To Do" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallMicrosoftToDo}" Style="{StaticResource AppsCheckboxStyle}"/>
-                                            <CheckBox Content="Windows Camera" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallWindowsCamera}" Style="{StaticResource AppsCheckboxStyle}"/>
-                                            <CheckBox Content="Mail and Calendar" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallMailAndCalendar}" Style="{StaticResource AppsCheckboxStyle}"/>
-                                            <CheckBox Content="Feedback Hub" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallFeedbackHub}" Style="{StaticResource AppsCheckboxStyle}"/>
-                                            <CheckBox Content="Windows Maps" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallWindowsMaps}" Style="{StaticResource AppsCheckboxStyle}"/>
-                                            <CheckBox Content="Windows Voice Recorder" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallWindowsVoiceRecorder}" Style="{StaticResource AppsCheckboxStyle}"/>
-                                            <CheckBox Content="Phone Link" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallPhoneLink}" Style="{StaticResource AppsCheckboxStyle}"/>
-                                            <CheckBox Content="Windows Media Player" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallWindowsMediaPlayer}" Style="{StaticResource AppsCheckboxStyle}"/>
-                                            <CheckBox Content="Movies and TV" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallMoviesAndTV}" Style="{StaticResource AppsCheckboxStyle}"/>
-                                            <CheckBox Content="Quick Assist" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallQuickAssist}" Style="{StaticResource AppsCheckboxStyle}"/>
-                                            <CheckBox Content="Microsoft Teams (Chat)" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallMicrosoftTeams}" Style="{StaticResource AppsCheckboxStyle}"/>
-                                            <CheckBox Content="Windows Web Experience Pack (widgets)" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallWindowsWebExperiencePack}" Style="{StaticResource AppsCheckboxStyle}"/>
-                                            
-                                            
-                                            
-
-                                            
+                                            <CheckBox Content="ClipChamp" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallClipChamp}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                            <CheckBox Content="Cortana" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallCortana}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                            <CheckBox Content="Microsoft News" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallMicrosoftNews}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                            <CheckBox Content="MSN Weather" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallMSNWeather}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                            <CheckBox Content="Get Help" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallGetHelp}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                            <CheckBox Content="Microsoft Tips" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallMicrosoftTips}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                            <CheckBox Content="Office" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallOffice}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                            <CheckBox Content="Microsoft Solitaire Collection" Margin="3" Foreground="#FFFFFF" IsChecked="{Binding ChckbxUninstallMicrosoftSolitaireCollection}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                            <CheckBox Content="Microsoft OneDrive" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallMicrosoftOneDrive}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                            <CheckBox Content="OneDrive" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallOneDrive}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                            <CheckBox Content="Microsoft People" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallMicrosoftPeople}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                            <CheckBox Content="Store Experience Host" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallStoreExperienceHost}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                            <CheckBox Content="Microsoft To Do" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallMicrosoftToDo}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                            <CheckBox Content="Windows Camera" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallWindowsCamera}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                            <CheckBox Content="Mail and Calendar" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallMailAndCalendar}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                            <CheckBox Content="Feedback Hub" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallFeedbackHub}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                            <CheckBox Content="Windows Maps" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallWindowsMaps}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                            <CheckBox Content="Windows Voice Recorder" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallWindowsVoiceRecorder}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                            <CheckBox Content="Phone Link" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallPhoneLink}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                            <CheckBox Content="Windows Media Player" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallWindowsMediaPlayer}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                            <CheckBox Content="Movies and TV" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallMoviesAndTV}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                            <CheckBox Content="Quick Assist" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallQuickAssist}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                            <CheckBox Content="Microsoft Teams (Chat)" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallMicrosoftTeams}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                            <CheckBox Content="Windows Web Experience Pack (widgets)" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallWindowsWebExperiencePack}" Style="{StaticResource GeneralCheckboxStyle}"/>
                                         </StackPanel>
 
                                         <StackPanel >
@@ -107,12 +112,7 @@
                                             <TextBlock Text="MicrosoftCorporationII.QuickAssist" Foreground="#FFFFFF" Margin="5"/>
                                             <TextBlock Text="MicrosoftTeams" Foreground="#FFFFFF" Margin="5"/>
                                             <TextBlock Text="MicrosoftWindows.Client.WebExperience" Foreground="#FFFFFF" Margin="5"/>
-                                            
-                                            
                                         </StackPanel>
-
-                                   
-
                                      
                                 </StackPanel>
                                 

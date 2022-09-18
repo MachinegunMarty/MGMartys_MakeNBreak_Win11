@@ -45,12 +45,12 @@
 
         <StackPanel>
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
-                <TextBlock FontSize="18" FontFamily="/Fonts/OpenSans-Regular.ttf #Open Sans Regular" Foreground="#DDDDDD" Margin="5">
+                <TextBlock FontSize="18" FontFamily="/Fonts/OpenSans-Regular.ttf #Open Sans Regular" Foreground="#DDDDDD" Margin="25">
                 This program allows you to tweak your Windows 11 install  <LineBreak/>
                 You can set the tweaks by checking the buttons, if you uncheck the buttons the default value will be set back.<LineBreak/>
                 So if you don't like something, you can set it back to default <LineBreak/> <LineBreak/>
                     I split the "Control Panel" and the new "Settings Panel" into tabbed pages with the original location<LineBreak/>
-                    I also added pages to disable "Services", uninstall 'Windows Apps' and to 'Install Software'
+                    I also added pages to "Disable Services", "Uninstall Windows Apps" and "Install Programs"
                 </TextBlock>
                 
             </StackPanel>

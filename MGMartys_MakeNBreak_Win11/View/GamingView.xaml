@@ -33,16 +33,16 @@
             <Border BorderBrush="#00FF00" BorderThickness="0,0,0,0">
                 <StackPanel Name="Gaming_Page" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
 
-                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
                     
                     <Border Name="SystemResponsiveness_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="4">
                         <StackPanel Name="SystemResponsiveness_Header" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
                             <Label Name="SystemResponsiveness_Label" Content="System Responsiveness" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"/>
                             <StackPanel Name="SystemResponsiveness_Content" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
                                 <StackPanel Margin="5">
-                                    <CheckBox Content="Change System Responsiveness" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxSystemResponsivenessChangeSystemResponsiveness}"/>
-                                    <CheckBox Content="Disable 'Network Throttling'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxSystemResponsivenessDisableNetworkThrottling}"/>
-                                    <CheckBox Content="Disable 'Power Throttling'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxSystemResponsivenessDisablePowerThrottling}"/>
+                                        <CheckBox Content="Change System Responsiveness" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxSystemResponsivenessChangeSystemResponsiveness}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                        <CheckBox Content="Network Throttling - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxSystemResponsivenessDisableNetworkThrottling}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                        <CheckBox Content="Power Throttling - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxSystemResponsivenessDisablePowerThrottling}" Style="{StaticResource GeneralCheckboxStyle}"/>
                                 </StackPanel>
                             </StackPanel>
                         </StackPanel>
@@ -53,9 +53,9 @@
                             <Label Name="DefaultGraphicsSettings_Label" Content="Default Graphics Settings" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"/>
                             <StackPanel Name="DefaultGraphicsSettings_Content" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
                                 <StackPanel Margin="5">
-                                    <CheckBox Content="Enable 'Variable Refresh Rate'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxDefaultGraphicsSettingsVariableRefreshRate}"/>
-                                    <CheckBox Content="Enable 'Optimizations for windowed games'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxDefaultGraphicsSettingsOptimizationsForWindowedGames}"/>
-                                    <CheckBox Content="Enable 'Hardware-accelerated GPU scheduling'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxDefaultGraphicsSettingsHardwareAcceleratedGPUScheduling}"/>
+                                        <CheckBox Content="Variable Refresh Rate - On" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxDefaultGraphicsSettingsVariableRefreshRate}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                        <CheckBox Content="Optimizations for windowed games - On" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxDefaultGraphicsSettingsOptimizationsForWindowedGames}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                        <CheckBox Content="Hardware-accelerated GPU scheduling - On" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxDefaultGraphicsSettingsHardwareAcceleratedGPUScheduling}" Style="{StaticResource GeneralCheckboxStyle}"/>
                                 </StackPanel>
                             </StackPanel>
                         </StackPanel>
@@ -66,10 +66,10 @@
                                 <Label Name="PrioritizeGamingTasks_Label" Content="Prioritize Gaming Tasks" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"/>
                                 <StackPanel Name="PrioritizeGamingTasks_Content" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
                                     <StackPanel Margin="5">
-                                        <CheckBox Content="Set 'GPU Priority'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxPrioritizeGamingTasksGPUPriority}"/>
-                                        <CheckBox Content="Set 'Games Priority'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxPrioritizeGamingTasksGamesPriority}"/>
-                                        <CheckBox Content="Set 'Scheduling Catagory'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxPrioritizeGamingTasksSchedulingCategory}"/>
-                                        <CheckBox Content="Set 'SFIO Priority'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxPrioritizeGamingTasksSFIOPriority}"/>
+                                        <CheckBox Content="GPU Priority" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxPrioritizeGamingTasksGPUPriority}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                        <CheckBox Content="Games Priority" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxPrioritizeGamingTasksGamesPriority}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                        <CheckBox Content="Scheduling Catagory" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxPrioritizeGamingTasksSchedulingCategory}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                        <CheckBox Content="SFIO Priority" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxPrioritizeGamingTasksSFIOPriority}" Style="{StaticResource GeneralCheckboxStyle}"/>
                                     </StackPanel>
                                 </StackPanel>
                             </StackPanel>

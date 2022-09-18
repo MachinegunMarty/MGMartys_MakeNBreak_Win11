@@ -55,8 +55,8 @@
                                             <Label Name="MakeYourComputerEasierToUse_Label" Content="Make Your Computer Easier To Use" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"/>
                                             <StackPanel Name="MakeYourComputerEasierToUse_Content" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
                                                 <StackPanel Margin="5">
-                                                    <CheckBox Content="Disable 'Always read this section aloud'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxMakeTheComputerEasierToUseDisableAlwaysReadThisSectionAloud}"/>
-                                                    <CheckBox Content="Disable 'Always scan this section'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxMakeTheComputerEasierToUseDisableAlwaysScanThisSection}"/>
+                                                    <CheckBox Content="Disable 'Always read this section aloud'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxMakeTheComputerEasierToUseDisableAlwaysReadThisSectionAloud}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                                    <CheckBox Content="Disable 'Always scan this section'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxMakeTheComputerEasierToUseDisableAlwaysScanThisSection}" Style="{StaticResource GeneralCheckboxStyle}"/>
                                                 </StackPanel>
                                             </StackPanel>
                                         </StackPanel>
@@ -67,10 +67,10 @@
                                             <Label Name="MakeYourComputerEasierToSee_Label" Content="Make Your Computer Easier To See" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"/>
                                             <StackPanel Name="MakeYourComputerEasierToSee_Content" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
                                                 <StackPanel Margin="5">
-                                                    <CheckBox Content="Disable 'High Contrast when left ALT + left SHIFT + PRINT SCREEN is pressed" Foreground="Lime"  Margin="5" IsChecked="{Binding ChckbxMakeTheComputerEasierToSeeTurnOffHighContrast}"/>
-                                                    <CheckBox Content="Disable 'Display a Warning Message When Turning A Setting On'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxMakeTheComputerEasierToSeeDisableDisplayAWarningMessageWhenTurningASettingOn}"/>
-                                                    <CheckBox Content="Disable 'Make A Sound When Turning A Setting On or Off'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxMakeTheComputerEasierToSeeDisableMakeASoundWhenTurningASettingOnOrOff}"/>
-                                                    <CheckBox Content="Enable 'Turn off all unneccassary animations (when possible)'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxMakeTheComputerEasierToSeeTurnOffAllUnneccassaryAnimations}"/>
+                                                    <CheckBox Content="Disable 'High Contrast when left ALT + left SHIFT + PRINT SCREEN is pressed" Foreground="Lime"  Margin="5" IsChecked="{Binding ChckbxMakeTheComputerEasierToSeeTurnOffHighContrast}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                                    <CheckBox Content="Disable 'Display a Warning Message When Turning A Setting On'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxMakeTheComputerEasierToSeeDisableDisplayAWarningMessageWhenTurningASettingOn}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                                    <CheckBox Content="Disable 'Make A Sound When Turning A Setting On or Off'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxMakeTheComputerEasierToSeeDisableMakeASoundWhenTurningASettingOnOrOff}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                                    <CheckBox Content="Enable 'Turn off all unneccassary animations (when possible)'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxMakeTheComputerEasierToSeeTurnOffAllUnneccassaryAnimations}" Style="{StaticResource GeneralCheckboxStyle}"/>
                                                 </StackPanel>
                                             </StackPanel>
                                         </StackPanel>
@@ -81,7 +81,7 @@
                                             <Label Name="MakeTheKeyboardEasierToUse_Label" Content="Make the keyboard easier to use" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"/>
                                             <StackPanel Name="MakeTheKeyboardEasierToUse_Content" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
                                                 <StackPanel Margin="5">
-                                                    <CheckBox Content="Disable 'Turn on Toggle Keys by holding down the NUM-LOCK key for 5 Seconds'" Foreground="Lime"  Margin="5" IsChecked="{Binding ChckbxMakeTheKeyboardEasierToUseDisableTurnOnToggleKeysByHoldingDownNumLock}"/>
+                                                    <CheckBox Content="Disable 'Turn on Toggle Keys by holding down the NUM-LOCK key for 5 Seconds'" Foreground="Lime"  Margin="5" IsChecked="{Binding ChckbxMakeTheKeyboardEasierToUseDisableTurnOnToggleKeysByHoldingDownNumLock}" Style="{StaticResource GeneralCheckboxStyle}"/>
                                                 </StackPanel>
                                             </StackPanel>
                                         </StackPanel>
@@ -96,7 +96,7 @@
                                             <Label Name="UseTextOrVisualAlternativesForSound_Label" Content="Use text or visual alternatives for sound" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"/>
                                             <StackPanel Name="UseTextOrVisualAlternativesForSound_Content" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
                                                 <StackPanel Margin="5">
-                                                    <CheckBox Content="Choose visual warning - None" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxUseTextOrVisualAlternativesForSoundChooseVisualWarning}"/>
+                                                    <CheckBox Content="Choose visual warning - None" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxUseTextOrVisualAlternativesForSoundChooseVisualWarning}" Style="{StaticResource GeneralCheckboxStyle}"/>
                                                 </StackPanel>
                                             </StackPanel>
                                         </StackPanel>
@@ -107,7 +107,7 @@
                                             <Label Name="akeTouchAndTabletsEasierToUse_Label" Content="Make touch and tablets easier to use" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"/>
                                             <StackPanel Name="akeTouchAndTabletsEasierToUse_Content" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
                                                 <StackPanel Margin="5">
-                                                    <CheckBox Content="Launching common tools - None" Foreground="Lime"  Margin="5" IsChecked="{Binding ChckbxMakeTouchAndTabletsEasierToUseLaunchingCommonTools}"/>
+                                                    <CheckBox Content="Launching common tools - None" Foreground="Lime"  Margin="5" IsChecked="{Binding ChckbxMakeTouchAndTabletsEasierToUseLaunchingCommonTools}" Style="{StaticResource GeneralCheckboxStyle}"/>
                                                 </StackPanel>
                                             </StackPanel>
                                         </StackPanel>
@@ -142,10 +142,10 @@
                                         <Label Name="FolderOptionsGeneral_Label" Content="General" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"/>
                                         <StackPanel Name="FolderOptionsGeneral_Content" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
                                                 <StackPanel Margin="5">
-                                                    <CheckBox Content="Open File Explorer to: 'This PC' instead of 'Quick Acces'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxFolderOptionsGeneralFileExplorerToThisPc}"/>
-                                                    <CheckBox Content="Disable 'Show recently used files in Quick Access'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxFolderOptionsGeneralShowRecentlyUsedFiles}"/>
-                                                    <CheckBox Content="Disable 'Show frequently used folders in Quick Accesss'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxFolderOptionsGeneralShowFrequentlyUsedFolders}"/>
-                                                    <CheckBox Content="Disable 'Show files from Office.com'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxFolderOptionsGeneralShowFilesFromOffice}"/>
+                                                <CheckBox Content="Open File Explorer to: 'This PC' instead of 'Quick Acces'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxFolderOptionsGeneralFileExplorerToThisPc}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                                <CheckBox Content="Disable 'Show recently used files in Quick Access'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxFolderOptionsGeneralShowRecentlyUsedFiles}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                                <CheckBox Content="Disable 'Show frequently used folders in Quick Accesss'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxFolderOptionsGeneralShowFrequentlyUsedFolders}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                                <CheckBox Content="Disable 'Show files from Office.com'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxFolderOptionsGeneralShowFilesFromOffice}" Style="{StaticResource GeneralCheckboxStyle}"/>
                                                 </StackPanel>
                                         </StackPanel>
                                     </StackPanel>
@@ -156,8 +156,8 @@
                                         <Label Name="FolderOptionsView_Label" Content="View" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"/>
                                         <StackPanel Name="FolderOptionsView_Content" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
                                             <StackPanel Margin="5">
-                                                <CheckBox Content="Show hidden files, folders and drives" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxFolderOptionViewShowHiddenFiles}"/>
-                                                <CheckBox Content="Disable 'Hide file extensions for known file types'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxFolderOptionViewHideFileExtensions}"/>
+                                                <CheckBox Content="Show hidden files, folders and drives" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxFolderOptionViewShowHiddenFiles}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                                <CheckBox Content="Disable 'Hide file extensions for known file types'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxFolderOptionViewHideFileExtensions}" Style="{StaticResource GeneralCheckboxStyle}"/>
                                             </StackPanel>
                                     </StackPanel>
                                     </StackPanel>
@@ -168,7 +168,7 @@
                                         <Label Name="FolderOptionsSearch_Label" Content="Search" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"/>
                                         <StackPanel Name="FolderOptionsSearch_Content" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
                                             <StackPanel Margin="5">
-                                                <CheckBox Content="Enable 'Don't use the index when searching in file folders for system files'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxSearchDontUseTheIndexWhenSearchingInFileFoldersForFileSystem}"/>
+                                                <CheckBox Content="Enable 'Don't use the index when searching in file folders for system files'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxSearchDontUseTheIndexWhenSearchingInFileFoldersForFileSystem}" Style="{StaticResource GeneralCheckboxStyle}"/>
                                             </StackPanel>
                                         </StackPanel>
                                     </StackPanel>
@@ -202,9 +202,9 @@
                                         <Label Name="PointerOptions_Label" Content="Pointer Options" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"/>
                                         <StackPanel Name="PointerOptions_Content" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
                                             <StackPanel Margin="5">
-                                                <CheckBox Content="Disable 'Enhance Pointer Precision'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxMouseDisableEnhancedPointerPrecision}"/>
-                                                <CheckBox Content="Disable 'Mouse Smoothing and Acceleration'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxMouseDisableMouseSmoothingAndAccelaration}"/>
-                                                <CheckBox Content="Show popups faster when hovering over an item" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxMouseShowPopupsFasterWhenHoveringOverAnItem}"/>
+                                                <CheckBox Content="Disable 'Enhance Pointer Precision'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxMouseDisableEnhancedPointerPrecision}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                                <CheckBox Content="Disable 'Mouse Smoothing and Acceleration'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxMouseDisableMouseSmoothingAndAccelaration}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                                <CheckBox Content="Show popups faster when hovering over an item" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxMouseShowPopupsFasterWhenHoveringOverAnItem}" Style="{StaticResource GeneralCheckboxStyle}"/>
                                             </StackPanel>
                                         </StackPanel>
                                     </StackPanel>
@@ -243,7 +243,7 @@
                                             <Label Name="ChoosePowerPlan_Label" Content="Choose a Power Plan" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"/>
                                             <StackPanel Name="ChoosePowerPlan_Content" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
                                                 <StackPanel Margin="5">
-                                                    <CheckBox Content="Change to 'Ultimate Performance'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxPowerOptionsChangePowerPlanToUltimatePerformance}"/>
+                                                    <CheckBox Content="Change to 'Ultimate Performance'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxPowerOptionsChangePowerPlanToUltimatePerformance}" Style="{StaticResource GeneralCheckboxStyle}"/>
                                                 </StackPanel>
                                             </StackPanel>
                                         </StackPanel>
@@ -254,7 +254,7 @@
                                             <Label Name="SystemSettings_Label" Content="System Options" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"/>
                                             <StackPanel Name="SystemSettings_Content" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
                                                 <StackPanel Margin="5">
-                                                    <CheckBox Content="Disable 'Fast Startup'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxPowerOptionsDisableFastStartup}"/>
+                                                    <CheckBox Content="Disable 'Fast Startup'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxPowerOptionsDisableFastStartup}" Style="{StaticResource GeneralCheckboxStyle}"/>
                                                 </StackPanel>
                                             </StackPanel>
                                         </StackPanel>
@@ -269,11 +269,11 @@
                                             <Label Name="AdvancedPowerSettings_Label" Content="Advanced Power Settings" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"/>
                                             <StackPanel Name="AdvancedPowerSettings_Content" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
                                                 <StackPanel Margin="5">
-                                                    <CheckBox Content="Hard disk - Turn off hard disk after - Never" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxPowerOptionsTurnOffHardDiskAfterNever}"/>
-                                                    <CheckBox Content="Sleep - Put the computer to sleep after - Never" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxPowerOptionsPutTheComputerToSleepAfterNever}"/>
-                                                    <CheckBox Content="USB settings - USB selective suspend settings - Disabled" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxPowerOptionsUSBSelectiveSuspendSettings}"/>
-                                                    <CheckBox Content="PCI Express - Link State Power Management - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxPowerOptionLinkStatPowerManagement}"/>
-                                                    <CheckBox Content="Display - Turn off the display after - Never" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxPowerOptionsTurnDisplayOffAfter}"/>
+                                                    <CheckBox Content="Hard disk - Turn off hard disk after - Never" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxPowerOptionsTurnOffHardDiskAfterNever}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                                    <CheckBox Content="Sleep - Put the computer to sleep after - Never" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxPowerOptionsPutTheComputerToSleepAfterNever}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                                    <CheckBox Content="USB settings - USB selective suspend settings - Disabled" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxPowerOptionsUSBSelectiveSuspendSettings}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                                    <CheckBox Content="PCI Express - Link State Power Management - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxPowerOptionLinkStatPowerManagement}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                                    <CheckBox Content="Display - Turn off the display after - Never" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxPowerOptionsTurnDisplayOffAfter}" Style="{StaticResource GeneralCheckboxStyle}"/>
                                                 </StackPanel>
                                             </StackPanel>
                                         </StackPanel>
@@ -309,7 +309,7 @@
                                         <Label Name="UserAccountControl_Label" Content="User Account Control Settings" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"/>
                                         <StackPanel Name="UserAccountControlSettings_Content" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
                                             <StackPanel Margin="5">
-                                                <CheckBox Content="Set UAC slider to 'Never Notify'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxSecurityAndMaintenanceSetUACSliderToNeverNotify}"/>
+                                                <CheckBox Content="Set UAC slider to 'Never Notify'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxSecurityAndMaintenanceSetUACSliderToNeverNotify}" Style="{StaticResource GeneralCheckboxStyle}"/>
                                             </StackPanel>
                                         </StackPanel>
                                     </StackPanel>
@@ -346,13 +346,13 @@
                                         <StackPanel Name="AdvancedSystemSettingsAdvanced_Content" Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
                                             <GroupBox Header="Performance" Foreground="Lime" Margin="5" >
                                                 <StackPanel Margin="5">
-                                                    <CheckBox Content="Set 'Performance Options' to 'Custom'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxSystemAdvancedSystemSettingsAdvancedPerformanceTabVisualCustom}"/>
+                                                    <CheckBox Content="Set 'Performance Options' to 'Custom'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxSystemAdvancedSystemSettingsAdvancedPerformanceTabVisualCustom}" Style="{StaticResource GeneralCheckboxStyle}"/>
                                                 </StackPanel>
                                             </GroupBox>
                                             <GroupBox Header="Startup and Recovery" Foreground="Lime" Margin="5">
                                                 <StackPanel Margin="5">
-                                                    <CheckBox Content="Time to display list of operating systems - 0 Seconds" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxSystemAdvancedSystemSettingsAdvancedStartupAndRecoveryTimeToDisplayListOfOS}"/>
-                                                    <CheckBox Content="Enable F8 During Boot" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxSystemAdvancedSystemSettingsAdvancedStartupAndRecoveryEnableF8DuringBoot}"/>
+                                                    <CheckBox Content="Time to display list of operating systems - 0 Seconds" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxSystemAdvancedSystemSettingsAdvancedStartupAndRecoveryTimeToDisplayListOfOS}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                                    <CheckBox Content="Enable F8 During Boot" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxSystemAdvancedSystemSettingsAdvancedStartupAndRecoveryEnableF8DuringBoot}" Style="{StaticResource GeneralCheckboxStyle}"/>
                                                 </StackPanel>
                                             </GroupBox>
                                         </StackPanel>
@@ -365,7 +365,7 @@
                                         <StackPanel Name="AdvancedSystemSettingsRemote_Content" Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
                                             <GroupBox Header="Remote Assistance" Foreground="Lime" Margin="5">
                                                 <StackPanel Margin="5">
-                                                    <CheckBox Content="Disable 'Allow Remote Assistance Connections to this computer'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxSystemAdvancedSystemSettingsRemoteRemoteAssistanceDisableAllowRemoteAssistance}"/>
+                                                    <CheckBox Content="Disable 'Allow Remote Assistance Connections to this computer'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxSystemAdvancedSystemSettingsRemoteRemoteAssistanceDisableAllowRemoteAssistance}" Style="{StaticResource GeneralCheckboxStyle}"/>
                                                 </StackPanel>
                                             </GroupBox>
                                         </StackPanel>
@@ -400,7 +400,7 @@
                                         <Label Name="TurnWindowsDefenderFirewallOnOff_Label" Content="Turn 'Windows Defender Firewall' On or Off" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"/>
                                         <StackPanel Name="TurnWindowsDefenderFirewallOnOff_Content" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
                                             <StackPanel Margin="5">
-                                                <CheckBox Content="Turn Off - Windows Defender Firewall - On All Profiles" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxWindowsDefenderFirewallTurnOffOnAllProfiles}"/>
+                                                <CheckBox Content="Turn Off - Windows Defender Firewall - On All Profiles" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxWindowsDefenderFirewallTurnOffOnAllProfiles}" Style="{StaticResource GeneralCheckboxStyle}"/>
                                             </StackPanel>
                                         </StackPanel>
                                     </StackPanel>

@@ -41,33 +41,20 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void SystemResponsivenessSearchOnInternetContextMenu()
         {
-            string RegistryHive = @"HKLM:\\";
-            string RegistryPath = @"SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Multimedia\\SystemProfile";
-            string Name = @"SystemResponsiveness";
-            string Type = @"DWord";
-            string Value = @"0";
-            string Default = @"20";
+            string Exe = "wt.exe";
+            string RegistryPath = "\"HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Multimedia\\SystemProfile\"";
+            string Name = "SystemResponsiveness";
+            string Type = "REG_DWORD";
+            string Value = "0";
+            string Default = "20";
 
-            string Exe = "Wt.exe";
-            string ArgsNoKey = @"powershell New-Item -Path '" + RegistryHive + RegistryPath + "' -Force";
-            string ArgsChecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Value + "' -Force";
-            string ArgsUnchecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Default + "' -Force";
-            RegistryKey RegKeyLM = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, RegistryView.Registry64);
-            var CheckRegKeyLM = RegKeyLM.OpenSubKey(RegistryPath, true);
-            
+            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxSystemResponsivenessChangeSystemResponsiveness)
-            {
-                if (CheckRegKeyLM == null)
-                {
-                    Process.Start(Exe, ArgsNoKey);
-                    Process.Start(Exe, ArgsChecked);
-                }
-                else
-                    Process.Start(Exe, ArgsChecked);
-            }
+                Process.Start(Exe, ArgsValue);
             else
-                Process.Start(Exe, ArgsUnchecked);
+                Process.Start(Exe, ArgsDefault);
         }
 
 
@@ -91,29 +78,19 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void SystemResponsivenessDisableNetworkThrottling()
         {
-            string RegistryHive = @"HKLM:\\";
-            string RegistryPath = @"SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Multimedia\\SystemProfile";
-            string Name = @"NetworkThrottlingIndex";
-            string Type = @"DWord";
-            string Value = @"4294967295";
-            string Default = @"10";
-
             string Exe = "Wt.exe";
-            string ArgsNoKey = @"powershell New-Item -Path '" + RegistryHive + RegistryPath + "' -Force";
-            string ArgsChecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Value + "' -Force";
-            string ArgsUnchecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Default + "' -Force";
-            RegistryKey RegKeyLM = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, RegistryView.Registry64);
-            var CheckRegKeyLM = RegKeyLM.OpenSubKey(RegistryPath, true);
+            string RegistryPath = "\"HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Multimedia\\SystemProfile\"";
+            string Name = "NetworkThrottlingIndex";
+            string Type = "REG_DWORD";
+            string Value = "4294967295";
+            string Default = "10";
+
+            string ArgsChecked = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsUnchecked = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxSystemResponsivenessDisableNetworkThrottling)
             {
-                if (CheckRegKeyLM == null)
-                {
-                    Process.Start(Exe, ArgsNoKey);
-                    Process.Start(Exe, ArgsChecked);
-                }
-                else
-                    Process.Start(Exe, ArgsChecked);
+                Process.Start(Exe, ArgsChecked);
             }
             else
                 Process.Start(Exe, ArgsUnchecked);
@@ -140,29 +117,18 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void SystemResponsivenessDisablePowerThrottling()
         {
-            string RegistryHive = @"HKLM:\\";
-            string RegistryPath = @"System\\CurrentControlSet\\Control\\Power\\PowerThrottling";
-            string Name = @"PowerThrottlingOff";
-            string Type = @"DWord";
-            string Value = @"1";
-
             string Exe = "Wt.exe";
-            string ArgsNoKey = @"powershell New-Item -Path '" + RegistryHive + RegistryPath + "' -Force";
-            string ArgsChecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Value + "' -Force";
-            string ArgsUnchecked = @"powershell Remove-Item -Path '" + RegistryPath + "' -Recurse";
-            RegistryKey RegKeyLM = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, RegistryView.Registry64);
-            var CheckRegKeyLM = RegKeyLM.OpenSubKey(RegistryPath, true);
+            string RegistryPath = "HKLM\\System\\CurrentControlSet\\Control\\Power\\PowerThrottling";
+            string Name = "PowerThrottlingOff";
+            string Type = "REG_DWORD";
+            string Value = "1";
+
+
+            string ArgsChecked = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsUnchecked = @"Reg delete " + RegistryPath + " /f";
 
             if (ChckbxSystemResponsivenessDisablePowerThrottling)
-            {
-                if (CheckRegKeyLM == null)
-                {
-                    Process.Start(Exe, ArgsNoKey);
-                    Process.Start(Exe, ArgsChecked);
-                }
-                else
-                    Process.Start(Exe, ArgsChecked);
-            }
+                Process.Start(Exe, ArgsChecked);
             else
                 Process.Start(Exe, ArgsUnchecked);
         }
@@ -192,66 +158,36 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void DefaultGraphicsSettingsVariableRefreshRate()
         {
-            string RegistryHive = @"HKCU:\\";
-            string RegistryHiveReg = @"HKCU\\";
-            string RegistryPath = @"Software\\Microsoft\\DirectX\\UserGpuPreferences";
+            string Exe = "cmd.exe";
+            string RegistryPath = "HKCU\\Software\\Microsoft\\DirectX\\UserGpuPreferences";
             string Name = "DirectXUserGlobalSettings";
-            string Type = "String";
-            string TypeReg = "REG_SZ";
-            string Value = "'VRROptimizeEnable=1;'"; 
-            string Default = "'VRROptimizeEnable=0;'";
-            string Value2 = "'SwapEffectUpgradeEnable=1'";
-            string Default2 = "'SwapEffectUpgradeEnable=0'"; 
+            string Type = "REG_SZ";
+            string Value = "VRROptimizeEnable=1;";
+            string Default = "VRROptimizeEnable=0;";
+            string Value2 = "SwapEffectUpgradeEnable=1;";
+            string Default2 = "SwapEffectUpgradeEnable=0;";
 
-
-            string Exe = "wt.exe";
-            string Cmd = "cmd.exe";
-            string ArgsNoKey = "powershell New-Item -Path " + RegistryHive + RegistryPath + " -Force";
-            //string ArgsValueValue2 = "powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Value + Value2 + "' -Force";
-            //string ArgsValueDefault2 = "powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Value + Default2 + "' -Force";
-            //string ArgsDefaultValue2 = "powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Default + Value2 + "' -Force";
-            //string ArgsDefaultDefault2 = "powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Default + Default2 + "' -Force";
-            // string ArgsValueValue2 = "Reg Add " + RegistryHiveReg + RegistryPath + " /v " + Name + " /t " + TypeReg + " /d " + Value + Value2 + " /f";
-            // string ArgsValueDefault2 = "Reg Add " + RegistryHiveReg + RegistryPath + " /v " + Name + " /t " + TypeReg + " /d " + Value + Default2 + " /f";
-            // string ArgsDefaultValue2 = "Reg Add " + RegistryHiveReg + RegistryPath + " /v " + Name + " /t " + TypeReg + " /d " + Default + Value2 + " /f";
-            // string ArgsDefaultDefault2 = "Reg Add " + RegistryHiveReg + RegistryPath + " /v " + Name + " /t " + TypeReg + " /d " + Default + Default2 + " /f";
-            string ArgsValueValue2 = "/C Reg Add HKCU\\Software\\Microsoft\\DirectX\\UserGpuPreferences /v DirectXUserGlobalSettings /t REG_SZ /d VRROptimizeEnable=1;SwapEffectUpgradeEnable=1; /f";
-            string ArgsValueDefault2 = "/C Reg Add HKCU\\Software\\Microsoft\\DirectX\\UserGpuPreferences /v DirectXUserGlobalSettings /t REG_SZ /d VRROptimizeEnable=1;SwapEffectUpgradeEnable=0; /f";
-            string ArgsDefaultValue2 = "/C Reg Add HKCU\\Software\\Microsoft\\DirectX\\UserGpuPreferences /v DirectXUserGlobalSettings /t REG_SZ /d VRROptimizeEnable=0;SwapEffectUpgradeEnable=1; /f";
-            string ArgsDefaultDefault2 = "/C Reg Add HKCU\\Software\\Microsoft\\DirectX\\UserGpuPreferences /v DirectXUserGlobalSettings /t REG_SZ /d VRROptimizeEnable=0;SwapEffectUpgradeEnable=0; /f";
-            //string RegTest = @"/C Reg Add " + RegistryHiveReg + RegistryPath + " /v " + Name + " /t " + TypeReg + " /d " + Value + Value2 + " /f";
-            RegistryKey RegKeyCU = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.CurrentUser, RegistryView.Registry64);
-            var CheckRegKeyCU = RegKeyCU.OpenSubKey(RegistryPath, true);
-
+            string ArgsValueValue2 = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + Value2 + " /f";
+            string ArgsValueDefault2 = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + Default2 + " /f";
+            string ArgsDefaultValue2 = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + Value2 + " /f";
+            string ArgsDefaultDefault2 = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + Default2 + " /f";
 
             if (ChckbxDefaultGraphicsSettingsVariableRefreshRate)
             {
-                if (CheckRegKeyCU == null)
-                {
                     if (ChckbxDefaultGraphicsSettingsOptimizationsForWindowedGames == true)
                     {
-                        Process.Start(Exe, ArgsNoKey);
-                        Process.Start(Cmd, ArgsValueValue2);
+                        Process.Start(Exe, ArgsValueValue2);
                     }
                     else
-                        Process.Start(Exe, ArgsNoKey);
-                        Process.Start(Cmd, ArgsValueDefault2);
-                }
-                else
-                    if (ChckbxDefaultGraphicsSettingsOptimizationsForWindowedGames == true)
-                    {
-                        Process.Start(Cmd, ArgsValueValue2);
-                    }
-                    else
-                        Process.Start(Cmd, ArgsValueDefault2);
+                        Process.Start(Exe, ArgsValueDefault2);
             }
             else
                 if (ChckbxDefaultGraphicsSettingsOptimizationsForWindowedGames == true)
                 {
-                Process.Start(Cmd, ArgsDefaultValue2);
+                Process.Start(Exe, ArgsDefaultValue2);
                 }
                 else
-                Process.Start(Cmd, ArgsDefaultDefault2);
+                Process.Start(Exe, ArgsDefaultDefault2);
         }
 
 
@@ -278,67 +214,40 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void DefaultGraphicsSettingsOptimizationsForWindowedGames()
         {
-            string RegistryHive = "HKCU:\\";
-            string RegistryPath = "Software\\Microsoft\\DirectX\\UserGpuPreferences";
-            string Name = @"DirectXUserGlobalSettings";
-            string Type = @"String";
-            string Value = @"SwapEffectUpgradeEnable=1;";
-            string Default = @"SwapEffectUpgradeEnable=0;";
-            string Value2 = @"VRROptimizeEnable=1;";
-            string Default2 = @"VRROptimizeEnable=0;";
-            string ValueValue2 = @"SwapEffectUpgradeEnable=1`;VRROptimizeEnable=1";
-            string ValueDefault2 = @"SwapEffectUpgradeEnable=1`;VRROptimizeEnable=0";
-            string DefaultValue2 = @"SwapEffectUpgradeEnable=0`;VRROptimizeEnable=1";
-            string DefaultDefault2 = @"SwapEffectUpgradeEnable=0`;VRROptimizeEnable=0";
+            string Exe = "cmd.exe";
+            string RegistryPath = "HKCU\\Software\\Microsoft\\DirectX\\UserGpuPreferences";
+            string Name = "DirectXUserGlobalSettings";
+            string Type = "REG_SZ";
+            string Value = "SwapEffectUpgradeEnable=1;";
+            string Default = "SwapEffectUpgradeEnable=0;";
+            string Value2 = "VRROptimizeEnable=1;";
+            string Default2 = "VRROptimizeEnable=0;";
 
-
-            string Exe = "Wt.exe";
-            string Cmd = "cmd.exe";
-            string ArgsNoKey = @"powershell New-Item -Path '" + RegistryHive + RegistryPath + "' -Force";
-            //string ArgsValueValue2 = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + ValueValue2 + "' -Force";
-            //string ArgsValueDefault2 = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + ValueDefault2 + "' -Force";
-            //string ArgsDefaultValue2 = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + DefaultValue2 + "' -Force";
-            //string ArgsDefaultDefault2 = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + DefaultDefault2 + "' -Force";
-            string ArgsValueValue2 = "/C Reg Add HKCU\\Software\\Microsoft\\DirectX\\UserGpuPreferences /v DirectXUserGlobalSettings /t REG_SZ /d SwapEffectUpgradeEnable=1;VRROptimizeEnable=1; /f";
-            string ArgsValueDefault2 = "/C Reg Add HKCU\\Software\\Microsoft\\DirectX\\UserGpuPreferences /v DirectXUserGlobalSettings /t REG_SZ /d SwapEffectUpgradeEnable=1;VRROptimizeEnable=0; /f";
-            string ArgsDefaultValue2 = "/C Reg Add HKCU\\Software\\Microsoft\\DirectX\\UserGpuPreferences /v DirectXUserGlobalSettings /t REG_SZ /d SwapEffectUpgradeEnable=0;VRROptimizeEnable=1; /f";
-            string ArgsDefaultDefault2 = "/C Reg Add HKCU\\Software\\Microsoft\\DirectX\\UserGpuPreferences /v DirectXUserGlobalSettings /t REG_SZ /d SwapEffectUpgradeEnable=0;VRROptimizeEnable=0; /f";
-            //string RegTest = @"/C Reg Add " + RegistryHive + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + Value2 + "/f";
-            RegistryKey RegKeyCU = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.CurrentUser, RegistryView.Registry64);
-            var CheckRegKeyCU = RegKeyCU.OpenSubKey(RegistryPath, true);
+            string ArgsValueValue2 = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + Value2 + " /f";
+            string ArgsValueDefault2 = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + Default2 + " /f";
+            string ArgsDefaultValue2 = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + Value2 + " /f";
+            string ArgsDefaultDefault2 = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + Default2 + " /f";
 
             if (ChckbxDefaultGraphicsSettingsOptimizationsForWindowedGames)
             {
-                if (CheckRegKeyCU == null)
+                if (ChckbxDefaultGraphicsSettingsVariableRefreshRate == true)
                 {
-                    if (ChckbxDefaultGraphicsSettingsVariableRefreshRate == true)
-                    {
-                        Process.Start(Exe, ArgsNoKey);
-                        Process.Start(Cmd, ArgsValueValue2);
-                    }
-                    else
-                        Process.Start(Exe, ArgsNoKey);
-                    Process.Start(Cmd, ArgsValueDefault2);
+                    Process.Start(Exe, ArgsValueValue2);
                 }
                 else
-                    if (ChckbxDefaultGraphicsSettingsVariableRefreshRate == true)
-                {
-                    Process.Start(Cmd, ArgsValueValue2);
-                }
-                else
-                    Process.Start(Cmd, ArgsValueDefault2);
+                    Process.Start(Exe, ArgsValueDefault2);
             }
             else
                 if (ChckbxDefaultGraphicsSettingsVariableRefreshRate == true)
             {
-                Process.Start(Cmd, ArgsDefaultValue2);
+                Process.Start(Exe, ArgsDefaultValue2);
             }
             else
-                Process.Start(Cmd, ArgsDefaultDefault2);
+                Process.Start(Exe, ArgsDefaultDefault2);
         }
 
 
-        
+
 
 
         // Checkbox - Turn On - 'Hardware-accelerated GPU scheduling' - Command
@@ -360,33 +269,20 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void DefaultGraphicsSettingsHardwareAcceleratedGPUScheduling()
         {
-            string RegistryHive = @"HKLM:\\";
-            string RegistryPath = @"SYSTEM\\CurrentControlSet\\Control\\GraphicsDrivers";
-            string Name = @"HwSchMode";
-            string Type = @"DWord";
-            string Value = @"2";
-
             string Exe = "Wt.exe";
-            string ArgsNoKey = @"powershell New-Item -Path '" + RegistryHive + RegistryPath + "' -Force";
-            string ArgsChecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Value + "' -Force";
-            string ArgsUnchecked = @"powershell Remove-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Force";
-            RegistryKey RegKeyLM = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, RegistryView.Registry64);
-            RegistryKey RegKeyCU = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.CurrentUser, RegistryView.Registry64);
-            var CheckRegKeyLM = RegKeyLM.OpenSubKey(RegistryPath, true);
-            var CheckRegKeyCU = RegKeyCU.OpenSubKey(RegistryPath, true);
+            string RegistryPath = "HKLM\\SYSTEM\\CurrentControlSet\\Control\\GraphicsDrivers";
+            string Name = "HwSchMode";
+            string Type = "REG_DWORD";
+            string Value = "2";
+            string ArgsValue = "Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "Reg delete " + RegistryPath + " /v " + Name + " /f";
 
             if (ChckbxDefaultGraphicsSettingsHardwareAcceleratedGPUScheduling)
             {
-                if (CheckRegKeyLM == null)
-                {
-                    Process.Start(Exe, ArgsNoKey);
-                    Process.Start(Exe, ArgsChecked);
-                }
-                else
-                    Process.Start(Exe, ArgsChecked);
+                Process.Start(Exe, ArgsValue);
             }
             else
-                Process.Start(Exe, ArgsUnchecked);
+                Process.Start(Exe, ArgsDefault);
         }
 
         #endregion
@@ -414,32 +310,21 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void PrioritizeGamingTasksGPUPriority()
         {
-            string RegistryHive = @"HKLM:\\";
-            string RegistryPath = @"SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Multimedia\\SystemProfile\\Tasks\\Games";
-            string Name = @"GPU Priority";
-            string Type = @"DWord";
-            string Value = @"8";
-            string Default = @"8";
-
             string Exe = "Wt.exe";
-            string ArgsNoKey = @"powershell New-Item -Path '" + RegistryHive + RegistryPath + "' -Force";
-            string ArgsChecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Value + "' -Force";
-            string ArgsUnchecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Default + "' -Force";
-            RegistryKey RegKeyLM = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, RegistryView.Registry64);
-            var CheckRegKeyLM = RegKeyLM.OpenSubKey(RegistryPath, true);
+            string RegistryPath = "\"HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Multimedia\\SystemProfile\\Tasks\\Games\"";
+            string Name = "\"GPU Priority\"";
+            string Type = "REG_DWORD";
+            string Value = "8";
+            string Default = "8";
+
+            
+            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxPrioritizeGamingTasksGPUPriority)
-            {
-                if (CheckRegKeyLM == null)
-                {
-                    Process.Start(Exe, ArgsNoKey);
-                    Process.Start(Exe, ArgsChecked);
-                }
-                else
-                    Process.Start(Exe, ArgsChecked);
-            }
+                Process.Start(Exe, ArgsValue);
             else
-                Process.Start(Exe, ArgsUnchecked);
+                Process.Start(Exe, ArgsDefault);
         }
 
 
@@ -463,32 +348,20 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void PrioritizeGamingTasksGamesPriority()
         {
-            string RegistryHive = @"HKLM:\\";
-            string RegistryPath = @"SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Multimedia\\SystemProfile\\Tasks\\Games";
-            string Name = @"Priority";
-            string Type = @"DWord";
-            string Value = @"6";
-            string Default = @"2";
-
             string Exe = "Wt.exe";
-            string ArgsNoKey = @"powershell New-Item -Path '" + RegistryHive + RegistryPath + "' -Force";
-            string ArgsChecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Value + "' -Force";
-            string ArgsUnchecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Default + "' -Force";
-            RegistryKey RegKeyLM = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, RegistryView.Registry64);
-            var CheckRegKeyLM = RegKeyLM.OpenSubKey(RegistryPath, true);
+            string RegistryPath = "\"HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Multimedia\\SystemProfile\\Tasks\\Games\"";
+            string Name = "Priority";
+            string Type = "REG_DWORD";
+            string Value = "6";
+            string Default = "2";
+            
+            string ArgsValue = "Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxPrioritizeGamingTasksGamesPriority)
-            {
-                if (CheckRegKeyLM == null)
-                {
-                    Process.Start(Exe, ArgsNoKey);
-                    Process.Start(Exe, ArgsChecked);
-                }
-                else
-                    Process.Start(Exe, ArgsChecked);
-            }
+                Process.Start(Exe, ArgsValue);
             else
-                Process.Start(Exe, ArgsUnchecked);
+                Process.Start(Exe, ArgsDefault);
         }
 
 
@@ -512,32 +385,20 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void PrioritizeGamingTasksSchedulingCategory()
         {
-            string RegistryHive = @"HKLM:\\";
-            string RegistryPath = @"SOFTWARE\Microsoft\\Windows NT\\CurrentVersion\\Multimedia\\SystemProfile\\Tasks\\Games";
-            string Name = @"Scheduling Category";
-            string Type = @"String";
-            string Value = @"High";
-            string Default = @"Medium";
-
             string Exe = "Wt.exe";
-            string ArgsNoKey = @"powershell New-Item -Path '" + RegistryHive + RegistryPath + "' -Force";
-            string ArgsChecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Value + "' -Force";
-            string ArgsUnchecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Default + "' -Force";
-            RegistryKey RegKeyLM = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, RegistryView.Registry64);
-            var CheckRegKeyLM = RegKeyLM.OpenSubKey(RegistryPath, true);
+            string RegistryPath = "\"HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Multimedia\\SystemProfile\\Tasks\\Games\"";
+            string Name = "\"Scheduling Category\"";
+            string Type = "REG_SZ";
+            string Value = "High";
+            string Default = "Medium";
+
+            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxPrioritizeGamingTasksSchedulingCategory)
-            {
-                if (CheckRegKeyLM == null)
-                {
-                    Process.Start(Exe, ArgsNoKey);
-                    Process.Start(Exe, ArgsChecked);
-                }
-                else
-                    Process.Start(Exe, ArgsChecked);
-            }
+                Process.Start(Exe, ArgsValue);
             else
-                Process.Start(Exe, ArgsUnchecked);
+                Process.Start(Exe, ArgsDefault);
         }
 
 
@@ -561,33 +422,20 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void PrioritizeGamingTasksSFIOPriority()
         {
-            string RegistryHive = @"HKLM:\\";
-            string RegistryPath = @"SOFTWARE\\Microsoft\Windows NT\\CurrentVersion\\Multimedia\\SystemProfile\\Tasks\\Games";
-            string Name = @"SFIO Priority";
-            string Type = @"String";
-            string Value = @"High";
-            string Default = @"Normal";
-
             string Exe = "Wt.exe";
-            string ArgsNoKey = @"powershell New-Item -Path '" + RegistryHive + RegistryPath + "' -Force";
-            string ArgsChecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Value + "' -Force";
-            string ArgsUnchecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Default + "' -Force";
-            RegistryKey RegKeyLM = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, RegistryView.Registry64);
-            var CheckRegKeyLM = RegKeyLM.OpenSubKey(RegistryPath, true);
-            
+            string RegistryPath = "\"HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Multimedia\\SystemProfile\\Tasks\\Games\"";
+            string Name = "\"SFIO Priority\"";
+            string Type = "REG_SZ";
+            string Value = "High";
+            string Default = "Normal";
+
+            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxPrioritizeGamingTasksSFIOPriority)
-            {
-                if (CheckRegKeyLM == null)
-                {
-                    Process.Start(Exe, ArgsNoKey);
-                    Process.Start(Exe, ArgsChecked);
-                }
-                else
-                    Process.Start(Exe, ArgsChecked);
-            }
+                Process.Start(Exe, ArgsValue);
             else
-                Process.Start(Exe, ArgsUnchecked);
+                Process.Start(Exe, ArgsDefault);
         }
 
 
@@ -617,31 +465,20 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void NaglesAlogrithmDisableNagleAlgorithm()
         {
-            string RegistryHive = @"HKLM:\\";
-            string RegistryPath = @"SYSTEM\\CurrentControlSet\\Services\\Tcpip\\Parameters\\Interfaces";
-            string Name = @"TCPNoDelay";
-            string Type = @"DWord";
-            string Value = @"1";
-
             string Exe = "Wt.exe";
-            string ArgsNoKey = @"powershell New-Item -Path '" + RegistryHive + RegistryPath + "' -Force";
-            string ArgsChecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Value + "' -Force";
-            string ArgsUnchecked = @"powershell Remove-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Force";
-            RegistryKey RegKeyLM = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, RegistryView.Registry64);
-            var CheckRegKeyLM = RegKeyLM.OpenSubKey(RegistryPath, true);
+            string RegistryPath = "HKLM\\SYSTEM\\CurrentControlSet\\Services\\Tcpip\\Parameters\\Interfaces";
+            string Name = "TCPNoDelay";
+            string Type = "REG_DWORD";
+            string Value = "1";
+
+            
+            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = @"Reg delete " + RegistryPath + " /v " + Name + " /f";
 
             if (ChckbxNaglesAlogrithmDisableNagleAlgorithm)
-            {
-                if (CheckRegKeyLM == null)
-                {
-                    Process.Start(Exe, ArgsNoKey);
-                    Process.Start(Exe, ArgsChecked);
-                }
-                else
-                    Process.Start(Exe, ArgsChecked);
-            }
+                Process.Start(Exe, ArgsValue);
             else
-                Process.Start(Exe, ArgsUnchecked);
+                Process.Start(Exe, ArgsDefault);
         }
 
 
@@ -665,31 +502,19 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void NaglesAlogrithmSendOutPacketsImmediatly()
         {
-            string RegistryHive = @"HKLM:\\";
-            string RegistryPath = @"SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces";
+            string Exe = "Wt.exe";
+            string RegistryPath = "HKLM\\SYSTEM\\CurrentControlSet\\Services\\Tcpip\\Parameters\\Interfaces";
             string Name = @"TcpAckFrequency";
-            string Type = @"DWord";
+            string Type = @"REG_DWORD";
             string Value = @"1";
 
-            string Exe = "Wt.exe";
-            string ArgsNoKey = @"powershell New-Item -Path '" + RegistryHive + RegistryPath + "' -Force";
-            string ArgsChecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Value + "' -Force";
-            string ArgsUnchecked = @"powershell Remove-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Force";
-            RegistryKey RegKeyLM = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, RegistryView.Registry64);
-            var CheckRegKeyLM = RegKeyLM.OpenSubKey(RegistryPath, true);
+            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = @"Reg delete " + RegistryPath + " /v " + Name + " /f";
 
             if (ChckbxNaglesAlogrithmSendOutPacketsImmediatly)
-            {
-                if (CheckRegKeyLM == null)
-                {
-                    Process.Start(Exe, ArgsNoKey);
-                    Process.Start(Exe, ArgsChecked);
-                }
-                else
-                    Process.Start(Exe, ArgsChecked);
-            }
+                Process.Start(Exe, ArgsValue);
             else
-                Process.Start(Exe, ArgsUnchecked);
+                Process.Start(Exe, ArgsDefault);
         }
 
 
@@ -713,31 +538,20 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void NaglesAlogrithmDisablePacketTicks()
         {
-            string RegistryHive = @"HKLM:\\";
+            string Exe = "Wt.exe";
             string RegistryPath = @"";
             string Name = @"";
             string Type = @"";
             string Value = @"";
+            string Default = @"";
 
-            string Exe = "Wt.exe";
-            string ArgsNoKey = @"powershell New-Item -Path '" + RegistryHive + RegistryPath + "' -Force";
-            string ArgsChecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Value + "' -Force";
-            string ArgsUnchecked = @"powershell Remove-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Force";
-            RegistryKey RegKeyLM = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, RegistryView.Registry64);
-            var CheckRegKeyLM = RegKeyLM.OpenSubKey(RegistryPath, true);
+            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxNaglesAlogrithmDisablePacketTicks)
-            {
-                if (CheckRegKeyLM == null)
-                {
-                    Process.Start(Exe, ArgsNoKey);
-                    Process.Start(Exe, ArgsChecked);
-                }
-                else
-                    Process.Start(Exe, ArgsChecked);
-            }
+                Process.Start(Exe, ArgsValue);
             else
-                Process.Start(Exe, ArgsUnchecked);
+                Process.Start(Exe, ArgsDefault);
         }
 
         #endregion

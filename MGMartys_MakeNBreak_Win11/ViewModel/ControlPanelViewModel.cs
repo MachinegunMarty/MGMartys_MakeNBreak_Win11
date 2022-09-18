@@ -42,32 +42,20 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void MakeTheComputerEasierToUseDisableAlwaysReadThisSectionAloud()
         {
-            string RegistryHive = @"HKCU:\\";
-            string RegistryPath = @"SOFTWARE\\Microsoft\\Ease of Access";
-            string Name = @"selfvoice";
-            string Type = @"DWord";
-            string Value = @"0";
-            string Default = @"1";
-
             string Exe = "Wt.exe";
-            string ArgsNoKey = @"powershell New-Item -Path '" + RegistryHive + RegistryPath + "' -Force";
-            string ArgsChecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Value + "' -Force";
-            string ArgsUnchecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Default + "' -Force";
-            RegistryKey RegKeyCU = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.CurrentUser, RegistryView.Registry64);
-            var CheckRegKeyCU = RegKeyCU.OpenSubKey(RegistryPath, true);
+            string RegistryPath = "\"HKCU\\SOFTWARE\\Microsoft\\Ease of Access\"";
+            string Name = "selfvoice";
+            string Type = "REG_DWORD";
+            string Value = "0";
+            string Default = "1";
+
+            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxMakeTheComputerEasierToUseDisableAlwaysReadThisSectionAloud)
-            {
-                if (CheckRegKeyCU == null)
-                {
-                    Process.Start(Exe, ArgsNoKey);
-                    Process.Start(Exe, ArgsChecked);
-                }
-                else
-                    Process.Start(Exe, ArgsChecked);
-            }
+                Process.Start(Exe, ArgsValue);
             else
-                Process.Start(Exe, ArgsUnchecked);
+                Process.Start(Exe, ArgsDefault);
         }
 
         // Checkbox - Disable 'Always scan this section' - Command
@@ -89,34 +77,20 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void MakeTheComputerEasierToUseDisableAlwaysScanThisSection()
         {
-            string RegistryHive = @"HKCU:\\";
-            string RegistryPath = @"SOFTWARE\\Microsoft\\Ease of Access";
-            string Name = @"selfscan";
-            string Type = @"DWord";
-            string Value = @"0";
-            string Default = @"1";
-
             string Exe = "Wt.exe";
-            string ArgsNoKey = @"powershell New-Item -Path '" + RegistryHive + RegistryPath + "' -Force";
-            string ArgsChecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Value + "' -Force";
-            string ArgsUnchecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Default + "' -Force";
-            RegistryKey RegKeyLM = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, RegistryView.Registry64);
-            RegistryKey RegKeyCU = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.CurrentUser, RegistryView.Registry64);
-            var CheckRegKeyLM = RegKeyLM.OpenSubKey(RegistryPath, true);
-            var CheckRegKeyCU = RegKeyCU.OpenSubKey(RegistryPath, true);
+            string RegistryPath = "\"HKCU\\SOFTWARE\\Microsoft\\Ease of Access\"";
+            string Name = "selfscan";
+            string Type = "REG_DWORD";
+            string Value = "0";
+            string Default = "1";
+
+            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxMakeTheComputerEasierToUseDisableAlwaysScanThisSection)
-            {
-                if (CheckRegKeyCU == null)
-                {
-                    Process.Start(Exe, ArgsNoKey);
-                    Process.Start(Exe, ArgsChecked);
-                }
-                else
-                    Process.Start(Exe, ArgsChecked);
-            }
+                Process.Start(Exe, ArgsValue);
             else
-                Process.Start(Exe, ArgsUnchecked);
+                Process.Start(Exe, ArgsDefault);
         }
 
         #endregion
@@ -142,34 +116,20 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void MakeTheComputerEasierToSeeTurnOffHighContrast()
         {
-            string RegistryHive = @"HKCU:\\";
-            string RegistryPath = @"Control Panel\\Accessibility\\HighContrast";
-            string Name = @"Flags";
-            string Type = @"String";
-            string Value = @"4194";
-            string Default = @"4198";
-
             string Exe = "Wt.exe";
-            string ArgsNoKey = @"powershell New-Item -Path '" + RegistryHive + RegistryPath + "' -Force";
-            string ArgsChecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Value + "' -Force";
-            string ArgsUnchecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Default + "' -Force";
-            RegistryKey RegKeyLM = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, RegistryView.Registry64);
-            RegistryKey RegKeyCU = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.CurrentUser, RegistryView.Registry64);
-            var CheckRegKeyLM = RegKeyLM.OpenSubKey(RegistryPath, true);
-            var CheckRegKeyCU = RegKeyCU.OpenSubKey(RegistryPath, true);
+            string RegistryPath = "\"HKCU\\Control Panel\\Accessibility\\HighContrast\"";
+            string Name = "Flags";
+            string Type = "REG_SZ";
+            string Value = "4194";
+            string Default = "4198";
+
+            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxMakeTheComputerEasierToSeeTurnOffHighContrast)
-            {
-                if (CheckRegKeyCU == null)
-                {
-                    Process.Start(Exe, ArgsNoKey);
-                    Process.Start(Exe, ArgsChecked);
-                }
-                else
-                    Process.Start(Exe, ArgsChecked);
-            }
+                Process.Start(Exe, ArgsValue);
             else
-                Process.Start(Exe, ArgsUnchecked);
+                Process.Start(Exe, ArgsDefault);
         }
 
 
@@ -192,35 +152,23 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void MakeTheComputerEasierToSeeDisableDisplayAWarningMessageWhenTurningASettingOn()
         {
-            string RegistryHive = @"HKCU:\\";
-            string RegistryPath = @"Control Panel\\Accessibility";
-            string Name = @"Warning Sounds";
-            string Type = @"DWord";
-            string Value = @"0";
-            string Default = @"1";
-
             string Exe = "Wt.exe";
-            string ArgsNoKey = @"powershell New-Item -Path '" + RegistryHive + RegistryPath + "' -Force";
-            string ArgsChecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Value + "' -Force";
-            string ArgsUnchecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Default + "' -Force";
-            RegistryKey RegKeyLM = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, RegistryView.Registry64);
-            RegistryKey RegKeyCU = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.CurrentUser, RegistryView.Registry64);
-            var CheckRegKeyLM = RegKeyLM.OpenSubKey(RegistryPath, true);
-            var CheckRegKeyCU = RegKeyCU.OpenSubKey(RegistryPath, true);
+            string RegistryPath = "\"HKCU\\Control Panel\\Accessibility\"";
+            string Name = "\"Warning Sounds\"";
+            string Type = "REG_DWORD";
+            string Value = "0";
+            string Default = "1";
+
+            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxMakeTheComputerEasierToSeeDisableDisplayAWarningMessageWhenTurningASettingOn)
-            {
-                if (CheckRegKeyCU == null)
-                {
-                    Process.Start(Exe, ArgsNoKey);
-                    Process.Start(Exe, ArgsChecked);
-                }
-                else
-                    Process.Start(Exe, ArgsChecked);
-            }
+                Process.Start(Exe, ArgsValue);
             else
-                Process.Start(Exe, ArgsUnchecked);
+                Process.Start(Exe, ArgsDefault);
         }
+
+
 
 
 
@@ -243,35 +191,22 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void MakeTheComputerEasierToSeeDisableMakeASoundWhenTurningASettingOnOrOff()
         {
-            string RegistryHive = @"HKCU:\\";
-            string RegistryPath = @"Control Panel\\Accessibility";
-            string Name = @"Sound on Activation";
-            string Type = @"DWord";
+            string Exe = "Wt.exe";
+            string RegistryPath = "\"HKCU\\Control Panel\\Accessibility\"";
+            string Name = "\"Sound on Activation\"";
+            string Type = "REG_DWORD";
             string Value = @"0";
             string Default = @"1";
 
-            string Exe = "Wt.exe";
-            string ArgsNoKey = @"powershell New-Item -Path '" + RegistryHive + RegistryPath + "' -Force";
-            string ArgsChecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Value + "' -Force";
-            string ArgsUnchecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Default + "' -Force";
-            RegistryKey RegKeyLM = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, RegistryView.Registry64);
-            RegistryKey RegKeyCU = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.CurrentUser, RegistryView.Registry64);
-            var CheckRegKeyLM = RegKeyLM.OpenSubKey(RegistryPath, true);
-            var CheckRegKeyCU = RegKeyCU.OpenSubKey(RegistryPath, true);
+            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxMakeTheComputerEasierToSeeDisableMakeASoundWhenTurningASettingOnOrOff)
-            {
-                if (CheckRegKeyCU == null)
-                {
-                    Process.Start(Exe, ArgsNoKey);
-                    Process.Start(Exe, ArgsChecked);
-                }
-                else
-                    Process.Start(Exe, ArgsChecked);
-            }
+                Process.Start(Exe, ArgsValue);
             else
-                Process.Start(Exe, ArgsUnchecked);
+                Process.Start(Exe, ArgsDefault);
         }
+    
 
 
         // Checkbox - Turn off all unneccassary animations (when possible) - Command
@@ -293,34 +228,20 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void MakeTheComputerEasierToSeeTurnOffAllUnneccassaryAnimations()
         {
-            string RegistryHive = @"HKCU:\\";
-            string RegistryPath = @"Control Panel\\Desktop\\WindowMetrics";
-            string Name = @"MinAnimate";
-            string Type = @"String";
-            string Value = @"1";
-            string Default = @"0";
-
             string Exe = "Wt.exe";
-            string ArgsNoKey = @"powershell New-Item -Path '" + RegistryHive + RegistryPath + "' -Force";
-            string ArgsChecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Value + "' -Force";
-            string ArgsUnchecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Default + "' -Force";
-            RegistryKey RegKeyLM = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, RegistryView.Registry64);
-            RegistryKey RegKeyCU = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.CurrentUser, RegistryView.Registry64);
-            var CheckRegKeyLM = RegKeyLM.OpenSubKey(RegistryPath, true);
-            var CheckRegKeyCU = RegKeyCU.OpenSubKey(RegistryPath, true);
+            string RegistryPath = "\"HKCU\\Control Panel\\Desktop\\WindowMetrics\"";
+            string Name = "MinAnimate";
+            string Type = "REG_SZ";
+            string Value = "1";
+            string Default = "0";
+
+            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxMakeTheComputerEasierToSeeTurnOffAllUnneccassaryAnimations)
-            {
-                if (CheckRegKeyCU == null)
-                {
-                    Process.Start(Exe, ArgsNoKey);
-                    Process.Start(Exe, ArgsChecked);
-                }
-                else
-                    Process.Start(Exe, ArgsChecked);
-            }
+                Process.Start(Exe, ArgsValue);
             else
-                Process.Start(Exe, ArgsUnchecked);
+                Process.Start(Exe, ArgsDefault);
         }
 
         #endregion
@@ -348,34 +269,20 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void MakeTheKeyboardEasierToUseSetUpMouseKeys()
         {
-            string RegistryHive = @"HKCU:\\";
-            string RegistryPath = @"Control Panel\Accessibility\MouseKeys";
-            string Name = @"Flags";
-            string Type = @"String";
-            string Value = @"130";
-            string Default = @"131";
-
             string Exe = "Wt.exe";
-            string ArgsNoKey = @"powershell New-Item -Path '" + RegistryHive + RegistryPath + "' -Force";
-            string ArgsChecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Value + "' -Force";
-            string ArgsUnchecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Default + "' -Force";
-            RegistryKey RegKeyLM = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, RegistryView.Registry64);
-            RegistryKey RegKeyCU = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.CurrentUser, RegistryView.Registry64);
-            var CheckRegKeyLM = RegKeyLM.OpenSubKey(RegistryPath, true);
-            var CheckRegKeyCU = RegKeyCU.OpenSubKey(RegistryPath, true);
+            string RegistryPath = "\"HKCU\\Control Panel\\Accessibility\\MouseKeys\"";
+            string Name = "Flags";
+            string Type = "REG_SZ";
+            string Value = "130";
+            string Default = "131";
+
+            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxMakeTheKeyboardEasierToUseSetUpMouseKeys)
-            {
-                if (CheckRegKeyCU == null)
-                {
-                    Process.Start(Exe, ArgsNoKey);
-                    Process.Start(Exe, ArgsChecked);
-                }
-                else
-                    Process.Start(Exe, ArgsChecked);
-            }
+                Process.Start(Exe, ArgsValue);
             else
-                Process.Start(Exe, ArgsUnchecked);
+                Process.Start(Exe, ArgsDefault);
         }
 
 
@@ -399,34 +306,20 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void MakeTheKeyboardEasierToUseSetUpStickyKeys()
         {
-            string RegistryHive = @"HKCU:\\";
-            string RegistryPath = @"Control Panel\Accessibility\StickyKeys";
-            string Name = @"Flags";
-            string Type = @"String";
-            string Value = @"2";
-            string Default = @"3";
-
             string Exe = "Wt.exe";
-            string ArgsNoKey = @"powershell New-Item -Path '" + RegistryHive + RegistryPath + "' -Force";
-            string ArgsChecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Value + "' -Force";
-            string ArgsUnchecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Default + "' -Force";
-            RegistryKey RegKeyLM = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, RegistryView.Registry64);
-            RegistryKey RegKeyCU = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.CurrentUser, RegistryView.Registry64);
-            var CheckRegKeyLM = RegKeyLM.OpenSubKey(RegistryPath, true);
-            var CheckRegKeyCU = RegKeyCU.OpenSubKey(RegistryPath, true);
+            string RegistryPath = "\"HKCU\\Control Panel\\Accessibility\\StickyKeys\"";
+            string Name = "Flags";
+            string Type = "REG_SZ";
+            string Value = "2";
+            string Default = "3";
+
+            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxMakeTheKeyboardEasierToUseSetUpStickyKeys)
-            {
-                if (CheckRegKeyCU == null)
-                {
-                    Process.Start(Exe, ArgsNoKey);
-                    Process.Start(Exe, ArgsChecked);
-                }
-                else
-                    Process.Start(Exe, ArgsChecked);
-            }
+                Process.Start(Exe, ArgsValue);
             else
-                Process.Start(Exe, ArgsUnchecked);
+                Process.Start(Exe, ArgsDefault);
         }
 
 
@@ -450,34 +343,20 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void MakeTheKeyboardEasierToUseDisableTurnOnToggleKeysByHoldingDownNumLock()
         {
-            string RegistryHive = @"HKCU:\\";
-            string RegistryPath = @"Control Panel\Accessibility\ToggleKeys";
-            string Name = @"Flags";
-            string Type = @"String";
-            string Value = @"34";
-            string Default = @"35";
-
             string Exe = "Wt.exe";
-            string ArgsNoKey = @"powershell New-Item -Path '" + RegistryHive + RegistryPath + "' -Force";
-            string ArgsChecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Value + "' -Force";
-            string ArgsUnchecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Default + "' -Force";
-            RegistryKey RegKeyLM = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, RegistryView.Registry64);
-            RegistryKey RegKeyCU = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.CurrentUser, RegistryView.Registry64);
-            var CheckRegKeyLM = RegKeyLM.OpenSubKey(RegistryPath, true);
-            var CheckRegKeyCU = RegKeyCU.OpenSubKey(RegistryPath, true);
+            string RegistryPath = "\"HKCU\\Control Panel\\Accessibility\\ToggleKeys\"";
+            string Name = "Flags";
+            string Type = "REG_SZ";
+            string Value = "34";
+            string Default = "35";
+
+            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxMakeTheKeyboardEasierToUseDisableTurnOnToggleKeysByHoldingDownNumLock)
-            {
-                if (CheckRegKeyCU == null)
-                {
-                    Process.Start(Exe, ArgsNoKey);
-                    Process.Start(Exe, ArgsChecked);
-                }
-                else
-                    Process.Start(Exe, ArgsChecked);
-            }
+                Process.Start(Exe, ArgsValue);
             else
-                Process.Start(Exe, ArgsUnchecked);
+                Process.Start(Exe, ArgsDefault);
         }
 
 
@@ -501,34 +380,20 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void MakeTheKeyboardEasierToUseSetUpFilterKeys()
         {
-            string RegistryHive = @"HKCU:\\";
-            string RegistryPath = @"Control Panel\Accessibility\StickyKeys";
-            string Name = @"Flags";
-            string Type = @"String";
-            string Value = @"102";
-            string Default = @"103";
-
             string Exe = "Wt.exe";
-            string ArgsNoKey = @"powershell New-Item -Path '" + RegistryHive + RegistryPath + "' -Force";
-            string ArgsChecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Value + "' -Force";
-            string ArgsUnchecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Default + "' -Force";
-            RegistryKey RegKeyLM = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, RegistryView.Registry64);
-            RegistryKey RegKeyCU = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.CurrentUser, RegistryView.Registry64);
-            var CheckRegKeyLM = RegKeyLM.OpenSubKey(RegistryPath, true);
-            var CheckRegKeyCU = RegKeyCU.OpenSubKey(RegistryPath, true);
+            string RegistryPath = "\"HKCU\\Control Panel\\Accessibility\\StickyKeys\"";
+            string Name = "Flags";
+            string Type = "REG_SZ";
+            string Value = "102";
+            string Default = "103";
+
+            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxMakeTheKeyboardEasierToUseSetUpFilterKeys)
-            {
-                if (CheckRegKeyCU == null)
-                {
-                    Process.Start(Exe, ArgsNoKey);
-                    Process.Start(Exe, ArgsChecked);
-                }
-                else
-                    Process.Start(Exe, ArgsChecked);
-            }
+                Process.Start(Exe, ArgsValue);
             else
-                Process.Start(Exe, ArgsUnchecked);
+                Process.Start(Exe, ArgsDefault);
         }
 
         #endregion
@@ -554,34 +419,20 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void UseTextOrVisualAlternativesForSoundDisableTurnOnVisualNotificationsForSounds()
         {
-            string RegistryHive = @"HKCU:\\";
-            string RegistryPath = @"Control Panel\Accessibility\SoundSentry";
-            string Name = @"Flags";
-            string Type = @"String";
-            string Value = @"2";
-            string Default = @"3";
-
             string Exe = "Wt.exe";
-            string ArgsNoKey = @"powershell New-Item -Path '" + RegistryHive + RegistryPath + "' -Force";
-            string ArgsChecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Value + "' -Force";
-            string ArgsUnchecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Default + "' -Force";
-            RegistryKey RegKeyLM = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, RegistryView.Registry64);
-            RegistryKey RegKeyCU = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.CurrentUser, RegistryView.Registry64);
-            var CheckRegKeyLM = RegKeyLM.OpenSubKey(RegistryPath, true);
-            var CheckRegKeyCU = RegKeyCU.OpenSubKey(RegistryPath, true);
+            string RegistryPath = "\"HKCU\\Control Panel\\Accessibility\\SoundSentry\"";
+            string Name = "Flags";
+            string Type = "REG_SZ";
+            string Value = "2";
+            string Default = "3";
+
+            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxUseTextOrVisualAlternativesForSoundDisableTurnOnVisualNotificationsForSounds)
-            {
-                if (CheckRegKeyCU == null)
-                {
-                    Process.Start(Exe, ArgsNoKey);
-                    Process.Start(Exe, ArgsChecked);
-                }
-                else
-                    Process.Start(Exe, ArgsChecked);
-            }
+                Process.Start(Exe, ArgsValue);
             else
-                Process.Start(Exe, ArgsUnchecked);
+                Process.Start(Exe, ArgsDefault);
         }
 
 
@@ -605,34 +456,20 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void UseTextOrVisualAlternativesForSoundChooseVisualWarning()
         {
-            string RegistryHive = @"HKCU:\\";
-            string RegistryPath = @"Control Panel\\Accessibility\\SoundSentry";
-            string Name = @"WindowsEffect";
-            string Type = @"String";
-            string Value = @"0";
-            string Default = @"1";
-
             string Exe = "Wt.exe";
-            string ArgsNoKey = @"powershell New-Item -Path '" + RegistryHive + RegistryPath + "' -Force";
-            string ArgsChecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Value + "' -Force";
-            string ArgsUnchecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Default + "' -Force";
-            RegistryKey RegKeyLM = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, RegistryView.Registry64);
-            RegistryKey RegKeyCU = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.CurrentUser, RegistryView.Registry64);
-            var CheckRegKeyLM = RegKeyLM.OpenSubKey(RegistryPath, true);
-            var CheckRegKeyCU = RegKeyCU.OpenSubKey(RegistryPath, true);
+            string RegistryPath = "\"HKCU\\Control Panel\\Accessibility\\SoundSentry\"";
+            string Name = "WindowsEffect";
+            string Type = "REG_SZ";
+            string Value = "0";
+            string Default = "1";
+
+            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxUseTextOrVisualAlternativesForSoundChooseVisualWarning)
-            {
-                if (CheckRegKeyCU == null)
-                {
-                    Process.Start(Exe, ArgsNoKey);
-                    Process.Start(Exe, ArgsChecked);
-                }
-                else
-                    Process.Start(Exe, ArgsChecked);
-            }
+                Process.Start(Exe, ArgsValue);
             else
-                Process.Start(Exe, ArgsUnchecked);
+                Process.Start(Exe, ArgsDefault);
         }
 
         #endregion
@@ -660,43 +497,31 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void MakeTouchAndTabletsEasierToUseLaunchingCommonTools()
         {
-            string RegistryHive = @"HKCU:\\";
-            string RegistryPath = @"Control Panel\Accessibility\SlateLaunch";
-            string Name = @"LaunchAT";
-            string Name2 = @"ATapp";
-            string Type = @"DWord";
-            string Type2 = @"String";
-            string Value = @"0";
-            string Default = @"1";
-            string Value2 = @" ";
-            string Default2 = @"narrator";
-
             string Exe = "Wt.exe";
-            string ArgsNoKey = @"powershell New-Item -Path '" + RegistryHive + RegistryPath + "' -Force";
-            string ArgsChecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Value + "' -Force";
-            string ArgsChecked2 = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name2 + "' -Type '" + Type2 + "' -Value ' ' -Force";
-            string ArgsUnchecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Default + "' -Force";
-            string ArgsUnchecked2 = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name2 + "' -Type '" + Type2 + "' -Value '" + Default2 + "' -Force";
-            RegistryKey RegKeyLM = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, RegistryView.Registry64);
-            RegistryKey RegKeyCU = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.CurrentUser, RegistryView.Registry64);
-            var CheckRegKeyLM = RegKeyLM.OpenSubKey(RegistryPath, true);
-            var CheckRegKeyCU = RegKeyCU.OpenSubKey(RegistryPath, true);
+            string RegistryPath = "\"HKCU\\Control Panel\\Accessibility\\SlateLaunch\"";
+            string Name = "LaunchAT";
+            string Name2 = "ATapp";
+            string Type = "REG_DWORD";
+            string Type2 = "REG_SZ";
+            string Value = "0";
+            string Default = "1";
+            string Value2 = "\" \"";
+            string Default2 = "narrator";
+
+           
+            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsValue2 = @"Reg Add " + RegistryPath + " /v " + Name2 + " /t " + Type2 + " /d " + Value2 + " /f";
+            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsDefault2 = @"Reg Add " + RegistryPath + " /v " + Name2 + " /t " + Type2 + " /d " + Default2 + " /f";
 
             if (ChckbxMakeTouchAndTabletsEasierToUseLaunchingCommonTools)
             {
-                if (CheckRegKeyCU == null)
-                {
-                    Process.Start(Exe, ArgsNoKey);
-                    Process.Start(Exe, ArgsChecked);
-                    Process.Start(Exe, ArgsChecked2);
-                }
-                else
-                    Process.Start(Exe, ArgsChecked);
-                    Process.Start(Exe, ArgsChecked2);
+                Process.Start(Exe, ArgsValue);
+                Process.Start(Exe, ArgsValue2);
             }
             else
-                Process.Start(Exe, ArgsUnchecked);
-                Process.Start(Exe, ArgsUnchecked2);
+                Process.Start(Exe, ArgsDefault);
+                Process.Start(Exe, ArgsDefault2);
         }
 
         #endregion
@@ -728,31 +553,19 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void FolderOptionsGeneralFileExplorerToThisPc()
         {
-            string RegistryHive = @"HKCU:\\";
-            string RegistryPath = @"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced";
-            string Name = @"LaunchTo";
-            string Checked = @"1";
-            string Unchecked = @"0";
-
             string Exe = "Wt.exe";
-            string ArgsNoKey = @"powershell New-Item -Path " + RegistryHive + RegistryPath + " -Force";
-            string ArgsChecked = @"powershell Set-ItemProperty -Path " + RegistryHive + RegistryPath + " -Name " + Name + " -Value " + Checked + " -Force";
-            string ArgsUnchecked = @"powershell Set-ItemProperty -Path " + RegistryHive + RegistryPath + " -Name " + Name + " -Value " + Unchecked + " -Force";
-            RegistryKey RegKeyCU = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.CurrentUser, RegistryView.Registry64);
-            var CheckRegKeyCU = RegKeyCU.OpenSubKey(RegistryPath, true);
+            string RegistryPath = "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced";
+            string Name = "LaunchTo";
+            string Type = "REG_DWORD";
+            string Value = "1";
+            string Default = "0";
+            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxFolderOptionsGeneralFileExplorerToThisPc)
-            {
-                if (CheckRegKeyCU == null)
-                {
-                    Process.Start(Exe, ArgsNoKey);
-                    Process.Start(Exe, ArgsChecked);
-                }
-                else
-                    Process.Start(Exe, ArgsChecked);
-            }
+                Process.Start(Exe, ArgsValue);
             else
-                Process.Start(Exe, ArgsUnchecked);
+                Process.Start(Exe, ArgsDefault);
         }
 
 
@@ -775,31 +588,20 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void FolderOptionsGeneralShowRecentlyUsedFiles()
         {
-            string RegistryHive = @"HKCU:\\";
-            string RegistryPath = @"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer";
-            string Name = @"ShowRecent";
-            string Checked = @"0";
-            string Unchecked = @"1";
-
             string Exe = "Wt.exe";
-            string ArgsNoKey = @"powershell New-Item -Path " + RegistryHive + RegistryPath + " -Force";
-            string ArgsChecked = @"powershell Set-ItemProperty -Path " + RegistryHive + RegistryPath + " -Name " + Name + " -Value " + Checked + " -Force";
-            string ArgsUnchecked = @"powershell Set-ItemProperty -Path " + RegistryHive + RegistryPath + " -Name " + Name + " -Value " + Unchecked + " -Force";
-            RegistryKey RegKeyCU = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.CurrentUser, RegistryView.Registry64);
-            var CheckRegKeyCU = RegKeyCU.OpenSubKey(RegistryPath, true);
+            string RegistryPath = "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer";
+            string Name = "ShowRecent";
+            string Type = "REG_DWORD";
+            string Value = @"0";
+            string Default = @"1";
+
+            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxFolderOptionsGeneralShowRecentlyUsedFiles)
-            {
-                if (CheckRegKeyCU == null)
-                {
-                    Process.Start(Exe, ArgsNoKey);
-                    Process.Start(Exe, ArgsChecked);
-                }
-                else
-                    Process.Start(Exe, ArgsChecked);
-            }
+                Process.Start(Exe, ArgsValue);
             else
-                Process.Start(Exe, ArgsUnchecked);
+                Process.Start(Exe, ArgsDefault);
         }
 
 
@@ -822,31 +624,20 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void FolderOptionsGeneralShowFrequentlyUsedFolders()
         {
-            string RegistryHive = @"HKCU:\\";
-            string RegistryPath = @"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer";
-            string Name = @"ShowFrequent";
-            string Checked = @"0";
-            string Unchecked = @"1";
-
             string Exe = "Wt.exe";
-            string ArgsNoKey = @"powershell New-Item -Path " + RegistryHive + RegistryPath + " -Force";
-            string ArgsChecked = @"powershell Set-ItemProperty -Path " + RegistryHive + RegistryPath + " -Name " + Name + " -Value " + Checked + " -Force";
-            string ArgsUnchecked = @"powershell Set-ItemProperty -Path " + RegistryHive + RegistryPath + " -Name " + Name + " -Value " + Unchecked + " -Force";
-            RegistryKey RegKeyCU = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.CurrentUser, RegistryView.Registry64);
-            var CheckRegKeyCU = RegKeyCU.OpenSubKey(RegistryPath, true);
+            string RegistryPath = "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer";
+            string Name = "ShowFrequent";
+            string Type = "REG_DWORD";
+            string Value = "0";
+            string Default = "1";
+
+            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxFolderOptionsGeneralShowFrequentlyUsedFolders)
-            {
-                if (CheckRegKeyCU == null)
-                {
-                    Process.Start(Exe, ArgsNoKey);
-                    Process.Start(Exe, ArgsChecked);
-                }
-                else
-                    Process.Start(Exe, ArgsChecked);
-            }
+                Process.Start(Exe, ArgsValue);
             else
-                Process.Start(Exe, ArgsUnchecked);
+                Process.Start(Exe, ArgsDefault);
         }
 
 
@@ -869,31 +660,21 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void FolderOptionsGeneralShowFilesFromOffice()
         {
-            string RegistryHive = @"HKCU:\\";
-            string RegistryPath = @"Software\\Microsoft\\Windows\\CurrentVersion\\Explorer";
-            string Name = @"ShowCloudFilesInQuickAccess";
-            string Checked = @"0";
-            string Unchecked = @"1";
-
             string Exe = "Wt.exe";
-            string ArgsNoKey = @"powershell New-Item -Path " + RegistryHive + RegistryPath + " -Force";
-            string ArgsChecked = @"powershell Set-ItemProperty -Path " + RegistryHive + RegistryPath + " -Name " + Name + " -Value " + Checked + " -Force";
-            string ArgsUnchecked = @"powershell Set-ItemProperty -Path " + RegistryHive + RegistryPath + " -Name " + Name + " -Value " + Unchecked + " -Force";
-            RegistryKey RegKeyCU = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.CurrentUser, RegistryView.Registry64);
-            var CheckRegKeyCU = RegKeyCU.OpenSubKey(RegistryPath, true);
+            string RegistryPath = "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer";
+            string Name = "ShowCloudFilesInQuickAccess";
+            string Type = "REG_DWORD";
+            string Value = "0";
+            string Default = "1";
+
+
+            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxFolderOptionsGeneralShowFilesFromOffice)
-            {
-                if (CheckRegKeyCU == null)
-                {
-                    Process.Start(Exe, ArgsNoKey);
-                    Process.Start(Exe, ArgsChecked);
-                }
-                else
-                    Process.Start(Exe, ArgsChecked);
-            }
+                Process.Start(Exe, ArgsValue);
             else
-                Process.Start(Exe, ArgsUnchecked);
+                Process.Start(Exe, ArgsDefault);
         }
 
         #endregion
@@ -921,34 +702,20 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void FolderOptionViewShowHiddenFiles()
         {
-            string RegistryHive = @"HKCU:\\";
-            string RegistryPath = @"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced";
-            string Name = @"Hidden";
-            string Type = @"DWord";
-            string Value = @"1";
-            string Default = @"2";
-
             string Exe = "Wt.exe";
-            string ArgsNoKey = @"powershell New-Item -Path '" + RegistryHive + RegistryPath + "' -Force";
-            string ArgsChecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Value + "' -Force";
-            string ArgsUnchecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Default + "' -Force";
-            RegistryKey RegKeyLM = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, RegistryView.Registry64);
-            RegistryKey RegKeyCU = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.CurrentUser, RegistryView.Registry64);
-            var CheckRegKeyLM = RegKeyLM.OpenSubKey(RegistryPath, true);
-            var CheckRegKeyCU = RegKeyCU.OpenSubKey(RegistryPath, true);
+            string RegistryPath = "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced";
+            string Name = "Hidden";
+            string Type = "REG_DWORD";
+            string Value = "1";
+            string Default = "2";
+
+            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxFolderOptionViewShowHiddenFiles)
-            {
-                if (CheckRegKeyCU == null)
-                {
-                    Process.Start(Exe, ArgsNoKey);
-                    Process.Start(Exe, ArgsChecked);
-                }
-                else
-                    Process.Start(Exe, ArgsChecked);
-            }
+                Process.Start(Exe, ArgsValue);
             else
-                Process.Start(Exe, ArgsUnchecked);
+                Process.Start(Exe, ArgsDefault);
         }
 
 
@@ -971,34 +738,20 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void FolderOptionViewHideFileExtensions()
         {
-            string RegistryHive = @"HKCU:\\";
-            string RegistryPath = @"Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced";
-            string Name = @"HideFileExt";
-            string Type = @"DWord";
-            string Value = @"0";
-            string Default = @"1";
-
             string Exe = "Wt.exe";
-            string ArgsNoKey = @"powershell New-Item -Path '" + RegistryHive + RegistryPath + "' -Force";
-            string ArgsChecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Value + "' -Force";
-            string ArgsUnchecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Default + "' -Force";
-            RegistryKey RegKeyLM = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, RegistryView.Registry64);
-            RegistryKey RegKeyCU = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.CurrentUser, RegistryView.Registry64);
-            var CheckRegKeyLM = RegKeyLM.OpenSubKey(RegistryPath, true);
-            var CheckRegKeyCU = RegKeyCU.OpenSubKey(RegistryPath, true);
+            string RegistryPath = "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced";
+            string Name = "HideFileExt";
+            string Type = "REG_DWORD";
+            string Value = "0";
+            string Default = "1";
+
+            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxFolderOptionViewHideFileExtensions)
-            {
-                if (CheckRegKeyCU == null)
-                {
-                    Process.Start(Exe, ArgsNoKey);
-                    Process.Start(Exe, ArgsChecked);
-                }
-                else
-                    Process.Start(Exe, ArgsChecked);
-            }
+                Process.Start(Exe, ArgsValue);
             else
-                Process.Start(Exe, ArgsUnchecked);
+                Process.Start(Exe, ArgsDefault);
         }
 
         #endregion
@@ -1026,34 +779,20 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void SearchDontUseTheIndexWhenSearchingInFileFoldersForFileSystem()
         {
-            string RegistryHive = @"HKCU:\\";
-            string RegistryPath = @"Software\Microsoft\Windows\CurrentVersion\Explorer\Search\Preferences";
-            string Name = @"WholeFileSystem";
-            string Type = @"DWord";
-            string Value = @"1";
-            string Default = @"0";
-
             string Exe = "Wt.exe";
-            string ArgsNoKey = @"powershell New-Item -Path '" + RegistryHive + RegistryPath + "' -Force";
-            string ArgsChecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Value + "' -Force";
-            string ArgsUnchecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Default + "' -Force";
-            RegistryKey RegKeyLM = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, RegistryView.Registry64);
-            RegistryKey RegKeyCU = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.CurrentUser, RegistryView.Registry64);
-            var CheckRegKeyLM = RegKeyLM.OpenSubKey(RegistryPath, true);
-            var CheckRegKeyCU = RegKeyCU.OpenSubKey(RegistryPath, true);
+            string RegistryPath = "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Search\\Preferences";
+            string Name = "WholeFileSystem";
+            string Type = "REG_DWORD";
+            string Value = "1";
+            string Default = "0";
+
+            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxSearchDontUseTheIndexWhenSearchingInFileFoldersForFileSystem)
-            {
-                if (CheckRegKeyCU == null)
-                {
-                    Process.Start(Exe, ArgsNoKey);
-                    Process.Start(Exe, ArgsChecked);
-                }
-                else
-                    Process.Start(Exe, ArgsChecked);
-            }
+                Process.Start(Exe, ArgsValue);
             else
-                Process.Start(Exe, ArgsUnchecked);
+                Process.Start(Exe, ArgsDefault);
         }
 
         #endregion
@@ -1082,48 +821,34 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void MouseDisableEnhancedPointerPrecision()
         {
-            string RegistryHive = @"HKCU:\\";
-            string RegistryPath = @"Control Panel\\Mouse";
-            string Name = @"MouseThreshold1";
-            string Name2 = @"MouseThreshold2";
-            string Name3 = @"MouseSpeed";
-            string Type = @"String";
-            string Value = @"0";
-            string Default = @"6";
-            string Default2 = @"10";
-            string Default3 = @"1";
-
             string Exe = "Wt.exe";
-            string ArgsNoKey = @"powershell New-Item -Path '" + RegistryHive + RegistryPath + "' -Force";
-            string ArgsChecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Value + "' -Force";
-            string ArgsChecked2 = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name2 + "' -Type '" + Type + "' -Value '" + Value + "' -Force";
-            string ArgsChecked3 = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name3 + "' -Type '" + Type + "' -Value '" + Value + "' -Force";
-            string ArgsUnchecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Default + "' -Force";
-            string ArgsUnchecked2 = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Default2 + "' -Force";
-            string ArgsUnchecked3 = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Default3 + "' -Force";
-            RegistryKey RegKeyLM = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, RegistryView.Registry64);
-            RegistryKey RegKeyCU = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.CurrentUser, RegistryView.Registry64);
-            var CheckRegKeyLM = RegKeyLM.OpenSubKey(RegistryPath, true);
-            var CheckRegKeyCU = RegKeyCU.OpenSubKey(RegistryPath, true);
+            string RegistryPath = "\"HKCU\\Control Panel\\Mouse\"";
+            string Name = "MouseThreshold1";
+            string Name2 = "MouseThreshold2";
+            string Name3 = "MouseSpeed";
+            string Type = "REG_SZ";
+            string Value = "0";
+            string Default = "6";
+            string Default2 = "10";
+            string Default3 = "1";
+
+            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsValue2 = @"Reg Add " + RegistryPath + " /v " + Name2 + " /t " + Type + " /d " + Value + " /f";
+            string ArgsValue3 = @"Reg Add " + RegistryPath + " /v " + Name3 + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsDefault2 = @"Reg Add " + RegistryPath + " /v " + Name2 + " /t " + Type + " /d " + Default2 + " /f";
+            string ArgsDefault3 = @"Reg Add " + RegistryPath + " /v " + Name3 + " /t " + Type + " /d " + Default3 + " /f";
 
             if (ChckbxMouseDisableEnhancedPointerPrecision)
             {
-                if (CheckRegKeyCU == null)
-                {
-                    Process.Start(Exe, ArgsNoKey);
-                    Process.Start(Exe, ArgsChecked);
-                    Process.Start(Exe, ArgsChecked2);
-                    Process.Start(Exe, ArgsChecked3);
-                }
-                else
-                    Process.Start(Exe, ArgsChecked);
-                    Process.Start(Exe, ArgsChecked2);
-                    Process.Start(Exe, ArgsChecked3);
+                Process.Start(Exe, ArgsValue);
+                Process.Start(Exe, ArgsValue2);
+                Process.Start(Exe, ArgsValue3);
             }
             else
-                Process.Start(Exe, ArgsUnchecked);
-                Process.Start(Exe, ArgsUnchecked2);
-                Process.Start(Exe, ArgsUnchecked3);
+                Process.Start(Exe, ArgsDefault);
+                Process.Start(Exe, ArgsDefault2);
+                Process.Start(Exe, ArgsDefault3);
         }
 
 
@@ -1147,52 +872,39 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void MouseDisableMouseSmoothingAndAccelaration()
         {
-            string RegistryHive = @"HKCU:\\";
-            string RegistryPath = @"Control Panel\\Mouse";
-            string Name = @"MouseSensitivity";
-            string Name2 = @"SmoothMouseXCurve";
-            string Name3 = @"SmoothMouseYCurve";
-            string Type = @"String";
-            string Type2 = @"Binary";
-            string Value = @"10";
-            string Value2 = "([byte[]](0x00,0x00,0x00,0x00, 0x00,0x00,0x00,0x00,0xC0,0xCC,0x0C,0x00,0x00,0x00,0x00,0x00,0x80,0x99,0x19,0x00,0x00,0x00,0x00,0x00,0x40,0x66,0x26,0x00,0x00,0x00,0x00,0x00,0x00,0x33,0x33,0x00,0x00,0x00,0x00,0x00))";
-            string Value3 = "([byte[]](0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x38,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x70,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0xA8,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0xE0,0x00,0x00,0x00,0x00,0x00))";
-            string Default = @"10";
-            string Default2 = @"([byte[]](0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x15,0x6e,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x40,0x01,0x00,0x00,0x00,0x00,0x00,0x29,0xdc,0x03,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x28,0x00,0x00,0x00,0x00,0x00))";
-            string Default3 = @"([byte[]](0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0xfd,0x11,0x01,0x00,0x00,0x00,0x00,0x00,0x00,0x24,0x04,0x00,0x00,0x00,0x00,0x00,0x00,0xfc,0x12,0x00,0x00,0x00,0x00,0x00,0x00,0xc0,0xbb,0x01,0x00,0x00,0x00,0x00))";
-
-
             string Exe = "Wt.exe";
-            string ArgsNoKey = @"powershell New-Item -Path '" + RegistryHive + RegistryPath + "' -Force";
-            string ArgsChecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Value + "' -Force";
-            string ArgsChecked2 = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name2 + "' -Type '" + Type2 + "' -Value ([byte[]](0x00,0x00,0x00,0x00, 0x00,0x00,0x00,0x00,0xC0,0xCC,0x0C,0x00,0x00,0x00,0x00,0x00,0x80,0x99,0x19,0x00,0x00,0x00,0x00,0x00,0x40,0x66,0x26,0x00,0x00,0x00,0x00,0x00,0x00,0x33,0x33,0x00,0x00,0x00,0x00,0x00)) -Force";
-            string ArgsChecked3 = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name3 + "' -Type '" + Type2 + "' -Value ([byte[]](0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x38,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x70,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0xA8,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0xE0,0x00,0x00,0x00,0x00,0x00)) -Force";
-            string ArgsUnchecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Default + "' -Force";
-            string ArgsUnchecked2 = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name2 + "' -Type '" + Type2 + "' -Value ([byte[]](0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x15,0x6e,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x40,0x01,0x00,0x00,0x00,0x00,0x00,0x29,0xdc,0x03,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x28,0x00,0x00,0x00,0x00,0x00)) -Force";
-            string ArgsUnchecked3 = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name3 + "' -Type '" + Type2 + "' -Value ([byte[]](0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0xfd,0x11,0x01,0x00,0x00,0x00,0x00,0x00,0x00,0x24,0x04,0x00,0x00,0x00,0x00,0x00,0x00,0xfc,0x12,0x00,0x00,0x00,0x00,0x00,0x00,0xc0,0xbb,0x01,0x00,0x00,0x00,0x00)) -Force";
-            RegistryKey RegKeyLM = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, RegistryView.Registry64);
-            RegistryKey RegKeyCU = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.CurrentUser, RegistryView.Registry64);
-            var CheckRegKeyLM = RegKeyLM.OpenSubKey(RegistryPath, true);
-            var CheckRegKeyCU = RegKeyCU.OpenSubKey(RegistryPath, true);
+            string RegistryPath = "\"HKCU\\Control Panel\\Mouse\"";
+            string Name = "MouseSensitivity";
+            string Name2 = "SmoothMouseXCurve";
+            string Name3 = "SmoothMouseYCurve";
+            string Type = "REG_SZ";
+            string Type2 = "REG_BINARY";
+            string Value = "10";
+            string Value2 = "0000000000000000C0CC0C0000000000809919000000000040662600000000000033330000000000";
+            string Value3 = "0000000000000000000038000000000000007000000000000000A800000000000000E00000000000";
+            string Default = "10";
+            string Default2 = "0000000000000000156e000000000000004001000000000029dc0300000000000000280000000000";
+            string Default3 = "0000000000000000fd11010000000000002404000000000000fc12000000000000c0bb0100000000";
+
+
+            
+            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsValue2 = @"Reg Add " + RegistryPath + " /v " + Name2 + " /t " + Type2 + " /d " + Value2 + " /f";
+            string ArgsValue3 = @"Reg Add " + RegistryPath + " /v " + Name3 + " /t " + Type2 + " /d " + Value3 + " /f";
+            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsDefault2 = @"Reg Add " + RegistryPath + " /v " + Name2 + " /t " + Type2 + " /d " + Default2 + " /f";
+            string ArgsDefault3 = @"Reg Add " + RegistryPath + " /v " + Name3 + " /t " + Type2 + " /d " + Default3 + " /f";
 
             if (ChckbxMouseDisableMouseSmoothingAndAccelaration)
             {
-                if (CheckRegKeyCU == null)
-                {
-                    Process.Start(Exe, ArgsNoKey);
-                    Process.Start(Exe, ArgsChecked);
-                    Process.Start(Exe, ArgsChecked2);
-                    Process.Start(Exe, ArgsChecked3);
-                }
-                else
-                    Process.Start(Exe, ArgsChecked);
-                Process.Start(Exe, ArgsChecked2);
-                Process.Start(Exe, ArgsChecked3);
+                Process.Start(Exe, ArgsValue);
+                Process.Start(Exe, ArgsValue2);
+                Process.Start(Exe, ArgsValue3);
             }
             else
-                Process.Start(Exe, ArgsUnchecked);
-            Process.Start(Exe, ArgsUnchecked2);
-            Process.Start(Exe, ArgsUnchecked3);
+                Process.Start(Exe, ArgsDefault);
+                Process.Start(Exe, ArgsDefault2);
+                Process.Start(Exe, ArgsDefault3);
         }
 
 
@@ -1216,34 +928,20 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void MouseShowPopupsFasterWhenHoveringOverAnItem()
         {
-            string RegistryHive = @"HKCU:\\";
-            string RegistryPath = @"Control Panel\Mouse";
-            string Name = @"MouseHoverTime";
-            string Type = @"String";
-            string Value = @"8";
-            string Default = @"400";
-
             string Exe = "Wt.exe";
-            string ArgsNoKey = @"powershell New-Item -Path '" + RegistryHive + RegistryPath + "' -Force";
-            string ArgsChecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Value + "' -Force";
-            string ArgsUnchecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Default + "' -Force";
-            RegistryKey RegKeyLM = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, RegistryView.Registry64);
-            RegistryKey RegKeyCU = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.CurrentUser, RegistryView.Registry64);
-            var CheckRegKeyLM = RegKeyLM.OpenSubKey(RegistryPath, true);
-            var CheckRegKeyCU = RegKeyCU.OpenSubKey(RegistryPath, true);
+            string RegistryPath = "\"HKCU\\Control Panel\\Mouse\"";
+            string Name = "MouseHoverTime";
+            string Type = "REG_SZ";
+            string Value = "8";
+            string Default = "400";
+
+            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxMouseShowPopupsFasterWhenHoveringOverAnItem)
-            {
-                if (CheckRegKeyCU == null)
-                {
-                    Process.Start(Exe, ArgsNoKey);
-                    Process.Start(Exe, ArgsChecked);
-                }
-                else
-                    Process.Start(Exe, ArgsChecked);
-            }
+                Process.Start(Exe, ArgsValue);
             else
-                Process.Start(Exe, ArgsUnchecked);
+                Process.Start(Exe, ArgsDefault);
         }
 
         #endregion
@@ -1272,22 +970,10 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void PowerOptionsChangePowerPlanToUltimatePerformance()
         {
-            string RegistryHive = @"HK:\\";
-            string RegistryPath = @"";
-            string Name = @"";
-            string Type = @"";
-            string Value = @"";
-            string Default = @"";
-
             string Exe = "Wt.exe";
-            string ArgsNoKey = @"powershell New-Item -Path '" + RegistryHive + RegistryPath + "' -Force";
             string ArgsChecked = @"powershell powercfg  /setactive 'e9a42b02-d5df-448d-aa00-03f14749eb61'";
             string ArgsUnchecked = @"powershell powercfg  /setactive '381b4222-f694-41f0-9685-ff5bb260df2e'";
-            RegistryKey RegKeyLM = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, RegistryView.Registry64);
-            RegistryKey RegKeyCU = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.CurrentUser, RegistryView.Registry64);
-            var CheckRegKeyLM = RegKeyLM.OpenSubKey(RegistryPath, true);
-            var CheckRegKeyCU = RegKeyCU.OpenSubKey(RegistryPath, true);
-
+            
             if (ChckbxPowerOptionsChangePowerPlanToUltimatePerformance)
             {
                 Process.Start(Exe, ArgsChecked);
@@ -1320,34 +1006,21 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void PowerOptionsDisableFastStartup()
         {
-            string RegistryHive = @"HKLM:\\";
-            string RegistryPath = @"SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Power";
-            string Name = @"HiberbootEnabled";
-            string Type = @"DWord";
+            string Exe = "Wt.exe";
+            string RegistryPath = "\"HKLM\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Power\"";
+            string Name =@"HiberbootEnabled";
+            string Type = "REG_DWORD";
             string Value = @"0";
             string Default = @"1";
 
-            string Exe = "Wt.exe";
-            string ArgsNoKey = @"powershell New-Item -Path '" + RegistryHive + RegistryPath + "' -Force";
-            string ArgsChecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Value + "' -Force";
-            string ArgsUnchecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Default + "' -Force";
-            RegistryKey RegKeyLM = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, RegistryView.Registry64);
-            RegistryKey RegKeyCU = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.CurrentUser, RegistryView.Registry64);
-            var CheckRegKeyLM = RegKeyLM.OpenSubKey(RegistryPath, true);
-            var CheckRegKeyCU = RegKeyCU.OpenSubKey(RegistryPath, true);
+            
+            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxPowerOptionsDisableFastStartup)
-            {
-                if (CheckRegKeyLM == null)
-                {
-                    Process.Start(Exe, ArgsNoKey);
-                    Process.Start(Exe, ArgsChecked);
-                }
-                else
-                    Process.Start(Exe, ArgsChecked);
-            }
+                Process.Start(Exe, ArgsValue);
             else
-                Process.Start(Exe, ArgsUnchecked);
+                Process.Start(Exe, ArgsDefault);
         }
 
         #endregion
@@ -1375,22 +1048,10 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void PowerOptionsTurnOffHardDiskAfterNever()
         {
-            string RegistryHive = @"HK:\\";
-            string RegistryPath = @"";
-            string Name = @"";
-            string Type = @"";
-            string Value = @"";
-            string Default = @"";
-
             string Exe = "Wt.exe";
-            string ArgsNoKey = @"powershell New-Item -Path '" + RegistryHive + RegistryPath + "' -Force";
             string ArgsChecked = @"powershell powercfg /SETACVALUEINDEX 'SCHEME_CURRENT' '0012ee47-9041-4b5d-9b77-535fba8b1442' '6738e2c4-e8a5-4a42-b16a-e040e769756e' '0'";
             string ArgsUnchecked = @"powershell powercfg /SETACVALUEINDEX 'SCHEME_CURRENT' '0012ee47-9041-4b5d-9b77-535fba8b1442' '6738e2c4-e8a5-4a42-b16a-e040e769756e' '900'";
-            RegistryKey RegKeyLM = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, RegistryView.Registry64);
-            RegistryKey RegKeyCU = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.CurrentUser, RegistryView.Registry64);
-            var CheckRegKeyLM = RegKeyLM.OpenSubKey(RegistryPath, true);
-            var CheckRegKeyCU = RegKeyCU.OpenSubKey(RegistryPath, true);
-
+            
             if (ChckbxPowerOptionsTurnOffHardDiskAfterNever)
             {
                 Process.Start(Exe, ArgsChecked);
@@ -1420,21 +1081,9 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void PowerOptionsPutTheComputerToSleepAfterNever()
         {
-            string RegistryHive = @"HK:\\";
-            string RegistryPath = @"";
-            string Name = @"";
-            string Type = @"";
-            string Value = @"";
-            string Default = @"";
-
             string Exe = "Wt.exe";
-            string ArgsNoKey = @"powershell New-Item -Path '" + RegistryHive + RegistryPath + "' -Force";
             string ArgsChecked = @"powershell powercfg /SETACVALUEINDEX 'SCHEME_CURRENT' '238c9fa8-0aad-41ed-83f4-97be242c8f20' '29f6c1db-86da-48c5-9fdb-f2b67b1f44da' '0'";
             string ArgsUnchecked = @"powershell powercfg /SETACVALUEINDEX 'SCHEME_CURRENT' '238c9fa8-0aad-41ed-83f4-97be242c8f20' '29f6c1db-86da-48c5-9fdb-f2b67b1f44da' '900'";
-            RegistryKey RegKeyLM = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, RegistryView.Registry64);
-            RegistryKey RegKeyCU = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.CurrentUser, RegistryView.Registry64);
-            var CheckRegKeyLM = RegKeyLM.OpenSubKey(RegistryPath, true);
-            var CheckRegKeyCU = RegKeyCU.OpenSubKey(RegistryPath, true);
 
             if (ChckbxPowerOptionsPutTheComputerToSleepAfterNever)
             {
@@ -1465,21 +1114,9 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void PowerOptionsUSBSelectiveSuspendSettings()
         {
-            string RegistryHive = @"HK:\\";
-            string RegistryPath = @"";
-            string Name = @"";
-            string Type = @"";
-            string Value = @"";
-            string Default = @"";
-
             string Exe = "Wt.exe";
-            string ArgsNoKey = @"powershell New-Item -Path '" + RegistryHive + RegistryPath + "' -Force";
             string ArgsChecked = @"powershell powercfg /SETACVALUEINDEX 'SCHEME_CURRENT' '2a737441-1930-4402-8d77-b2bebba308a3' '48e6b7a6-50f5-4782-a5d4-53bb8f07e226' '0'";
             string ArgsUnchecked = @"powershell powercfg /SETACVALUEINDEX 'SCHEME_CURRENT' '2a737441-1930-4402-8d77-b2bebba308a3' '48e6b7a6-50f5-4782-a5d4-53bb8f07e226' '1'";
-            RegistryKey RegKeyLM = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, RegistryView.Registry64);
-            RegistryKey RegKeyCU = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.CurrentUser, RegistryView.Registry64);
-            var CheckRegKeyLM = RegKeyLM.OpenSubKey(RegistryPath, true);
-            var CheckRegKeyCU = RegKeyCU.OpenSubKey(RegistryPath, true);
 
             if (ChckbxPowerOptionsUSBSelectiveSuspendSettings)
             {
@@ -1510,21 +1147,9 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void Template()
         {
-            string RegistryHive = @"HK:\\";
-            string RegistryPath = @"";
-            string Name = @"";
-            string Type = @"";
-            string Value = @"";
-            string Default = @"";
-
             string Exe = "Wt.exe";
-            string ArgsNoKey = @"powershell New-Item -Path '" + RegistryHive + RegistryPath + "' -Force";
             string ArgsChecked = @"powershell powercfg /SETACVALUEINDEX 'SCHEME_CURRENT' '501a4d13-42af-4429-9fd1-a8218c268e20' 'ee12f906-d277-404b-b6da-e5fa1a576df5' '0'";
             string ArgsUnchecked = @"powershell powercfg /SETACVALUEINDEX 'SCHEME_CURRENT' '501a4d13-42af-4429-9fd1-a8218c268e20' 'ee12f906-d277-404b-b6da-e5fa1a576df5' '1'";
-            RegistryKey RegKeyLM = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, RegistryView.Registry64);
-            RegistryKey RegKeyCU = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.CurrentUser, RegistryView.Registry64);
-            var CheckRegKeyLM = RegKeyLM.OpenSubKey(RegistryPath, true);
-            var CheckRegKeyCU = RegKeyCU.OpenSubKey(RegistryPath, true);
 
             if (ChckbxPowerOptionLinkStatPowerManagement)
             {
@@ -1555,31 +1180,13 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void PowerOptionsTurnDisplayOffAfter()
         {
-            string RegistryHive = @"HK:\\";
-            string RegistryPath = @"";
-            string Name = @"";
-            string Type = @"";
-            string Value = @"";
-            string Default = @"";
-
             string Exe = "Wt.exe";
-            string ArgsNoKey = @"powershell New-Item -Path '" + RegistryHive + RegistryPath + "' -Force";
             string ArgsChecked = @"powershell powercfg /SETACVALUEINDEX 'SCHEME_CURRENT' '7516b95f-f776-4464-8c53-06167f40cc99' '3c0bc021-c8a8-4e07-a973-6b14cbcb2b7e' '0'";
             string ArgsUnchecked = @"powershell powercfg /SETACVALUEINDEX 'SCHEME_CURRENT' '7516b95f-f776-4464-8c53-06167f40cc99' '3c0bc021-c8a8-4e07-a973-6b14cbcb2b7e' '900'";
-            RegistryKey RegKeyLM = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, RegistryView.Registry64);
-            RegistryKey RegKeyCU = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.CurrentUser, RegistryView.Registry64);
-            var CheckRegKeyLM = RegKeyLM.OpenSubKey(RegistryPath, true);
-            var CheckRegKeyCU = RegKeyCU.OpenSubKey(RegistryPath, true);
 
             if (ChckbxPowerOptionsTurnDisplayOffAfter)
             {
-                if (CheckRegKeyCU == null)
-                {
-                    Process.Start(Exe, ArgsNoKey);
-                    Process.Start(Exe, ArgsChecked);
-                }
-                else
-                    Process.Start(Exe, ArgsChecked);
+                Process.Start(Exe, ArgsChecked);
             }
             else
                 Process.Start(Exe, ArgsUnchecked);
@@ -1615,34 +1222,20 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void SecurityAndMaintenanceSetUACSliderToNeverNotify()
         {
-            string RegistryHive = @"HKLM:\\";
-            string RegistryPath = @"SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System";
-            string Name = @"EnableLUA";
-            string Type = @"DWord";
+            string Exe = "Wt.exe";
+            string RegistryPath = "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System";
+            string Name = "EnableLUA";
+            string Type = "REG_DWORD";
             string Value = @"0";
             string Default = @"1";
 
-            string Exe = "Wt.exe";
-            string ArgsNoKey = @"powershell New-Item -Path '" + RegistryHive + RegistryPath + "' -Force";
-            string ArgsChecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Value + "' -Force";
-            string ArgsUnchecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Default + "' -Force";
-            RegistryKey RegKeyLM = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, RegistryView.Registry64);
-            RegistryKey RegKeyCU = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.CurrentUser, RegistryView.Registry64);
-            var CheckRegKeyLM = RegKeyLM.OpenSubKey(RegistryPath, true);
-            var CheckRegKeyCU = RegKeyCU.OpenSubKey(RegistryPath, true);
+            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxSecurityAndMaintenanceSetUACSliderToNeverNotify)
-            {
-                if (CheckRegKeyLM == null)
-                {
-                    Process.Start(Exe, ArgsNoKey);
-                    Process.Start(Exe, ArgsChecked);
-                }
-                else
-                    Process.Start(Exe, ArgsChecked);
-            }
+                Process.Start(Exe, ArgsValue);
             else
-                Process.Start(Exe, ArgsUnchecked);
+                Process.Start(Exe, ArgsDefault);
         }
 
 
@@ -1668,581 +1261,98 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
                 _chckbxSystemAdvancedSystemSettingsAdvancedPerformanceTabVisualCustom = value;
                 OnPropertyChanged(nameof(ChckbxSystemAdvancedSystemSettingsAdvancedPerformanceTabVisualCustom));
-                SystemAdvancedSystemSettingsAdvancedPerformanceTabVisualCustom1();
-                SystemAdvancedSystemSettingsAdvancedPerformanceTabVisualCustom2();
-                SystemAdvancedSystemSettingsAdvancedPerformanceTabVisualCustom3();
-                SystemAdvancedSystemSettingsAdvancedPerformanceTabVisualCustom4();
-                SystemAdvancedSystemSettingsAdvancedPerformanceTabVisualCustom5();
-                SystemAdvancedSystemSettingsAdvancedPerformanceTabVisualCustom6();
-                SystemAdvancedSystemSettingsAdvancedPerformanceTabVisualCustom7();
-                SystemAdvancedSystemSettingsAdvancedPerformanceTabVisualCustom8();
-                SystemAdvancedSystemSettingsAdvancedPerformanceTabVisualCustom9();
-                SystemAdvancedSystemSettingsAdvancedPerformanceTabVisualCustom10();
-                SystemAdvancedSystemSettingsAdvancedPerformanceTabVisualCustom11();
+                SystemAdvancedSystemSettingsAdvancedPerformanceTabVisualCustom();
+                
 
             }
-        }
-
-
-        public void SystemAdvancedSystemSettingsAdvancedPerformanceTabVisualCustom1()
-        {
-            string RegistryHive = @"HKCU:\\";
-            string RegistryPath = @"Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\VisualEffects";
-            string Name = @"VisualFXSetting";
-            string Type = @"DWord";
-            string Value = @"3";
-            string Default = @"0";
-
-            string Exe = "Wt.exe";
-            string ArgsNoKey = @"powershell New-Item -Path '" + RegistryHive + RegistryPath + "' -Force";
-            string ArgsChecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Value + "' -Force";
-            string ArgsUnchecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Default + "' -Force";
-            RegistryKey RegKeyLM = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, RegistryView.Registry64);
-            RegistryKey RegKeyCU = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.CurrentUser, RegistryView.Registry64);
-            var CheckRegKeyLM = RegKeyLM.OpenSubKey(RegistryPath, true);
-            var CheckRegKeyCU = RegKeyCU.OpenSubKey(RegistryPath, true);
-
-            if (ChckbxSystemAdvancedSystemSettingsAdvancedPerformanceTabVisualCustom)
-            {
-                if (CheckRegKeyCU == null)
-                {
-                    Process.Start(Exe, ArgsNoKey);
-                    Process.Start(Exe, ArgsChecked);
-                }
-                else
-                    Process.Start(Exe, ArgsChecked);
-            }
-            else
-                Process.Start(Exe, ArgsUnchecked);
-        }
-
-
-        public void SystemAdvancedSystemSettingsAdvancedPerformanceTabVisualCustom2()
-        {
-            string RegistryHive = @"HKCU:\\";
-            string RegistryPath = @"Control Panel\\Desktop";
-            string Name = @"UserPreferencesMask";
-            string Type = @"Binary";
-            string Value = @"([byte[]](0x90,0x12,0x03,0x80,0x10,0x00,0x00,0x00))";
-            string Default = @"([byte[]](0x9e,0x1e,0x07,0x80,0x12,0x00,0x00,0x00))";
-
-            string Exe = "Wt.exe";
-            string ArgsNoKey = @"powershell New-Item -Path '" + RegistryHive + RegistryPath + "' -Force";
-            string ArgsChecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value ([byte[]](0x90,0x12,0x03,0x80,0x10,0x00,0x00,0x00)) -Force";
-            string ArgsUnchecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value ([byte[]](0x9e,0x1e,0x07,0x80,0x12,0x00,0x00,0x00)) -Force";
-            RegistryKey RegKeyLM = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, RegistryView.Registry64);
-            RegistryKey RegKeyCU = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.CurrentUser, RegistryView.Registry64);
-            var CheckRegKeyLM = RegKeyLM.OpenSubKey(RegistryPath, true);
-            var CheckRegKeyCU = RegKeyCU.OpenSubKey(RegistryPath, true);
-
-            if (ChckbxSystemAdvancedSystemSettingsAdvancedPerformanceTabVisualCustom)
-            {
-                if (CheckRegKeyCU == null)
-                {
-                    Process.Start(Exe, ArgsNoKey);
-                    Process.Start(Exe, ArgsChecked);
-                }
-                else
-                    Process.Start(Exe, ArgsChecked);
-            }
-            else
-                Process.Start(Exe, ArgsUnchecked);
-        }
-
-
-        public void SystemAdvancedSystemSettingsAdvancedPerformanceTabVisualCustom3()
-        {
-            string RegistryHive = @"HKCU:\\";
-            string RegistryPath = @"Control Panel\\Desktop\\WindowMetrics";
-            string Name = @"MinAnimate";
-            string Type = @"String";
-            string Value = @"0";
-            string Default = @"1";
-
-            string Exe = "Wt.exe";
-            string ArgsNoKey = @"powershell New-Item -Path '" + RegistryHive + RegistryPath + "' -Force";
-            string ArgsChecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Value + "' -Force";
-            string ArgsUnchecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Default + "' -Force";
-            RegistryKey RegKeyLM = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, RegistryView.Registry64);
-            RegistryKey RegKeyCU = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.CurrentUser, RegistryView.Registry64);
-            var CheckRegKeyLM = RegKeyLM.OpenSubKey(RegistryPath, true);
-            var CheckRegKeyCU = RegKeyCU.OpenSubKey(RegistryPath, true);
-
-            if (ChckbxSystemAdvancedSystemSettingsAdvancedPerformanceTabVisualCustom)
-            {
-                if (CheckRegKeyCU == null)
-                {
-                    Process.Start(Exe, ArgsNoKey);
-                    Process.Start(Exe, ArgsChecked);
-                }
-                else
-                    Process.Start(Exe, ArgsChecked);
-            }
-            else
-                Process.Start(Exe, ArgsUnchecked);
-        }
-
-
-        public void SystemAdvancedSystemSettingsAdvancedPerformanceTabVisualCustom4()
-        {
-            string RegistryHive = @"HKCU:\\";
-            string RegistryPath = @"Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced";
-            string Name = @"TaskbarAnimations";
-            string Type = @"DWord";
-            string Value = @"0";
-            string Default = @"1";
-
-            string Exe = "Wt.exe";
-            string ArgsNoKey = @"powershell New-Item -Path '" + RegistryHive + RegistryPath + "' -Force";
-            string ArgsChecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Value + "' -Force";
-            string ArgsUnchecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Default + "' -Force";
-            RegistryKey RegKeyLM = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, RegistryView.Registry64);
-            RegistryKey RegKeyCU = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.CurrentUser, RegistryView.Registry64);
-            var CheckRegKeyLM = RegKeyLM.OpenSubKey(RegistryPath, true);
-            var CheckRegKeyCU = RegKeyCU.OpenSubKey(RegistryPath, true);
-
-            if (ChckbxSystemAdvancedSystemSettingsAdvancedPerformanceTabVisualCustom)
-            {
-                if (CheckRegKeyCU == null)
-                {
-                    Process.Start(Exe, ArgsNoKey);
-                    Process.Start(Exe, ArgsChecked);
-                }
-                else
-                    Process.Start(Exe, ArgsChecked);
-            }
-            else
-                Process.Start(Exe, ArgsUnchecked);
-        }
-
-
-        public void SystemAdvancedSystemSettingsAdvancedPerformanceTabVisualCustom5()
-        {
-            string RegistryHive = @"HKCU:\\";
-            string RegistryPath = @"Software\\Microsoft\\Windows\\DWM";
-            string Name = @"EnableAeroPeek";
-            string Type = @"DWord";
-            string Value = @"0";
-            string Default = @"1";
-
-            string Exe = "Wt.exe";
-            string ArgsNoKey = @"powershell New-Item -Path '" + RegistryHive + RegistryPath + "' -Force";
-            string ArgsChecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Value + "' -Force";
-            string ArgsUnchecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Default + "' -Force";
-            RegistryKey RegKeyLM = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, RegistryView.Registry64);
-            RegistryKey RegKeyCU = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.CurrentUser, RegistryView.Registry64);
-            var CheckRegKeyLM = RegKeyLM.OpenSubKey(RegistryPath, true);
-            var CheckRegKeyCU = RegKeyCU.OpenSubKey(RegistryPath, true);
-
-            if (ChckbxSystemAdvancedSystemSettingsAdvancedPerformanceTabVisualCustom)
-            {
-                if (CheckRegKeyCU == null)
-                {
-                    Process.Start(Exe, ArgsNoKey);
-                    Process.Start(Exe, ArgsChecked);
-                }
-                else
-                    Process.Start(Exe, ArgsChecked);
-            }
-            else
-                Process.Start(Exe, ArgsUnchecked);
-        }
-
-
-        public void SystemAdvancedSystemSettingsAdvancedPerformanceTabVisualCustom6()
-        {
-            string RegistryHive = @"HKCU:\\";
-            string RegistryPath = @"Software\\Microsoft\\Windows\\DWM";
-            string Name = @"AlwaysHibernateThumbnails";
-            string Type = @"DWord";
-            string Value = @"0";
-            string Default = @"0";
-
-            string Exe = "Wt.exe";
-            string ArgsNoKey = @"powershell New-Item -Path '" + RegistryHive + RegistryPath + "' -Force";
-            string ArgsChecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Value + "' -Force";
-            string ArgsUnchecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Default + "' -Force";
-            RegistryKey RegKeyLM = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, RegistryView.Registry64);
-            RegistryKey RegKeyCU = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.CurrentUser, RegistryView.Registry64);
-            var CheckRegKeyLM = RegKeyLM.OpenSubKey(RegistryPath, true);
-            var CheckRegKeyCU = RegKeyCU.OpenSubKey(RegistryPath, true);
-
-            if (ChckbxSystemAdvancedSystemSettingsAdvancedPerformanceTabVisualCustom)
-            {
-                if (CheckRegKeyCU == null)
-                {
-                    Process.Start(Exe, ArgsNoKey);
-                    Process.Start(Exe, ArgsChecked);
-                }
-                else
-                    Process.Start(Exe, ArgsChecked);
-            }
-            else
-                Process.Start(Exe, ArgsUnchecked);
-        }
-
-
-        public void SystemAdvancedSystemSettingsAdvancedPerformanceTabVisualCustom7()
-        {
-            string RegistryHive = @"HKCU:\\";
-            string RegistryPath = @"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer";
-            string Name = @"DisableThumbnails";
-            string Type = @"DWord";
-            string Value = @"0";
-            string Default = @"1";
-
-            string Exe = "Wt.exe";
-            string ArgsNoKey = @"powershell New-Item -Path '" + RegistryHive + RegistryPath + "' -Force";
-            string ArgsChecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Value + "' -Force";
-            string ArgsUnchecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Default + "' -Force";
-            RegistryKey RegKeyLM = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, RegistryView.Registry64);
-            RegistryKey RegKeyCU = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.CurrentUser, RegistryView.Registry64);
-            var CheckRegKeyLM = RegKeyLM.OpenSubKey(RegistryPath, true);
-            var CheckRegKeyCU = RegKeyCU.OpenSubKey(RegistryPath, true);
-
-            if (ChckbxSystemAdvancedSystemSettingsAdvancedPerformanceTabVisualCustom)
-            {
-                if (CheckRegKeyCU == null)
-                {
-                    Process.Start(Exe, ArgsNoKey);
-                    Process.Start(Exe, ArgsChecked);
-                }
-                else
-                    Process.Start(Exe, ArgsChecked);
-            }
-            else
-                Process.Start(Exe, ArgsUnchecked);
-        }
-
-
-        public void SystemAdvancedSystemSettingsAdvancedPerformanceTabVisualCustom8()
-        {
-            string RegistryHive = @"HKCU:\\";
-            string RegistryPath = @"Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced";
-            string Name = @"ListviewAlphaSelect";
-            string Type = @"DWord";
-            string Value = @"0";
-            string Default = @"1";
-
-            string Exe = "Wt.exe";
-            string ArgsNoKey = @"powershell New-Item -Path '" + RegistryHive + RegistryPath + "' -Force";
-            string ArgsChecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Value + "' -Force";
-            string ArgsUnchecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Default + "' -Force";
-            RegistryKey RegKeyLM = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, RegistryView.Registry64);
-            RegistryKey RegKeyCU = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.CurrentUser, RegistryView.Registry64);
-            var CheckRegKeyLM = RegKeyLM.OpenSubKey(RegistryPath, true);
-            var CheckRegKeyCU = RegKeyCU.OpenSubKey(RegistryPath, true);
-
-            if (ChckbxSystemAdvancedSystemSettingsAdvancedPerformanceTabVisualCustom)
-            {
-                if (CheckRegKeyCU == null)
-                {
-                    Process.Start(Exe, ArgsNoKey);
-                    Process.Start(Exe, ArgsChecked);
-                }
-                else
-                    Process.Start(Exe, ArgsChecked);
-            }
-            else
-                Process.Start(Exe, ArgsUnchecked);
-        }
-
-
-        public void SystemAdvancedSystemSettingsAdvancedPerformanceTabVisualCustom9()
-        {
-            string RegistryHive = @"HKCU:\\";
-            string RegistryPath = @"Control Panel\\Desktop";
-            string Name = @"DragFullWindows";
-            string Type = @"String";
-            string Value = @"1";
-            string Default = @"1";
-
-            string Exe = "Wt.exe";
-            string ArgsNoKey = @"powershell New-Item -Path '" + RegistryHive + RegistryPath + "' -Force";
-            string ArgsChecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Value + "' -Force";
-            string ArgsUnchecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Default + "' -Force";
-            RegistryKey RegKeyLM = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, RegistryView.Registry64);
-            RegistryKey RegKeyCU = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.CurrentUser, RegistryView.Registry64);
-            var CheckRegKeyLM = RegKeyLM.OpenSubKey(RegistryPath, true);
-            var CheckRegKeyCU = RegKeyCU.OpenSubKey(RegistryPath, true);
-
-            if (ChckbxSystemAdvancedSystemSettingsAdvancedPerformanceTabVisualCustom)
-            {
-                if (CheckRegKeyCU == null)
-                {
-                    Process.Start(Exe, ArgsNoKey);
-                    Process.Start(Exe, ArgsChecked);
-                }
-                else
-                    Process.Start(Exe, ArgsChecked);
-            }
-            else
-                Process.Start(Exe, ArgsUnchecked);
-        }
-
-
-        public void SystemAdvancedSystemSettingsAdvancedPerformanceTabVisualCustom10()
-        {
-            string RegistryHive = @"HKCU:\\";
-            string RegistryPath = @"Control Panel\\Desktop";
-            string Name = @"FontSmoothing";
-            string Type = @"String";
-            string Value = @"2";
-            string Default = @"2";
-
-            string Exe = "Wt.exe";
-            string ArgsNoKey = @"powershell New-Item -Path '" + RegistryHive + RegistryPath + "' -Force";
-            string ArgsChecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Value + "' -Force";
-            string ArgsUnchecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Default + "' -Force";
-            RegistryKey RegKeyLM = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, RegistryView.Registry64);
-            RegistryKey RegKeyCU = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.CurrentUser, RegistryView.Registry64);
-            var CheckRegKeyLM = RegKeyLM.OpenSubKey(RegistryPath, true);
-            var CheckRegKeyCU = RegKeyCU.OpenSubKey(RegistryPath, true);
-
-            if (ChckbxSystemAdvancedSystemSettingsAdvancedPerformanceTabVisualCustom)
-            {
-                if (CheckRegKeyCU == null)
-                {
-                    Process.Start(Exe, ArgsNoKey);
-                    Process.Start(Exe, ArgsChecked);
-                }
-                else
-                    Process.Start(Exe, ArgsChecked);
-            }
-            else
-                Process.Start(Exe, ArgsUnchecked);
-        }
-
-
-        public void SystemAdvancedSystemSettingsAdvancedPerformanceTabVisualCustom11()
-        {
-            string RegistryHive = @"HKCU:\\";
-            string RegistryPath = @"Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced";
-            string Name = @"ListviewShadow";
-            string Type = @"DWord";
-            string Value = @"0";
-            string Default = @"1";
-
-            string Exe = "Wt.exe";
-            string ArgsNoKey = @"powershell New-Item -Path '" + RegistryHive + RegistryPath + "' -Force";
-            string ArgsChecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Value + "' -Force";
-            string ArgsUnchecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Default + "' -Force";
-            RegistryKey RegKeyLM = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, RegistryView.Registry64);
-            RegistryKey RegKeyCU = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.CurrentUser, RegistryView.Registry64);
-            var CheckRegKeyLM = RegKeyLM.OpenSubKey(RegistryPath, true);
-            var CheckRegKeyCU = RegKeyCU.OpenSubKey(RegistryPath, true);
-
-            if (ChckbxSystemAdvancedSystemSettingsAdvancedPerformanceTabVisualCustom)
-            {
-                if (CheckRegKeyCU == null)
-                {
-                    Process.Start(Exe, ArgsNoKey);
-                    Process.Start(Exe, ArgsChecked);
-                }
-                else
-                    Process.Start(Exe, ArgsChecked);
-            }
-            else
-                Process.Start(Exe, ArgsUnchecked);
         }
 
 
         public void SystemAdvancedSystemSettingsAdvancedPerformanceTabVisualCustom()
         {
-            string RegistryHive = @"HKCU:\\";
-            
-            string RegistryPath = @"Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\VisualEffects";
-            string RegistryPath2 = @"Control Panel\\Desktop";
-            string RegistryPath3 = @"Control Panel\\Desktop\\WindowMetrics";
-            string RegistryPath4 = @"Software\\Microsoft\\Windows\\DWM";
-            string RegistryPath5 = @"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer";
-            string RegistryPath6 = @"Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced";
-            
-            string Name = @"VisualFXSetting";
-            string Name2 = @"UserPreferencesMask";
-            string Name3 = @"MinAnimate";
-            string Name4 = @"TaskbarAnimations";
-            string Name5 = @"EnableAeroPeek";
-            string Name6 = @"AlwaysHibernateThumbnails";
-            string Name7 = @"DisableThumbnails";
-            string Name8 = @"ListviewAlphaSelect";
-            string Name9 = @"DragFullWindows";
-            string Name10 = @"FontSmoothing";
-            string Name11 = @"ListviewShadow";
-           
-            string Type = @"Dword";
-            string Type2 = @"String";
-            string Type3 = @"Binary";
-            
-            string Value = @"3";
-            string Value2 = @"([byte[]](0x90,0x12,0x03,0x80,0x10,0x00,0x00,0x00))";
-            string Value3 = @"0";
-            string Value4 = @"0";
-            string Value5 = @"0";
-            string Value6 = @"0";
-            string Value7 = @"0";
-            string Value8 = @"0";
-            string Value9 = @"1";
-            string Value10 = @"2";
-            string Value11 = @"0";
-            
-            string Default = @"0";
-            string Default2 = @"([byte[]](0x9e,0x1e,0x07,0x80,0x12,0x00,0x00,0x00))";
-            string Default3 = @"1";
-            string Default4 = @"1";
-            string Default5 = @"1";
-            string Default6 = @"0";
-            string Default7 = @"1";
-            string Default8 = @"1";
-            string Default9 = @"1";
-            string Default10 = @"1";
-            string Default11 = @"1";
-
             string Exe = "Wt.exe";
-            string ArgsNoKey = @"powershell New-Item -Path '" + RegistryHive + RegistryPath + "' -Force";
-            string ArgsNoKey2 = @"powershell New-Item -Path '" + RegistryHive + RegistryPath2 + "' -Force";
-            string ArgsNoKey3 = @"powershell New-Item -Path '" + RegistryHive + RegistryPath3 + "' -Force";
-            string ArgsNoKey4 = @"powershell New-Item -Path '" + RegistryHive + RegistryPath4 + "' -Force";
-            string ArgsNoKey5 = @"powershell New-Item -Path '" + RegistryHive + RegistryPath5 + "' -Force";
-            string ArgsNoKey6 = @"powershell New-Item -Path '" + RegistryHive + RegistryPath6 + "' -Force";
+            string RegistryPath = "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\VisualEffects";
+            string RegistryPath2 = "\"HKCU\\Control Panel\\Desktop\"";
+            string RegistryPath3 = "\"HKCU\\Control Panel\\Desktop\\WindowMetrics\"";
+            string RegistryPath4 = "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced";
+            string RegistryPath5 = "HKCU\\Software\\Microsoft\\Windows\\DWM";
+            string RegistryPath6 = "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer";
+            string Name = "VisualFXSetting";
+            string Name2 = "UserPreferencesMask";
+            string Name3 = "MinAnimate";
+            string Name4 = "TaskbarAnimations";
+            string Name5 = "EnableAeroPeek";
+            string Name6 = "AlwaysHibernateThumbnails";
+            string Name7 = "DisableThumbnails";
+            string Name8 = "ListviewAlphaSelect";
+            string Name9 = "DragFullWindows";
+            string Name10 = "FontSmoothing";
+            string Name11 = "ListviewShadow";
+            string Type = "REG_DWORD";
+            string Type2 = "REG_BINARY";
+            string Type3 = "REG_SZ";
+            string Value = "3";
+            string Value2 = "9012038010000000";
+            string Value3 = "0";
+            string Value4 = "1";
+            string Value5 = "2";
+            string Default = "0";
+            string Default2 = "9e1e078012000000";
+            string Default3 = "1";
+            string Default4 = "2";
+           
+            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsValue2 = @"Reg Add " + RegistryPath2 + " /v " + Name2 + " /t " + Type2 + " /d " + Value2 + " /f";
+            string ArgsValue3 = @"Reg Add " + RegistryPath3 + " /v " + Name3 + " /t " + Type3 + " /d " + Value3 + " /f";
+            string ArgsValue4 = @"Reg Add " + RegistryPath4 + " /v " + Name4 + " /t " + Type + " /d " + Value3 + " /f";
+            string ArgsValue5 = @"Reg Add " + RegistryPath5 + " /v " + Name5 + " /t " + Type + " /d " + Value3 + " /f";
+            string ArgsValue6 = @"Reg Add " + RegistryPath5 + " /v " + Name6 + " /t " + Type + " /d " + Value3 + " /f";
+            string ArgsValue7 = @"Reg Add " + RegistryPath6 + " /v " + Name7 + " /t " + Type + " /d " + Value3 + " /f";
+            string ArgsValue8 = @"Reg Add " + RegistryPath4 + " /v " + Name8 + " /t " + Type + " /d " + Value3 + " /f";
+            string ArgsValue9 = @"Reg Add " + RegistryPath2 + " /v " + Name9 + " /t " + Type3 + " /d " + Value4 + " /f";
+            string ArgsValue10 = @"Reg Add " + RegistryPath2 + " /v " + Name10 + " /t " + Type3 + " /d " + Value5 + " /f";
+            string ArgsValue11 = @"Reg Add " + RegistryPath4 + " /v " + Name11 + " /t " + Type + " /d " + Value3 + " /f";
 
-            string ArgsChecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Value + "' -Force";
-            string ArgsChecked2 = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath2 + "' -Name '" + Name2 + "' -Type '" + Type3 + "' -Value ([byte[]](0x90,0x12,0x03,0x80,0x10,0x00,0x00,0x00)) -Force";
-            string ArgsChecked3 = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath3 + "' -Name '" + Name3 + "' -Type '" + Type2 + "' -Value '" + Value3 + "' -Force";
-            string ArgsChecked4 = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath6 + "' -Name '" + Name4 + "' -Type '" + Type + "' -Value '" + Value4 + "' -Force";
-            string ArgsChecked5 = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath4 + "' -Name '" + Name5 + "' -Type '" + Type + "' -Value '" + Value5 + "' -Force";
-            string ArgsChecked6 = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath4 + "' -Name '" + Name6 + "' -Type '" + Type + "' -Value '" + Value6 + "' -Force";
-            string ArgsChecked7 = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath5 + "' -Name '" + Name7 + "' -Type '" + Type + "' -Value '" + Value7 + "' -Force";
-            string ArgsChecked8 = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath6 + "' -Name '" + Name8 + "' -Type '" + Type + "' -Value '" + Value8 + "' -Force";
-            string ArgsChecked9 = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath2 + "' -Name '" + Name9 + "' -Type '" + Type2 + "' -Value '" + Value9 + "' -Force";
-            string ArgsChecked10 = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath2 + "' -Name '" + Name10 + "' -Type '" + Type2 + "' -Value '" + Value10 + "' -Force";
-            string ArgsChecked11 = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath6 + "' -Name '" + Name11 + "' -Type '" + Type + "' -Value '" + Value11 + "' -Force";
-            
-            string ArgsUnchecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Default + "' -Force";
-            string ArgsUnchecked2 = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath2 + "' -Name '" + Name2 + "' -Type '" + Type3 + "' -Value ([byte[]](0x9e,0x1e,0x07,0x80,0x12,0x00,0x00,0x00)) -Force";
-            string ArgsUnchecked3 = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath3 + "' -Name '" + Name3 + "' -Type '" + Type2 + "' -Value '" + Default3 + "' -Force";
-            string ArgsUnchecked4 = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath6 + "' -Name '" + Name4 + "' -Type '" + Type + "' -Value '" + Default4 + "' -Force";
-            string ArgsUnchecked5 = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath4 + "' -Name '" + Name5 + "' -Type '" + Type + "' -Value '" + Default5 + "' -Force";
-            string ArgsUnchecked6 = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath4 + "' -Name '" + Name6 + "' -Type '" + Type + "' -Value '" + Default6 + "' -Force";
-            string ArgsUnchecked7 = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath5 + "' -Name '" + Name7 + "' -Type '" + Type + "' -Value '" + Default7 + "' -Force";
-            string ArgsUnchecked8 = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath6 + "' -Name '" + Name8 + "' -Type '" + Type + "' -Value '" + Default8 + "' -Force";
-            string ArgsUnchecked9 = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath2 + "' -Name '" + Name9 + "' -Type '" + Type2 + "' -Value '" + Default9 + "' -Force";
-            string ArgsUnchecked10 = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath2 + "' -Name '" + Name10 + "' -Type '" + Type2 + "' -Value '" + Default10 + "' -Force";
-            string ArgsUnchecked11 = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath6 + "' -Name '" + Name11 + "' -Type '" + Type + "' -Value '" + Default11 + "' -Force";
-            RegistryKey RegKeyLM = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, RegistryView.Registry64);
-            RegistryKey RegKeyCU = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.CurrentUser, RegistryView.Registry64);
-            var CheckRegKeyLM = RegKeyLM.OpenSubKey(RegistryPath, true);
-            var CheckRegKeyCU = RegKeyCU.OpenSubKey(RegistryPath, true);
-            var CheckRegKeyCU2 = RegKeyCU.OpenSubKey(RegistryPath2, true);
-            var CheckRegKeyCU3 = RegKeyCU.OpenSubKey(RegistryPath3, true);
-            var CheckRegKeyCU4 = RegKeyCU.OpenSubKey(RegistryPath4, true);
-            var CheckRegKeyCU5 = RegKeyCU.OpenSubKey(RegistryPath5, true);
-            var CheckRegKeyCU6 = RegKeyCU.OpenSubKey(RegistryPath6, true);
+            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsDefault2 = @"Reg Add " + RegistryPath2 + " /v " + Name2 + " /t " + Type2 + " /d " + Default2 + " /f";
+            string ArgsDefault3 = @"Reg Add " + RegistryPath3 + " /v " + Name3 + " /t " + Type3 + " /d " + Default3 + " /f";
+            string ArgsDefault4 = @"Reg Add " + RegistryPath4 + " /v " + Name4 + " /t " + Type + " /d " + Default3 + " /f";
+            string ArgsDefault5 = @"Reg Add " + RegistryPath5 + " /v " + Name5 + " /t " + Type + " /d " + Default3 + " /f";
+            string ArgsDefault6 = @"Reg Add " + RegistryPath5 + " /v " + Name6 + " /t " + Type + " /d " + Default + " /f";
+            string ArgsDefault7 = @"Reg Add " + RegistryPath6 + " /v " + Name7 + " /t " + Type + " /d " + Default3 + " /f";
+            string ArgsDefault8 = @"Reg Add " + RegistryPath4 + " /v " + Name8 + " /t " + Type + " /d " + Default3 + " /f";
+            string ArgsDefault9 = @"Reg Add " + RegistryPath2 + " /v " + Name9 + " /t " + Type3 + " /d " + Default3 + " /f";
+            string ArgsDefault10 = @"Reg Add " + RegistryPath2 + " /v " + Name10 + " /t " + Type3 + " /d " + Default4 + " /f";
+            string ArgsDefault11 = @"Reg Add " + RegistryPath4 + " /v " + Name11 + " /t " + Type + " /d " + Default3 + " /f";
 
             if (ChckbxSystemAdvancedSystemSettingsAdvancedPerformanceTabVisualCustom)
             {
-                if (CheckRegKeyCU == null)
-                {
-                    Process.Start(Exe, ArgsNoKey);
-                    Process.Start(Exe, ArgsChecked);
-                }
-                else
-                    Process.Start(Exe, ArgsChecked);
-
-                if (CheckRegKeyCU2 == null)
-                {
-                    Process.Start(Exe, ArgsNoKey2);
-                    Process.Start(Exe, ArgsChecked2);
-                }
-                else
-                    Process.Start(Exe, ArgsChecked2);
-
-                if (CheckRegKeyCU3 == null)
-                {
-                    Process.Start(Exe, ArgsNoKey3);
-                    Process.Start(Exe, ArgsChecked3);
-                }
-                else
-                    Process.Start(Exe, ArgsChecked3);
-
-                if (CheckRegKeyCU6 == null)
-                {
-                    Process.Start(Exe, ArgsNoKey6);
-                    Process.Start(Exe, ArgsChecked4);
-                }
-                else
-                    Process.Start(Exe, ArgsChecked4);
-
-                if (CheckRegKeyCU4 == null)
-                {
-                    Process.Start(Exe, ArgsNoKey4);
-                    Process.Start(Exe, ArgsChecked5);
-                }
-                else
-                    Process.Start(Exe, ArgsChecked5);
-
-                if (CheckRegKeyCU4 == null)
-                {
-                    Process.Start(Exe, ArgsNoKey4);
-                    Process.Start(Exe, ArgsChecked6);
-                }
-                else
-                    Process.Start(Exe, ArgsChecked6);
-
-                if (CheckRegKeyCU5 == null)
-                {
-                    Process.Start(Exe, ArgsNoKey5);
-                    Process.Start(Exe, ArgsChecked7);
-                }
-                else
-                    Process.Start(Exe, ArgsChecked7);
-
-                if (CheckRegKeyCU6 == null)
-                {
-                    Process.Start(Exe, ArgsNoKey6);
-                    Process.Start(Exe, ArgsChecked8);
-                }
-                else
-                    Process.Start(Exe, ArgsChecked8);
-
-                if (CheckRegKeyCU2 == null)
-                {
-                    Process.Start(Exe, ArgsNoKey2);
-                    Process.Start(Exe, ArgsChecked9);
-                }
-                else
-                    Process.Start(Exe, ArgsChecked9);
-
-                if (CheckRegKeyCU2 == null)
-                {
-                    Process.Start(Exe, ArgsNoKey2);
-                    Process.Start(Exe, ArgsChecked10);
-                }
-                else
-                    Process.Start(Exe, ArgsChecked10);
-
-                if (CheckRegKeyCU6 == null)
-                {
-                    Process.Start(Exe, ArgsNoKey6);
-                    Process.Start(Exe, ArgsChecked11);
-                }
-                else
-                    Process.Start(Exe, ArgsChecked11);
-
+                Process.Start(Exe, ArgsValue);
+                Process.Start(Exe, ArgsValue2);
+                Process.Start(Exe, ArgsValue3);
+                Process.Start(Exe, ArgsValue4);
+                Process.Start(Exe, ArgsValue5);
+                Process.Start(Exe, ArgsValue6);
+                Process.Start(Exe, ArgsValue7);
+                Process.Start(Exe, ArgsValue8);
+                Process.Start(Exe, ArgsValue9);
+                Process.Start(Exe, ArgsValue10);
+                Process.Start(Exe, ArgsValue11);
             }
             else
-            Process.Start(Exe, ArgsUnchecked);
-            Process.Start(Exe, ArgsUnchecked2);
-            Process.Start(Exe, ArgsUnchecked3);
-            Process.Start(Exe, ArgsUnchecked4);
-            Process.Start(Exe, ArgsUnchecked5);
-            Process.Start(Exe, ArgsUnchecked6);
-            Process.Start(Exe, ArgsUnchecked7);
-            Process.Start(Exe, ArgsUnchecked8);
-            Process.Start(Exe, ArgsUnchecked9);
-            Process.Start(Exe, ArgsUnchecked10);
-            Process.Start(Exe, ArgsUnchecked11);
+                Process.Start(Exe, ArgsDefault);
+                Process.Start(Exe, ArgsDefault2);
+                Process.Start(Exe, ArgsDefault3);
+                Process.Start(Exe, ArgsDefault4);
+                Process.Start(Exe, ArgsDefault5);
+                Process.Start(Exe, ArgsDefault6);
+                Process.Start(Exe, ArgsDefault7);
+                Process.Start(Exe, ArgsDefault8);
+                Process.Start(Exe, ArgsDefault9);
+                Process.Start(Exe, ArgsDefault10);
+                Process.Start(Exe, ArgsDefault11);
         }
+
 
 
         // Checkbox - Startup and Recovery - Command
@@ -2264,21 +1374,9 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void SystemAdvancedSystemSettingsAdvancedStartupAndRecoveryTimeToDisplayListOfOS()
         {
-            string RegistryHive = @"HK:\\";
-            string RegistryPath = @"";
-            string Name = @"";
-            string Type = @"";
-            string Value = @"";
-            string Default = @"";
-
             string Exe = "Wt.exe";
-            string ArgsNoKey = @"powershell New-Item -Path '" + RegistryHive + RegistryPath + "' -Force";
             string ArgsChecked = @"powershell bcdedit /timeout 0";
             string ArgsUnchecked = @"powershell bcdedit /timeout 10";
-            RegistryKey RegKeyLM = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, RegistryView.Registry64);
-            RegistryKey RegKeyCU = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.CurrentUser, RegistryView.Registry64);
-            var CheckRegKeyLM = RegKeyLM.OpenSubKey(RegistryPath, true);
-            var CheckRegKeyCU = RegKeyCU.OpenSubKey(RegistryPath, true);
 
             if (ChckbxSystemAdvancedSystemSettingsAdvancedStartupAndRecoveryTimeToDisplayListOfOS)
             {
@@ -2308,31 +1406,13 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void SystemAdvancedSystemSettingsAdvancedStartupAndRecoveryEnableF8DuringBoot()
         {
-            string RegistryHive = @"HK:\\";
-            string RegistryPath = @"";
-            string Name = @"";
-            string Type = @"";
-            string Value = @"";
-            string Default = @"";
-
             string Exe = "Wt.exe";
-            string ArgsNoKey = @"powershell New-Item -Path '" + RegistryHive + RegistryPath + "' -Force";
             string ArgsChecked = @"powershell bcdedit /set '{default}' 'bootmenupolicy' 'legacy'";
             string ArgsUnchecked = @"powershell bcdedit /set '{default}' 'bootmenupolicy' 'legacy'";
-            RegistryKey RegKeyLM = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, RegistryView.Registry64);
-            RegistryKey RegKeyCU = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.CurrentUser, RegistryView.Registry64);
-            var CheckRegKeyLM = RegKeyLM.OpenSubKey(RegistryPath, true);
-            var CheckRegKeyCU = RegKeyCU.OpenSubKey(RegistryPath, true);
 
             if (ChckbxSystemAdvancedSystemSettingsAdvancedStartupAndRecoveryEnableF8DuringBoot)
             {
-                if (CheckRegKeyCU == null)
-                {
-                    Process.Start(Exe, ArgsNoKey);
-                    Process.Start(Exe, ArgsChecked);
-                }
-                else
-                    Process.Start(Exe, ArgsChecked);
+                Process.Start(Exe, ArgsChecked);
             }
             else
                 Process.Start(Exe, ArgsUnchecked);
@@ -2362,34 +1442,20 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void SystemAdvancedSystemSettingsRemoteRemoteAssistanceDisableAllowRemoteAssistance()
         {
-            string RegistryHive = @"HKLM:\\";
-            string RegistryPath = @"System\CurrentControlSet\Control\Remote Assistance";
+            string Exe = "Wt.exe";
+            string RegistryPath = "\"HKLM\\System\\CurrentControlSet\\Control\\Remote Assistance\"";
             string Name = @"fAllowToGetHelp";
-            string Type = @"DWord";
+            string Type = @"REG_DWORD";
             string Value = @"0";
             string Default = @"1";
 
-            string Exe = "Wt.exe";
-            string ArgsNoKey = @"powershell New-Item -Path '" + RegistryHive + RegistryPath + "' -Force";
-            string ArgsChecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Value + "' -Force";
-            string ArgsUnchecked = @"powershell Set-ItemProperty -Path '" + RegistryHive + RegistryPath + "' -Name '" + Name + "' -Type '" + Type + "' -Value '" + Default + "' -Force";
-            RegistryKey RegKeyLM = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, RegistryView.Registry64);
-            RegistryKey RegKeyCU = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.CurrentUser, RegistryView.Registry64);
-            var CheckRegKeyLM = RegKeyLM.OpenSubKey(RegistryPath, true);
-            var CheckRegKeyCU = RegKeyCU.OpenSubKey(RegistryPath, true);
+            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxSystemAdvancedSystemSettingsRemoteRemoteAssistanceDisableAllowRemoteAssistance)
-            {
-                if (CheckRegKeyLM == null)
-                {
-                    Process.Start(Exe, ArgsNoKey);
-                    Process.Start(Exe, ArgsChecked);
-                }
-                else
-                    Process.Start(Exe, ArgsChecked);
-            }
+                Process.Start(Exe, ArgsValue);
             else
-                Process.Start(Exe, ArgsUnchecked);
+                Process.Start(Exe, ArgsDefault);
         }
 
 
@@ -2420,31 +1486,13 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void WindowsDefenderFirewallTurnOffOnAllProfiles()
         {
-            string RegistryHive = @"HK:\\";
-            string RegistryPath = @"";
-            string Name = @"";
-            string Type = @"";
-            string Value = @"";
-            string Default = @"";
-
             string Exe = "Wt.exe";
-            string ArgsNoKey = @"powershell New-Item -Path '" + RegistryHive + RegistryPath + "' -Force";
             string ArgsChecked = @"powershell netsh advfirewall set allprofiles state off";
             string ArgsUnchecked = @"powershell netsh advfirewall set allprofiles state on";
-            RegistryKey RegKeyLM = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, RegistryView.Registry64);
-            RegistryKey RegKeyCU = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.CurrentUser, RegistryView.Registry64);
-            var CheckRegKeyLM = RegKeyLM.OpenSubKey(RegistryPath, true);
-            var CheckRegKeyCU = RegKeyCU.OpenSubKey(RegistryPath, true);
 
             if (ChckbxWindowsDefenderFirewallTurnOffOnAllProfiles)
             {
-                if (CheckRegKeyCU == null)
-                {
-                    Process.Start(Exe, ArgsNoKey);
-                    Process.Start(Exe, ArgsChecked);
-                }
-                else
-                    Process.Start(Exe, ArgsChecked);
+                Process.Start(Exe, ArgsChecked);
             }
             else
                 Process.Start(Exe, ArgsUnchecked);

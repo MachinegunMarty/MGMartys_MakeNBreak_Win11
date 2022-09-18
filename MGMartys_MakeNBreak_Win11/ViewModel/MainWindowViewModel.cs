@@ -38,13 +38,13 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
                 new MenuItems { MenuName = "Gaming", MenuImage = @"/Resources/Icons/Gamepad_Icon.png" },
                 new MenuItems { MenuName = "Control Panel", MenuImage = @"/Resources/Icons/ControlPanel_Icon.png" },
                 new MenuItems { MenuName = "Settings", MenuImage = @"/Resources/Icons/Settings_Icon.png" },
-                new MenuItems { MenuName = "Services", MenuImage = @"/Resources/Icons/services_icon.png" },
+                new MenuItems { MenuName = "Disable Services", MenuImage = @"/Resources/Icons/Services_Icon.png" },
                 new MenuItems { MenuName = "Remove Apps", MenuImage = @"/Resources/Icons/Apps_icon.png" },
-                new MenuItems { MenuName = "Install Software", MenuImage = @"/Resources/Icons/Software_Icon.png" }
+                new MenuItems { MenuName = "Install Programs", MenuImage = @"/Resources/Icons/Software_Icon.png" }
             };
 
             MenuItemsCollection = new CollectionViewSource { Source = menuItems };
-            MenuItemsCollection.Filter += MenuItems_Filter;
+         
 
             // Set Startup Page
             SelectedViewModel = new StartupViewModel();
@@ -57,38 +57,6 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propName));
         }
 
-
-        // Text Search Filter.
-        private string filterText;
-        public string FilterText
-        {
-            get => filterText;
-            set
-            {
-                filterText = value;
-                MenuItemsCollection.View.Refresh();
-                OnPropertyChanged("FilterText");
-            }
-        }
-       
-        private void MenuItems_Filter(object sender, FilterEventArgs e)
-        {
-            if(string.IsNullOrEmpty(FilterText))
-            {
-                e.Accepted = true;
-                return;
-            }
-
-            MenuItems _item = e.Item as MenuItems;
-            if(_item.MenuName.ToUpper().Contains(FilterText.ToUpper()))
-            {
-                e.Accepted = true;
-            }
-            else
-            {
-                e.Accepted = false;
-            }
-        }
 
         // Selected ViewModel
         private object _selectedViewModel;
@@ -134,17 +102,17 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
                     SelectedViewModel = new SettingsViewModel();
                     SelectedMenuItem = "Settings";
                     break;
-                case "Services":
+                case "Disable Services":
                     SelectedViewModel = new ServicesViewModel();
-                    SelectedMenuItem = "Services";
+                    SelectedMenuItem = "Disable Services";
                     break;
                 case "Remove Apps":
                     SelectedViewModel = new AppsViewModel();
                     SelectedMenuItem = "Remove Apps";
                     break;
-                case "Install Software":
-                    SelectedViewModel = new SoftwareViewModel();
-                    SelectedMenuItem = "Install Software";
+                case "Install Programs":
+                    SelectedViewModel = new ProgramsViewModel();
+                    SelectedMenuItem = "Install Programs";
                     break;
                 default:
                     SelectedViewModel = new HomeViewModel();
@@ -167,72 +135,7 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
             }
         }
 
-        // Show PC View
-        public void PCView()
-        {
-            SelectedViewModel = new PCViewModel();
-        }
-
-        // This PC button Command
-        private ICommand _pccommand;
-        public ICommand ThisPCCommand
-        {
-            get
-            {
-                if (_pccommand == null)
-                {
-                    _pccommand = new RelayCommand(param => PCView());
-                }
-                return _pccommand;
-            }
-        }
-
-        // Show Home View
-        private void ShowHome()
-        {
-            SelectedViewModel = new HomeViewModel();
-        }
-
-        // Back button Command
-        private ICommand _backHomeCommand;
-        public ICommand BackHomeCommand
-        {
-            get
-            {
-                if (_backHomeCommand == null)
-                {
-                    _backHomeCommand = new RelayCommand(p => ShowHome());
-                }
-                return _backHomeCommand;
-            }
-        }
-
-       
-
-        // Close App
-        public void CloseApp(object obj)
-        {
-            MainWindow win = obj as MainWindow;
-            win.Close();
-        }
-
-        // Close App Command
-        private ICommand _closeCommand;
-        public ICommand CloseAppCommand
-        {
-            get
-            {
-                if (_closeCommand == null)
-                {
-                    _closeCommand = new RelayCommand(p => CloseApp(p));
-                }
-                return _closeCommand;
-            }
-        }
-
-
-
-        
+           
 
 
     

@@ -18,6 +18,109 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
 
 
+        #region Hidden App Settings
+
+        // CheckBox - Preinstalled Apps Enabled
+        private Boolean _chckbxHiddenAppSettingsPreinstalledAppsEnabled;
+        public Boolean ChckbxHiddenAppSettingsPreinstalledAppsEnabled
+        {
+            get => _chckbxHiddenAppSettingsPreinstalledAppsEnabled;
+            set
+            {
+                if (_chckbxHiddenAppSettingsPreinstalledAppsEnabled == value)
+                    return;
+
+                _chckbxHiddenAppSettingsPreinstalledAppsEnabled = value;
+                OnPropertyChanged(nameof(ChckbxHiddenAppSettingsPreinstalledAppsEnabled));
+                HiddenAppSettingsPreinstalledAppsEnabled();
+            }
+        }
+
+        private void HiddenAppSettingsPreinstalledAppsEnabled()
+        {
+            string Exe = "wt.exe";
+            string RegistryPath = "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager";
+            string Name = "PreInstalledAppsEnabled";
+            string Name2 = "PreInstalledAppsEverEnabled";
+            string Name3 = "OEMPreInstalledAppsEnabled";
+            string Type = "REG_DWORD";
+            string Value = "0";
+            string Default = "1";
+            string ArgsChecked = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsChecked2 = @"Reg Add " + RegistryPath + " /v " + Name2 + " /t " + Type + " /d " + Value + " /f";
+            string ArgsChecked3 = @"Reg Add " + RegistryPath + " /v " + Name3 + " /t " + Type + " /d " + Value + " /f";
+            string ArgsUnchecked = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsUnchecked2 = @"Reg Add " + RegistryPath + " /v " + Name2 + " /t " + Type + " /d " + Default + " /f";
+            string ArgsUnchecked3 = @"Reg Add " + RegistryPath + " /v " + Name3 + " /t " + Type + " /d " + Default + " /f";
+
+            if (ChckbxHiddenAppSettingsPreinstalledAppsEnabled)
+            {
+                Process.Start(Exe, ArgsChecked);
+                Process.Start(Exe, ArgsChecked2);
+                Process.Start(Exe, ArgsChecked3);
+            }
+            else
+            {
+                Process.Start(Exe, ArgsUnchecked);
+                Process.Start(Exe, ArgsUnchecked2);
+                Process.Start(Exe, ArgsUnchecked3);
+            }
+        }
+
+
+        // CheckBox - Preinstalled Apps Enabled
+        private Boolean _chckbxHiddenAppSettingsQuitlyReinstallApps;
+        public Boolean ChckbxHiddenAppSettingsQuitlyReinstallApps
+        {
+            get => _chckbxHiddenAppSettingsQuitlyReinstallApps;
+            set
+            {
+                if (_chckbxHiddenAppSettingsQuitlyReinstallApps == value)
+                    return;
+
+                _chckbxHiddenAppSettingsQuitlyReinstallApps = value;
+                OnPropertyChanged(nameof(ChckbxHiddenAppSettingsQuitlyReinstallApps));
+                HiddenAppSettingsQuitlyReinstallApps();
+            }
+        }
+
+        private void HiddenAppSettingsQuitlyReinstallApps()
+        {
+            string Exe = "wt.exe";
+            string RegistryPath = "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager";
+            string Name = "SilentInstalledAppsEnabled";
+            string Name2 = "ContentDeliveryAllowed";
+            string Name3 = "SubscribedContentEnabled";
+            string Type = "REG_DWORD";
+            string Value = "0";
+            string Default = "1";
+            string ArgsChecked = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsChecked2 = @"Reg Add " + RegistryPath + " /v " + Name2 + " /t " + Type + " /d " + Value + " /f";
+            string ArgsChecked3 = @"Reg Add " + RegistryPath + " /v " + Name3 + " /t " + Type + " /d " + Value + " /f";
+            string ArgsUnchecked = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsUnchecked2 = @"Reg Add " + RegistryPath + " /v " + Name2 + " /t " + Type + " /d " + Default + " /f";
+            string ArgsUnchecked3 = @"Reg Add " + RegistryPath + " /v " + Name3 + " /t " + Type + " /d " + Default + " /f";
+
+            if (ChckbxHiddenAppSettingsQuitlyReinstallApps)
+            {
+                Process.Start(Exe, ArgsChecked);
+                Process.Start(Exe, ArgsChecked2);
+                Process.Start(Exe, ArgsChecked3);
+            }
+            else
+            {
+                Process.Start(Exe, ArgsUnchecked);
+                Process.Start(Exe, ArgsUnchecked2);
+                Process.Start(Exe, ArgsUnchecked3);
+            }
+        }
+
+
+
+        #endregion
+
+
+        #region Uninstall Apps
 
         // Checkbox - ClipChamp - Command
 
@@ -739,6 +842,7 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
                 Process.Start(Exe, Install);
         }
 
+        #endregion
 
     }
 }

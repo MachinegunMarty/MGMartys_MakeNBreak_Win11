@@ -74,23 +74,15 @@
     <Compile Include="ViewModel\AppsViewModel.cs" />
     <Compile Include="ViewModel\ControlPanelViewModel.cs" />
     <Compile Include="ViewModel\DesktopViewModel.cs" />
-    <Compile Include="ViewModel\DocumentViewModel.cs" />
-    <Compile Include="ViewModel\DownloadViewModel.cs" />
     <Compile Include="ViewModel\ExplorerViewModel.cs" />
     <Compile Include="ViewModel\GamingViewModel.cs" />
     <Compile Include="ViewModel\HomeViewModel.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
-    <Compile Include="ViewModel\MovieViewModel.cs" />
-    <Compile Include="ViewModel\MusicViewModel.cs" />
-    <Compile Include="ViewModel\NavigationViewModel.cs" />
-    <Compile Include="ViewModel\PCViewModel.cs" />
     <Compile Include="ViewModel\PersonalizationViewModel.cs" />
-    <Compile Include="ViewModel\PictureViewModel.cs" />
-    <Compile Include="ViewModel\SoftwareViewModel.cs" />
+    <Compile Include="ViewModel\ProgramsViewModel.cs" />
     <Compile Include="ViewModel\ServicesViewModel.cs" />
     <Compile Include="ViewModel\SettingsViewModel.cs" />
     <Compile Include="ViewModel\StartupViewModel.cs" />
-    <Compile Include="ViewModel\TrashViewModel.cs" />
     <Compile Include="View\AppsView.xaml.cs">
       <DependentUpon>AppsView.xaml</DependentUpon>
     </Compile>
@@ -101,12 +93,6 @@
     <Compile Include="View\DesktopView.xaml.cs">
       <DependentUpon>DesktopView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\DocumentView.xaml.cs">
-      <DependentUpon>DocumentView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\DownloadView.xaml.cs">
-      <DependentUpon>DownloadView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\ExplorerView.xaml.cs">
       <DependentUpon>ExplorerView.xaml</DependentUpon>
     </Compile>
@@ -116,23 +102,11 @@
     <Compile Include="View\HomeView.xaml.cs">
       <DependentUpon>HomeView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\MovieView.xaml.cs">
-      <DependentUpon>MovieView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\MusicView.xaml.cs">
-      <DependentUpon>MusicView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\PCView.xaml.cs">
-      <DependentUpon>PCView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\PersonalizationView.xaml.cs">
       <DependentUpon>PersonalizationView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\PictureView.xaml.cs">
-      <DependentUpon>PictureView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\SoftwareView.xaml.cs">
-      <DependentUpon>SoftwareView.xaml</DependentUpon>
+    <Compile Include="View\ProgramsView.xaml.cs">
+      <DependentUpon>ProgramsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ServicesView.xaml.cs">
       <DependentUpon>ServicesView.xaml</DependentUpon>
@@ -142,9 +116,6 @@
     </Compile>
     <Compile Include="View\StartupView.xaml.cs">
       <DependentUpon>StartupView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\TrashView.xaml.cs">
-      <DependentUpon>TrashView.xaml</DependentUpon>
     </Compile>
     <!-- Pages -->
     <Page Include="Resources\DataTemplates\DataTemplates.xaml">
@@ -171,14 +142,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\DocumentView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\DownloadView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="View\ExplorerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -191,27 +154,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\MovieView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\MusicView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\PCView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="View\PersonalizationView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\PictureView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\SoftwareView.xaml">
+    <Page Include="View\ProgramsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -224,10 +171,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\StartupView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\TrashView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -251,7 +194,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Resources\Scripts\RemoveOneDrive.ps1" />
     <Resource Include="Resources\Fonts\Cairo-SemiBold.ttf" />
     <Resource Include="Resources\Fonts\Roboto-Regular.ttf" />
     <Resource Include="Resources\Fonts\OpenSans-Regular.ttf" />
@@ -267,33 +209,8 @@
     <Resource Include="Resources\Icons\VisualCPlusPlus_Icon.png" />
     <Resource Include="Resources\Icons\WindowsDefenderFirewall_Icon.png" />
     <Resource Include="Resources\Icons\System_Icon.png" />
-    <Resource Include="Resources\Icons\Settings-icon.png" />
-    <Resource Include="Resources\Icons\Control-Panel-icon.png" />
-    <Resource Include="Resources\Icons\img_about.png" />
-    <Resource Include="Resources\Icons\img_acoustic.png" />
-    <Resource Include="Resources\Icons\img_album.png" />
-    <Resource Include="Resources\Icons\img_arrow.png" />
-    <Resource Include="Resources\Icons\img_artist.png" />
-    <Resource Include="Resources\Icons\img_electronic.png" />
-    <Resource Include="Resources\Icons\img_exit.png" />
-    <Resource Include="Resources\Icons\img_folder.png" />
-    <Resource Include="Resources\Icons\img_genre.png" />
-    <Resource Include="Resources\Icons\img_hiphop.png" />
-    <Resource Include="Resources\Icons\img_history.png" />
-    <Resource Include="Resources\Icons\img_home.png" />
-    <Resource Include="Resources\Icons\img_hotkey.png" />
-    <Resource Include="Resources\Icons\img_input.png" />
-    <Resource Include="Resources\Icons\img_jazz.png" />
-    <Resource Include="Resources\Icons\img_metal.png" />
-    <Resource Include="Resources\Icons\img_movies.png" />
-    <Resource Include="Resources\Icons\img_music.png" />
-    <Resource Include="Resources\Icons\img_playlist.png" />
-    <Resource Include="Resources\Icons\img_pop.png" />
-    <Resource Include="Resources\Icons\img_rock.png" />
-    <Resource Include="Resources\Icons\img_search.png" />
     <Resource Include="Resources\Icons\Settings_Icon.png" />
     <Resource Include="Resources\Icons\ControlPanel_Icon.png" />
-    <Resource Include="Resources\Icons\Explorer.png" />
     <Resource Include="Resources\Icons\Desktop_Icon.png" />
     <Resource Include="Resources\Icons\PowerOptions_Icon.png" />
     <Resource Include="Resources\Icons\EaseOfAccesCenter_Icon.png" />
@@ -301,75 +218,20 @@
     <Resource Include="Resources\Icons\SecurityAndMaintenance_Icon.png" />
     <Resource Include="Resources\Icons\Mouse_Icon.png" />
     <Resource Include="Resources\Icons\FileExplorerOptions_Icon.png" />
-    <Resource Include="Resources\Icons\7z.png" />
-    <Resource Include="Resources\Icons\Brave.png" />
     <Resource Include="Resources\Icons\NetFramework.png" />
     <Resource Include="Resources\Icons\EclipseAdoptium_Icon.png" />
     <Resource Include="Resources\Icons\NETCore_Icon.png" />
     <Resource Include="Resources\Icons\NETFramework35_Icon.png" />
     <Resource Include="Resources\Icons\NETFramework48_Icon.png" />
     <Resource Include="Resources\Icons\DirectX_Icon.png" />
-    <Resource Include="Resources\Icons\img_songs.png" />
-    <Resource Include="Resources\Icons\max_def.png" />
-    <Resource Include="Resources\Icons\max_mo.png" />
-    <Resource Include="Resources\Icons\shutdown_def.png" />
-    <Resource Include="Resources\Icons\shutdown_mo.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Icons\alarm_icon.png" />
-    <Resource Include="Resources\Icons\analytics_icon.png" />
-    <Resource Include="Resources\Icons\android_icon.png" />
-    <Resource Include="Resources\Icons\angular_icon.png" />
-    <Resource Include="Resources\Icons\audio_icon.png" />
-    <Resource Include="Resources\Icons\back_icon.png" />
-    <Resource Include="Resources\Icons\book_icon.png" />
-    <Resource Include="Resources\Icons\calendar_icon.png" />
-    <Resource Include="Resources\Icons\channelIcon.png" />
-    <Resource Include="Resources\Icons\channel_icon.png" />
-    <Resource Include="Resources\Icons\chart_icon.png" />
-    <Resource Include="Resources\Icons\clap_icon.png" />
-    <Resource Include="Resources\Icons\close_icon.png" />
-    <Resource Include="Resources\Icons\close_mo_icon.png" />
-    <Resource Include="Resources\Icons\Document_Icon.png" />
     <Resource Include="Resources\Icons\Download_Icon.png" />
-    <Resource Include="Resources\Icons\drive_icon.png" />
-    <Resource Include="Resources\Icons\export_icon.png" />
-    <Resource Include="Resources\Icons\file_icon.png" />
-    <Resource Include="Resources\Icons\film_icon.png" />
-    <Resource Include="Resources\Icons\flutter_icon.png" />
     <Resource Include="Resources\Icons\Folder_Icon.png" />
-    <Resource Include="Resources\Icons\headphone_icon.png" />
     <Resource Include="Resources\Icons\Home_Icon.png" />
-    <Resource Include="Resources\Icons\html_icon.png" />
-    <Resource Include="Resources\Icons\Images_Icon.png" />
-    <Resource Include="Resources\Icons\invoice_icon.png" />
-    <Resource Include="Resources\Icons\javascript_icon.png" />
     <Resource Include="Resources\Icons\MGMarty_Icon.png" />
-    <Resource Include="Resources\Icons\Movies_Icon.png" />
     <Resource Include="Resources\Icons\movie_icon.png" />
-    <Resource Include="Resources\Icons\musical_icon.png" />
-    <Resource Include="Resources\Icons\Music_Icon.png" />
-    <Resource Include="Resources\Icons\network_icon.png" />
-    <Resource Include="Resources\Icons\notepad_icon.png" />
-    <Resource Include="Resources\Icons\note_icon.png" />
-    <Resource Include="Resources\Icons\order_icon.png" />
-    <Resource Include="Resources\Icons\password_icon.png" />
-    <Resource Include="Resources\Icons\pctrash_icon.png" />
-    <Resource Include="Resources\Icons\pc_icon.png" />
-    <Resource Include="Resources\Icons\picture_icon.png" />
-    <Resource Include="Resources\Icons\printer_icon.png" />
-    <Resource Include="Resources\Icons\print_icon.png" />
-    <Resource Include="Resources\Icons\python_icon.png" />
-    <Resource Include="Resources\Icons\services_icon.png" />
-    <Resource Include="Resources\Icons\stock_icon.png" />
-    <Resource Include="Resources\Icons\studio_icon.png" />
-    <Resource Include="Resources\Icons\swift_icon.png" />
-    <Resource Include="Resources\Icons\Trash_Icon.png" />
-    <Resource Include="Resources\Icons\usb_icon.png" />
-    <Resource Include="Resources\Icons\vsc_icon.png" />
-    <Resource Include="Resources\Icons\vs_icon.png" />
-    <Resource Include="Resources\Icons\webcam_icon.png" />
-    <Resource Include="Resources\Icons\wifi_icon.png" />
+    <Resource Include="Resources\Icons\Services_Icon.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Icons\Bluetooth_Icon.png" />
@@ -454,6 +316,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Icons\MKVToolNix_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\OracleVMVirtualBox_Icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

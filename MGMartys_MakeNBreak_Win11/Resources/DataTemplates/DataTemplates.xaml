@@ -11,11 +11,7 @@
         <view:StartupView/>
     </DataTemplate>
     
-    <!--PC Page-->
     
-    <DataTemplate DataType="{x:Type viewmodel:PCViewModel}">
-        <view:PCView/>
-    </DataTemplate>
     
     <!--Home Page-->
 
@@ -43,11 +39,7 @@
         <view:ExplorerView/>
     </DataTemplate>
 
-    <!--Document Page-->
-
-    <DataTemplate DataType="{x:Type viewmodel:DocumentViewModel}">
-        <view:DocumentView/>
-    </DataTemplate>
+   
 
     <!--Control Panel Page-->
 
@@ -55,11 +47,7 @@
         <view:ControlPanelView/>
     </DataTemplate>
 
-    <!--Download Page-->
-
-    <DataTemplate DataType="{x:Type viewmodel:DownloadViewModel}">
-        <view:DownloadView/>
-    </DataTemplate>
+   
 
     <!--Settings Page-->
 
@@ -67,11 +55,7 @@
         <view:SettingsView/>
     </DataTemplate>
 
-    <!--Picture Page-->
-
-    <DataTemplate DataType="{x:Type viewmodel:PictureViewModel}">
-        <view:PictureView/>
-    </DataTemplate>
+    
 
     <!--Services Page-->
 
@@ -79,30 +63,18 @@
         <view:ServicesView/>
     </DataTemplate>
 
+    <!--Apps Page-->
+
     <DataTemplate DataType="{x:Type viewmodel:AppsViewModel}">
         <view:AppsView/>
     </DataTemplate>
-    
-    <DataTemplate DataType="{x:Type viewmodel:SoftwareViewModel}">
-        <view:SoftwareView/>
+
+    <!--Software Page-->
+
+    <DataTemplate DataType="{x:Type viewmodel:ProgramsViewModel}">
+        <view:ProgramsView/>
     </DataTemplate>
 
-    <!--Music Page-->
-
-    <DataTemplate DataType="{x:Type viewmodel:MusicViewModel}">
-        <view:MusicView/>
-    </DataTemplate>
-    
-    <!--Movie Page-->
-
-    <DataTemplate DataType="{x:Type viewmodel:MovieViewModel}">
-        <view:MovieView/>
-    </DataTemplate>
-
-    <!--Trash Page-->
-
-    <DataTemplate DataType="{x:Type viewmodel:TrashViewModel}">
-        <view:TrashView/>
-    </DataTemplate>
+   
     
 </ResourceDictionary>

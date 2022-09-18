@@ -7,7 +7,7 @@
              d:DataContext="{d:DesignInstance Type={x:Type viewmodel:DesktopViewModel}}"
              mc:Ignorable="d" 
              d:DesignWidth="1070"
-             d:DesignHeight="630"
+             d:DesignHeight="730"
              >
     
     <!--Fade In Animation-->
@@ -42,9 +42,9 @@
                             <Label Name="ContextMenu_Label" Content="Context Menu" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"  />
                             <StackPanel Name="ContextMenu_Content" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
                                 <StackPanel Margin="5">
-                                    <CheckBox Content="Get the 'Classic' right click menu back" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxContextMenuClassicRightClickMenu}"/>
-                                    <CheckBox Content="Enable the new 'Wide' Context Menu" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxContextMenuNewWideContextMenu}"/>
-                                    <CheckBox Content="Disable 'Search on Internet' prompt in 'Open with'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxContextMenuSearchOnInternetContextMenu}"/>
+                                    <CheckBox Content="Get the 'Classic' right click menu back" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxContextMenuClassicRightClickMenu}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                        <CheckBox Content="Enable the new 'Wide' Context Menu" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxContextMenuNewWideContextMenu}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                        <CheckBox Content="Disable 'Search on Internet' prompt in 'Open with'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxContextMenuSearchOnInternetContextMenu}" Style="{StaticResource GeneralCheckboxStyle}"/>
                                 </StackPanel>
                             </StackPanel>
                         </StackPanel>
@@ -55,10 +55,10 @@
                             <Label Name="DesktopSettings_Label" Content="Desktop Settings" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1" />
                             <StackPanel Name="DesktopSettings_Content" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
                                 <StackPanel Margin="5">
-                                    <CheckBox Content="Maximize wallpaper quality" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxDesktopSettingsMaximizeWallpaperQuality}"/>
-                                    <CheckBox Content="Open Menu's faster" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxDesktopSettingsOpenMenusFaster}"/>
-                                    <CheckBox Content="Reduces the time the system waits when clicking 'End Task' in 'Task Manager'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxDesktopSettingsReduceTimeSystemWaitsEndTask}"/>
-                                    <CheckBox Content="Reduces time to wait to kill service that are not responding" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxDesktopSettingsReduceTimeToWaitKillService}"/>
+                                        <CheckBox Content="Maximize wallpaper quality" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxDesktopSettingsMaximizeWallpaperQuality}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                        <CheckBox Content="Open Menu's faster" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxDesktopSettingsOpenMenusFaster}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                        <CheckBox Content="Reduces the time the system waits when clicking 'End Task' in 'Task Manager'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxDesktopSettingsReduceTimeSystemWaitsEndTask}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                        <CheckBox Content="Reduces time to wait to kill service that are not responding" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxDesktopSettingsReduceTimeToWaitKillService}" Style="{StaticResource GeneralCheckboxStyle}"/>
                                 </StackPanel>
                             </StackPanel>
                         </StackPanel>
@@ -69,11 +69,11 @@
                             <Label Name="FileSystem_Label" Content="File System" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"/>
                             <StackPanel Name="FileSystem_Content" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
                                 <StackPanel Margin="5">
-                                    <CheckBox Content="Don't Show 'Potentially Harmfull File - Open' when installing/ opening from network" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxDesktopSettingsFileSystemDontShowPotentiallyHarmfullFile}"/>
-                                    <CheckBox Content="Don't check for 'Low Disk Space' in the background" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxFileSystemDontCheckLowDisk}"/>
-                                    <CheckBox Content="Do not 'Track Shell shortcuts during roaming'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxFileSystemDoNotTrackShell}"/>
-                                    <CheckBox Content="Do not use 'the search-based method when resolving shell shortcuts'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxFileSystemDoNotUseSearch}"/>
-                                    <CheckBox Content="Do not use 'the tracking-based method when resolving shell shortcuts'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxFileSystemDoNotUseTracking}"/>
+                                        <CheckBox Content="Don't Show 'Potentially Harmfull File - Open' when installing/ opening from network" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxDesktopSettingsFileSystemDontShowPotentiallyHarmfullFile}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                        <CheckBox Content="Don't check for 'Low Disk Space' in the background" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxFileSystemDontCheckLowDisk}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                        <CheckBox Content="Do not 'Track Shell shortcuts during roaming'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxFileSystemDoNotTrackShell}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                        <CheckBox Content="Do not use 'the search-based method when resolving shell shortcuts'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxFileSystemDoNotUseSearch}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                        <CheckBox Content="Do not use 'the tracking-based method when resolving shell shortcuts'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxFileSystemDoNotUseTracking}" Style="{StaticResource GeneralCheckboxStyle}"/>
                                 </StackPanel>
                             </StackPanel>
                         </StackPanel>
@@ -90,10 +90,10 @@
                                 <Label Name="NavigationPane_Label" Content="Navigation Pane" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"/>
                                 <StackPanel Name="NavigationPane_Content" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
                                     <StackPanel Margin="5">
-                                        <CheckBox Content="Add 'Recycle Bin' to 'Navigation Pane'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxNavigationPaneAddRecycleBin}"/>
-                                        <CheckBox Content="Set icon cache size to 4096 KB" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxNavigationPaneSetIconCache}"/>
-                                        <CheckBox Content="Enable File System long paths" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxNavigationPaneEnableFileSystemLong}"/>
-                                        <CheckBox Content="Set Windows Startup delay to 0 ms" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxNavigationPaneSetWindowsStartupDelay}"/>
+                                        <CheckBox Content="Add 'Recycle Bin' to 'Navigation Pane'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxNavigationPaneAddRecycleBin}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                        <CheckBox Content="Set icon cache size to 4096 KB" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxNavigationPaneSetIconCache}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                        <CheckBox Content="Enable File System long paths" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxNavigationPaneEnableFileSystemLong}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                        <CheckBox Content="Set Windows Startup delay to 0 ms" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxNavigationPaneSetWindowsStartupDelay}" Style="{StaticResource GeneralCheckboxStyle}"/>
                                     </StackPanel>
                                 </StackPanel>
                             </StackPanel>
@@ -104,9 +104,26 @@
                                 <Label Name="RebootShutdownOrLogout_Label" Content="Reboot, Shutdown or Logout" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"/>
                                 <StackPanel Name="RebootShutdownOrLogout_Panel" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
                                     <StackPanel Margin="5">
-                                        <CheckBox Content="Auto Close 'Apps'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxRebootShutdownLogoutAutoCloseApps}"/>
-                                        <CheckBox Content="Wait time before closing 'Apps' (2 sec.)" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxRebootShutdownLogoutWaitTimeBeforeClosingApps}"/>
-                                        <CheckBox Content="Wait time before stopping 'Services'  (2 sec.)" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxRebootShutdownLogoutWaitTimeBeforeStoppingServices}"/>
+                                        <CheckBox Content="Auto Close 'Apps'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxRebootShutdownLogoutAutoCloseApps}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                        <CheckBox Content="Wait time before closing 'Apps' (2 sec.)" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxRebootShutdownLogoutWaitTimeBeforeClosingApps}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                        <CheckBox Content="Wait time before stopping 'Services'  (2 sec.)" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxRebootShutdownLogoutWaitTimeBeforeStoppingServices}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+
+                        <Border Name="Suggestions_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="4">
+                            <StackPanel Name="Suggestions" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Label Name="Suggestions_Label" Content="Suggestions" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"/>
+                                <StackPanel Name="Suggestions_Panel" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
+                                    <StackPanel Margin="5">
+                                        <CheckBox Content="Start Menu suggestions - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxSuggestionsStartMenuSuggestions}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                        <CheckBox Content="Show suggestions occasionally - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxSuggestionsShowSuggestionsOccasionally}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                        <CheckBox Content="Show suggestions in timeline - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxSuggestionsShowSuggestionsInTimeline}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                        <CheckBox Content="Lockscreen suggestions and Rotation - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxSuggestionsLockscreenSuggestionsAndRotation}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                        <CheckBox Content="Ads in File Explorer - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxSuggestionsAdsInFileExplorer}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                        <CheckBox Content="Show me the Windows welcome experience after updates and occasionally - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxSuggestionsShowMeTheWindowsWelcomeExperienceAfterUpdatesAndOccasionally}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                        <CheckBox Content="Get tips, tricks, suggestions as you use Windows - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxSuggestionsGetTipsTricksSuggestionsAsYouUseWindows}" Style="{StaticResource GeneralCheckboxStyle}"/>
                                     </StackPanel>
                                 </StackPanel>
                             </StackPanel>

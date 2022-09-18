@@ -42,9 +42,9 @@
                             <Label Name="ServicesApplications_Label" Content="Applications" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"  />
                             <StackPanel Name="ServicesApplications_Content" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
                                     <StackPanel Margin="5">
-                                        <CheckBox Content="Disable 'Application Layer Gateway Service'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxServicesApplicationLayerGatewayService}" Style="{StaticResource AppsCheckboxStyle}"/>
-                                        <CheckBox Content="Disable 'Application Management'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxServicesApplicationManagement}" Style="{StaticResource AppsCheckboxStyle}"/>
-                                        <CheckBox Content="Disable 'Program Compatibility Assistant Service'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxServicesProgramCompatibilityAssistantService}" Style="{StaticResource AppsCheckboxStyle}"/>
+                                        <CheckBox Content="Application Layer Gateway Service" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxServicesApplicationLayerGatewayService}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                        <CheckBox Content="Application Management" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxServicesApplicationManagement}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                        <CheckBox Content="Program Compatibility Assistant Service" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxServicesProgramCompatibilityAssistantService}" Style="{StaticResource GeneralCheckboxStyle}"/>
                                 </StackPanel>
                             </StackPanel>
                         </StackPanel>
@@ -55,7 +55,7 @@
                             <Label Name="ServicesDemo_Label" Content="Demo" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"  />
                             <StackPanel Name="ServicesDemo_Content" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
                                 <StackPanel Margin="5">
-                                        <CheckBox Content="Disable 'Retail Demo Service'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxServicesRetailDemoService}"/>
+                                        <CheckBox Content="Retail Demo Service" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxServicesRetailDemoService}" Style="{StaticResource GeneralCheckboxStyle}"/>
                                 </StackPanel>
                             </StackPanel>
                         </StackPanel>
@@ -66,7 +66,7 @@
                             <Label Name="ServicesLocation_Label" Content="Locations" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"  />
                             <StackPanel Name="ServicesLocation_Content" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
                                 <StackPanel Margin="5">
-                                        <CheckBox Content="Disable 'Geolocation Service'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxServicesGeolocationService}"/>
+                                        <CheckBox Content="Geolocation Service" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxServicesGeolocationService}" Style="{StaticResource GeneralCheckboxStyle}"/>
                                 </StackPanel>
                             </StackPanel>
                         </StackPanel>
@@ -77,7 +77,7 @@
                             <Label Name="ServicesMaps_Label" Content="Maps" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"  />
                             <StackPanel Name="ServicesMaps_Content" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
                                 <StackPanel Margin="5">
-                                        <CheckBox Content="Disable 'Downloaded Maps Manager'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxServicesDownloadedMapsManager}"/>
+                                        <CheckBox Content="Downloaded Maps Manager" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxServicesDownloadedMapsManager}" Style="{StaticResource GeneralCheckboxStyle}"/>
                                 </StackPanel>
                             </StackPanel>
                         </StackPanel>
@@ -94,7 +94,7 @@
                                 <Label Name="ServicesPrinters_Label" Content="Printers" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"  />
                                 <StackPanel Name="ServicesPrinters_Content" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
                                     <StackPanel Margin="5">
-                                        <CheckBox Content="Disable 'PrintSpooler'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxServicesPrintSpooler}"/>
+                                        <CheckBox Content="PrintSpooler" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxServicesPrintSpooler}" Style="{StaticResource GeneralCheckboxStyle}"/>
                                     </StackPanel>
                                 </StackPanel>
                             </StackPanel>
@@ -105,8 +105,8 @@
                                 <Label Name="ServicesPrivacy_Label" Content="Privacy" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"  />
                                 <StackPanel Name="ServicesPrivacy_Content" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
                                     <StackPanel Margin="5">
-                                        <CheckBox Content="Disable 'Connected User Experiences and Telemetry'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxServicesConnectedUserExperiencesAndTelemetry}"/>
-                                        <CheckBox Content="Disable 'Device Management Wireless Application Protocol (WAP) Push message Routing Service'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxServicesDeviceManagementWirelessApplicationProtocolWAPPushMessageRoutingService}"/>
+                                        <CheckBox Content="Connected User Experiences and Telemetry" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxServicesConnectedUserExperiencesAndTelemetry}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                        <CheckBox Content="Device Management Wireless Application Protocol (WAP) Push message Routing Service" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxServicesDeviceManagementWirelessApplicationProtocolWAPPushMessageRoutingService}" Style="{StaticResource GeneralCheckboxStyle}"/>
                                     </StackPanel>
                                 </StackPanel>
                             </StackPanel>
@@ -117,7 +117,7 @@
                                 <Label Name="ServicesSearch_Label" Content="Search" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"  />
                                 <StackPanel Name="ServicesSearch_Content" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
                                     <StackPanel Margin="5">
-                                        <CheckBox Content="Disable 'Windows Search'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxServicesWindowsSearch}"/>
+                                        <CheckBox Content="Windows Search" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxServicesWindowsSearch}" Style="{StaticResource GeneralCheckboxStyle}"/>
                                     </StackPanel>
                                 </StackPanel>
                             </StackPanel>
@@ -128,7 +128,7 @@
                                 <Label Name="ServicesSysmain_Label" Content="Sysmain" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"  />
                                 <StackPanel Name="ServicesSysmain_Content" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
                                     <StackPanel Margin="5">
-                                        <CheckBox Content="Disable 'SysMain' (Old Superfetch)" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxServicesSysMain}"/>
+                                        <CheckBox Content="SysMain (Old Superfetch)" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxServicesSysMain}" Style="{StaticResource GeneralCheckboxStyle}"/>
                                     </StackPanel>
                                 </StackPanel>
                             </StackPanel>
