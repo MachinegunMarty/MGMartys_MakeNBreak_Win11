@@ -69,12 +69,18 @@
         <view:AppsView/>
     </DataTemplate>
 
-    <!--Software Page-->
+    <!--Programs Page-->
 
     <DataTemplate DataType="{x:Type viewmodel:ProgramsViewModel}">
         <view:ProgramsView/>
     </DataTemplate>
 
-   
-    
+    <!--Subsystems Page-->
+
+    <DataTemplate DataType="{x:Type viewmodel:SubsystemsViewModel}">
+        <view:SubsystemsView/>
+    </DataTemplate> 
+
+
+
 </ResourceDictionary>

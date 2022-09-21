@@ -1307,7 +1307,7 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
             string ArgsValue4 = @"Reg Add " + RegistryPath4 + " /v " + Name4 + " /t " + Type + " /d " + Value3 + " /f";
             string ArgsValue5 = @"Reg Add " + RegistryPath5 + " /v " + Name5 + " /t " + Type + " /d " + Value3 + " /f";
             string ArgsValue6 = @"Reg Add " + RegistryPath5 + " /v " + Name6 + " /t " + Type + " /d " + Value3 + " /f";
-            string ArgsValue7 = @"Reg Add " + RegistryPath6 + " /v " + Name7 + " /t " + Type + " /d " + Value3 + " /f";
+            string ArgsValue7 = @"Reg Add " + RegistryPath6 + " /v " + Name7 + " /t " + Type + " /d " + Value4 + " /f";
             string ArgsValue8 = @"Reg Add " + RegistryPath4 + " /v " + Name8 + " /t " + Type + " /d " + Value3 + " /f";
             string ArgsValue9 = @"Reg Add " + RegistryPath2 + " /v " + Name9 + " /t " + Type3 + " /d " + Value4 + " /f";
             string ArgsValue10 = @"Reg Add " + RegistryPath2 + " /v " + Name10 + " /t " + Type3 + " /d " + Value5 + " /f";

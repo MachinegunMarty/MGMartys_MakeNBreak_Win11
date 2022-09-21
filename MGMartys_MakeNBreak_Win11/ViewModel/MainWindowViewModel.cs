@@ -40,7 +40,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
                 new MenuItems { MenuName = "Settings", MenuImage = @"/Resources/Icons/Settings_Icon.png" },
                 new MenuItems { MenuName = "Disable Services", MenuImage = @"/Resources/Icons/Services_Icon.png" },
                 new MenuItems { MenuName = "Remove Apps", MenuImage = @"/Resources/Icons/Apps_icon.png" },
-                new MenuItems { MenuName = "Install Programs", MenuImage = @"/Resources/Icons/Software_Icon.png" }
+                new MenuItems { MenuName = "Install Programs", MenuImage = @"/Resources/Icons/Software_Icon.png" },
+                new MenuItems { MenuName = "Subsystems", MenuImage = @"/Resources/Icons/WSL_Icon.png" }
             };
 
             MenuItemsCollection = new CollectionViewSource { Source = menuItems };
@@ -113,6 +114,10 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
                 case "Install Programs":
                     SelectedViewModel = new ProgramsViewModel();
                     SelectedMenuItem = "Install Programs";
+                    break;
+                case "Subsystems":
+                    SelectedViewModel = new SubsystemsViewModel();
+                    SelectedMenuItem = "Windows Subsystems";
                     break;
                 default:
                     SelectedViewModel = new HomeViewModel();

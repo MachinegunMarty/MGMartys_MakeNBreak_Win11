@@ -7,7 +7,7 @@
              d:DataContext="{d:DesignInstance Type={x:Type viewmodel:ProgramsViewModel}}"
              mc:Ignorable="d" 
              d:DesignWidth="1070"
-             d:DesignHeight="630"
+             d:DesignHeight="730"
              >
 
     <!--Fade In Animation-->
@@ -61,7 +61,9 @@
                             </StackPanel>
                         </StackPanel>
                     </Border>
-                        
+
+                       
+
                     </StackPanel>
 
                     

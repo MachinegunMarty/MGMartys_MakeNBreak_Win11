@@ -1,0 +1,67 @@
+﻿<UserControl x:Class="MGMartys_MakeNBreak_Win11.View.SubsystemsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:viewmodel="clr-namespace:MGMartys_MakeNBreak_Win11.ViewModel"
+             d:DataContext="{d:DesignInstance Type={x:Type viewmodel:SubsystemsViewModel}}"
+             mc:Ignorable="d" 
+             d:DesignWidth="1070"
+             d:DesignHeight="730">
+
+    <!--Fade In Animation-->
+
+    <UserControl.Style>
+        <Style>
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="UserControl.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity"
+                                             From="0.0"
+                                             To="1.0"
+                                             Duration="0:0:0.5"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Style>
+
+    <Grid>
+        <Grid Background="#000000">
+
+            <Border BorderBrush="#00FF00" BorderThickness="0,0,0,0">
+                <StackPanel Name="Gaming_Page" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+
+                        <Border Name="WindowsSubsystem_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Top" CornerRadius="4">
+                            <StackPanel Name="WindowsSubsystem_Header" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Label Name="WindowsSubsystem_Label" Content="Windows Subsystem for Linux" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1" />
+                                <StackPanel Name="WindowsSubsystem_Content" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="3">
+                                    <StackPanel>
+                                        <CheckBox Content="WSL: Ubuntu (Default)" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxWSLUbuntuDefault}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/Ubuntu_Icon.png"/>
+                                        <CheckBox Content="WSL: Debian" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxWSLDebian}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/Debian_Icon.png"/>
+                                        <CheckBox Content="WSL: kali-linux" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxWSLkalilinux}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/KaliLinux_Icon.png"/>
+                                        <CheckBox Content="WSL: SLES-12" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxWSLSLES12}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/Suse_Icon.png"/>
+                                        <CheckBox Content="WSL: SLES-15" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxWSLSLES15}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/Suse_Icon.png"/>
+                                        <CheckBox Content="WSL: Ubuntu-18.04" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxWSLUbuntu1804}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/Ubuntu_Icon.png"/>
+                                        <CheckBox Content="WSL: Ubuntu-20.04" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxWSLUbuntu2004}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/Ubuntu_Icon.png"/>
+                                        <CheckBox Content="WSL: OracleLinux_8_5" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxWSLOracleLinux85}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/OracleLinux_Icon.png"/>
+                                        <CheckBox Content="WSL: OracleLinux_7_9" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxWSLOracleLinux79}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/OracleLinux_Icon.png"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+
+
+                    </StackPanel>
+
+                </StackPanel>
+            </Border>
+
+        </Grid>
+    </Grid>
+
+</UserControl>

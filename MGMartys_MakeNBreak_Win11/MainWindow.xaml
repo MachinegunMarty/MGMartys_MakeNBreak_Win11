@@ -7,7 +7,7 @@
         xmlns:styles="MGMartys_MakeNBreak_Win11.Resources.styles"
         xmlns:local="clr-namespace:MGMartys_MakeNBreak_Win11"
         mc:Ignorable="d"
-        Title="MG Marty's Make N Break Tweaks for Windows 11 (22H2)" 
+        Title="MG Marty's - Make N Break - Windows 11 (22H2)" 
         Width="1280"
         Height="800" 
         x:Name="DashboardWindow"
@@ -261,7 +261,7 @@
                 BorderThickness="0,0,0,0"
                                    >
 
-                <TextBlock Text="MG Marty's Make N Break Tweaks for Win 11"
+                <TextBlock Text="MG Marty's - Make N Break - Windows 11 (22H2)"
                        Style="{StaticResource FooterStyle}"/>
 
             </Border>

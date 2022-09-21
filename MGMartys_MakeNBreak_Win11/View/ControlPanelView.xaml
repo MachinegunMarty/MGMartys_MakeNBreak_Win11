@@ -203,7 +203,6 @@
                                         <StackPanel Name="PointerOptions_Content" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
                                             <StackPanel Margin="5">
                                                 <CheckBox Content="Disable 'Enhance Pointer Precision'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxMouseDisableEnhancedPointerPrecision}" Style="{StaticResource GeneralCheckboxStyle}"/>
-                                                <CheckBox Content="Disable 'Mouse Smoothing and Acceleration'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxMouseDisableMouseSmoothingAndAccelaration}" Style="{StaticResource GeneralCheckboxStyle}"/>
                                                 <CheckBox Content="Show popups faster when hovering over an item" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxMouseShowPopupsFasterWhenHoveringOverAnItem}" Style="{StaticResource GeneralCheckboxStyle}"/>
                                             </StackPanel>
                                         </StackPanel>
@@ -344,11 +343,7 @@
                                     <StackPanel Name="AdvancedSystemSettingsAdvanced_Header" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
                                         <Label Name="AdvancedSystemSettingsAdvanced_Label" Content="Advanced System Settings - Tab: Advanced" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"/>
                                         <StackPanel Name="AdvancedSystemSettingsAdvanced_Content" Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
-                                            <GroupBox Header="Performance" Foreground="Lime" Margin="5" >
-                                                <StackPanel Margin="5">
-                                                    <CheckBox Content="Set 'Performance Options' to 'Custom'" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxSystemAdvancedSystemSettingsAdvancedPerformanceTabVisualCustom}" Style="{StaticResource GeneralCheckboxStyle}"/>
-                                                </StackPanel>
-                                            </GroupBox>
+                                           
                                             <GroupBox Header="Startup and Recovery" Foreground="Lime" Margin="5">
                                                 <StackPanel Margin="5">
                                                     <CheckBox Content="Time to display list of operating systems - 0 Seconds" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxSystemAdvancedSystemSettingsAdvancedStartupAndRecoveryTimeToDisplayListOfOS}" Style="{StaticResource GeneralCheckboxStyle}"/>
