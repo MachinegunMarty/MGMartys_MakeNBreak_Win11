@@ -92,11 +92,9 @@
     <Compile Include="ViewModel\AppsViewModel.cs" />
     <Compile Include="ViewModel\ControlPanelViewModel.cs" />
     <Compile Include="ViewModel\DesktopViewModel.cs" />
-    <Compile Include="ViewModel\ExplorerViewModel.cs" />
     <Compile Include="ViewModel\GamingViewModel.cs" />
     <Compile Include="ViewModel\HomeViewModel.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
-    <Compile Include="ViewModel\PersonalizationViewModel.cs" />
     <Compile Include="ViewModel\ServicesViewModel.cs" />
     <Compile Include="ViewModel\SettingsViewModel.cs" />
     <Compile Include="ViewModel\StartupViewModel.cs" />
@@ -112,17 +110,11 @@
     <Compile Include="View\DesktopView.xaml.cs">
       <DependentUpon>DesktopView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\ExplorerView.xaml.cs">
-      <DependentUpon>ExplorerView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\GamingView.xaml.cs">
       <DependentUpon>GamingView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\HomeView.xaml.cs">
       <DependentUpon>HomeView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\PersonalizationView.xaml.cs">
-      <DependentUpon>PersonalizationView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ServicesView.xaml.cs">
       <DependentUpon>ServicesView.xaml</DependentUpon>
@@ -164,10 +156,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\ExplorerView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="View\GamingView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -175,10 +163,6 @@
     <Page Include="View\HomeView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\PersonalizationView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\ServicesView.xaml">
       <SubType>Designer</SubType>
