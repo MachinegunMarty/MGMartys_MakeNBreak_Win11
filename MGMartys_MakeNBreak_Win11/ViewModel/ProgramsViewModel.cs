@@ -378,7 +378,7 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         public void InstallNet35()
         {
             string Exe = "wt.exe";
-            string Arguments = @"powershell Dism /online /Enable-Feature /FeatureName:NetFx3";
+            string Arguments = @"powershell DISM /Online /Enable-Feature /FeatureName:NetFx3 /All";
 
             if (ChckbxInstallNet35)
                 Process.Start(Exe, Arguments);
@@ -578,8 +578,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         public void InstallVisualC2005()
         {
             string Exe = "wt.exe";
-            string Argumentsx86 = @"winget install --id=Microsoft.VC++2005Redist-x86 -e";
-            string Argumentsx64 = "winget install --id=Microsoft.VC++2005Redist-x64 -e";
+            string Argumentsx86 = @"winget install --id=Microsoft.VCRedist.2005.x86 -e";
+            string Argumentsx64 = "winget install --id=Microsoft.VCRedist.2005.x64 -e";
 
             if (ChckbxInstallVisualC2005)
                 Process.Start(Exe, Argumentsx86);
@@ -606,8 +606,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         public void InstallVisualC2008()
         {
             string Exe = "wt.exe";
-            string Argumentsx86 = "winget install --id=Microsoft.VC++2008Redist-x86 -e";
-            string Argumentsx64 = "winget install --id=Microsoft.VC++2008Redist-x64 -e";
+            string Argumentsx86 = "winget install --id=Microsoft.VCRedist.2008.x86 -e";
+            string Argumentsx64 = "winget install --id=Microsoft.VCRedist.2008.x64 -e";
 
             if (ChckbxInstallVisualC2008)
                 Process.Start(Exe, Argumentsx86);
@@ -1273,7 +1273,7 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         public void InstallRufus()
         {
             string Exe = "wt.exe";
-            string Arguments = @"winget install --id=Rufus.Rufus -e";
+            string Arguments = @"winget install -h --id=Rufus.Rufus ";
 
             if (ChckbxInstallRufus)
                 Process.Start(Exe, Arguments);
@@ -1587,7 +1587,7 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         public void InstallMicrosoftTeams()
         {
             string Exe = "wt.exe";
-            string Arguments = @"winget install --id=TeamSpeakSystems.TeamSpeakClient  -e";
+            string Arguments = @"winget install --id=Microsoft.Teams -e";
 
             if (ChckbxInstallMicrosoftTeams)
                 Process.Start(Exe, Arguments);
@@ -1612,7 +1612,7 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         public void InstallHorizonClient()
         {
             string Exe = "wt.exe";
-            string Arguments = @"winget install --id=VMware.HorizonClient -e";
+            string Arguments = @"winget install -h --id=VMware.HorizonClient -e";
 
             if (ChckbxInstallHorizonClient)
                 Process.Start(Exe, Arguments);

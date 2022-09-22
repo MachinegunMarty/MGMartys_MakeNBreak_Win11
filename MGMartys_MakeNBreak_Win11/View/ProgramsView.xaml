@@ -115,7 +115,7 @@
                                 <StackPanel Name="Entertainment_Panel" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="3">
                                     <StackPanel Margin="5">
                                         <CheckBox Content="Dopamine" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxInstallDopamine}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/Dopamine_Icon.png"/>
-                                        <CheckBox Content="VLC" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxInstallDopamine}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/VLC_Icon.png"/>
+                                        <CheckBox Content="VLC" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxInstallVLC}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/VLC_Icon.png"/>
                                         <CheckBox Content="Winamp" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxInstallWinamp}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/Winamp_Icon.png"/>
                                     </StackPanel>
                                 </StackPanel>
@@ -164,7 +164,6 @@
                                 <StackPanel Name="Imaging_Panel" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="3">
                                     <StackPanel Margin="5">
                                         <CheckBox Content="ImgBurn" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxInstallImgBurn}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/ImgBurn_Icon.png"/>
-                                        <CheckBox Content="Rufus" Foreground="Lime" Margin="3" IsChecked="{Binding ChckbxInstallRufus}" Style="{StaticResource SoftwareCheckboxStyle}" Tag="/Resources/Icons/Rufus_Icon.png"/>
                                     </StackPanel>
                                 </StackPanel>
                             </StackPanel>
