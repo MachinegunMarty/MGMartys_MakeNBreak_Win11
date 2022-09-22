@@ -97,11 +97,11 @@
     <Compile Include="ViewModel\HomeViewModel.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
     <Compile Include="ViewModel\PersonalizationViewModel.cs" />
-    <Compile Include="ViewModel\ProgramsViewModel.cs" />
     <Compile Include="ViewModel\ServicesViewModel.cs" />
     <Compile Include="ViewModel\SettingsViewModel.cs" />
     <Compile Include="ViewModel\StartupViewModel.cs" />
-    <Compile Include="ViewModel\SubsystemsViewModel.cs" />
+    <Compile Include="ViewModel\WingetViewModel.cs" />
+    <Compile Include="ViewModel\WSLViewModel.cs" />
     <Compile Include="View\AppsView.xaml.cs">
       <DependentUpon>AppsView.xaml</DependentUpon>
     </Compile>
@@ -124,9 +124,6 @@
     <Compile Include="View\PersonalizationView.xaml.cs">
       <DependentUpon>PersonalizationView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\ProgramsView.xaml.cs">
-      <DependentUpon>ProgramsView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\ServicesView.xaml.cs">
       <DependentUpon>ServicesView.xaml</DependentUpon>
     </Compile>
@@ -136,8 +133,11 @@
     <Compile Include="View\StartupView.xaml.cs">
       <DependentUpon>StartupView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\SubsystemsView.xaml.cs">
-      <DependentUpon>SubsystemsView.xaml</DependentUpon>
+    <Compile Include="View\WingetView.xaml.cs">
+      <DependentUpon>WingetView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WSLView.xaml.cs">
+      <DependentUpon>WSLView.xaml</DependentUpon>
     </Compile>
     <!-- Pages -->
     <Page Include="Resources\DataTemplates\DataTemplates.xaml">
@@ -180,10 +180,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\ProgramsView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="View\ServicesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -196,9 +192,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\SubsystemsView.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="View\WingetView.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\WSLView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
@@ -372,6 +372,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="favicon512x512.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\Winget_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\Winget_Icon_Edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\WSL_Icon_Edit.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

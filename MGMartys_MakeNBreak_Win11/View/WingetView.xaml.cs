@@ -18,9 +18,9 @@ namespace MGMartys_MakeNBreak_Win11.View
     /// <summary>
     /// Interaction logic for ProgramsView.xaml
     /// </summary>
-    public partial class ProgramsView : UserControl
+    public partial class WingetView : UserControl
     {
-        public ProgramsView()
+        public WingetView()
         {
             InitializeComponent();
         }

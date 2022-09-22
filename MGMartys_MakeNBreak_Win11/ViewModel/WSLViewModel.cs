@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MGMartys_MakeNBreak_Win11.ViewModel
 {
-    public class SubsystemsViewModel : INotifyPropertyChanged
+    public class WSLViewModel : INotifyPropertyChanged
     {
         // Implement interface member for INotifyPropertyChanged.
         public event PropertyChangedEventHandler PropertyChanged;

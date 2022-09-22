@@ -69,16 +69,16 @@
         <view:AppsView/>
     </DataTemplate>
 
-    <!--Programs Page-->
+    <!--Winget Page-->
 
-    <DataTemplate DataType="{x:Type viewmodel:ProgramsViewModel}">
-        <view:ProgramsView/>
+    <DataTemplate DataType="{x:Type viewmodel:WingetViewModel}">
+        <view:WingetView/>
     </DataTemplate>
 
-    <!--Subsystems Page-->
+    <!--WSL Page-->
 
-    <DataTemplate DataType="{x:Type viewmodel:SubsystemsViewModel}">
-        <view:SubsystemsView/>
+    <DataTemplate DataType="{x:Type viewmodel:WSLViewModel}">
+        <view:WSLView/>
     </DataTemplate> 
 
 

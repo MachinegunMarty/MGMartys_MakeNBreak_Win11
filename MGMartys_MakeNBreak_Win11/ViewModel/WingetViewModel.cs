@@ -20,7 +20,7 @@ using Microsoft.Win32;
 
 namespace MGMartys_MakeNBreak_Win11.ViewModel
 {
-    public class ProgramsViewModel : INotifyPropertyChanged
+    public class WingetViewModel : INotifyPropertyChanged
     {
         // Implement interface member for INotifyPropertyChanged.
         public event PropertyChangedEventHandler PropertyChanged;

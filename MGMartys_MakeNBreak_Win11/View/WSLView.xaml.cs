@@ -18,9 +18,9 @@ namespace MGMartys_MakeNBreak_Win11.View
     /// <summary>
     /// Interaction logic for SubsystemsView.xaml
     /// </summary>
-    public partial class SubsystemsView : UserControl
+    public partial class WSLView : UserControl
     {
-        public SubsystemsView()
+        public WSLView()
         {
             InitializeComponent();
         }

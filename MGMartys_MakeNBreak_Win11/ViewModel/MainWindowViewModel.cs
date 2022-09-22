@@ -38,10 +38,10 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
                 new MenuItems { MenuName = "Gaming", MenuImage = @"/Resources/Icons/Gamepad_Icon.png" },
                 new MenuItems { MenuName = "Control Panel", MenuImage = @"/Resources/Icons/ControlPanel_Icon.png" },
                 new MenuItems { MenuName = "Settings", MenuImage = @"/Resources/Icons/Settings_Icon.png" },
-                new MenuItems { MenuName = "Disable Services", MenuImage = @"/Resources/Icons/Services_Icon.png" },
-                new MenuItems { MenuName = "Remove Apps", MenuImage = @"/Resources/Icons/Apps_icon.png" },
-                new MenuItems { MenuName = "Install Programs", MenuImage = @"/Resources/Icons/Software_Icon.png" },
-                new MenuItems { MenuName = "Subsystems", MenuImage = @"/Resources/Icons/WSL_Icon.png" }
+                new MenuItems { MenuName = "Services", MenuImage = @"/Resources/Icons/Services_Icon.png" },
+                new MenuItems { MenuName = "Apps", MenuImage = @"/Resources/Icons/Apps_icon.png" },
+                new MenuItems { MenuName = "Winget", MenuImage = @"/Resources/Icons/Winget_Icon_Edit.png" },
+                new MenuItems { MenuName = "WSL", MenuImage = @"/Resources/Icons/WSL_Icon_Edit.png" }
             };
 
             MenuItemsCollection = new CollectionViewSource { Source = menuItems };
@@ -103,21 +103,21 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
                     SelectedViewModel = new SettingsViewModel();
                     SelectedMenuItem = "Settings";
                     break;
-                case "Disable Services":
+                case "Services":
                     SelectedViewModel = new ServicesViewModel();
                     SelectedMenuItem = "Disable Services";
                     break;
-                case "Remove Apps":
+                case "Apps":
                     SelectedViewModel = new AppsViewModel();
                     SelectedMenuItem = "Remove Apps";
                     break;
-                case "Install Programs":
-                    SelectedViewModel = new ProgramsViewModel();
-                    SelectedMenuItem = "Install Programs";
+                case "Winget":
+                    SelectedViewModel = new WingetViewModel();
+                    SelectedMenuItem = "Install Software with Winget";
                     break;
-                case "Subsystems":
-                    SelectedViewModel = new SubsystemsViewModel();
-                    SelectedMenuItem = "Windows Subsystems";
+                case "WSL":
+                    SelectedViewModel = new WSLViewModel();
+                    SelectedMenuItem = "Windows Subsystem for Linux";
                     break;
                 default:
                     SelectedViewModel = new HomeViewModel();
