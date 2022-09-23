@@ -998,7 +998,7 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         public void InstallWinamp()
         {
             string Exe = "wt.exe";
-            string Arguments = @"winget install --id=Radionomy.Winamp -e";
+            string Arguments = @"winget install --id=Winamp.Winamp -e";
 
             if (ChckbxInstallWinamp)
                 Process.Start(Exe, Arguments);

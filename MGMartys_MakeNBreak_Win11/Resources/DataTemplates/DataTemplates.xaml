@@ -33,13 +33,7 @@
         <view:GamingView/>
     </DataTemplate>
 
-    <!--Explorer Page-->
-
-    <DataTemplate DataType="{x:Type viewmodel:ExplorerViewModel}">
-        <view:ExplorerView/>
-    </DataTemplate>
-
-   
+    
 
     <!--Control Panel Page-->
 
