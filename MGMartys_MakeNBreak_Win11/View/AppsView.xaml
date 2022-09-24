@@ -53,7 +53,7 @@
 
                         <Border Name="Apps_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="4">
                             <StackPanel Name="Apps_Header" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                <Label Name="Apps_Label" Content="Remove Apps" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1" BorderBrush="Lime"/>
+                                <Label Name="Apps_Label" Content="Remove Apps" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1" />
                                 
                                     <StackPanel Name="Apps_Panel" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
                                         <StackPanel Width="Auto" Orientation="Vertical">

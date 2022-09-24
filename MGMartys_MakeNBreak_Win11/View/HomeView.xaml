@@ -54,7 +54,9 @@
                     Disable "Services", <LineBreak/> 
                     Uninstall Windows "Apps" <LineBreak/> 
                     Install Apps with "Winget" and <LineBreak/> 
-                    Install the Windows Subsystem for Linux
+                    Install the "Windows Subsystem for Linux" (WSL) <LineBreak/> <LineBreak/>
+                    The commands are run in "Windows Terminal" (wt.exe)<LineBreak/>
+                    
                 </TextBlock>
                 
             </StackPanel>

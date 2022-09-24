@@ -395,6 +395,18 @@
                                         </StackPanel>
                                     </Border>
 
+                                    <Border Name="PrivacyAndSecurityDiagnosticsAndFeedback_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="4">
+                                        <StackPanel Name="PrivacyAndSecurityDiagnosticsAndFeedback_Header" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                            <Label Name="PrivacyAndSecurityDiagnosticsAndFeedback_Label" Content="Diagnostics and Feedback" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"/>
+                                            <StackPanel Name="PrivacyAndSecurityDiagnosticsAndFeedback_Panel" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
+                                                <StackPanel Margin="5">
+                                                    <CheckBox Content="'Diagnostic Data' - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxDiagnosticsAndFeedbackDiagnosticsData}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                                    <CheckBox Content="'Feedback Frequency' - Never" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxDiagnosticsAndFeedbackFeedbackFrequency}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                                </StackPanel>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </Border>
+
                                     <Border Name="PrivacyAndSecurityActivityHistory_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="4">
                                         <StackPanel Name="PrivacyAndSecurityActivityHistory_Header" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
                                             <Label Name="PrivacyAndSecurityActivityHistory_Label" Content="Activity History" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"/>

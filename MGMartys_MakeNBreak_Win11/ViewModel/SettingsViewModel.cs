@@ -390,9 +390,9 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
             string Value = "0";
             string Default = "1";
 
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
             string ArgsValue2 = @"Reg Add " + RegistryPath + " /v " + Name2 + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
             string ArgsDefault2 = @"Reg Add " + RegistryPath + " /v " + Name2 + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxSystemRemoteDesktop)
@@ -1505,6 +1505,78 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
                 Process.Start(Exe, ArgsUnchecked4);
                 Process.Start(Exe, ArgsUnchecked5);
         }
+
+        #endregion
+
+        #region Diagnostics and Feedback
+
+
+        // CheckBox - Diagnostic Data - Command
+        private Boolean _chckbxDiagnosticsAndFeedbackDiagnosticsData;
+        public Boolean ChckbxDiagnosticsAndFeedbackDiagnosticsData
+        {
+            get => _chckbxDiagnosticsAndFeedbackDiagnosticsData;
+            set
+            {
+                if (_chckbxDiagnosticsAndFeedbackDiagnosticsData == value)
+                    return;
+
+                _chckbxDiagnosticsAndFeedbackDiagnosticsData = value;
+                OnPropertyChanged(nameof(ChckbxDiagnosticsAndFeedbackDiagnosticsData));
+                DiagnosticsAndFeedbackDiagnosticsData();
+            }
+        }
+
+        private void DiagnosticsAndFeedbackDiagnosticsData()
+        {
+            string Exe = "wt.exe";
+            string RegistryPath = "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\DataCollection";
+            string Name = "AllowTelemetry";
+            string Type = "REG_DWORD";
+            string Value = "0";
+            string Default = "1";
+            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+
+            if (ChckbxDiagnosticsAndFeedbackDiagnosticsData)
+                Process.Start(Exe, ArgsValue);
+            else
+                Process.Start(Exe, ArgsDefault);
+        }
+
+
+        // CheckBox - Feedback Frequency - Command
+        private Boolean _chckbxDiagnosticsAndFeedbackFeedbackFrequency;
+        public Boolean ChckbxDiagnosticsAndFeedbackFeedbackFrequency
+        {
+            get => _chckbxDiagnosticsAndFeedbackFeedbackFrequency;
+            set
+            {
+                if (_chckbxDiagnosticsAndFeedbackFeedbackFrequency == value)
+                    return;
+
+                _chckbxDiagnosticsAndFeedbackFeedbackFrequency = value;
+                OnPropertyChanged(nameof(ChckbxDiagnosticsAndFeedbackFeedbackFrequency));
+                DiagnosticsAndFeedbackFeedbackFrequency();
+            }
+        }
+
+        private void DiagnosticsAndFeedbackFeedbackFrequency()
+        {
+            string Exe = "wt.exe";
+            string RegistryPath = "HKCU\\SOFTWARE\\Microsoft\\Siuf\\Rules";
+            string Name = "NumberOfSIUFInPeriod";
+            string Type = "REG_DWORD";
+            string Value = "0";
+            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = @"Reg delete " + RegistryPath + " /v " + Name + " /f";
+
+            if (ChckbxDiagnosticsAndFeedbackFeedbackFrequency)
+                Process.Start(Exe, ArgsValue);
+            else
+                Process.Start(Exe, ArgsDefault);
+        }
+
 
         #endregion
 
