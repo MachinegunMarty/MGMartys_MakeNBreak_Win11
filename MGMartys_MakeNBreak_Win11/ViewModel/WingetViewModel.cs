@@ -352,8 +352,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
         public void InstallNet31()
         {
-            string Exe = "wt.exe";
-            string Arguments = @"winget install --id=Microsoft.DotNet.AspNetCore.3_1  -e";
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget install --id=Microsoft.DotNet.AspNetCore.3_1  -e";
 
             if (ChckbxInstallNet31)
                 Process.Start(Exe, Arguments);
@@ -377,8 +377,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
         public void InstallNet35()
         {
-            string Exe = "wt.exe";
-            string Arguments = @"powershell DISM /Online /Enable-Feature /FeatureName:NetFx3 /All";
+            string Exe = "cmd.exe";
+            string Arguments = "/C DISM /Online /Enable-Feature /FeatureName:NetFx3 /All";
 
             if (ChckbxInstallNet35)
                 Process.Start(Exe, Arguments);
@@ -402,8 +402,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
         public void InstallNet48()
         {
-            string Exe = "wt.exe";
-            string Arguments = @"winget install --id=Microsoft.dotNetFramework -e";
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget install --id=Microsoft.dotNetFramework -e";
 
             if (ChckbxInstallNet48)
                 Process.Start(Exe, Arguments);
@@ -427,8 +427,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
         public void InstallNet50()
         {
-            string Exe = "wt.exe";
-            string Arguments = @"winget install --id=Microsoft.DotNet.AspNetCore.5 -e";
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget install --id=Microsoft.DotNet.AspNetCore.5 -e";
 
             if (ChckbxInstallNet50)
                 Process.Start(Exe, Arguments);
@@ -452,8 +452,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
         public void InstallNet60()
         {
-            string Exe = "wt.exe";
-            string Arguments = @"winget install --id=Microsoft.DotNet.AspNetCore.6 -e";
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget install --id=Microsoft.DotNet.AspNetCore.6 -e";
 
             if (ChckbxInstallNet60)
                 Process.Start(Exe, Arguments);
@@ -477,8 +477,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
         public void InstallJava8()
         {
-            string Exe = "wt.exe";
-            string Arguments = @"winget install --id=EclipseAdoptium.Temurin.8.JRE -e";
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget install --id=EclipseAdoptium.Temurin.8.JRE -e";
 
             if (ChckbxInstallJava8)
                 Process.Start(Exe, Arguments);
@@ -502,8 +502,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
         public void InstallJava11()
         {
-            string Exe = "wt.exe";
-            string Arguments = "winget install --id=EclipseAdoptium.Temurin.11.JRE -e";
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget install --id=EclipseAdoptium.Temurin.11.JRE -e";
 
             if (ChckbxInstallJava11)
                 Process.Start(Exe, Arguments);
@@ -527,8 +527,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
         public void InstallJava17()
         {
-            string Exe = "wt.exe";
-            string Arguments = "winget install --id=EclipseAdoptium.Temurin.17.JRE -e";
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget install --id=EclipseAdoptium.Temurin.17.JRE -e";
 
             if (ChckbxInstallJava17)
                 Process.Start(Exe, Arguments);
@@ -552,8 +552,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
         public void InstallDirectX()
         {
-            string Exe = "wt.exe";
-            string Arguments = "winget install --id=Microsoft.DirectX -e";
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget install --id=Microsoft.DirectX -e";
 
             if (ChckbxInstallDirectX)
                 Process.Start(Exe, Arguments);
@@ -577,13 +577,13 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
         public void InstallVisualC2005()
         {
-            string Exe = "wt.exe";
-            string Argumentsx86 = @"winget install --id=Microsoft.VCRedist.2005.x86 -e";
-            string Argumentsx64 = "winget install --id=Microsoft.VCRedist.2005.x64 -e";
+            string Exe = "cmd.exe";
+            string Argumentsx86 = "/C winget install --id=Microsoft.VCRedist.2005.x86 -e";
+            string Argumentsx64 = "/C winget install --id=Microsoft.VCRedist.2005.x64 -e";
 
             if (ChckbxInstallVisualC2005)
                 Process.Start(Exe, Argumentsx86);
-            Thread.Sleep(10000);
+            Thread.Sleep(7000);
                 Process.Start(Exe, Argumentsx64);
         }
 
@@ -605,13 +605,13 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
         public void InstallVisualC2008()
         {
-            string Exe = "wt.exe";
-            string Argumentsx86 = "winget install --id=Microsoft.VCRedist.2008.x86 -e";
-            string Argumentsx64 = "winget install --id=Microsoft.VCRedist.2008.x64 -e";
+            string Exe = "cmd.exe";
+            string Argumentsx86 = "/C winget install --id=Microsoft.VCRedist.2008.x86 -e";
+            string Argumentsx64 = "/C winget install --id=Microsoft.VCRedist.2008.x64 -e";
 
             if (ChckbxInstallVisualC2008)
                 Process.Start(Exe, Argumentsx86);
-            Thread.Sleep(10000);
+            Thread.Sleep(7000);
                 Process.Start(Exe, Argumentsx64);
         }
 
@@ -633,13 +633,13 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
         public void InstallVisualC2010()
         {
-            string Exe = "wt.exe";
-            string Argumentsx86 = "winget install --id=Microsoft.VC++2010Redist-x86 -e";
-            string Argumentsx64 = "winget install --id=Microsoft.VC++2010Redist-x64 -e";
+            string Exe = "cmd.exe";
+            string Argumentsx86 = "/C winget install --id=Microsoft.VC++2010Redist-x86 -e";
+            string Argumentsx64 = "/C winget install --id=Microsoft.VC++2010Redist-x64 -e";
 
             if (ChckbxInstallVisualC2010)
                 Process.Start(Exe, Argumentsx86);
-            Thread.Sleep(10000);
+                Thread.Sleep(7000);
                 Process.Start(Exe, Argumentsx64);
         }
 
@@ -661,13 +661,13 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
         public void InstallVisualC2012()
         {
-            string Exe = "wt.exe";
-            string Argumentsx86 = "winget install --id=Microsoft.VC++2012Redist-x86 -e";
-            string Argumentsx64 = "winget install --id=Microsoft.VC++2012Redist-x64 -e";
+            string Exe = "cmd.exe";
+            string Argumentsx86 = "/C winget install --id=Microsoft.VC++2012Redist-x86 -e";
+            string Argumentsx64 = "/C winget install --id=Microsoft.VC++2012Redist-x64 -e";
 
             if (ChckbxInstallVisualC2012)
                 Process.Start(Exe, Argumentsx86);
-            Thread.Sleep(10000);
+            Thread.Sleep(7000);
                 Process.Start(Exe, Argumentsx64);
         }
 
@@ -689,13 +689,13 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
         public void InstallVisualC2013()
         {
-            string Exe = "wt.exe";
-            string Argumentsx86 = "winget install --id=Microsoft.VC++2013Redist-x86 -e";
-            string Argumentsx64 = "winget install --id=Microsoft.VC++2013Redist-x64 -e";
+            string Exe = "cmd.exe";
+            string Argumentsx86 = "/C winget install --id=Microsoft.VC++2013Redist-x86 -e";
+            string Argumentsx64 = "/C winget install --id=Microsoft.VC++2013Redist-x64 -e";
 
             if (ChckbxInstallVisualC2013)
                 Process.Start(Exe, Argumentsx86);
-            Thread.Sleep(10000);
+            Thread.Sleep(7000);
                 Process.Start(Exe, Argumentsx64);
         }
 
@@ -717,13 +717,13 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
         public void InstallVisualC2015171922()
         {
-            string Exe = "wt.exe";
-            string Argumentsx86 = "winget install --id=Microsoft.VC++2015-2019Redist-x86 -e";
-            string Argumentsx64 = "winget install --id=Microsoft.VC++2015-2019Redist-x64 -e";
+            string Exe = "cmd.exe";
+            string Argumentsx86 = "/C winget install --id=Microsoft.VC++2015-2019Redist-x86 -e";
+            string Argumentsx64 = "/C winget install --id=Microsoft.VC++2015-2019Redist-x64 -e";
 
             if (ChckbxInstallVisualC2015171922)
                 Process.Start(Exe, Argumentsx86);
-            Thread.Sleep(10000);
+            Thread.Sleep(7000);
                 Process.Start(Exe, Argumentsx64);
         }
 
@@ -752,8 +752,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
         public void InstallBrave()
         {
-            string Exe = "wt.exe";
-            string Arguments = @"winget install --id=BraveSoftware.BraveBrowser -e";
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget install --id=BraveSoftware.BraveBrowser -e";
 
             if (ChckbxInstallBrave)
                 Process.Start(Exe, Arguments);
@@ -777,8 +777,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
         public void InstallChrome()
         {
-            string Exe = "wt.exe";
-            string Arguments = @"winget install --id=Google.Chrome -e";
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget install --id=Google.Chrome -e";
 
             if (ChckbxInstallChrome)
                 Process.Start(Exe, Arguments);
@@ -802,8 +802,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
         public void InstallFirefox()
         {
-            string Exe = "wt.exe";
-            string Arguments = @"winget install --id=Mozilla.Firefox -e";
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget install --id=Mozilla.Firefox -e";
 
             if (ChckbxInstallFirefox)
                 Process.Start(Exe, Arguments);
@@ -827,8 +827,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
         public void InstallOpera()
         {
-            string Exe = "wt.exe";
-            string Arguments = @"winget install --id=Opera.Opera -e";
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget install --id=Opera.Opera -e";
 
             if (ChckbxInstallOpera)
                 Process.Start(Exe, Arguments);
@@ -858,8 +858,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
         public void Install7Zip()
         {
-            string Exe = "wt.exe";
-            string Arguments = @"winget install --id=7zip.7zip -e";
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget install --id=7zip.7zip -e";
 
             if (ChckbxInstall7Zip)
                 Process.Start(Exe, Arguments);
@@ -883,8 +883,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
         public void InstallWinRAR()
         {
-            string Exe = "wt.exe";
-            string Arguments = @"winget install --id=RARLab.WinRAR -e";
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget install --id=RARLab.WinRAR -e";
 
             if (ChckbxInstallWinRAR)
                 Process.Start(Exe, Arguments);
@@ -915,8 +915,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
         public void InstallNotepadPlusPlus()
         {
-            string Exe = "wt.exe";
-            string Arguments = @"winget install --id=Notepad++.Notepad++ -e";
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget install --id=Notepad++.Notepad++ -e";
 
             if (ChckbxInstallNotepadPlusPlus)
                 Process.Start(Exe, Arguments);
@@ -947,8 +947,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
         public void InstallDopamine()
         {
-            string Exe = "wt.exe";
-            string Arguments = @"winget install --id=Digimezzo.Dopamine -e";
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget install --id=Digimezzo.Dopamine -e";
 
             if (ChckbxInstallDopamine)
                 Process.Start(Exe, Arguments);
@@ -972,8 +972,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
         public void InstallVLC()
         {
-            string Exe = "wt.exe";
-            string Arguments = @"winget install --id=VideoLAN.VLC -e";
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget install --id=VideoLAN.VLC -e";
 
             if (ChckbxInstallVLC)
                 Process.Start(Exe, Arguments);
@@ -997,8 +997,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
         public void InstallWinamp()
         {
-            string Exe = "wt.exe";
-            string Arguments = @"winget install --id=Winamp.Winamp -e";
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget install --id=Winamp.Winamp -e";
 
             if (ChckbxInstallWinamp)
                 Process.Start(Exe, Arguments);
@@ -1030,8 +1030,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
         public void InstallEAApp()
         {
-            string Exe = "wt.exe";
-            string Arguments = @"winget install --id=ElectronicArts.EADesktop  -e";
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget install --id=ElectronicArts.EADesktop  -e";
 
             if (ChckbxInstallEAApp)
                 Process.Start(Exe, Arguments);
@@ -1055,8 +1055,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
         public void InstallEpic()
         {
-            string Exe = "wt.exe";
-            string Arguments = @"winget install --id=EpicGames.EpicGamesLauncher -e";
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget install --id=EpicGames.EpicGamesLauncher -e";
 
             if (ChckbxInstallEpic)
                 Process.Start(Exe, Arguments);
@@ -1080,8 +1080,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
         public void InstallGOGGalaxy()
         {
-            string Exe = "wt.exe";
-            string Arguments = @"winget install --id=GOG.Galaxy -e";
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget install --id=GOG.Galaxy -e";
 
             if (ChckbxInstallGOGGalaxy)
                 Process.Start(Exe, Arguments);
@@ -1105,8 +1105,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
         public void InstallMinecraftLauncher()
         {
-            string Exe = "wt.exe";
-            string Arguments = @"winget install --id=Mojang.MinecraftLauncher  -e";
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget install --id=Mojang.MinecraftLauncher  -e";
 
             if (ChckbxInstallMinecraftLauncher)
                 Process.Start(Exe, Arguments);
@@ -1131,8 +1131,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
         public void InstallSteam()
         {
-            string Exe = "wt.exe";
-            string Arguments = @"winget install --id=Valve.Steam -e";
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget install --id=Valve.Steam -e";
 
             if (ChckbxInstallSteam)
                 Process.Start(Exe, Arguments);
@@ -1156,8 +1156,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
         public void InstallUbisoft()
         {
-            string Exe = "wt.exe";
-            string Arguments = @"winget install --id=Ubisoft.Connect -e";
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget install --id=Ubisoft.Connect -e";
 
             if (ChckbxInstallUbisoft)
                 Process.Start(Exe, Arguments);
@@ -1187,8 +1187,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
         public void InstallGIMP()
         {
-            string Exe = "wt.exe";
-            string Arguments = @"winget install --id=GIMP.GIMP -e";
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget install --id=GIMP.GIMP -e";
 
             if (ChckbxInstallGIMP)
                 Process.Start(Exe, Arguments);
@@ -1213,8 +1213,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void InstallIrfanView()
         {
-            string Exe = "wt.exe";
-            string Arguments = @"winget install --id=IrfanSkiljan.IrfanView -e";
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget install --id=IrfanSkiljan.IrfanView -e";
 
             if (ChckbxInstallIrfanView)
                 Process.Start(Exe, Arguments);
@@ -1245,8 +1245,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void InstallImgBurn()
         {
-            string Exe = "wt.exe";
-            string Arguments = @"winget install --id=LIGHTNINGUK.ImgBurn  -e";
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget install --id=LIGHTNINGUK.ImgBurn  -e";
 
             if (ChckbxInstallImgBurn)
                 Process.Start(Exe, Arguments);
@@ -1272,8 +1272,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void InstallRufus()
         {
-            string Exe = "wt.exe";
-            string Arguments = @"winget install -h --id=Rufus.Rufus ";
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget install -h --id=Rufus.Rufus ";
 
             if (ChckbxInstallRufus)
                 Process.Start(Exe, Arguments);
@@ -1302,8 +1302,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
         public void InstallLibreOffice()
         {
-            string Exe = "wt.exe";
-            string Arguments = @"winget install --id=TheDocumentFoundation.LibreOffice -e";
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget install --id=TheDocumentFoundation.LibreOffice -e";
 
             if (ChckbxInstallLibreOffice)
                 Process.Start(Exe, Arguments);
@@ -1335,8 +1335,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
         public void InstalliNFektNFOViewer()
         {
-            string Exe = "wt.exe";
-            string Arguments = @"winget install --id=syndicode.iNFektNFOViewer -e";
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget install --id=syndicode.iNFektNFOViewer -e";
 
             if (ChckbxInstalliNFektNFOViewer)
                 Process.Start(Exe, Arguments);
@@ -1365,8 +1365,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
         public void InstallPutty()
         {
-            string Exe = "wt.exe";
-            string Arguments = @"winget install --id=PuTTY.PuTTY -e";
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget install --id=PuTTY.PuTTY -e";
 
             if (ChckbxInstallPutty)
                 Process.Start(Exe, Arguments);
@@ -1390,8 +1390,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
         public void InstallTeamViewer()
         {
-            string Exe = "wt.exe";
-            string Arguments = @"winget install --id=TeamViewer.TeamViewer -e";
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget install --id=TeamViewer.TeamViewer -e";
 
             if (ChckbxInstallTeamViewer)
                 Process.Start(Exe, Arguments);
@@ -1415,8 +1415,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
         public void InstallWinSCP()
         {
-            string Exe = "wt.exe";
-            string Arguments = @"winget install --id=WinSCP.WinSCP -e";
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget install --id=WinSCP.WinSCP -e";
 
             if (ChckbxInstallWinSCP)
                 Process.Start(Exe, Arguments);
@@ -1446,8 +1446,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
         public void InstallOBSStudio()
         {
-            string Exe = "wt.exe";
-            string Arguments = @"winget install --id=OBSProject.OBSStudio -e";
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget install --id=OBSProject.OBSStudio -e";
 
             if (ChckbxInstallOBSStudio)
                 Process.Start(Exe, Arguments);
@@ -1477,8 +1477,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
         public void InstallDiscord()
         {
-            string Exe = "wt.exe";
-            string Arguments = @"winget install --id=Discord.Discord -e";
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget install --id=Discord.Discord -e";
 
             if (ChckbxInstallDiscord)
                 Process.Start(Exe, Arguments);
@@ -1502,8 +1502,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
         public void InstallElement()
         {
-            string Exe = "wt.exe";
-            string Arguments = @"winget install --id=Element.Element -e";
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget install --id=Element.Element -e";
 
             if (ChckbxInstallElement)
                 Process.Start(Exe, Arguments);
@@ -1527,8 +1527,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
         public void InstallGuilded()
         {
-            string Exe = "wt.exe";
-            string Arguments = @"winget install --id=Guilded.Guilded -e";
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget install --id=Guilded.Guilded -e";
 
             if (ChckbxInstallGuilded)
                 Process.Start(Exe, Arguments);
@@ -1552,8 +1552,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
         public void InstallTeamSpeak()
         {
-            string Exe = "wt.exe";
-            string Arguments = @"winget install --id=TeamSpeakSystems.TeamSpeakClient -e";
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget install --id=TeamSpeakSystems.TeamSpeakClient -e";
 
             if (ChckbxInstallTeamSpeak)
                 Process.Start(Exe, Arguments);
@@ -1586,8 +1586,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void InstallMicrosoftTeams()
         {
-            string Exe = "wt.exe";
-            string Arguments = @"winget install --id=Microsoft.Teams -e";
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget install --id=Microsoft.Teams -e";
 
             if (ChckbxInstallMicrosoftTeams)
                 Process.Start(Exe, Arguments);
@@ -1611,8 +1611,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
         public void InstallHorizonClient()
         {
-            string Exe = "wt.exe";
-            string Arguments = @"winget install -h --id=VMware.HorizonClient -e";
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget install -h --id=VMware.HorizonClient -e";
 
             if (ChckbxInstallHorizonClient)
                 Process.Start(Exe, Arguments);
@@ -1642,8 +1642,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
         public void InstallAudacity()
         {
-            string Exe = "wt.exe";
-            string Arguments = @"winget install --id=Audacity.Audacity -e";
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget install --id=Audacity.Audacity -e";
 
             if (ChckbxInstallAudacity)
                 Process.Start(Exe, Arguments);
@@ -1667,8 +1667,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
         public void InstallVoicemeeterPotato()
         {
-            string Exe = "wt.exe";
-            string Arguments = @"winget install --id=VB-Audio.Voicemeeter.Potato -e";
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget install --id=VB-Audio.Voicemeeter.Potato -e";
 
             if (ChckbxInstallVoicemeeterPotato)
                 Process.Start(Exe, Arguments);
@@ -1698,8 +1698,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
         public void InstallFileBot()
         {
-            string Exe = "wt.exe";
-            string Arguments = @"winget install --id=PointPlanck.FileBot -e";
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget install --id=PointPlanck.FileBot -e";
 
             if (ChckbxInstallFileBot)
                 Process.Start(Exe, Arguments);
@@ -1723,8 +1723,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
         public void InstallHandbrake()
         {
-            string Exe = "wt.exe";
-            string Arguments = @"winget install --id=HandBrake.HandBrake -e";
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget install --id=HandBrake.HandBrake -e";
 
             if (ChckbxInstallHandbrake)
                 Process.Start(Exe, Arguments);
@@ -1748,8 +1748,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
         public void InstallMKVToolNix()
         {
-            string Exe = "wt.exe";
-            string Arguments = @"winget install --id=MKVToolNix.MKVToolNix -e";
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget install --id=MKVToolNix.MKVToolNix -e";
 
             if (ChckbxInstallMKVToolNix)
                 Process.Start(Exe, Arguments);
@@ -1773,8 +1773,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
         public void InstallRenameMyTVSeries()
         {
-            string Exe = "wt.exe";
-            string Arguments = @"winget install --id=Tweaking4All.RenameMyTVSeries -e";
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget install --id=Tweaking4All.RenameMyTVSeries -e";
 
             if (ChckbxInstallRenameMyTVSeries)
                 Process.Start(Exe, Arguments);
@@ -1804,8 +1804,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
         public void InstallOracleVMVirtualBox()
         {
-            string Exe = "wt.exe";
-            string Arguments = @"winget install --id=Oracle.VirtualBox  -e";
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget install --id=Oracle.VirtualBox  -e";
 
             if (ChckbxInstallOracleVMVirtualBox)
                 Process.Start(Exe, Arguments);
@@ -1830,8 +1830,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
         public void InstallVisualStudio2022Community()
         {
-            string Exe = "wt.exe";
-            string Arguments = @"winget install --id=Microsoft.VisualStudio.2022.Community -e";
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget install --id=Microsoft.VisualStudio.2022.Community -e";
 
             if (ChckbxInstallVisualStudio2022Community)
                 Process.Start(Exe, Arguments);

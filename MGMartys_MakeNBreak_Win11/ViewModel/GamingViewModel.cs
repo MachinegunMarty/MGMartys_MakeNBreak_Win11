@@ -41,15 +41,15 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void SystemResponsivenessSearchOnInternetContextMenu()
         {
-            string Exe = "wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "\"HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Multimedia\\SystemProfile\"";
             string Name = "SystemResponsiveness";
             string Type = "REG_DWORD";
             string Value = "0";
             string Default = "20";
 
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxSystemResponsivenessChangeSystemResponsiveness)
                 Process.Start(Exe, ArgsValue);
@@ -78,15 +78,15 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void SystemResponsivenessDisableNetworkThrottling()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "\"HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Multimedia\\SystemProfile\"";
             string Name = "NetworkThrottlingIndex";
             string Type = "REG_DWORD";
             string Value = "4294967295";
             string Default = "10";
 
-            string ArgsChecked = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsUnchecked = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsChecked = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsUnchecked = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxSystemResponsivenessDisableNetworkThrottling)
             {
@@ -117,15 +117,15 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void SystemResponsivenessDisablePowerThrottling()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKLM\\System\\CurrentControlSet\\Control\\Power\\PowerThrottling";
             string Name = "PowerThrottlingOff";
             string Type = "REG_DWORD";
             string Value = "1";
 
 
-            string ArgsChecked = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsUnchecked = @"Reg delete " + RegistryPath + " /f";
+            string ArgsChecked = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsUnchecked = "/C Reg delete " + RegistryPath + " /f";
 
             if (ChckbxSystemResponsivenessDisablePowerThrottling)
                 Process.Start(Exe, ArgsChecked);
@@ -269,13 +269,13 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void DefaultGraphicsSettingsHardwareAcceleratedGPUScheduling()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKLM\\SYSTEM\\CurrentControlSet\\Control\\GraphicsDrivers";
             string Name = "HwSchMode";
             string Type = "REG_DWORD";
             string Value = "2";
-            string ArgsValue = "Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = "Reg delete " + RegistryPath + " /v " + Name + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg delete " + RegistryPath + " /v " + Name + " /f";
 
             if (ChckbxDefaultGraphicsSettingsHardwareAcceleratedGPUScheduling)
             {
@@ -310,7 +310,7 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void PrioritizeGamingTasksGPUPriority()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "\"HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Multimedia\\SystemProfile\\Tasks\\Games\"";
             string Name = "\"GPU Priority\"";
             string Type = "REG_DWORD";
@@ -318,8 +318,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
             string Default = "8";
 
             
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxPrioritizeGamingTasksGPUPriority)
                 Process.Start(Exe, ArgsValue);
@@ -348,15 +348,15 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void PrioritizeGamingTasksGamesPriority()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "\"HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Multimedia\\SystemProfile\\Tasks\\Games\"";
             string Name = "Priority";
             string Type = "REG_DWORD";
             string Value = "6";
             string Default = "2";
             
-            string ArgsValue = "Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = "Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxPrioritizeGamingTasksGamesPriority)
                 Process.Start(Exe, ArgsValue);
@@ -385,15 +385,15 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void PrioritizeGamingTasksSchedulingCategory()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "\"HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Multimedia\\SystemProfile\\Tasks\\Games\"";
             string Name = "\"Scheduling Category\"";
             string Type = "REG_SZ";
             string Value = "High";
             string Default = "Medium";
 
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxPrioritizeGamingTasksSchedulingCategory)
                 Process.Start(Exe, ArgsValue);
@@ -422,15 +422,15 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void PrioritizeGamingTasksSFIOPriority()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "\"HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Multimedia\\SystemProfile\\Tasks\\Games\"";
             string Name = "\"SFIO Priority\"";
             string Type = "REG_SZ";
             string Value = "High";
             string Default = "Normal";
 
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxPrioritizeGamingTasksSFIOPriority)
                 Process.Start(Exe, ArgsValue);
@@ -465,15 +465,15 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void NaglesAlogrithmDisableNagleAlgorithm()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKLM\\SYSTEM\\CurrentControlSet\\Services\\Tcpip\\Parameters\\Interfaces";
             string Name = "TCPNoDelay";
             string Type = "REG_DWORD";
             string Value = "1";
 
             
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg delete " + RegistryPath + " /v " + Name + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg delete " + RegistryPath + " /v " + Name + " /f";
 
             if (ChckbxNaglesAlogrithmDisableNagleAlgorithm)
                 Process.Start(Exe, ArgsValue);
@@ -502,14 +502,14 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void NaglesAlogrithmSendOutPacketsImmediatly()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKLM\\SYSTEM\\CurrentControlSet\\Services\\Tcpip\\Parameters\\Interfaces";
             string Name = @"TcpAckFrequency";
             string Type = @"REG_DWORD";
             string Value = @"1";
 
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg delete " + RegistryPath + " /v " + Name + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg delete " + RegistryPath + " /v " + Name + " /f";
 
             if (ChckbxNaglesAlogrithmSendOutPacketsImmediatly)
                 Process.Start(Exe, ArgsValue);
@@ -538,15 +538,15 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void NaglesAlogrithmDisablePacketTicks()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = @"";
             string Name = @"";
             string Type = @"";
             string Value = @"";
             string Default = @"";
 
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxNaglesAlogrithmDisablePacketTicks)
                 Process.Start(Exe, ArgsValue);

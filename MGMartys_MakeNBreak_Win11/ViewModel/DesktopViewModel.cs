@@ -44,12 +44,12 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
         private void ContextMenuClassicRightClickMenu()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKCU\\Software\\Classes\\CLSID\\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\\";
             string Name = "InprocServer32";
 
-            string ArgsChecked = @"Reg Add " + RegistryPath + Name + " /f";
-            string ArgsUnchecked = @"Reg delete " + RegistryPath + " /f";
+            string ArgsChecked = "/C Reg Add " + RegistryPath + Name + " /f";
+            string ArgsUnchecked = "/C Reg delete " + RegistryPath + " /f";
             
             if (ChckbxContextMenuClassicRightClickMenu)
             {
@@ -77,15 +77,15 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
         private void ContextMenuNewWideContextMenu()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\FlightedFeatures";
             string Name = "ImmersiveContextMenu";
             string Type = "REG_DWORD";
             string Value = "1";
             string Default = "0";
 
-            string ArgsChecked = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsUnchecked = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsChecked = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsUnchecked = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxContextMenuNewWideContextMenu)
             {
@@ -116,14 +116,14 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void ContextMenuSearchOnInternetContextMenu()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer";
             string Name = "NoInternetOpenWith";
             string Type = "REG_DWORD";
             string Value = "1";
             string Default = "0";
-            string ArgsChecked = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsUnchecked = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsChecked = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsUnchecked = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxContextMenuSearchOnInternetContextMenu)
             {
@@ -158,14 +158,14 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void DesktopSettingsMaximizeWallpaperQuality()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "\"HKCU\\Control Panel\\Desktop\"";
             string Name = "JPEGImportQuality";
             string Type = "REG_DWORD";
             string Value = "100";
             string Default = "70";
-            string ArgsChecked = "Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsUnchecked = "Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsChecked = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsUnchecked = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxDesktopSettingsMaximizeWallpaperQuality)
             {
@@ -196,14 +196,14 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void DesktopSettingsOpenMenusFaster()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "\"HKCU\\Control Panel\\Desktop\"";
             string Name = "MenuShowDelay";
             string Type = "REG_SZ";
             string Value = "8";
             string Default = "400";
-            string ArgsChecked = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsUnchecked = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsChecked = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsUnchecked = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxDesktopSettingsOpenMenusFaster)
             {
@@ -234,13 +234,13 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void DesktopSettingsReduceTimeSystemWaitsEndTask()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "\"HKCU\\Control Panel\\Desktop\"";
             string Name = "HungAppTimeout";
             string Type = "REG_SZ";
             string Value = "1000";
-            string ArgsChecked = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsUnchecked = @"Reg delete " + RegistryPath + " /v " + Name + " /f";
+            string ArgsChecked = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsUnchecked = "/C Reg delete " + RegistryPath + " /v " + Name + " /f";
 
             if (ChckbxDesktopSettingsReduceTimeSystemWaitsEndTask)
             {
@@ -271,14 +271,14 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void DesktopSettingsReduceTimeToWaitKillService()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "\"HKCU\\Control Panel\\Desktop\"";
             string Name = @"LowLevelHooksTimeout";
             string Type = @"REG_DWORD";
             string Value = @"1000";
             
-            string ArgsChecked = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsUnchecked = @"Reg delete " + RegistryPath + " /v " + Name + " /f";
+            string ArgsChecked = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsUnchecked = "/C Reg delete " + RegistryPath + " /v " + Name + " /f";
 
             if (ChckbxDesktopSettingsReduceTimeToWaitKillService)
             {
@@ -314,7 +314,7 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void DesktopSettingsFileSystemDontShowPotentiallyHarmfullFile()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "\"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Group Policy Objects\\{3D2C7559-33D6-4493-AC1F-4DC5F8DB73E5}Machine\\Software\\Policies\\Microsoft\\Windows\\CurrentVersion\\Internet Settings\\Zones\\3\"";
             string RegistryPath2 = "\"HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Internet Settings\\Zones\\3\"";
             string Name = "1806";
@@ -323,10 +323,10 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
             string Default = "1";
 
             
-            string ArgsChecked = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsChecked2 = @"Reg Add " + RegistryPath2 + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsUnchecked = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
-            string ArgsUnchecked2 = @"Reg Add " + RegistryPath2 + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsChecked = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsChecked2 = "/C Reg Add " + RegistryPath2 + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsUnchecked = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsUnchecked2 = "/C Reg Add " + RegistryPath2 + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxDesktopSettingsFileSystemDontShowPotentiallyHarmfullFile)
             {
@@ -357,14 +357,14 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void FileSystemDontCheckLowDisk()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer";
             string Name = "NoLowDiskSpaceChecks";
             string Type = "REG_DWORD";
             string Value = "1";
 
-            string ArgsChecked = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsUnchecked = @"Reg delete " + RegistryPath + " /v " + Name + " /f";
+            string ArgsChecked = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsUnchecked = "/C Reg delete " + RegistryPath + " /v " + Name + " /f";
 
             if (ChckbxFileSystemDontCheckLowDisk)
             {
@@ -394,14 +394,14 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void FileSystemDoNotTrackShell()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer";
             string Name = "LinkResolveIgnoreLinkInfo";
             string Type = "REG_DWORD";
             string Value = "1";
 
-            string ArgsChecked = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsUnchecked = @"Reg delete " + RegistryPath + " /v " + Name + " /f";
+            string ArgsChecked = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsUnchecked = "/C Reg delete " + RegistryPath + " /v " + Name + " /f";
 
             if (ChckbxFileSystemDoNotTrackShell)
             {
@@ -432,15 +432,15 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void FileSystemDoNotUseSearch()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer";
             string Name = "NoResolveSearch";
             string Type = "REG_DWORD";
             string Value = "1";
 
 
-            string ArgsChecked = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsUnchecked = @"Reg delete " + RegistryPath + " /v " + Name + " /f";
+            string ArgsChecked = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsUnchecked = "/C Reg delete " + RegistryPath + " /v " + Name + " /f";
 
             if (ChckbxFileSystemDoNotUseSearch)
             {
@@ -470,15 +470,15 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void FileSystemDoNotUseTracking()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer";
             string Name = "NoResolveTrack";
             string Type = "REG_DWORD";
             string Value = "1";
 
 
-            string ArgsChecked = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsUnchecked = @"Reg delete " + RegistryPath + " /v " + Name + " /f";
+            string ArgsChecked = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsUnchecked = "/C Reg delete " + RegistryPath + " /v " + Name + " /f";
 
             if (ChckbxFileSystemDoNotUseTracking)
             {
@@ -511,14 +511,14 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void NavigationPaneAddRecycleBin()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKCU\\SOFTWARE\\Classes\\CLSID\\{645FF040-5081-101B-9F08-00AA002F954E}";
             string Name = "System.IsPinnedToNameSpaceTree";
             string Type = "REG_DWORD";
             string Value = "1";
 
-            string ArgsChecked = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsUnchecked = @"Reg delete " + RegistryPath + " /f";
+            string ArgsChecked = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsUnchecked = "/C Reg delete " + RegistryPath + " /f";
 
             if (ChckbxNavigationPaneAddRecycleBin)
             {
@@ -548,14 +548,14 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void NavigationPaneSetIconCache()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer";
             string Name = "\"Max Cached Icons\"";
             string Type = "REG_SZ";
             string Value = "4096";
 
-            string ArgsChecked = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsUnchecked = @"Reg delete " + RegistryPath + " /v " + Name + " /f";
+            string ArgsChecked = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsUnchecked = "/C Reg delete " + RegistryPath + " /v " + Name + " /f";
 
             if (ChckbxNavigationPaneSetIconCache)
             {
@@ -585,14 +585,14 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void NavigationPaneEnableFileSystemLong()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKLM\\SYSTEM\\CurrentControlSet\\Policies";
             string Name = "LongPathsEnabled";
             string Type = "REG_DWORD";
             string Value = "1";
 
-            string ArgsChecked = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsUnchecked = @"Reg delete " + RegistryPath + " /v " + Name + " /f";
+            string ArgsChecked = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsUnchecked = "/C Reg delete " + RegistryPath + " /v " + Name + " /f";
 
             if (ChckbxNavigationPaneEnableFileSystemLong)
             {
@@ -622,15 +622,15 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void NavigationPaneSetWindowsStartupDelay()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Serialize";
             string Name = "StartupDelayInMSec";
             string Type = "REG_DWORD";
             string Value = "0";
 
 
-            string ArgsChecked = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsUnchecked = @"Reg delete " + RegistryPath + " /f";
+            string ArgsChecked = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsUnchecked = "/C Reg delete " + RegistryPath + " /f";
 
 
             if (ChckbxNavigationPaneSetWindowsStartupDelay)
@@ -664,14 +664,14 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void RebootShutdownLogoutAutoCloseApps()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "\"HKCU\\Control Panel\\Desktop\"";
             string Name = "AutoEndTasks";
             string Type = "REG_SZ";
             string Value = "1";
 
-            string ArgsChecked = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsUnchecked = @"Reg delete " + RegistryPath + " /v " + Name + " /f";
+            string ArgsChecked = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsUnchecked = "/C Reg delete " + RegistryPath + " /v " + Name + " /f";
 
             if (ChckbxRebootShutdownLogoutAutoCloseApps)
             {
@@ -701,14 +701,14 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void RebootShutdownLogoutWaitTimeBeforeClosingApps()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "\"HKCU\\Control Panel\\Desktop\"";
             string Name = "WaitToKillAppTimeout";
             string Type = "REG_SZ";
             string Value = "4096";
 
-            string ArgsChecked = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsUnchecked = @"Reg delete " + RegistryPath + " /v " + Name + " /f";
+            string ArgsChecked = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsUnchecked = "/C Reg delete " + RegistryPath + " /v " + Name + " /f";
 
             if (ChckbxRebootShutdownLogoutWaitTimeBeforeClosingApps)
             {
@@ -738,15 +738,15 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void RebootShutdownLogoutWaitTimeBeforeStoppingServices()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKLM\\SYSTEM\\CurrentControlSet\\Control";
             string Name = "WaitToKillServiceTimeout";
             string Type = "REG_SZ";
             string Value = "2000";
             string Default = "5000";
 
-            string ArgsChecked = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsUnchecked = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsChecked = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsUnchecked = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxRebootShutdownLogoutWaitTimeBeforeStoppingServices)
             {
@@ -779,14 +779,14 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         private void SuggestionsStartMenuSuggestions()
         {
-            string Exe = "wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager";
             string Name = "SystemPaneSuggestionsEnabled";
             string Type = "REG_DWORD";
             string Value = "0";
             string Default = "1";
-            string ArgsChecked = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsUnchecked = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsChecked = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsUnchecked = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxSuggestionsStartMenuSuggestions)
                 Process.Start(Exe, ArgsChecked);
@@ -813,14 +813,14 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         private void SuggestionsShowSuggestionsOccasionally()
         {
-            string Exe = "wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager";
             string Name = "SubscribedContent-338388Enabled";
             string Type = "REG_DWORD";
             string Value = "0";
             string Default = "1";
-            string ArgsChecked = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsUnchecked = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsChecked = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsUnchecked = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxSuggestionsShowSuggestionsOccasionally)
                 Process.Start(Exe, ArgsChecked);
@@ -847,14 +847,14 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         private void SuggestionsShowSuggestionsInTimeline()
         {
-            string Exe = "wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager";
             string Name = "SubscribedContent-353698Enabled";
             string Type = "REG_DWORD";
             string Value = "0";
             string Default = "1";
-            string ArgsChecked = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsUnchecked = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsChecked = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsUnchecked = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxSuggestionsShowSuggestionsInTimeline)
                 Process.Start(Exe, ArgsChecked);
@@ -881,7 +881,7 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         private void SuggestionsLockscreenSuggestionsAndRotation()
         {
-            string Exe = "wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager";
             string Name = "SoftLandingEnabled";
             string Name2 = "RotatingLockScreenEnabled";
@@ -889,12 +889,12 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
             string Type = "REG_DWORD";
             string Value = "0";
             string Default = "1";
-            string ArgsChecked = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsChecked2 = @"Reg Add " + RegistryPath + " /v " + Name2 + " /t " + Type + " /d " + Value + " /f";
-            string ArgsChecked3 = @"Reg Add " + RegistryPath + " /v " + Name3 + " /t " + Type + " /d " + Value + " /f";
-            string ArgsUnchecked = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
-            string ArgsUnchecked2 = @"Reg Add " + RegistryPath + " /v " + Name2 + " /t " + Type + " /d " + Default + " /f";
-            string ArgsUnchecked3 = @"Reg Add " + RegistryPath + " /v " + Name3 + " /t " + Type + " /d " + Default + " /f";
+            string ArgsChecked = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsChecked2 = "/C Reg Add " + RegistryPath + " /v " + Name2 + " /t " + Type + " /d " + Value + " /f";
+            string ArgsChecked3 = "/C Reg Add " + RegistryPath + " /v " + Name3 + " /t " + Type + " /d " + Value + " /f";
+            string ArgsUnchecked = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsUnchecked2 = "/C Reg Add " + RegistryPath + " /v " + Name2 + " /t " + Type + " /d " + Default + " /f";
+            string ArgsUnchecked3 = "/C Reg Add " + RegistryPath + " /v " + Name3 + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxSuggestionsLockscreenSuggestionsAndRotation)
             {
@@ -929,14 +929,14 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         private void SuggestionsAdsInFileExplorer()
         {
-            string Exe = "wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced";
             string Name = "ShowSyncProviderNotifications";
             string Type = "REG_DWORD";
             string Value = "0";
             string Default = "1";
-            string ArgsChecked = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsUnchecked = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsChecked = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsUnchecked = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxSuggestionsAdsInFileExplorer)
                 Process.Start(Exe, ArgsChecked);
@@ -963,14 +963,14 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         private void SuggestionsShowMeTheWindowsWelcomeExperienceAfterUpdatesAndOccasionally()
         {
-            string Exe = "wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager";
             string Name = "SubscribedContent-310093Enabled";
             string Type = "REG_DWORD";
             string Value = "0";
             string Default = "1";
-            string ArgsChecked = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsUnchecked = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsChecked = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsUnchecked = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxSuggestionsShowMeTheWindowsWelcomeExperienceAfterUpdatesAndOccasionally)
                 Process.Start(Exe, ArgsChecked);
@@ -997,14 +997,14 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         private void SuggestionsGetTipsTricksSuggestionsAsYouUseWindows()
         {
-            string Exe = "wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager";
             string Name = "SubscribedContent-338389Enabled";
             string Type = "REG_DWORD";
             string Value = "0";
             string Default = "1";
-            string ArgsChecked = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsUnchecked = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsChecked = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsUnchecked = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxSuggestionsGetTipsTricksSuggestionsAsYouUseWindows)
                 Process.Start(Exe, ArgsChecked);

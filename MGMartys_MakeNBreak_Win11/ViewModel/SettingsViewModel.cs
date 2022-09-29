@@ -48,15 +48,15 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void SystemNotificationsGetNotificationsFromAppsAndOtherSendersOff()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\PushNotifications";
             string Name = "ToastEnabled";
             string Type = "REG_DWORD";
             string Value = "0";
             string Default = "1";
 
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxSystemNotificationsGetNotificationsFromAppsAndOtherSendersOff)
                 Process.Start(Exe, ArgsValue);
@@ -83,15 +83,15 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void SystemNotificationsAllowNotificationsToPlaySoundsOff()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Notifications\\Settings";
             string Name = "NOC_GLOBAL_SETTING_ALLOW_NOTIFICATION_SOUND";
             string Type = "REG_DWORD";
             string Value = "0";
             string Default = "1";
 
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxSystemNotificationsAllowNotificationsToPlaySoundsOff)
                 Process.Start(Exe, ArgsValue);
@@ -118,15 +118,15 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void SystemNotificationsShowNotificationsOnTheLockScreenOff()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Notifications\\Settings";
             string Name = "NOC_GLOBAL_SETTING_ALLOW_TOASTS_ABOVE_LOCK";
             string Type = "REG_DWORD";
             string Value = "0";
             string Default = "1";
 
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxSystemNotificationsShowNotificationsOnTheLockScreenOff)
                 Process.Start(Exe, ArgsValue);
@@ -153,15 +153,15 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void SystemNotificationsShowRemindersAndIncomingVOIPCallsOnTheLockScreen()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Notifications\\Settings";
             string Name = "NOC_GLOBAL_SETTING_ALLOW_CRITICAL_TOASTS_ABOVE_LOCK";
             string Type = "REG_DWORD";
             string Value = "0";
             string Default = "1";
 
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxSystemNotificationsShowRemindersAndIncomingVOIPCallsOnTheLockScreen)
                 Process.Start(Exe, ArgsValue);
@@ -193,9 +193,9 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void SystemPowerScreenAndSleepOnBatteryPowerTurnOffScreenAfter()
         {
-            string Exe = "wt.exe";
-            string Value = @"powershell powercfg /SETDCVALUEINDEX SCHEME_CURRENT 7516b95f-f776-4464-8c53-06167f40cc99 3c0bc021-c8a8-4e07-a973-6b14cbcb2b7e 0";
-            string Default = @"powershell powercfg /SETDCVALUEINDEX SCHEME_CURRENT 7516b95f-f776-4464-8c53-06167f40cc99 3c0bc021-c8a8-4e07-a973-6b14cbcb2b7e 300";
+            string Exe = "cmd.exe";
+            string Value = "/C powercfg /SETDCVALUEINDEX SCHEME_CURRENT 7516b95f-f776-4464-8c53-06167f40cc99 3c0bc021-c8a8-4e07-a973-6b14cbcb2b7e 0";
+            string Default = "/C powercfg /SETDCVALUEINDEX SCHEME_CURRENT 7516b95f-f776-4464-8c53-06167f40cc99 3c0bc021-c8a8-4e07-a973-6b14cbcb2b7e 300";
 
             if (ChckbxSystemPowerScreenAndSleepOnBatteryPowerTurnOffScreenAfter)
                 Process.Start(Exe, Value);
@@ -223,9 +223,9 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void SystemPowerScreenAndSleepWhenPluggedInTurnOffMyScreenAfter()
         {
-            string Exe = "wt.exe";
-            string Value = @"powershell powercfg /SETACVALUEINDEX SCHEME_CURRENT 7516b95f-f776-4464-8c53-06167f40cc99 3c0bc021-c8a8-4e07-a973-6b14cbcb2b7e 0";
-            string Default = @"powershell powercfg /SETACVALUEINDEX SCHEME_CURRENT 7516b95f-f776-4464-8c53-06167f40cc99 3c0bc021-c8a8-4e07-a973-6b14cbcb2b7e 300";
+            string Exe = "cmd.exe";
+            string Value = "/C powercfg /SETACVALUEINDEX SCHEME_CURRENT 7516b95f-f776-4464-8c53-06167f40cc99 3c0bc021-c8a8-4e07-a973-6b14cbcb2b7e 0";
+            string Default = "/C powercfg /SETACVALUEINDEX SCHEME_CURRENT 7516b95f-f776-4464-8c53-06167f40cc99 3c0bc021-c8a8-4e07-a973-6b14cbcb2b7e 300";
 
             if (ChckbxSystemPowerScreenAndSleepWhenPluggedInTurnOffMyScreenAfter)
                 Process.Start(Exe, Value);
@@ -252,9 +252,9 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
         public void SystemPowerScreenAndSleepOnBatteryPowerPutMyDeviceToSleepAfter()
         {
-            string Exe = "wt.exe";
-            string Value = @"powershell powercfg /SETDCVALUEINDEX SCHEME_CURRENT 238c9fa8-0aad-41ed-83f4-97be242c8f20 29f6c1db-86da-48c5-9fdb-f2b67b1f44da 0";
-            string Default = @"powershell powercfg /SETDCVALUEINDEX SCHEME_CURRENT 238c9fa8-0aad-41ed-83f4-97be242c8f20 29f6c1db-86da-48c5-9fdb-f2b67b1f44da 300";
+            string Exe = "cmd.exe";
+            string Value = "/C powercfg /SETDCVALUEINDEX SCHEME_CURRENT 238c9fa8-0aad-41ed-83f4-97be242c8f20 29f6c1db-86da-48c5-9fdb-f2b67b1f44da 0";
+            string Default = "/C powercfg /SETDCVALUEINDEX SCHEME_CURRENT 238c9fa8-0aad-41ed-83f4-97be242c8f20 29f6c1db-86da-48c5-9fdb-f2b67b1f44da 300";
 
             if (ChckbxSystemPowerScreenAndSleepOnBatteryPowerPutMyDeviceToSleepAfter)
                 Process.Start(Exe, Value);
@@ -280,9 +280,9 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
         public void SystemPowerScreenAndSleepWhenPluggedInPutMyDeviceToSleepAfter()
         {
-            string Exe = "wt.exe";
-            string Value = @"powershell powercfg /SETACVALUEINDEX SCHEME_CURRENT 238c9fa8-0aad-41ed-83f4-97be242c8f20 29f6c1db-86da-48c5-9fdb-f2b67b1f44da 0";
-            string Default = @"powershell powercfg /SETACVALUEINDEX SCHEME_CURRENT 238c9fa8-0aad-41ed-83f4-97be242c8f20 29f6c1db-86da-48c5-9fdb-f2b67b1f44da 300";
+            string Exe = "cmd.exe";
+            string Value = "/C powercfg /SETACVALUEINDEX SCHEME_CURRENT 238c9fa8-0aad-41ed-83f4-97be242c8f20 29f6c1db-86da-48c5-9fdb-f2b67b1f44da 0";
+            string Default = "/C powercfg /SETACVALUEINDEX SCHEME_CURRENT 238c9fa8-0aad-41ed-83f4-97be242c8f20 29f6c1db-86da-48c5-9fdb-f2b67b1f44da 300";
 
             if (ChckbxSystemPowerScreenAndSleepWhenPluggedInPutMyDeviceToSleepAfter)
                 Process.Start(Exe, Value);
@@ -308,8 +308,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
         public void SystemPowerModeOptimizeYourDeviceBasedOnPowerUseAndPerformance()
         {
-            string Exe = "wt.exe";
-            string Arguments = @"powershell powercfg /setactive 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c";
+            string Exe = "cmd.exe";
+            string Arguments = "/C powercfg /setactive 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c";
 
             if (ChckbxSystemPowerModeOptimizeYourDeviceBasedOnPowerUseAndPerformance)
                 Process.Start(Exe, Arguments);
@@ -341,15 +341,15 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void SystemStorageStorageSense()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\StorageSense\\Parameters\\StoragePolicy";
             string Name = "01";
             string Type = "REG_DWORD";
             string Value = "0";
             string Default = "1";
 
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxSystemStorageStorageSense)
                 Process.Start(Exe, ArgsValue);
@@ -382,7 +382,7 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void SystemRemoteDesktop()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "\"HKLM\\SYSTEM\\CurrentControlSet\\Control\\Terminal Server\"";
             string Name = "fDenyTSConnections";
             string Name2 = "updateRDStatus";
@@ -390,10 +390,10 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
             string Value = "0";
             string Default = "1";
 
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
-            string ArgsValue2 = @"Reg Add " + RegistryPath + " /v " + Name2 + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault2 = @"Reg Add " + RegistryPath + " /v " + Name2 + " /t " + Type + " /d " + Default + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsValue2 = "/C Reg Add " + RegistryPath + " /v " + Name2 + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault2 = "/C Reg Add " + RegistryPath + " /v " + Name2 + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxSystemRemoteDesktop)
             {
@@ -433,15 +433,15 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void BluetoothAndDevicesAutoplay()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\AutoplayHandlers";
             string Name = "DisableAutoplay";
             string Type = "REG_DWORD";
             string Value = "1";
             string Default = "0";
 
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxBluetoothAndDevicesAutoplay)
                 Process.Start(Exe, ArgsValue);
@@ -478,8 +478,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void NetworkAndInternetAdvancedSharingSettingsNetworkDiscovery()
         {
-            string Exe = "wt.exe";
-            string Arguments = @"powershell netsh advfirewall firewall set rule group='Network Discovery' new enable=Yes";
+            string Exe = "cmd.exe";
+            string Arguments = "/C netsh advfirewall firewall set rule group='Network Discovery' new enable=Yes";
 
             if (ChckbxNetworkAndInternetAdvancedSharingSettingsNetworkDiscovery)
                 Process.Start(Exe, Arguments);
@@ -504,8 +504,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void NetworkAndInternetAdvancedSharingSettingsFileAndPrinterSharing()
         {
-            string Exe = "wt.exe";
-            string Arguments = @"powershell netsh advfirewall firewall set rule group='File and Printer Sharing' new enable=Yes";
+            string Exe = "cmd.exe";
+            string Arguments = "/C netsh advfirewall firewall set rule group='File and Printer Sharing' new enable=Yes";
 
             if (ChckbxNetworkAndInternetAdvancedSharingSettingsFileAndPrinterSharing)
                 Process.Start(Exe, Arguments);
@@ -539,8 +539,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         // Set Taskbar Light
         public void SetTaskbarLight()
         {
-            string Exe = "Wt.exe";
-            string Value = "Reg Add \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize\" /v SystemUsesLightTheme /t REG_DWORD /d 1 /f";
+            string Exe = "cmd.exe";
+            string Value = "/C Reg Add \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize\" /v SystemUsesLightTheme /t REG_DWORD /d 1 /f";
             Process.Start(Exe, Value);
             
         }
@@ -562,8 +562,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         // Set Taskbar Dark
         public void SetTaskbarDark()
         {
-            string Exe = "Wt.exe";
-            string Value = "Reg Add \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize\" /v SystemUsesLightTheme /t REG_DWORD /d 0 /f";
+            string Exe = "cmd.exe";
+            string Value = "/C Reg Add \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize\" /v SystemUsesLightTheme /t REG_DWORD /d 0 /f";
             Process.Start(Exe, Value);
         }
 
@@ -589,8 +589,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         // Set Apps Light
         public void SetAppsLight()
         {
-            string Exe = "Wt.exe";
-            string Value = "Reg Add \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize\" /v AppsUseLightTheme /t REG_DWORD /d 1 /f";
+            string Exe = "cmd.exe";
+            string Value = "/C Reg Add \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize\" /v AppsUseLightTheme /t REG_DWORD /d 1 /f";
             Process.Start(Exe, Value);
         }
 
@@ -611,8 +611,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         // Set Apps Dark
         public void SetAppsDark()
         {
-            string Exe = "Wt.exe";
-            string Value = "Reg Add \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize\" /v AppsUseLightTheme /t REG_DWORD /d 0 /f";
+            string Exe = "cmd.exe";
+            string Value = "/C Reg Add \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize\" /v AppsUseLightTheme /t REG_DWORD /d 0 /f";
             Process.Start(Exe, Value);
 
             //          Process.Start("wt", "Reg Add \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize\" /v AppsUseLightTheme /t REG_DWORD /d 0 /f");
@@ -639,15 +639,15 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void PersonalizationColorsTransparancyEffects()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath ="HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize";
             string Name = "EnableTransparency";
             string Type = "REG_DWORD";
             string Value = "0";
             string Default = "1";
 
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxPersonalizationColorsTransparancyEffects)
                 Process.Start(Exe, ArgsValue);
@@ -674,15 +674,15 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void PersonalizationColorsShowAccentColorOnStartAndTaskbar()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize";
             string Name = "ColorPrevalence";
             string Type = "REG_DWORD";
             string Value = "1";
             string Default = "0";
 
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxPersonalizationColorsShowAccentColorOnStartAndTaskbar)
                 Process.Start(Exe, ArgsValue);
@@ -709,15 +709,15 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void PersonalizationsColorsShowAccentColorOnTitleBarsAndWindowsBorders()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKCU\\SOFTWARE\\Microsoft\\Windows\\DWM";
             string Name = "ColorPrevalence";
             string Type = "REG_DWORD";
             string Value = @"1";
             string Default = @"0";
 
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxPersonalizationsColorsShowAccentColorOnTitleBarsAndWindowsBorders)
                 Process.Start(Exe, ArgsValue);
@@ -786,8 +786,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         // Change PC Name
         public void ChangePcName()
         {
-            string Exe = "Wt.exe";
-            string Click = "powershell Rename-Computer -NewName " + ChangedPcName;
+            string Exe = "powershell.exe";
+            string Click = "Rename-Computer -NewName " + ChangedPcName;
             Process.Start(Exe, Click);
             //          MessageBox.Show("Accent Clicked");
             //Process.Start("wt.exe", "powershell Rename-Computer -NewName " + ChangedPcName);
@@ -817,15 +817,15 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void PersonalizationStartShowRecentlyAddedApps()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows\\Explorer";
             string Name = "HideRecentlyAddedApps";
             string Type = "REG_DWORD";
-            string Value = @"1";
-            string Default = @"0";
+            string Value = "1";
+            string Default = "0";
 
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxPersonalizationStartShowRecentlyAddedApps)
                 Process.Start(Exe, ArgsValue);
@@ -852,15 +852,15 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void PersonalizationStartShowMostUsedApps()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows\\Explorer";
             string Name = "ShowOrHideMostUsedApps";
             string Type = "REG_DWORD";
             string Value = "2";
             string Default = "0";
 
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxPersonalizationStartShowMostUsedApps)
                 Process.Start(Exe, ArgsValue);
@@ -887,14 +887,14 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void PersonalizationStartShowRecentlyOpenedItemsInJumpList()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced";
             string Name = "Start_TrackDocs";
             string Type = "REG_DWORD";
             string Value = "0";
             string Default = "1";
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxPersonalizationStartShowRecentlyOpenedItemsInJumpList)
                 Process.Start(Exe, ArgsValue);
@@ -925,15 +925,15 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void PersonalizationTaskbarHideSearch()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Search";
             string Name = "SearchboxTaskbarMode";
             string Type = "REG_DWORD";
             string Value = "0";
             string Default = "1";
 
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxPersonalizationTaskbarHideSearch)
                 Process.Start(Exe, ArgsValue);
@@ -960,15 +960,15 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void PersonalizationTaskbarHideTaskView()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced";
             string Name = "ShowTaskViewButton";
             string Type = "REG_DWORD";
             string Value = "0";
             string Default = "1";
 
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxPersonalizationTaskbarHideTaskView)
                 Process.Start(Exe, ArgsValue);
@@ -995,15 +995,15 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void PersonalizationTaskbarHideWidgets()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced";
             string Name = "TaskbarDa";
             string Type = "REG_DWORD";
             string Value = "0";
             string Default = "1";
 
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxPersonalizationTaskbarHideWidgets)
                 Process.Start(Exe, ArgsValue);
@@ -1030,15 +1030,15 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void PersonalizationTaskbarHideChat()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced";
             string Name = "TaskbarMn";
             string Type = "REG_DWORD";
             string Value = "0";
             string Default = "1";
 
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxPersonalizationTaskbarHideChat)
                 Process.Start(Exe, ArgsValue);
@@ -1067,15 +1067,15 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void PersonalizationTaskbarHidePenMenu()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\PenWorkspace";
             string Name = "PenWorkspaceButtonDesiredVisibility";
             string Type = "REG_DWORD";
             string Value = "0";
             string Default = "1";
 
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxPersonalizationTaskbarHidePenMenu)
                 Process.Start(Exe, ArgsValue);
@@ -1102,15 +1102,15 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void PersonalizationTaskbarHideTouchKeyboard()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "\"HKCU\\SOFTWARE\\Microsoft\\TabletTip\\1.7\"";
             string Name = "TipbandDesiredVisibility";
             string Type = "REG_DWORD";
             string Value = "0";
             string Default = "1";
 
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxPersonalizationTaskbarHideTouchKeyboard)
                 Process.Start(Exe, ArgsValue);
@@ -1137,14 +1137,14 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void PersonalizationTaskbarHideVirtualTouchpad()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKCU\\Software\\Microsoft\\Touchpad";
             string Name = "TouchpadDesiredVisibility";
             string Type = "REG_DWORD";
             string Value = "0";
             string Default = "1";
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxPersonalizationTaskbarHideVirtualTouchpad)
                 Process.Start(Exe, ArgsValue);
@@ -1173,15 +1173,15 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void PersonalizationTaskbarBehaviorsTaskbarAlignment()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced";
             string Name = "TaskbarAl";
             string Type = "REG_DWORD";
             string Value = "0";
             string Default = "1";
 
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxPersonalizationTaskbarBehaviorsTaskbarAlignment)
                 Process.Start(Exe, ArgsValue);
@@ -1210,18 +1210,18 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         {
             if (ChckbxPersonalizationTaskbarBehaviorsAutomaticlyHideTheTaskbar)
             {
-                // Process.Start("wt.exe", "reg add \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StuckRects3\" /v \"Settings\" /t REG_BINARY /d 30000000feffffff7af400000300000030000000300000000000000070050000000a0000a00500006000000001000000 /f");
-                Process.Start("wt.exe", "powershell Set-ItemProperty -Path 'HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StuckRects3' -Name Settings -Value ([byte[]](0x30,0x00,0x00,0x00,0xfe,0xff,0xff,0xff,0x7a,0xf4,0x00,0x00,0x03,0x00,0x00,0x00,0x30,0x00,0x00,0x00,0x30,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x70,0x05,0x00,0x00,0x00,0x0a,0x00,0x00,0xa0,0x05,0x00,0x00,0x60,0x00,0x00,0x00,0x01,0x00,0x00,0x00))");
-                Process.Start("wt.exe", "taskkill /f /im explorer.exe");
-                Process.Start("wt.exe", "powershell Start-Process explorer");
+                Process.Start("cmd.exe", "/C reg add \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StuckRects3\" /v \"Settings\" /t REG_BINARY /d 30000000feffffff7af400000300000030000000300000000000000070050000000a0000a00500006000000001000000 /f");
+                //Process.Start("wt.exe", "powershell Set-ItemProperty -Path 'HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StuckRects3' -Name Settings -Value ([byte[]](0x30,0x00,0x00,0x00,0xfe,0xff,0xff,0xff,0x7a,0xf4,0x00,0x00,0x03,0x00,0x00,0x00,0x30,0x00,0x00,0x00,0x30,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x70,0x05,0x00,0x00,0x00,0x0a,0x00,0x00,0xa0,0x05,0x00,0x00,0x60,0x00,0x00,0x00,0x01,0x00,0x00,0x00))");
+                Process.Start("cmd.exe", "/C taskkill /f /im explorer.exe");
+                Process.Start("powershell.exe", "Start-Process explorer");
 
             }
             else
             {
-                // Process.Start("wt.exe", "reg add \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StuckRects3\" /v \"Settings\" /t REG_BINARY /d 30000000feffffff7bf400000300000030000000300000000000000070050000000a0000a00500006000000001000000 /f");
-                Process.Start("wt.exe", "powershell Set-ItemProperty -Path 'HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StuckRects3' -Name Settings -Value ([byte[]](0x30,0x00,0x00,0x00,0xfe,0xff,0xff,0xff,0x7b,0xf4,0x00,0x00,0x03,0x00,0x00,0x00,0x30,0x00,0x00,0x00,0x30,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x70,0x05,0x00,0x00,0x00,0x0a,0x00,0x00,0xa0,0x05,0x00,0x00,0x60,0x00,0x00,0x00,0x01,0x00,0x00,0x00))");
-                Process.Start("wt.exe", "taskkill /f /im explorer.exe");
-                Process.Start("wt.exe", "powershell Start-Process explorer");
+                Process.Start("cmd.exe", "/C reg add \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StuckRects3\" /v \"Settings\" /t REG_BINARY /d 30000000feffffff7bf400000300000030000000300000000000000070050000000a0000a00500006000000001000000 /f");
+                //Process.Start("cmd.exe", "powershell Set-ItemProperty -Path 'HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StuckRects3' -Name Settings -Value ([byte[]](0x30,0x00,0x00,0x00,0xfe,0xff,0xff,0xff,0x7b,0xf4,0x00,0x00,0x03,0x00,0x00,0x00,0x30,0x00,0x00,0x00,0x30,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x70,0x05,0x00,0x00,0x00,0x0a,0x00,0x00,0xa0,0x05,0x00,0x00,0x60,0x00,0x00,0x00,0x01,0x00,0x00,0x00))");
+                Process.Start("cmd.exe", "/C taskkill /f /im explorer.exe");
+                Process.Start("powershell.exe", "Start-Process explorer");
             }
         }
 
@@ -1252,15 +1252,15 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void AppsOfflineMapsUpdateAutomaticallyWhenPluggedInAndOnWifi()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKLM\\SYSTEM\\Maps";
             string Name = "AutoUpdateEnabled";
             string Type = "REG_DWORD";
             string Value = "0";
             string Default = "1";
 
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxAppsOfflineMapsUpdateAutomaticallyWhenPluggedInAndOnWifi)
                 Process.Start(Exe, ArgsValue);
@@ -1295,15 +1295,15 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void GamingCapturesWhenSomethingCoolHappenedInYourGame()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\GameDVR";
             string Name = "HistoricalCaptureEnabled";
             string Type = "REG_DWORD";
             string Value = "0";
             string Default = "1";
 
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxGamingCapturesWhenSomethingCoolHappenedInYourGame)
                 Process.Start(Exe, ArgsValue);
@@ -1338,15 +1338,15 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void PrivacyAndSecurityGeneralLetWebsitesShowMeLocallyRelevantContentByAccessingMyLanguageList()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "\"HKCU\\Control Panel\\International\\User Profile\"";
             string Name = "HttpAcceptLanguageOptOut";
             string Type = "REG_DWORD";
             string Value = "1";
             string Default = "0";
 
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxPrivacyAndSecurityGeneralLetWebsitesShowMeLocallyRelevantContentByAccessingMyLanguageList)
                 Process.Start(Exe, ArgsValue);
@@ -1373,15 +1373,15 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void PrivacyAndSecurityGeneralLetWindowsImproveStartAndSearchResultsByTrackingAppLaunches()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced";
             string Name = "Start_TrackProgs";
             string Type = "REG_DWORD";
             string Value = "0";
             string Default = "1";
 
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxPrivacyAndSecurityGeneralLetWindowsImproveStartAndSearchResultsByTrackingAppLaunches)
                 Process.Start(Exe, ArgsValue);
@@ -1409,7 +1409,7 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void PrivacyAndSecurityGeneralShowMeSuggestedContentInTheSettingsApp()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager";
             string Name = "SubscribedContent-338393Enabled";
             string Name2 = "SubscribedContent-353694Enabled";
@@ -1418,12 +1418,12 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
             string Value = "0";
             string Default = "1";
 
-            string ArgsChecked = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsChecked2 = @"Reg Add " + RegistryPath + " /v " + Name2 + " /t " + Type + " /d " + Value + " /f";
-            string ArgsChecked3 = @"Reg Add " + RegistryPath + " /v " + Name3 + " /t " + Type + " /d " + Value + " /f";
-            string ArgsUnchecked = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
-            string ArgsUnchecked2 = @"Reg Add " + RegistryPath + " /v " + Name2 + " /t " + Type + " /d " + Default + " /f";
-            string ArgsUnchecked3 = @"Reg Add " + RegistryPath + " /v " + Name3 + " /t " + Type + " /d " + Default + " /f";
+            string ArgsChecked = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsChecked2 = "/C Reg Add " + RegistryPath + " /v " + Name2 + " /t " + Type + " /d " + Value + " /f";
+            string ArgsChecked3 = "/C Reg Add " + RegistryPath + " /v " + Name3 + " /t " + Type + " /d " + Value + " /f";
+            string ArgsUnchecked = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsUnchecked2 = "/C Reg Add " + RegistryPath + " /v " + Name2 + " /t " + Type + " /d " + Default + " /f";
+            string ArgsUnchecked3 = "/C Reg Add " + RegistryPath + " /v " + Name3 + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxPrivacyAndSecurityGeneralShowMeSuggestedContentInTheSettingsApp)
             {
@@ -1462,33 +1462,33 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void PrivacyAndSecurityInkingAndTypeingPersonalizationPersonalInkingAndTypingDictionary()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\CPSS\\Store\\InkingAndTypingPersonalization";
             string RegistryPath2 = "HKCU\\Software\\Microsoft\\Personalization\\Settings";
             string RegistryPath3 = "HKCU\\Software\\Microsoft\\InputPersonalization";
             string RegistryPath4 = "HKCU\\Software\\Microsoft\\InputPersonalization\\TrainedDataStore";
-            string Name = @"Value";
-            string Name2 = @"AcceptedPrivacyPolicy";
-            string Name3 = @"RestrictImplicitTextCollection";
-            string Name4 = @"RestrictImplicitInkCollection";
-            string Name5 = @"HarvestContacts";
-            string Type = @"REG_DWORD";
-            string Value = @"0";
-            string Value2 = @"1";
-            string Default = @"1";
-            string Default2 = @"0";
+            string Name = "Value";
+            string Name2 = "AcceptedPrivacyPolicy";
+            string Name3 = "RestrictImplicitTextCollection";
+            string Name4 = "RestrictImplicitInkCollection";
+            string Name5 = "HarvestContacts";
+            string Type = "REG_DWORD";
+            string Value = "0";
+            string Value2 = "1";
+            string Default = "1";
+            string Default2 = "0";
 
             
-            string ArgsChecked = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsChecked2 = @"Reg Add " + RegistryPath2 + " /v " + Name2 + " /t " + Type + " /d " + Value + " /f";
-            string ArgsChecked3 = @"Reg Add " + RegistryPath3 + " /v " + Name3 + " /t " + Type + " /d " + Value2 + " /f";
-            string ArgsChecked4 = @"Reg Add " + RegistryPath3 + " /v " + Name4 + " /t " + Type + " /d " + Value2 + " /f";
-            string ArgsChecked5 = @"Reg Add " + RegistryPath4 + " /v " + Name5 + " /t " + Type + " /d " + Value + " /f";
-            string ArgsUnchecked = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
-            string ArgsUnchecked2 = @"Reg Add " + RegistryPath2 + " /v " + Name2 + " /t " + Type + " /d " + Default + " /f";
-            string ArgsUnchecked3 = @"Reg Add " + RegistryPath3 + " /v " + Name3 + " /t " + Type + " /d " + Default2 + " /f";
-            string ArgsUnchecked4 = @"Reg Add " + RegistryPath3 + " /v " + Name4 + " /t " + Type + " /d " + Default2 + " /f";
-            string ArgsUnchecked5 = @"Reg Add " + RegistryPath4 + " /v " + Name5 + " /t " + Type + " /d " + Default + " /f";
+            string ArgsChecked = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsChecked2 = "/C Reg Add " + RegistryPath2 + " /v " + Name2 + " /t " + Type + " /d " + Value + " /f";
+            string ArgsChecked3 = "/C Reg Add " + RegistryPath3 + " /v " + Name3 + " /t " + Type + " /d " + Value2 + " /f";
+            string ArgsChecked4 = "/C Reg Add " + RegistryPath3 + " /v " + Name4 + " /t " + Type + " /d " + Value2 + " /f";
+            string ArgsChecked5 = "/C Reg Add " + RegistryPath4 + " /v " + Name5 + " /t " + Type + " /d " + Value + " /f";
+            string ArgsUnchecked = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsUnchecked2 = "/C Reg Add " + RegistryPath2 + " /v " + Name2 + " /t " + Type + " /d " + Default + " /f";
+            string ArgsUnchecked3 = "/C Reg Add " + RegistryPath3 + " /v " + Name3 + " /t " + Type + " /d " + Default2 + " /f";
+            string ArgsUnchecked4 = "/C Reg Add " + RegistryPath3 + " /v " + Name4 + " /t " + Type + " /d " + Default2 + " /f";
+            string ArgsUnchecked5 = "/C Reg Add " + RegistryPath4 + " /v " + Name5 + " /t " + Type + " /d " + Default + " /f";
             
             if (ChckbxPrivacyAndSecurityInkingAndTypeingPersonalizationPersonalInkingAndTypingDictionary)
             {
@@ -1529,14 +1529,14 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         private void DiagnosticsAndFeedbackDiagnosticsData()
         {
-            string Exe = "wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\DataCollection";
             string Name = "AllowTelemetry";
             string Type = "REG_DWORD";
             string Value = "0";
             string Default = "1";
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxDiagnosticsAndFeedbackDiagnosticsData)
                 Process.Start(Exe, ArgsValue);
@@ -1563,13 +1563,13 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         private void DiagnosticsAndFeedbackFeedbackFrequency()
         {
-            string Exe = "wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKCU\\SOFTWARE\\Microsoft\\Siuf\\Rules";
             string Name = "NumberOfSIUFInPeriod";
             string Type = "REG_DWORD";
             string Value = "0";
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg delete " + RegistryPath + " /v " + Name + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg delete " + RegistryPath + " /v " + Name + " /f";
 
             if (ChckbxDiagnosticsAndFeedbackFeedbackFrequency)
                 Process.Start(Exe, ArgsValue);
@@ -1601,15 +1601,15 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void PrivacyAndSecurityActivityHistoryStoreMyActivationHistoryOnThisDevice()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows\\System";
             string Name = "PublishUserActivities";
             string Type = "REG_DWORD";
             string Value = "0";
             string Default = "1";
 
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxPrivacyAndSecurityActivityHistoryStoreMyActivationHistoryOnThisDevice)
                 Process.Start(Exe, ArgsValue);
@@ -1640,15 +1640,15 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void PrivacyAndSecuritySearchPermissionsSetSafeSearchOff()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\SearchSettings";
             string Name = "SafeSearchMode";
             string Type = "REG_DWORD";
             string Value = "0";
             string Default = "1";
 
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxPrivacyAndSecuritySearchPermissionsTurnSafeSearchOff)
                 Process.Start(Exe, ArgsValue);
@@ -1675,15 +1675,15 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void PrivacyAndSecuritySearchPermissionsCloudContentSearchMicrosoftAccount()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\SearchSettings";
             string Name = "IsMSACloudSearchEnabled";
             string Type = "REG_DWORD";
             string Value = "0";
             string Default = "1";
 
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxPrivacyAndSecuritySearchPermissionsCloudContentSearchMicrosoftAccount)
                 Process.Start(Exe, ArgsValue);
@@ -1710,15 +1710,15 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void PrivacyAndSecuritySearchPermissionsCloudContentSearchWorkOrSchoolAccount()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\SearchSettings";
             string Name = "IsAADCloudSearchEnabled";
             string Type = "REG_DWORD";
             string Value = "0";
             string Default = "1";
 
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxPrivacyAndSecuritySearchPermissionsCloudContentSearchWorkOrSchoolAccount)
                 Process.Start(Exe, ArgsValue);
@@ -1745,15 +1745,15 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void PrivacyAndSecuritySearchPermissionsHistorySearchHistoryOnThisDevice()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\SearchSettings";
             string Name = "IsDeviceSearchHistoryEnabled";
             string Type = "REG_DWORD";
             string Value = "0";
             string Default = "1";
 
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxPrivacyAndSecuritySearchPermissionsHistorySearchHistoryOnThisDevice)
                 Process.Start(Exe, ArgsValue);
@@ -1780,15 +1780,15 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void PrivacyAndSecuritySearchPermissionsMoreSettingsShowSearchHighlights()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\SearchSettings";
             string Name = "IsDynamicSearchBoxEnabled";
             string Type = "REG_DWORD";
             string Value = "0";
             string Default = "1";
 
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxPrivacyAndSecuritySearchPermissionsMoreSettingsShowSearchHighlights)
                 Process.Start(Exe, ArgsValue);
@@ -1819,15 +1819,15 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void AppPermissionsVoiceActivationLetAppsAccesVoiceActivationServicesOff()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKCU\\Software\\Microsoft\\Speech_OneCore\\Settings\\VoiceActivation\\UserPreferenceForAllApps";
             string Name = "AgentActivationEnabled";
             string Type = "REG_DWORD";
             string Value = "0";
             string Default = "1";
 
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxAppPermissionsVoiceActivationLetAppsAccesVoiceActivationServicesOff)
                 Process.Start(Exe, ArgsValue);
@@ -1854,15 +1854,15 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void AppPermissionsVoiceActivationLetAppsUseVoiceActivationWhenDeviceIsLockedOff()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKCU\\Software\\Microsoft\\Speech_OneCore\\Settings\\VoiceActivation\\UserPreferenceForAllApps";
             string Name = "AgentActivationOnLockScreenEnabled";
             string Type = "REG_DWORD";
             string Value = "0";
             string Default = "1";
 
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxAppPermissionsVoiceActivationLetAppsUseVoiceActivationWhenDeviceIsLockedOff)
                 Process.Start(Exe, ArgsValue);
@@ -1889,14 +1889,14 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void AppPermissionsNotificationsLetAppsAccesYourNotifications()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\CapabilityAccessManager\\ConsentStore\\userNotificationListener";
             string Name = "Value";
             string Type = "REG_SZ";
             string Value = "Deny";
             string Default = "Allow";
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxAppPermissionsNotificationsLetAppsAccesYourNotifications)
                 Process.Start(Exe, ArgsValue);
@@ -1923,15 +1923,15 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void AppPermissionsAccountInfoLetAppsAccesYourAccountInfo()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\CapabilityAccessManager\\ConsentStore\\userAccountInformation";
             string Name = "Value";
             string Type = "REG_SZ";
             string Value = "Deny";
             string Default = "Allow";
 
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxAppPermissionsAccountInfoLetAppsAccesYourAccountInfo)
                 Process.Start(Exe, ArgsValue);
@@ -1958,14 +1958,14 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void AppPermissionsContactsLetAppsAccesYourContacts()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\CapabilityAccessManager\\ConsentStore\\contacts";
             string Name = "Value";
             string Type = "REG_SZ";
             string Value = "Deny";
             string Default = "Allow";
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxAppPermissionsContactsLetAppsAccesYourContacts)
                 Process.Start(Exe, ArgsValue);
@@ -1993,15 +1993,15 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void AppPermissionsCalendarLetAppsAccesYourCalendar()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\CapabilityAccessManager\\ConsentStore\\appointments";
             string Name = "Value";
             string Type = "REG_SZ";
             string Value = "Deny";
             string Default = "Allow";
 
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxAppPermissionsCalendarLetAppsAccesYourCalendar)
                 Process.Start(Exe, ArgsValue);
@@ -2029,15 +2029,15 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void AppPermissionsPhoneCallsLetAppsMakePhoneCalls()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\CapabilityAccessManager\\ConsentStore\\phoneCall";
             string Name = "Value";
             string Type = "REG_SZ";
             string Value = "Deny";
             string Default = "Allow";
 
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxAppPermissionsPhoneCallsLetAppsMakePhoneCalls)
                 Process.Start(Exe, ArgsValue);
@@ -2065,15 +2065,15 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void AppPermissionsCallHistoryLetAppsAccesYourCallHistory()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\CapabilityAccessManager\\ConsentStore\\phoneCallHistory";
             string Name = "Value";
             string Type = "REG_SZ";
             string Value = "Deny";
             string Default = "Allow";
 
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxAppPermissionsCallHistoryLetAppsAccesYourCallHistory)
                 Process.Start(Exe, ArgsValue);
@@ -2101,15 +2101,15 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void AppPermissionsEmailLetAppsAccesYourEmail()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\CapabilityAccessManager\\ConsentStore\\email";
             string Name = "Value";
             string Type = "REG_SZ";
             string Value = "Deny";
             string Default = "Allow";
 
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxAppPermissionsEmailLetAppsAccesYourEmail)
                 Process.Start(Exe, ArgsValue);
@@ -2137,15 +2137,15 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void AppPermissionsTasksLetAppsAccesYourTasks()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\CapabilityAccessManager\\ConsentStore\\userDataTasks";
             string Name = "Value";
             string Type = "REG_SZ";
             string Value = "Deny";
             string Default = "Allow";
 
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxAppPermissionsTasksLetAppsAccesYourTasks)
                 Process.Start(Exe, ArgsValue);
@@ -2173,15 +2173,15 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void AppPermissionsMessagingLetAppsReadYourMessages()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\CapabilityAccessManager\\ConsentStore\\chat";
             string Name = "Value";
             string Type = "REG_SZ";
             string Value = "Deny";
             string Default = "Allow";
 
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxAppPermissionsMessagingLetAppsReadYourMessages)
                 Process.Start(Exe, ArgsValue);
@@ -2209,15 +2209,15 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void AppPermissionsRadiosLetAppsControlDeviceRadios()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\CapabilityAccessManager\\ConsentStore\\radios";
             string Name = "Value";
             string Type = "REG_SZ";
             string Value = "Deny";
             string Default = "Allow";
 
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxAppPermissionsRadiosLetAppsControlDeviceRadios)
                 Process.Start(Exe, ArgsValue);
@@ -2245,15 +2245,15 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void AppPermissionsOtherDevicesCommunicateWithUnpairedDevices()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\CapabilityAccessManager\\ConsentStore\\bluetoothSync";
             string Name = "Value";
             string Type = "REG_SZ";
             string Value = "Deny";
             string Default = "Allow";
 
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxAppPermissionsOtherDevicesCommunicateWithUnpairedDevices)
                 Process.Start(Exe, ArgsValue);
@@ -2281,15 +2281,15 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void AppPermissionsAppDiagnosticsAllowAppsToAccesDiagnosticsInfoAboutYourOtherApps()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\CapabilityAccessManager\\ConsentStore\\appDiagnostics";
             string Name = "Value";
             string Type = "REG_SZ";
             string Value = "Deny";
             string Default = "Allow";
 
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxAppPermissionsAppDiagnosticsAllowAppsToAccesDiagnosticsInfoAboutYourOtherApps)
                 Process.Start(Exe, ArgsValue);
@@ -2317,15 +2317,15 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void AppPermissionsDocumentsAllowAppsToAccesYourDocumentsLibrary()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\CapabilityAccessManager\\ConsentStore\\documentsLibrary";
             string Name = "Value";
             string Type = "REG_SZ";
             string Value = "Deny";
             string Default = "Allow";
 
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxAppPermissionsDocumentsAllowAppsToAccesYourDocumentsLibrary)
                 Process.Start(Exe, ArgsValue);
@@ -2353,15 +2353,15 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void AppPermissionsDownloadsFolderAllowAppsToAccesYourDownloadsFolder()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\CapabilityAccessManager\\ConsentStore\\downloadsFolder";
             string Name = "Value";
             string Type = "REG_SZ";
             string Value = "Deny";
             string Default = "Allow";
             
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxAppPermissionsDownloadsFolderAllowAppsToAccesYourDownloadsFolder)
                 Process.Start(Exe, ArgsValue);
@@ -2389,15 +2389,15 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void AppPermissionsMusicLibraryAllowAppsToAccesYourMusicLibrary()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\CapabilityAccessManager\\ConsentStore\\musicLibrary";
             string Name = "Value";
             string Type = "REG_SZ";
             string Value = "Deny";
             string Default = "Allow";
 
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxAppPermissionsMusicLibraryAllowAppsToAccesYourMusicLibrary)
                 Process.Start(Exe, ArgsValue);
@@ -2425,15 +2425,15 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void AppPermissionsPicturesAllowAppsToAccesYourPicturesLibrary()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\CapabilityAccessManager\\ConsentStore\\picturesLibrary";
             string Name = "Value";
             string Type = "REG_SZ";
             string Value = "Deny";
             string Default = "Allow";
 
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxAppPermissionsPicturesAllowAppsToAccesYourPicturesLibrary)
                 Process.Start(Exe, ArgsValue);
@@ -2461,15 +2461,15 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void AppPermissionsVideosAllowAppsToAccesYourVideosLibrary()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\CapabilityAccessManager\\ConsentStore\\videosLibrary";
             string Name = "Value";
             string Type = "REG_SZ";
             string Value = "Deny";
             string Default = "Allow";
 
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxAppPermissionsVideosAllowAppsToAccesYourVideosLibrary)
                 Process.Start(Exe, ArgsValue);
@@ -2497,15 +2497,15 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void AppPermissionsFileSystemLetAppsAccesYourFileSystem()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\CapabilityAccessManager\\ConsentStore\\broadFileSystemAccess";
             string Name = "Value";
             string Type = "REG_SZ";
             string Value = "Deny";
             string Default = "Allow";
 
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxAppPermissionsFileSystemLetAppsAccesYourFileSystem)
                 Process.Start(Exe, ArgsValue);
@@ -2532,15 +2532,15 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void AppPermissionsScreenshotBordersLetAppsTurnOffTheScreenshotBorder()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\CapabilityAccessManager\\ConsentStore\\graphicsCaptureWithoutBorder";
             string Name = "Value";
             string Type = "REG_SZ";
             string Value = "Deny";
             string Default = "Allow";
 
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxAppPermissionsScreenshotBordersLetAppsTurnOffTheScreenshotBorder)
                 Process.Start(Exe, ArgsValue);
@@ -2568,15 +2568,15 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void AppPermissionsScreenshotBordersLetDesktopAppsTakeScreenshotsOfVariousWindowsAndDisplays()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\CapabilityAccessManager\\ConsentStore\\graphicsCaptureWithoutBorder\\NonPackaged";
             string Name = "Value";
             string Type = "REG_SZ";
             string Value = "Deny";
             string Default = "Allow";
 
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxAppPermissionsScreenshotBordersLetDesktopAppsTakeScreenshotsOfVariousWindowsAndDisplays)
                 Process.Start(Exe, ArgsValue);
@@ -2604,14 +2604,14 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void AppPermissionsScreenshotsAndAppsLetAppsTakeScreenshotsOfVariousWindowsAndDisplays()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\CapabilityAccessManager\\ConsentStore\\graphicsCaptureProgrammatic";
             string Name = "Value";
             string Type = "REG_SZ";
             string Value = "Deny";
             string Default = "Allow";
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxAppPermissionsScreenshotsAndAppsLetAppsTakeScreenshotsOfVariousWindowsAndDisplays)
                 Process.Start(Exe, ArgsValue);
@@ -2639,15 +2639,15 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void AppPermissionsScreenshotsAndAppsLetDesktopAppsTakeScreenshotsOfVariousWindowsAndDisplays()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\CapabilityAccessManager\\ConsentStore\\graphicsCaptureProgrammatic\\NonPackaged";
             string Name = "Value";
             string Type = "REG_SZ";
             string Value = "Deny";
             string Default = "Allow";
 
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxAppPermissionsScreenshotsAndAppsLetDesktopAppsTakeScreenshotsOfVariousWindowsAndDisplays)
                 Process.Start(Exe, ArgsValue);
@@ -2681,15 +2681,15 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void WindowsUpdateAllowDownloadsFromOtherPCs()
         {
-            string Exe = "Wt.exe";
+            string Exe = "cmd.exe";
             string RegistryPath = "HKU\\S-1-5-20\\Software\\Microsoft\\Windows\\CurrentVersion\\DeliveryOptimization\\Settings";
             string Name = "DownloadMode";
             string Type = "REG_DWORD";
-            string Value = @"0";
-            string Default = @"1";
+            string Value = "0";
+            string Default = "1";
 
-            string ArgsValue = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = @"Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
 
             if (ChckbxWindowsUpdateAllowDownloadsFromOtherPCs)
                 Process.Start(Exe, ArgsValue);

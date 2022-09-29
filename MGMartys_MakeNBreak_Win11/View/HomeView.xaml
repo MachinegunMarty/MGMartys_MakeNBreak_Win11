@@ -33,7 +33,7 @@
         
         <StackPanel>
             <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center">
-                <TextBlock  Text="Welcome to my Windows 11 tweak program "   
+                <TextBlock  Text="Welcome to 'MG Marty's Make N Break Windows 11' program "   
                             FontSize="24"
                             FontWeight="DemiBold"
                             FontFamily="/Fonts/OpenSans-Regular.ttf #Open Sans Regular"
@@ -46,16 +46,19 @@
         <StackPanel>
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
                 <TextBlock FontSize="18" FontFamily="/Fonts/OpenSans-Regular.ttf #Open Sans Regular" Foreground="#DDDDDD" Margin="25">
-                This program allows you to tweak your Windows 11 install  <LineBreak/>
+                This program allows you to tweak your Windows 11 install  <LineBreak/><LineBreak/>
                 Checking buttons activates the settings and unchecking it after that wil set the default value back.<LineBreak/>
                 So if you don't like something, you can set it back to default <LineBreak/> <LineBreak/>
                     The "Control Panel" and "Settings" page contain tabs with a page for each subsection<LineBreak/><LineBreak/>
-                    I also added pages to: <LineBreak/> <LineBreak/> 
-                    Disable "Services", <LineBreak/> 
-                    Uninstall Windows "Apps" <LineBreak/> 
-                    Install Apps with "Winget" and <LineBreak/> 
-                    Install the "Windows Subsystem for Linux" (WSL) <LineBreak/> <LineBreak/>
-                    The commands are run in "Windows Terminal" (wt.exe)<LineBreak/>
+                    - Desktop = Settings that i couldn't find a button for.<LineBreak/>
+                    - Gaming = The usually suggested settings for gamers, but benefits everyone<LineBreak/>
+                    - Control Panel = All the settings that can be changed in the "Control Panel"<LineBreak/>
+                    - Settings = All the settings that can be changed in the "Settings" panel<LineBreak/>
+                    - Services = Disable unnecessary services<LineBreak/>
+                    - Apps = Uninstall unnecessary Windows "Apps" <LineBreak/> 
+                    - Winget = Install Apps with "Winget"<LineBreak/> 
+                    - WSL = Install the "Windows Subsystem for Linux" (WSL) <LineBreak/> <LineBreak/>
+                   
                     
                 </TextBlock>
                 

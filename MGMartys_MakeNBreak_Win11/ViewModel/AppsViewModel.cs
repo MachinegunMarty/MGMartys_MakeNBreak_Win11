@@ -141,14 +141,10 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void UninstallClipChamp()
         {
-            string Exe = "wt.exe";
-            string Uninstall = @"powershell Get-AppxPackage *Clipchamp.Clipchamp* | Remove-AppxPackage";
-            string Install = @"powershell Add-AppxPackage -register 'C:\Program Files\WindowsApps\Clipchamp.Clipchamp_2.4.9.0_neutral__yxz26nhyzhsrt\AppxManifest.xml' –DisableDevelopmentMode";
-
-            if (ChckbxUninstallClipChamp)
-                Process.Start(Exe, Uninstall);
-            else
-                Process.Start(Exe, Install);
+            string Exe = "powershell.exe";
+            string Uninstall = "Get-AppxPackage *Clipchamp.Clipchamp* | Remove-AppxPackage";
+            Process.Start(Exe, Uninstall);
+            
         }
 
 
@@ -171,14 +167,9 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void UninstallCortana()
         {
-            string Exe = "wt.exe";
-            string Uninstall = @"powershell Get-AppxPackage -AllUsers *Microsoft.549981C3F5F10* | Remove-AppxPackage";
-            string Install = @"powershell Add-AppxPackage -register 'C:\Program Files\WindowsApps\Microsoft.549981C3F5F10_4.2204.13303.0_x64__8wekyb3d8bbwe\AppxManifest.xml' –DisableDevelopmentMode";
-
-            if (ChckbxUninstallCortana)
-                Process.Start(Exe, Uninstall);
-            else
-                Process.Start(Exe, Install);
+            string Exe = "powershell.exe";
+            string Uninstall = "Get-AppxPackage -AllUsers *Microsoft.549981C3F5F10* | Remove-AppxPackage";
+            Process.Start(Exe, Uninstall);
         }
 
 
@@ -202,14 +193,9 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void UninstallMicrosoftNews()
         {
-            string Exe = "wt.exe";
-            string Uninstall = @"powershell Get-AppxPackage *Microsoft.BingNews* | Remove-AppxPackage";
-            string Install = @"powershell Add-AppxPackage -register 'C:\Program Files\WindowsApps\Microsoft.BingNews_1.0.1.0_x64__8wekyb3d8bbwe\AppxManifest.xml' –DisableDevelopmentMode";
-
-            if (ChckbxUninstallMicrosoftNews)
-                Process.Start(Exe, Uninstall);
-            else
-                Process.Start(Exe, Install);
+            string Exe = "powershell.exe";
+            string Uninstall = "Get-AppxPackage *Microsoft.BingNews* | Remove-AppxPackage";
+            Process.Start(Exe, Uninstall);
         }
 
 
@@ -232,14 +218,10 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void UninstallMSNWeather()
         {
-            string Exe = "wt.exe";
-            string Uninstall = @"powershell Get-AppxPackage *Microsoft.BingWeather* | Remove-AppxPackage";
-            string Install = @"powershell Add-AppxPackage -register 'C:\Program Files\WindowsApps\Microsoft.BingWeather_3.2.7.0_x64__8wekyb3d8bbwe\AppxManifest.xml' –DisableDevelopmentMode";
-
-            if (ChckbxUninstallMSNWeather)
-                Process.Start(Exe, Uninstall);
-            else
-                Process.Start(Exe, Install);
+            string Exe = "powershell.exe";
+            string Uninstall = "Get-AppxPackage *Microsoft.BingWeather* | Remove-AppxPackage";
+            Process.Start(Exe, Uninstall);
+           
         }
 
 
@@ -262,14 +244,9 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void UninstallGetHelp()
         {
-            string Exe = "wt.exe";
-            string Uninstall = @"powershell Get-AppxPackage *Microsoft.GetHelp* | Remove-AppxPackage";
-            string Install = @"powershell Add-AppxPackage -register 'C:\Program Files\WindowsApps\Microsoft.GetHelp_10.2206.2011.0_x64__8wekyb3d8bbwe\AppxManifest.xml' –DisableDevelopmentMode";
-
-            if (ChckbxUninstallGetHelp)
-                Process.Start(Exe, Uninstall);
-            else
-                Process.Start(Exe, Install);
+            string Exe = "powershell.exe";
+            string Uninstall = "Get-AppxPackage *Microsoft.GetHelp* | Remove-AppxPackage";
+            Process.Start(Exe, Uninstall);
         }
 
 
@@ -292,14 +269,9 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void UninstallMicrosoftTips()
         {
-            string Exe = "wt.exe";
-            string Uninstall = @"powershell Get-AppxPackage *Microsoft.Getstarted* | Remove-AppxPackage";
-            string Install = @"powershell Add-AppxPackage -register 'C:\Program Files\WindowsApps\Microsoft.Getstarted_10.2206.2.0_x64__8wekyb3d8bbwe\AppxManifest.xml' –DisableDevelopmentMode";
-
-            if (ChckbxUninstallMicrosoftTips)
-                Process.Start(Exe, Uninstall);
-            else
-                Process.Start(Exe, Install);
+            string Exe = "powershell.exe";
+            string Uninstall = "Get-AppxPackage *Microsoft.Getstarted* | Remove-AppxPackage";
+            Process.Start(Exe, Uninstall);
         }
 
 
@@ -322,14 +294,9 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void UninstallOffice()
         {
-            string Exe = "wt.exe";
-            string Uninstall = @"powershell Get-AppxPackage *Microsoft.MicrosoftOfficeHub* | Remove-AppxPackage";
-            string Install = @"powershell Add-AppxPackage -register 'C:\Program Files\WindowsApps\Microsoft.MicrosoftOfficeHub_18.2209.1061.0_x64__8wekyb3d8bbwe\AppxManifest.xml' –DisableDevelopmentMode";
-
-            if (ChckbxUninstallOffice)
-                Process.Start(Exe, Uninstall);
-            else
-                Process.Start(Exe, Install);
+            string Exe = "powershell.exe";
+            string Uninstall = "Get-AppxPackage *Microsoft.MicrosoftOfficeHub* | Remove-AppxPackage";
+            Process.Start(Exe, Uninstall);
         }
 
 
@@ -352,14 +319,9 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void UninstallMicrosoftSolitaireCollection()
         {
-            string Exe = "wt.exe";
-            string Uninstall = @"powershell Get-AppxPackage *Microsoft.MicrosoftSolitaireCollection* | Remove-AppxPackage";
-            string Install = @"powershell Add-AppxPackage -register 'C:\Program Files\WindowsApps\.MicrosoftSolitaireCollection_4.14.90Microsoft20.0_x64__8wekyb3d8bbwe\AppxManifest.xml' –DisableDevelopmentMode";
-
-            if (ChckbxUninstallMicrosoftSolitaireCollection)
-                Process.Start(Exe, Uninstall);
-            else
-                Process.Start(Exe, Install);
+            string Exe = "powershell.exe";
+            string Uninstall = "Get-AppxPackage *Microsoft.MicrosoftSolitaireCollection* | Remove-AppxPackage";
+            Process.Start(Exe, Uninstall);
         }
 
 
@@ -382,14 +344,9 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void UninstallMicrosoftOneDrive()
         {
-            string Exe = "wt.exe";
-            string Uninstall = @"winget uninstall --id=Microsoft.OneDrive --accept-source-agreements";
-            string Install = @"winget install --id=Microsoft.OneDrive --accept-source-agreements";
-
-            if (ChckbxUninstallMicrosoftOneDrive)
-                Process.Start(Exe, Uninstall);
-            else
-                Process.Start(Exe, Install);
+            string Exe = "cmd.exe";
+            string Uninstall = "/C winget uninstall --id=Microsoft.OneDrive --accept-source-agreements";
+            Process.Start(Exe, Uninstall);
         }
 
 
@@ -412,14 +369,9 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void UninstallOneDrive()
         {
-            string Exe = "wt.exe";
-            string Uninstall = @"powershell Get-AppxPackage *Microsoft.OneDriveSync* | Remove-AppxPackage";
-            string Install = @"powershell Add-AppxPackage -register 'C:\Program Files\WindowsApps\Microsoft.OneDriveSync_22176.821.3.0_neutral__8wekyb3d8bbwe\AppxManifest.xml' –DisableDevelopmentMode";
-
-            if (ChckbxUninstallOneDrive)
-                Process.Start(Exe, Uninstall);
-            else
-                Process.Start(Exe, Install);
+            string Exe = "powershell.exe";
+            string Uninstall = "Get-AppxPackage *Microsoft.OneDriveSync* | Remove-AppxPackage";
+            Process.Start(Exe, Uninstall);
         }
 
 
@@ -442,14 +394,9 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void UninstallMicrosoftPeople()
         {
-            string Exe = "wt.exe";
-            string Uninstall = @"powershell Get-AppxPackage *Microsoft.People* | Remove-AppxPackage";
-            string Install = @"powershell Add-AppxPackage -register 'C:\Program Files\WindowsApps\Microsoft.People_10.2105.4.0_x64__8wekyb3d8bbwe\AppxManifest.xml' –DisableDevelopmentMode";
-
-            if (ChckbxUninstallMicrosoftPeople)
-                Process.Start(Exe, Uninstall);
-            else
-                Process.Start(Exe, Install);
+            string Exe = "powershell.exe";
+            string Uninstall = "Get-AppxPackage *Microsoft.People* | Remove-AppxPackage";
+            Process.Start(Exe, Uninstall);
         }
 
 
@@ -472,14 +419,9 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void UninstallStoreExperienceHost()
         {
-            string Exe = "wt.exe";
-            string Uninstall = @"powershell Get-AppxPackage *Microsoft.StorePurchaseApp* | Remove-AppxPackage";
-            string Install = @"powershell Add-AppxPackage -register 'C:\Program Files\WindowsApps\Microsoft.StorePurchaseApp_12203.44.0.0_x64__8wekyb3d8bbwe\AppxManifest.xml' –DisableDevelopmentMode";
-
-            if (ChckbxUninstallStoreExperienceHost)
-                Process.Start(Exe, Uninstall);
-            else
-                Process.Start(Exe, Install);
+            string Exe = "powershell.exe";
+            string Uninstall = "Get-AppxPackage *Microsoft.StorePurchaseApp* | Remove-AppxPackage";
+            Process.Start(Exe, Uninstall);
         }
 
 
@@ -502,14 +444,9 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void UninstallMicrosoftToDo()
         {
-            string Exe = "wt.exe";
-            string Uninstall = @"powershell Get-AppxPackage *Microsoft.Todos* | Remove-AppxPackage";
-            string Install = @"powershell Add-AppxPackage -register 'C:\Program Files\WindowsApps\Microsoft.Todos_0.78.52391.0_x64__8wekyb3d8bbwe\AppxManifest.xml' –DisableDevelopmentMode";
-
-            if (ChckbxUninstallMicrosoftToDo)
-                Process.Start(Exe, Uninstall);
-            else
-                Process.Start(Exe, Install);
+            string Exe = "powershell.exe";
+            string Uninstall = "Get-AppxPackage *Microsoft.Todos* | Remove-AppxPackage";
+            Process.Start(Exe, Uninstall);
         }
 
 
@@ -532,14 +469,9 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void UninstallWindowsCamera()
         {
-            string Exe = "wt.exe";
-            string Uninstall = @"powershell Get-AppxPackage *Microsoft.WindowsCamera* | Remove-AppxPackage";
-            string Install = @"powershell Add-AppxPackage -register 'C:\Program Files\WindowsApps\Microsoft.WindowsCamera_2022.2207.29.0_x64__8wekyb3d8bbwe\AppxManifest.xml' –DisableDevelopmentMode";
-
-            if (ChckbxUninstallWindowsCamera)
-                Process.Start(Exe, Uninstall);
-            else
-                Process.Start(Exe, Install);
+            string Exe = "powershell.exe";
+            string Uninstall = "Get-AppxPackage *Microsoft.WindowsCamera* | Remove-AppxPackage";
+            Process.Start(Exe, Uninstall);
         }
 
 
@@ -562,14 +494,9 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void UninstallMailAndCalendar()
         {
-            string Exe = "wt.exe";
-            string Uninstall = @"powershell Get-AppxPackage *microsoft.windowscommunicationsapps* | Remove-AppxPackage";
-            string Install = @"powershell Add-AppxPackage -register 'C:\Program Files\WindowsApps\microsoft.windowscommunicationsapps_16005.14326.20970.0_x64__8wekyb3d8bbwe\AppxManifest.xml' –DisableDevelopmentMode";
-
-            if (ChckbxUninstallMailAndCalendar)
-                Process.Start(Exe, Uninstall);
-            else
-                Process.Start(Exe, Install);
+            string Exe = "powershell.exe";
+            string Uninstall = "Get-AppxPackage *microsoft.windowscommunicationsapps* | Remove-AppxPackage";
+            Process.Start(Exe, Uninstall);
         }
 
 
@@ -592,14 +519,9 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void UninstallFeedbackHub()
         {
-            string Exe = "wt.exe";
-            string Uninstall = @"powershell Get-AppxPackage *Microsoft.WindowsFeedbackHub* | Remove-AppxPackage";
-            string Install = @"powershell Add-AppxPackage -register 'C:\Program Files\WindowsApps\Microsoft.WindowsFeedbackHub_1.2203.761.0_x64__8wekyb3d8bbwe\AppxManifest.xml' –DisableDevelopmentMode";
-
-            if (ChckbxUninstallFeedbackHub)
-                Process.Start(Exe, Uninstall);
-            else
-                Process.Start(Exe, Install);
+            string Exe = "powershell.exe";
+            string Uninstall = "Get-AppxPackage *Microsoft.WindowsFeedbackHub* | Remove-AppxPackage";
+            Process.Start(Exe, Uninstall);
         }
 
 
@@ -622,14 +544,9 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void UninstallWindowsMaps()
         {
-            string Exe = "wt.exe";
-            string Uninstall = @"powershell Get-AppxPackage *Microsoft.WindowsMaps* | Remove-AppxPackage";
-            string Install = @"powershell Add-AppxPackage -register 'C:\Program Files\WindowsApps\Microsoft.WindowsMaps_1.0.43.0_x64__8wekyb3d8bbwe\AppxManifest.xml' –DisableDevelopmentMode";
-
-            if (ChckbxUninstallWindowsMaps)
-                Process.Start(Exe, Uninstall);
-            else
-                Process.Start(Exe, Install);
+            string Exe = "powershell.exe";
+            string Uninstall = "Get-AppxPackage *Microsoft.WindowsMaps* | Remove-AppxPackage";
+            Process.Start(Exe, Uninstall);
         }
 
 
@@ -652,14 +569,9 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void UninstallWindowsVoiceRecorder()
         {
-            string Exe = "wt.exe";
-            string Uninstall = @"powershell Get-AppxPackage *Microsoft.WindowsSoundRecorder* | Remove-AppxPackage";
-            string Install = @"powershell Add-AppxPackage -register 'C:\Program Files\WindowsApps\Microsoft.WindowsSoundRecorder_1.0.61.0_x64__8wekyb3d8bbwe\AppxManifest.xml' –DisableDevelopmentMode";
-
-            if (ChckbxUninstallWindowsVoiceRecorder)
-                Process.Start(Exe, Uninstall);
-            else
-                Process.Start(Exe, Install);
+            string Exe = "powershell.exe";
+            string Uninstall = "Get-AppxPackage *Microsoft.WindowsSoundRecorder* | Remove-AppxPackage";
+            Process.Start(Exe, Uninstall);
         }
 
 
@@ -682,14 +594,9 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void UninstallPhoneLink()
         {
-            string Exe = "wt.exe";
-            string Uninstall = @"powershell Get-AppxPackage *Microsoft.YourPhone* | Remove-AppxPackage";
-            string Install = @"powershell Add-AppxPackage -register 'C:\Program Files\WindowsApps\Microsoft.YourPhone_0.22062.543.0_x64__8wekyb3d8bbwe\AppxManifest.xml' –DisableDevelopmentMode";
-
-            if (ChckbxUninstallPhoneLink)
-                Process.Start(Exe, Uninstall);
-            else
-                Process.Start(Exe, Install);
+            string Exe = "powershell.exe";
+            string Uninstall = "Get-AppxPackage *Microsoft.YourPhone* | Remove-AppxPackage";
+            Process.Start(Exe, Uninstall);
         }
 
 
@@ -712,14 +619,9 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void UninstallWindowsMediaPlayer()
         {
-            string Exe = "wt.exe";
-            string Uninstall = @"powershell Get-AppxPackage *Microsoft.ZuneMusic* | Remove-AppxPackage";
-            string Install = @"powershell Add-AppxPackage -register 'C:\Program Files\WindowsApps\Microsoft.ZuneMusic_11.2205.22.0_x64__8wekyb3d8bbwe\AppxManifest.xml' –DisableDevelopmentMode";
-
-            if (ChckbxUninstallWindowsMediaPlayer)
-                Process.Start(Exe, Uninstall);
-            else
-                Process.Start(Exe, Install);
+            string Exe = "powershell.exe";
+            string Uninstall = "Get-AppxPackage *Microsoft.ZuneMusic* | Remove-AppxPackage";
+            Process.Start(Exe, Uninstall);
         }
 
 
@@ -742,14 +644,9 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void UninstallMoviesAndTV()
         {
-            string Exe = "wt.exe";
-            string Uninstall = @"powershell Get-AppxPackage *Microsoft.ZuneVideo* | Remove-AppxPackage";
-            string Install = @"powershell Add-AppxPackage -register 'C:\Program Files\WindowsApps\Microsoft.ZuneVideo_10.22061.10241.0_x64__8wekyb3d8bbwe\AppxManifest.xml' –DisableDevelopmentMode";
-
-            if (ChckbxUninstallMoviesAndTV)
-                Process.Start(Exe, Uninstall);
-            else
-                Process.Start(Exe, Install);
+            string Exe = "powershell.exe";
+            string Uninstall = "Get-AppxPackage *Microsoft.ZuneVideo* | Remove-AppxPackage";
+            Process.Start(Exe, Uninstall);
         }
 
 
@@ -772,14 +669,9 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void UninstallQuickAssist()
         {
-            string Exe = "wt.exe";
-            string Uninstall = @"powershell Get-AppxPackage *MicrosoftCorporationII.QuickAssist* | Remove-AppxPackage";
-            string Install = @"powershell Add-AppxPackage -register 'C:\Program Files\WindowsApps\MicrosoftCorporationII.QuickAssist_2.0.9.0_x64__8wekyb3d8bbwe\AppxManifest.xml' –DisableDevelopmentMode";
-
-            if (ChckbxUninstallQuickAssist)
-                Process.Start(Exe, Uninstall);
-            else
-                Process.Start(Exe, Install);
+            string Exe = "powershell.exe";
+            string Uninstall = "Get-AppxPackage *MicrosoftCorporationII.QuickAssist* | Remove-AppxPackage";
+            Process.Start(Exe, Uninstall);
         }
 
 
@@ -802,14 +694,9 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void UninstallMicrosoftTeams()
         {
-            string Exe = "wt.exe";
-            string Uninstall = @"powershell Get-AppxPackage *MicrosoftTeams* | Remove-AppxPackage";
-            string Install = @"powershell Add-AppxPackage -register 'C:\Program Files\WindowsApps\MicrosoftTeams_22227.300.1508.3394_x64__8wekyb3d8bbwe\AppxManifest.xml' –DisableDevelopmentMode";
-
-            if (ChckbxUninstallMicrosoftTeams)
-                Process.Start(Exe, Uninstall);
-            else
-                Process.Start(Exe, Install);
+            string Exe = "powershell.exe";
+            string Uninstall = "Get-AppxPackage *MicrosoftTeams* | Remove-AppxPackage";
+            Process.Start(Exe, Uninstall);
         }
 
 
@@ -832,14 +719,9 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void UninstallWindowsWebExperiencePack()
         {
-            string Exe = "wt.exe";
-            string Uninstall = @"powershell Get-AppxPackage *MicrosoftWindows.Client.WebExperience* | Remove-AppxPackage";
-            string Install = @"powershell Add-AppxPackage -register 'C:\Program Files\WindowsApps\MicrosoftWindows.Client.WebExperience_421.20070.625.0_x64__cw5n1h2txyewy\AppxManifest.xml' –DisableDevelopmentMode";
-
-            if (ChckbxUninstallWindowsWebExperiencePack)
-                Process.Start(Exe, Uninstall);
-            else
-                Process.Start(Exe, Install);
+            string Exe = "powershell.exe";
+            string Uninstall = "Get-AppxPackage *MicrosoftWindows.Client.WebExperience* | Remove-AppxPackage";
+            Process.Start(Exe, Uninstall);
         }
 
         #endregion

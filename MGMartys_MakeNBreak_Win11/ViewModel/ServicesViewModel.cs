@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using Microsoft.Win32;
 
 namespace MGMartys_MakeNBreak_Win11.ViewModel
@@ -39,13 +40,13 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void ServicesApplicationLayerGatewayService()
         {
-            string Name = @"ALG";
-            string StartupType1 = @"Disabled";
-            string StartupType2 = @"Manual";
+            string Name = "ALG";
+            string StartupType1 = "disabled";
+            string StartupType2 = "demand";
 
-            string Exe = "Wt.exe";
-            string ArgsChecked = @"powershell Set-Service -Name '" + Name + "' -StartupType " + StartupType1;
-            string ArgsUnchecked = @"powershell Set-Service -Name '" + Name + "' -StartupType " + StartupType2;
+            string Exe = "cmd.exe";
+            string ArgsChecked = "/C sc config " + Name + " \"start=\" " + StartupType1;
+            string ArgsUnchecked = "/C sc config " + Name + " \"start=\" " + StartupType2;
 
 
             if (ChckbxServicesApplicationLayerGatewayService)
@@ -76,13 +77,13 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void ServicesApplicationManagement()
         {
-            string Name = @"AppMgmt";
-            string StartupType1 = @"Disabled";
-            string StartupType2 = @"Manual";
+            string Name = "AppMgmt";
+            string StartupType1 = "disabled";
+            string StartupType2 = "demand";
 
-            string Exe = "Wt.exe";
-            string ArgsChecked = @"powershell Set-Service -Name '" + Name + "' -StartupType " + StartupType1;
-            string ArgsUnchecked = @"powershell Set-Service -Name '" + Name + "' -StartupType " + StartupType2;
+            string Exe = "cmd.exe";
+            string ArgsChecked = "/C sc config " + Name + " \"start=\" " + StartupType1;
+            string ArgsUnchecked = "/C sc config " + Name + " \"start=\" " + StartupType2;
 
 
             if (ChckbxServicesApplicationManagement)
@@ -113,13 +114,13 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void ServicesProgramCompatibilityAssistantService()
         {
-            string Name = @"PcaSvc";
-            string StartupType1 = @"Disabled";
-            string StartupType2 = @"Automatic";
+            string Name = "PcaSvc";
+            string StartupType1 = "disabled";
+            string StartupType2 = "delayed-auto";
 
-            string Exe = "Wt.exe";
-            string ArgsChecked = @"powershell Set-Service -Name '" + Name + "' -StartupType " + StartupType1;
-            string ArgsUnchecked = @"powershell Set-Service -Name '" + Name + "' -StartupType " + StartupType2;
+            string Exe = "cmd.exe";
+            string ArgsChecked = "/C sc config " + Name + " \"start=\" " + StartupType1;
+            string ArgsUnchecked = "/C sc config " + Name + " \"start=\" " + StartupType2;
 
 
             if (ChckbxServicesProgramCompatibilityAssistantService)
@@ -155,13 +156,13 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void ServicesRetailDemoService()
         {
-            string Name = @"RetailDemo";
-            string StartupType1 = @"Disabled";
-            string StartupType2 = @"Manual";
+            string Name = "RetailDemo";
+            string StartupType1 = "disabled";
+            string StartupType2 = "demand";
 
-            string Exe = "Wt.exe";
-            string ArgsChecked = @"powershell Set-Service -Name '" + Name + "' -StartupType " + StartupType1;
-            string ArgsUnchecked = @"powershell Set-Service -Name '" + Name + "' -StartupType " + StartupType2;
+            string Exe = "cmd.exe";
+            string ArgsChecked = "/C sc config " + Name + " \"start=\" " + StartupType1;
+            string ArgsUnchecked = "/C sc config " + Name + " \"start=\" " + StartupType2;
 
 
             if (ChckbxServicesRetailDemoService)
@@ -196,13 +197,13 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void ServicesGeolocationService()
         {
-            string Name = @"lfsvc";
-            string StartupType1 = @"Disabled";
-            string StartupType2 = @"Manual";
+            string Name = "lfsvc";
+            string StartupType1 = "disabled";
+            string StartupType2 = "demand";
 
-            string Exe = "Wt.exe";
-            string ArgsChecked = @"powershell Set-Service -Name '" + Name + "' -StartupType " + StartupType1;
-            string ArgsUnchecked = @"powershell Set-Service -Name '" + Name + "' -StartupType " + StartupType2;
+            string Exe = "cmd.exe";
+            string ArgsChecked = "/C sc config " + Name + " \"start=\" " + StartupType1;
+            string ArgsUnchecked = "/C sc config " + Name + " \"start=\" " + StartupType2;
 
 
             if (ChckbxServicesGeolocationService)
@@ -236,13 +237,13 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void ServicesDownloadedMapsManager()
         {
-            string Name = @"MapsBroker";
-            string StartupType1 = @"Disabled";
-            string StartupType2 = @"Automatic";
+            string Name = "MapsBroker";
+            string StartupType1 = "disabled";
+            string StartupType2 = "delayed-auto";
 
-            string Exe = "Wt.exe";
-            string ArgsChecked = @"powershell Set-Service -Name '" + Name + "' -StartupType " + StartupType1;
-            string ArgsUnchecked = @"powershell Set-Service -Name '" + Name + "' -StartupType " + StartupType2;
+            string Exe = "cmd.exe";
+            string ArgsChecked = "/C sc config " + Name + " \"start=\" " + StartupType1;
+            string ArgsUnchecked = "/C sc config " + Name + " \"start=\" " + StartupType2;
 
 
             if (ChckbxServicesApplicationLayerGatewayService)
@@ -276,13 +277,13 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void ServicesPrintSpooler()
         {
-            string Name = @"Spooler";
-            string StartupType1 = @"Disabled";
-            string StartupType2 = @"Automatic";
+            string Name = "Spooler";
+            string StartupType1 = "disabled";
+            string StartupType2 = "auto";
 
-            string Exe = "Wt.exe";
-            string ArgsChecked = @"powershell Set-Service -Name '" + Name + "' -StartupType " + StartupType1;
-            string ArgsUnchecked = @"powershell Set-Service -Name '" + Name + "' -StartupType " + StartupType2;
+            string Exe = "cmd.exe";
+            string ArgsChecked = "/C sc config " + Name + " \"start=\" " + StartupType1;
+            string ArgsUnchecked = "/C sc config " + Name + " \"start=\" " + StartupType2;
 
 
             if (ChckbxServicesPrintSpooler)
@@ -316,13 +317,13 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void ServicesConnectedUserExperiencesAndTelemetry()
         {
-            string Name = @"DiagTrack";
-            string StartupType1 = @"Disabled";
-            string StartupType2 = @"Automatic";
+            string Name = "DiagTrack";
+            string StartupType1 = "disabled";
+            string StartupType2 = "delayed-auto";
 
-            string Exe = "Wt.exe";
-            string ArgsChecked = @"powershell Set-Service -Name '" + Name + "' -StartupType " + StartupType1;
-            string ArgsUnchecked = @"powershell Set-Service -Name '" + Name + "' -StartupType " + StartupType2;
+            string Exe = "cmd.exe";
+            string ArgsChecked = "/C sc config " + Name + " \"start=\" " + StartupType1;
+            string ArgsUnchecked = "/C sc config " + Name + " \"start=\" " + StartupType2;
 
 
             if (ChckbxServicesConnectedUserExperiencesAndTelemetry)
@@ -353,13 +354,13 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void ServicesDeviceManagementWirelessApplicationProtocolWAPPushMessageRoutingService()
         {
-            string Name = @"dmwappushservice";
-            string StartupType1 = @"Disabled";
-            string StartupType2 = @"Manual";
+            string Name = "dmwappushservice";
+            string StartupType1 = "disabled";
+            string StartupType2 = "demand";
 
-            string Exe = "Wt.exe";
-            string ArgsChecked = @"powershell Set-Service -Name '" + Name + "' -StartupType " + StartupType1;
-            string ArgsUnchecked = @"powershell Set-Service -Name '" + Name + "' -StartupType " + StartupType2;
+            string Exe = "cmd.exe";
+            string ArgsChecked = "/C sc config " + Name + " \"start=\" " + StartupType1;
+            string ArgsUnchecked = "/C sc config " + Name + " \"start=\" " + StartupType2;
 
 
             if (ChckbxServicesDeviceManagementWirelessApplicationProtocolWAPPushMessageRoutingService)
@@ -393,13 +394,13 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void ServicesWindowsSearch()
         {
-            string Name = @"WSearch";
-            string StartupType1 = @"Disabled";
-            string StartupType2 = @"Automatic";
+            string Name = "WSearch";
+            string StartupType1 = "disabled";
+            string StartupType2 = "auto";
 
-            string Exe = "Wt.exe";
-            string ArgsChecked = @"powershell Set-Service -Name '" + Name + "' -StartupType " + StartupType1;
-            string ArgsUnchecked = @"powershell Set-Service -Name '" + Name + "' -StartupType " + StartupType2;
+            string Exe = "cmd.exe";
+            string ArgsChecked = "/C sc config " + Name + " \"start=\" " + StartupType1;
+            string ArgsUnchecked = "/C sc config " + Name + " \"start=\" " + StartupType2;
 
 
             if (ChckbxServicesWindowsSearch)
@@ -433,13 +434,13 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void ServicesSysMain()
         {
-            string Name = @"SysMain";
-            string StartupType1 = @"Disabled";
-            string StartupType2 = @"Automatic";
+            string Name = "SysMain";
+            string StartupType1 = "disabled";
+            string StartupType2 = "delayed-auto";
 
-            string Exe = "Wt.exe";
-            string ArgsChecked = @"powershell Set-Service -Name '" + Name + "' -StartupType " + StartupType1;
-            string ArgsUnchecked = @"powershell Set-Service -Name '" + Name + "' -StartupType " + StartupType2;
+            string Exe = "cmd.exe";
+            string ArgsChecked = "/C sc config " + Name + " \"start=\" " + StartupType1;
+            string ArgsUnchecked = "/C sc config " + Name + " \"start=\" " + StartupType2;
 
 
             if (ChckbxServicesSysMain)
@@ -473,13 +474,13 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         public void ServicesTextInputManagementService()
         {
-            string Name = @"TextInputManagementService";
-            string StartupType1 = @"Disabled";
-            string StartupType2 = @"Automatic";
+            string Name = "TextInputManagementService";
+            string StartupType1 = "disabled";
+            string StartupType2 = "auto";
 
-            string Exe = "Wt.exe";
-            string ArgsChecked = @"powershell Set-Service -Name '" + Name + "' -StartupType '" + StartupType1 + "' -Force";
-            string ArgsUnchecked = @"powershell Set-Service -Name '" + Name + "' -StartupType '" + StartupType2 + "' -Force";
+            string Exe = "cmd.exe";
+            string ArgsChecked = "/C sc config " + Name + " \"start=\" " + StartupType1;
+            string ArgsUnchecked = "/C sc config " + Name + " \"start=\" " + StartupType2;
 
 
             if (ChckbxServicesTextInputManagementService)
