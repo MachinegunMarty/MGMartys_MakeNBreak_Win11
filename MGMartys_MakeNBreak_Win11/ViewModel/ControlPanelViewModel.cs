@@ -2,6 +2,7 @@
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Threading;
 using System.Windows.Data;
 using System.Windows.Input;
 using MGMartys_MakeNBreak_Win11.Model;
@@ -828,27 +829,31 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
             string Name3 = "MouseSpeed";
             string Type = "REG_SZ";
             string Value = "0";
-            string Default = "6";
+            string Default1 = "6";
             string Default2 = "10";
             string Default3 = "1";
 
-            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsValue1 = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f" ;
             string ArgsValue2 = "/C Reg Add " + RegistryPath + " /v " + Name2 + " /t " + Type + " /d " + Value + " /f";
             string ArgsValue3 = "/C Reg Add " + RegistryPath + " /v " + Name3 + " /t " + Type + " /d " + Value + " /f";
-            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+           
+            string ArgsDefault1 = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default1 + " /f";
             string ArgsDefault2 = "/C Reg Add " + RegistryPath + " /v " + Name2 + " /t " + Type + " /d " + Default2 + " /f";
             string ArgsDefault3 = "/C Reg Add " + RegistryPath + " /v " + Name3 + " /t " + Type + " /d " + Default3 + " /f";
 
             if (ChckbxMouseDisableEnhancedPointerPrecision)
             {
-                Process.Start(Exe, ArgsValue);
+                Process.Start(Exe, ArgsValue1);
                 Process.Start(Exe, ArgsValue2);
                 Process.Start(Exe, ArgsValue3);
             }
+
             else
-                Process.Start(Exe, ArgsDefault);
+            {
+                Process.Start(Exe, ArgsDefault1);
                 Process.Start(Exe, ArgsDefault2);
                 Process.Start(Exe, ArgsDefault3);
+            }
         }
 
 
@@ -902,9 +907,11 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
                 Process.Start(Exe, ArgsValue3);
             }
             else
+            {
                 Process.Start(Exe, ArgsDefault);
                 Process.Start(Exe, ArgsDefault2);
                 Process.Start(Exe, ArgsDefault3);
+            }
         }
 
 
@@ -1340,6 +1347,7 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
                 Process.Start(Exe, ArgsValue11);
             }
             else
+            {
                 Process.Start(Exe, ArgsDefault);
                 Process.Start(Exe, ArgsDefault2);
                 Process.Start(Exe, ArgsDefault3);
@@ -1351,6 +1359,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
                 Process.Start(Exe, ArgsDefault9);
                 Process.Start(Exe, ArgsDefault10);
                 Process.Start(Exe, ArgsDefault11);
+            }
+                
         }
 
 

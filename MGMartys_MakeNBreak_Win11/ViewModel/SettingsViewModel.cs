@@ -399,10 +399,12 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
             {
                 Process.Start(Exe, ArgsValue);
                 Process.Start(Exe, ArgsValue2);
-            } 
+            }
             else
+            {
                 Process.Start(Exe, ArgsDefault);
                 Process.Start(Exe, ArgsDefault2);
+            }
         }
 
 
@@ -1499,11 +1501,14 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
                 Process.Start(Exe, ArgsChecked5);
             }
             else
+            {
                 Process.Start(Exe, ArgsUnchecked);
                 Process.Start(Exe, ArgsUnchecked2);
                 Process.Start(Exe, ArgsUnchecked3);
                 Process.Start(Exe, ArgsUnchecked4);
                 Process.Start(Exe, ArgsUnchecked5);
+            }
+                
         }
 
         #endregion
