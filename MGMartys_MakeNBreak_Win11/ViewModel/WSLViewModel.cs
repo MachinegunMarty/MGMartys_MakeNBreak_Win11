@@ -37,8 +37,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
         public void WSLUbuntuDefault()
         {
-            string Exe = "wsl.exe";
-            string Arguments = "--install -d Ubuntu";
+            string Exe = "cmd.exe";
+            string Arguments = "/C wsl --install -d Ubuntu";
 
             if (ChckbxWSLUbuntuDefault)
                 Process.Start(Exe, Arguments);
@@ -62,8 +62,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
         public void WSLDebian()
         {
-            string Exe = "wsl.exe";
-            string Arguments = @"--install -d Debian";
+            string Exe = "cmd.exe";
+            string Arguments = "/C wsl --install -d Debian";
 
             if (ChckbxWSLDebian)
                 Process.Start(Exe, Arguments);
@@ -87,8 +87,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
         public void WSLkalilinux()
         {
-            string Exe = "wsl.exe";
-            string Arguments = @"--install -d kali-linux";
+            string Exe = "cmd.exe";
+            string Arguments = "/C wsl --install -d kali-linux";
 
             if (ChckbxWSLkalilinux)
                 Process.Start(Exe, Arguments);
@@ -112,8 +112,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
         public void WSLSLES12()
         {
-            string Exe = "wsl.exe";
-            string Arguments = @"--install -d SLES-12";
+            string Exe = "cmd.exe";
+            string Arguments = "/C wsl --install -d SLES-12";
 
             if (ChckbxWSLSLES12)
                 Process.Start(Exe, Arguments);
@@ -137,8 +137,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
         public void WSLSLES15()
         {
-            string Exe = "wsl.exe";
-            string Arguments = @"--install -d SLES-15";
+            string Exe = "cmd.exe";
+            string Arguments = "/C wsl --install -d SLES-15";
 
             if (ChckbxWSLSLES12)
                 Process.Start(Exe, Arguments);
@@ -162,8 +162,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
         public void WSLUbuntu1804()
         {
-            string Exe = "wsl.exe";
-            string Arguments = @"--install -d Ubuntu-18.04";
+            string Exe = "cmd.exe";
+            string Arguments = "/C wsl --install -d Ubuntu-18.04";
 
             if (ChckbxWSLUbuntu1804)
                 Process.Start(Exe, Arguments);
@@ -188,8 +188,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
         public void WSLUbuntu2004()
         {
-            string Exe = "wsl.exe";
-            string Arguments = @"--install -d Ubuntu-20.04";
+            string Exe = "cmd.exe";
+            string Arguments = "/C wsl --install -d Ubuntu-20.04";
 
             if (ChckbxWSLUbuntu1804)
                 Process.Start(Exe, Arguments);
@@ -214,8 +214,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
         public void WSLOracleLinux85()
         {
-            string Exe = "wsl.exe";
-            string Arguments = @"--install -d OracleLinux_8_5";
+            string Exe = "cmd.exe";
+            string Arguments = "/C wsl --install -d OracleLinux_8_5";
 
             if (ChckbxWSLOracleLinux85)
                 Process.Start(Exe, Arguments);
@@ -240,8 +240,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
         public void WSLOracleLinux79()
         {
-            string Exe = "wsl.exe";
-            string Arguments = @"--install -d OracleLinux_7_9";
+            string Exe = "cmd.exe";
+            string Arguments = "/C wsl --install -d OracleLinux_7_9";
 
             if (ChckbxWSLOracleLinux85)
                 Process.Start(Exe, Arguments);

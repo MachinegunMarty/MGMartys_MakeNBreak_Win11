@@ -383,8 +383,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         public void UninstallMicrosoftOneDrive()
         {
             string Exe = "wt.exe";
-            string Uninstall = @"winget uninstall --id=Microsoft.OneDrive";
-            string Install = @"winget install --id=Microsoft.OneDrive -e";
+            string Uninstall = @"winget uninstall --id=Microsoft.OneDrive --accept-source-agreements";
+            string Install = @"winget install --id=Microsoft.OneDrive --accept-source-agreements";
 
             if (ChckbxUninstallMicrosoftOneDrive)
                 Process.Start(Exe, Uninstall);
