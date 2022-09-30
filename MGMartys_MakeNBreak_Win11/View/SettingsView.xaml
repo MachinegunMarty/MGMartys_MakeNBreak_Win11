@@ -276,7 +276,6 @@
                                             <GroupBox Header="Taskbar Behaviors" Foreground="Lime" Margin="5">
                                                 <StackPanel Margin="5">
                                                     <CheckBox Content="Taskbar Alignment - Left" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxPersonalizationTaskbarBehaviorsTaskbarAlignment}" Style="{StaticResource GeneralCheckboxStyle}"/>
-                                                    <CheckBox Content="Turn 'Automatically hide the taskbar' - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxPersonalizationTaskbarBehaviorsAutomaticlyHideTheTaskbar}" Style="{StaticResource GeneralCheckboxStyle}"/>
                                                 </StackPanel>
                                             </GroupBox>
 
