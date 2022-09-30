@@ -233,8 +233,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
             string RegistryPath = "\"HKCU\\Control Panel\\Desktop\\WindowMetrics\"";
             string Name = "MinAnimate";
             string Type = "REG_SZ";
-            string Value = "1";
-            string Default = "0";
+            string Value = "0";
+            string Default = "1";
 
             string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
             string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
