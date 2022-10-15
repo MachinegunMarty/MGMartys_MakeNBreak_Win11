@@ -332,8 +332,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         public void InstallVisualC2010()
         {
             string Exe = "cmd.exe";
-            string Argumentsx86 = "/C winget install --id=Microsoft.VC++2010Redist-x86 -e";
-            string Argumentsx64 = "/C winget install --id=Microsoft.VC++2010Redist-x64 -e";
+            string Argumentsx86 = "/C winget install --id=Microsoft.VCRedist.2010.x86  -e";
+            string Argumentsx64 = "/C winget install --id=Microsoft.VCRedist.2010.x64  -e";
 
             if (ChckbxInstallVisualC2010)
                 Process.Start(Exe, Argumentsx86);
@@ -360,8 +360,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         public void InstallVisualC2012()
         {
             string Exe = "cmd.exe";
-            string Argumentsx86 = "/C winget install --id=Microsoft.VC++2012Redist-x86 -e";
-            string Argumentsx64 = "/C winget install --id=Microsoft.VC++2012Redist-x64 -e";
+            string Argumentsx86 = "/C winget install --id=Microsoft.VCRedist.2012.x86 -e";
+            string Argumentsx64 = "/C winget install --id=Microsoft.VCRedist.2012.x64 -e";
 
             if (ChckbxInstallVisualC2012)
                 Process.Start(Exe, Argumentsx86);
@@ -388,8 +388,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         public void InstallVisualC2013()
         {
             string Exe = "cmd.exe";
-            string Argumentsx86 = "/C winget install --id=Microsoft.VC++2013Redist-x86 -e";
-            string Argumentsx64 = "/C winget install --id=Microsoft.VC++2013Redist-x64 -e";
+            string Argumentsx86 = "/C winget install --id=Microsoft.VCRedist.2013.x86 -e";
+            string Argumentsx64 = "/C winget install --id=Microsoft.VCRedist.2013.x64 -e";
 
             if (ChckbxInstallVisualC2013)
                 Process.Start(Exe, Argumentsx86);
@@ -416,8 +416,8 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         public void InstallVisualC2015171922()
         {
             string Exe = "cmd.exe";
-            string Argumentsx86 = "/C winget install --id=Microsoft.VC++2015-2019Redist-x86 -e";
-            string Argumentsx64 = "/C winget install --id=Microsoft.VC++2015-2019Redist-x64 -e";
+            string Argumentsx86 = "/C winget install --id=Microsoft.VCRedist.2015+.x86 -e";
+            string Argumentsx64 = "/C winget install --id=Microsoft.VCRedist.2015+.x64 -e";
 
             if (ChckbxInstallVisualC2015171922)
                 Process.Start(Exe, Argumentsx86);

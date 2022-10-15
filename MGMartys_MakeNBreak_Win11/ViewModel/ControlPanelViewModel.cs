@@ -1428,6 +1428,42 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
                 Process.Start(Exe, ArgsUnchecked);
         }
 
+
+        // Checkbox - Disable HPET - Command
+
+        private Boolean _chckbxSystemAdvancedSystemSettingsAdvancedStartupAndRecoveryDisableHPET;
+        public Boolean ChckbxSystemAdvancedSystemSettingsAdvancedStartupAndRecoveryDisableHPET
+        {
+            get => _chckbxSystemAdvancedSystemSettingsAdvancedStartupAndRecoveryDisableHPET;
+            set
+            {
+                if (_chckbxSystemAdvancedSystemSettingsAdvancedStartupAndRecoveryDisableHPET == value)
+                    return;
+
+                _chckbxSystemAdvancedSystemSettingsAdvancedStartupAndRecoveryDisableHPET = value;
+                OnPropertyChanged(nameof(ChckbxSystemAdvancedSystemSettingsAdvancedStartupAndRecoveryDisableHPET));
+                SystemAdvancedSystemSettingsAdvancedStartupAndRecoveryDisableHPET();
+            }
+        }
+
+        public void SystemAdvancedSystemSettingsAdvancedStartupAndRecoveryDisableHPET()
+        {
+            string Exe = "cmd.exe";
+            string ArgsChecked = "/C bcdedit /deletevalue useplatformclock";
+            string ArgsChecked2 = "/C bcdedit /set disabledynamictick yes";
+            string ArgsUnchecked = "/C bcdedit /set useplatformclock true";
+            string ArgsUnchecked2 = "/C bcdedit /set disabledynamictick no";
+
+            if (ChckbxSystemAdvancedSystemSettingsAdvancedStartupAndRecoveryDisableHPET)
+            {
+                Process.Start(Exe, ArgsChecked);
+                Process.Start(Exe, ArgsChecked2);
+            }
+            else
+                Process.Start(Exe, ArgsUnchecked);
+                Process.Start(Exe, ArgsUnchecked2);
+        }
+
         #endregion
 
         #region Advanced System Settings - Tab: Remote

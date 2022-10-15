@@ -348,6 +348,7 @@
                                                 <StackPanel Margin="5">
                                                     <CheckBox Content="Time to display list of operating systems - 0 Seconds" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxSystemAdvancedSystemSettingsAdvancedStartupAndRecoveryTimeToDisplayListOfOS}" Style="{StaticResource GeneralCheckboxStyle}"/>
                                                     <CheckBox Content="Enable F8 During Boot" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxSystemAdvancedSystemSettingsAdvancedStartupAndRecoveryEnableF8DuringBoot}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                                    <CheckBox Content="Disable HPET" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxSystemAdvancedSystemSettingsAdvancedStartupAndRecoveryDisableHPET}" Style="{StaticResource GeneralCheckboxStyle}"/>
                                                 </StackPanel>
                                             </GroupBox>
                                         </StackPanel>
