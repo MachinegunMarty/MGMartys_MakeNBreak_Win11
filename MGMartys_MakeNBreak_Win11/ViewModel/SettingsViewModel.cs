@@ -2,8 +2,11 @@
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.IO;
+using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Windows;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -904,6 +907,76 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
                 Process.Start(Exe, ArgsDefault);
         }
 
+
+        // Checkbox - Turn Recommended - Off - Command
+
+        private Boolean _chckbxPersonalizationStartRecommended;
+        public Boolean ChckbxPersonalizationStartRecommended
+        {
+            get => _chckbxPersonalizationStartRecommended;
+            set
+            {
+                if (_chckbxPersonalizationStartRecommended == value)
+                    return;
+
+                _chckbxPersonalizationStartRecommended = value;
+                OnPropertyChanged(nameof(ChckbxPersonalizationStartRecommended));
+                PersonalizationStartRecommended();
+            }
+        }
+
+        public void PersonalizationStartRecommended()
+        {
+            string Exe = "cmd.exe";
+            string RegistryPath = "HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows\\Explorer";
+            string Name = "HideRecommendedSection";
+            string Type = "REG_DWORD";
+            string Value = "1";
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg delete " + RegistryPath + " /v " + Name + " /f";
+
+            if (ChckbxPersonalizationStartRecommended)
+                Process.Start(Exe, ArgsValue);
+            else
+                Process.Start(Exe, ArgsDefault);
+        }
+
+
+        // Checkbox - Remove all pinned Apps and load MG Marty's defaults - Command
+
+        private Boolean _chckbxPersonalizationStartRemoveAllPinnedLoadDefaults;
+        public Boolean ChckbxPersonalizationStartRemoveAllPinnedLoadDefaults
+        {
+            get => _chckbxPersonalizationStartRemoveAllPinnedLoadDefaults;
+            set
+            {
+                if (_chckbxPersonalizationStartRemoveAllPinnedLoadDefaults == value)
+                    return;
+
+                _chckbxPersonalizationStartRemoveAllPinnedLoadDefaults = value;
+                OnPropertyChanged(nameof(ChckbxPersonalizationStartRemoveAllPinnedLoadDefaults));
+                PersonalizationStartRemoveAllPinnedLoadDefaults();
+            }
+        }
+
+
+        public void PersonalizationStartRemoveAllPinnedLoadDefaults()
+        {
+            string Exe = "cmd.exe";
+            string Path = "%LocalAppData%\\Packages\\Microsoft.Windows.StartMenuExperienceHost_cw5n1h2txyewy\\LocalState\\";
+            string File = "start2.bin";
+            string ArgsValue = "/C DEL /F /S /Q /A \"%LocalAppData%\\Packages\\Microsoft.Windows.StartMenuExperienceHost_cw5n1h2txyewy\\LocalState\\start2.bin\"";
+            string ArgsValue2 = "/C taskkill /im StartMenuExperienceHost.exe /f";
+            string ArgsValue3 = "/C start C:\\Windows\\SystemApps\\Microsoft.Windows.StartMenuExperienceHost_cw5n1h2txyewy\\StartMenuExperienceHost.exe";
+
+            if (ChckbxPersonalizationStartRemoveAllPinnedLoadDefaults)
+            {
+                Process.Start(Exe, ArgsValue);
+                Process.Start(Exe, ArgsValue2);
+                Process.Start(Exe, ArgsValue3);
+            }
+        }
+
         #endregion
 
         #region Taskbar
@@ -1049,6 +1122,9 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
 
 
+       
+
+
 
         // Checkbox - Hide 'Pen Menu' - Command
 
@@ -1191,6 +1267,47 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
                 Process.Start(Exe, ArgsDefault);
         }
 
+
+        // Checkbox - Clear all Taskbar Items - Command
+
+        private Boolean _chckbxPersonalizationTaskbarClearAll;
+        public Boolean ChckbxPersonalizationTaskbarClearAll
+        {
+            get => _chckbxPersonalizationTaskbarClearAll;
+            set
+            {
+                if (_chckbxPersonalizationTaskbarClearAll == value)
+                    return;
+
+                _chckbxPersonalizationTaskbarClearAll = value;
+                OnPropertyChanged(nameof(ChckbxPersonalizationTaskbarClearAll));
+                PersonalizationTaskbarClearAll();
+            }
+        }
+
+        public void PersonalizationTaskbarClearAll()
+        {
+            string Exe = "cmd.exe";
+            string RegistryPath = "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Taskband";
+            string Name = "TaskbarMn";
+            string Type = "REG_DWORD";
+            string Value = "0";
+            string Default = "1";
+
+            string ArgsValue = "/C DEL /F /S /Q /A \"%AppData%\\Microsoft\\Internet Explorer\\Quick Launch\\User Pinned\\TaskBar\\*\"";
+            string ArgsValue2 = "/C Reg delete " + RegistryPath + " /f";
+            string ArgsValue3 = "/C taskkill /F /IM explorer.exe";
+            string ArgsValue4 = "/C start explorer";
+
+            if (ChckbxPersonalizationTaskbarClearAll)
+            {
+                Process.Start(Exe, ArgsValue).WaitForExit(500000);
+                Process.Start(Exe, ArgsValue2).WaitForExit(500000);
+                Process.Start(Exe, ArgsValue3).WaitForExit(500000);
+                Process.Start(Exe, ArgsValue4);
+            }
+        }
+
         // Checkbox - Automatically hide the taskbar - Command
 
         private Boolean _chckbxPersonalizationTaskbarBehaviorsAutomaticlyHideTheTaskbar;
@@ -1318,6 +1435,57 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         #endregion
 
         #region Privacy & Security
+
+        #region For Developers
+
+        // Checkbox - Set 'Terminal' to 'Windows Terminal' - Command
+
+        private Boolean _chckbxPrivacyAndSecurityForDevelopersSetTerminal;
+        public Boolean ChckbxPrivacyAndSecurityForDevelopersSetTerminal
+        {
+            get => _chckbxPrivacyAndSecurityForDevelopersSetTerminal;
+            set
+            {
+                if (_chckbxPrivacyAndSecurityForDevelopersSetTerminal == value)
+                    return;
+
+                _chckbxPrivacyAndSecurityForDevelopersSetTerminal = value;
+                OnPropertyChanged(nameof(ChckbxPrivacyAndSecurityForDevelopersSetTerminal));
+                PrivacyAndSecurityForDevelopersSetTerminal();
+            }
+        }
+
+        public void PrivacyAndSecurityForDevelopersSetTerminal()
+        {
+            string Exe = "cmd.exe";
+            string RegistryPath = "HKCU\\Console\\%%Startup\\";
+            string Name = "DelegationConsole";
+            string Name2 = "DelegationTerminal";
+            string Type = "REG_SZ";
+            string Value = "\"{2EACA947-7F5F-4CFA-BA87-8F7FBEEFBE69}\"";
+            string Value2 = "\"{E12CFF52-A866-4C77-9A90-F570A7AA2C6B}\"";
+            string Default = "\"{00000000-0000-0000-0000-000000000000}\"";
+            
+
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsValue2 = "/C Reg Add " + RegistryPath + " /v " + Name2 + " /t " + Type + " /d " + Value2 + " /f";
+            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+            string ArgsDefault2 = "/C Reg Add " + RegistryPath + " /v " + Name2 + " /t " + Type + " /d " + Default + " /f";
+
+            if (ChckbxPrivacyAndSecurityForDevelopersSetTerminal)
+            {
+                Process.Start(Exe, ArgsValue).WaitForExit(50000);
+                Process.Start(Exe, ArgsValue2);
+            }
+            else
+            {
+                Process.Start(Exe, ArgsDefault).WaitForExit(50000);
+                Process.Start(Exe, ArgsDefault2);
+            }
+        }
+
+
+        #endregion
 
         #region General
 
@@ -2666,6 +2834,43 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         #endregion
 
         #region Windows Update
+
+        // Checkbox - ADVANCED OPTIONS - Receive Updates for other Microsoft products - Command
+
+        private Boolean _chckbxWindowsUpdateReceiveUpdatesForOtherMicrosoftProducts;
+        public Boolean ChckbxWindowsUpdateReceiveUpdatesForOtherMicrosoftProducts
+        {
+            get => _chckbxWindowsUpdateReceiveUpdatesForOtherMicrosoftProducts;
+            set
+            {
+                if (_chckbxWindowsUpdateReceiveUpdatesForOtherMicrosoftProducts == value)
+                    return;
+
+                _chckbxWindowsUpdateReceiveUpdatesForOtherMicrosoftProducts = value;
+                OnPropertyChanged(nameof(ChckbxWindowsUpdateReceiveUpdatesForOtherMicrosoftProducts));
+                WindowsUpdatReceiveUpdatesForOtherMicrosoftProducts();
+            }
+        }
+
+        public void WindowsUpdatReceiveUpdatesForOtherMicrosoftProducts()
+        {
+            string Exe = "cmd.exe";
+            string RegistryPath = "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\WindowsUpdate\\Services\\7971F918-A847-4430-9279-4A52D1EFE18D";
+            string Name = "RegisteredWithAU";
+            string Type = "REG_DWORD";
+            string Value = "1";
+            string Default = "0";
+
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Default + " /f";
+
+            if (ChckbxWindowsUpdateReceiveUpdatesForOtherMicrosoftProducts)
+                Process.Start(Exe, ArgsValue);
+            else
+                Process.Start(Exe, ArgsDefault);
+        }
+
+
 
         // Checkbox - ADVANCED OPTIONS - Delivery Optimization - Allow downloads from other pc's - Command
 

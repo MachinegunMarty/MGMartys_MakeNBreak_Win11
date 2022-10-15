@@ -1460,8 +1460,10 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
                 Process.Start(Exe, ArgsChecked2);
             }
             else
+            {
                 Process.Start(Exe, ArgsUnchecked);
                 Process.Start(Exe, ArgsUnchecked2);
+            }
         }
 
         #endregion

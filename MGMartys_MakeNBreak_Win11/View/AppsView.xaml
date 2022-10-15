@@ -63,6 +63,7 @@
                                             <CheckBox Content="Cortana" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallCortana}" Style="{StaticResource GeneralCheckboxStyle}"/>
                                             <CheckBox Content="Microsoft News" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallMicrosoftNews}" Style="{StaticResource GeneralCheckboxStyle}"/>
                                             <CheckBox Content="MSN Weather" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallMSNWeather}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                            <CheckBox Content="Microsoft Edge" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallEdge}" Style="{StaticResource GeneralCheckboxStyle}"/>
                                             <CheckBox Content="Get Help" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallGetHelp}" Style="{StaticResource GeneralCheckboxStyle}"/>
                                             <CheckBox Content="Microsoft Tips" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallMicrosoftTips}" Style="{StaticResource GeneralCheckboxStyle}"/>
                                             <CheckBox Content="Office" Foreground="#FFFFFF" Margin="3" IsChecked="{Binding ChckbxUninstallOffice}" Style="{StaticResource GeneralCheckboxStyle}"/>
@@ -92,6 +93,7 @@
                                             <TextBlock Text="Microsoft.549981C3F5F10" Foreground="#FFFFFF" Margin="5"/>
                                             <TextBlock Text="Microsoft.BingNews" Foreground="#FFFFFF" Margin="5"/>
                                             <TextBlock Text="Microsoft.BingWeather" Foreground="#FFFFFF" Margin="5"/>
+                                            <TextBlock Text="Microsoft.Edge" Foreground="#FFFFFF" Margin="5"/>
                                             <TextBlock Text="Microsoft.GetHelp" Foreground="#FFFFFF" Margin="5"/>
                                             <TextBlock Text="Microsoft.Getstarted" Foreground="#FFFFFF" Margin="5"/>
                                             <TextBlock Text="Microsoft.MicrosoftOfficeHub" Foreground="#FFFFFF" Margin="5"/>

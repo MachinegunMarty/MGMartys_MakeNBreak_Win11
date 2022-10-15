@@ -226,6 +226,31 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
 
 
+        // Checkbox - Microsoft Edge - Command
+
+        private Boolean _chckbxUninstallEdge;
+        public Boolean ChckbxUninstallEdge
+        {
+            get => _chckbxUninstallEdge;
+            set
+            {
+                if (_chckbxUninstallEdge == value)
+                    return;
+
+                _chckbxUninstallEdge = value;
+                OnPropertyChanged(nameof(ChckbxUninstallEdge));
+                UninstallEdge();
+            }
+        }
+
+        public void UninstallEdge()
+        {
+            string Exe = "cmd.exe";
+            string Uninstall = "/C winget uninstall --id=Microsoft.Edge --silent --accept-source-agreements";
+            Process.Start(Exe, Uninstall);
+        }
+
+
         // Checkbox - Get Help - Command
 
         private Boolean _chckbxUninstallGetHelp;

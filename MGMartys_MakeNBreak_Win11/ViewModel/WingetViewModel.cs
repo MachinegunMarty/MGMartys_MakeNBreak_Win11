@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -280,8 +281,7 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
             string Argumentsx64 = "/C winget install --id=Microsoft.VCRedist.2005.x64 -e";
 
             if (ChckbxInstallVisualC2005)
-                Process.Start(Exe, Argumentsx86);
-            Thread.Sleep(7000);
+                Process.Start(Exe, Argumentsx86).WaitForExit(50000);
                 Process.Start(Exe, Argumentsx64);
         }
 
@@ -308,8 +308,7 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
             string Argumentsx64 = "/C winget install --id=Microsoft.VCRedist.2008.x64 -e";
 
             if (ChckbxInstallVisualC2008)
-                Process.Start(Exe, Argumentsx86);
-            Thread.Sleep(7000);
+                Process.Start(Exe, Argumentsx86).WaitForExit(50000);
                 Process.Start(Exe, Argumentsx64);
         }
 
@@ -336,8 +335,7 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
             string Argumentsx64 = "/C winget install --id=Microsoft.VCRedist.2010.x64  -e";
 
             if (ChckbxInstallVisualC2010)
-                Process.Start(Exe, Argumentsx86);
-                Thread.Sleep(7000);
+                Process.Start(Exe, Argumentsx86).WaitForExit(50000);
                 Process.Start(Exe, Argumentsx64);
         }
 
@@ -364,8 +362,7 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
             string Argumentsx64 = "/C winget install --id=Microsoft.VCRedist.2012.x64 -e";
 
             if (ChckbxInstallVisualC2012)
-                Process.Start(Exe, Argumentsx86);
-            Thread.Sleep(7000);
+                Process.Start(Exe, Argumentsx86).WaitForExit(50000);
                 Process.Start(Exe, Argumentsx64);
         }
 
@@ -392,8 +389,7 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
             string Argumentsx64 = "/C winget install --id=Microsoft.VCRedist.2013.x64 -e";
 
             if (ChckbxInstallVisualC2013)
-                Process.Start(Exe, Argumentsx86);
-            Thread.Sleep(7000);
+                Process.Start(Exe, Argumentsx86).WaitForExit(50000);
                 Process.Start(Exe, Argumentsx64);
         }
 
@@ -420,8 +416,7 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
             string Argumentsx64 = "/C winget install --id=Microsoft.VCRedist.2015+.x64 -e";
 
             if (ChckbxInstallVisualC2015171922)
-                Process.Start(Exe, Argumentsx86);
-            Thread.Sleep(7000);
+                Process.Start(Exe, Argumentsx86).WaitForExit(50000);
                 Process.Start(Exe, Argumentsx64);
         }
 
@@ -451,7 +446,7 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         public void InstallBrave()
         {
             string Exe = "cmd.exe";
-            string Arguments = "/C winget install --id=BraveSoftware.BraveBrowser -e";
+            string Arguments = "/C winget install --id=Brave.Brave -e";
 
             if (ChckbxInstallBrave)
                 Process.Start(Exe, Arguments);
@@ -502,9 +497,13 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         {
             string Exe = "cmd.exe";
             string Arguments = "/C winget install --id=Mozilla.Firefox -e";
+            string Addon1 = "/C \"%PROGRAMFILES%\\Mozilla Firefox\\firefox.exe\" \"https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/\"";
 
             if (ChckbxInstallFirefox)
-                Process.Start(Exe, Arguments);
+            {
+                Process.Start(Exe, Arguments).WaitForExit(500000);
+                Process.Start(Exe, Addon1);
+            }
         }
 
 
@@ -615,9 +614,13 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         {
             string Exe = "cmd.exe";
             string Arguments = "/C winget install --id=Notepad++.Notepad++ -e";
+            string Arguments2 = "/C copy \"C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Notepad++.lnk\" \"C:\\Users\\%username%\\Desktop\\\"";
 
             if (ChckbxInstallNotepadPlusPlus)
-                Process.Start(Exe, Arguments);
+            {
+                Process.Start(Exe, Arguments).WaitForExit(50000);
+                Process.Start(Exe, Arguments2);
+            }
         }
 
 
@@ -887,9 +890,11 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         {
             string Exe = "cmd.exe";
             string Arguments = "/C winget install --id=GIMP.GIMP -e";
+            string Arguments2 = "/C copy \"C:\\Users\\%username%\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\GIMP 2.10.32.lnk\" \"C:\\Users\\%username%\\Desktop\\\"";
 
             if (ChckbxInstallGIMP)
-                Process.Start(Exe, Arguments);
+                Process.Start(Exe, Arguments).WaitForExit(500000);
+                Process.Start(Exe, Arguments2);
         }
 
 
@@ -1064,9 +1069,11 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         {
             string Exe = "cmd.exe";
             string Arguments = "/C winget install --id=PuTTY.PuTTY -e";
+            string Arguments2 = "/C copy \"C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\PuTTY (64-bit)\\PuTTY.lnk\" \"C:\\Users\\%username%\\Desktop\\\"";
 
             if (ChckbxInstallPutty)
-                Process.Start(Exe, Arguments);
+                Process.Start(Exe, Arguments).WaitForExit(50000);
+                Process.Start(Exe, Arguments2);
         }
 
 
@@ -1422,13 +1429,15 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         {
             string Exe = "cmd.exe";
             string Arguments = "/C winget install --id=HandBrake.HandBrake -e";
+            string Arguments2 = "/C copy \"C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\HandBrake\\HandBrake.lnk\" \"C:\\Users\\%username%\\Desktop\\\"";
 
             if (ChckbxInstallHandbrake)
-                Process.Start(Exe, Arguments);
+                Process.Start(Exe, Arguments).WaitForExit(50000);
+                Process.Start(Exe, Arguments2);
         }
 
 
-        // Install MKV Tool Nix
+        // Install MKVToolNix
         private Boolean _chckbxInstallMKVToolNix;
         public Boolean ChckbxInstallMKVToolNix
         {
@@ -1447,9 +1456,11 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         {
             string Exe = "cmd.exe";
             string Arguments = "/C winget install --id=MKVToolNix.MKVToolNix -e";
+            string Arguments2 = "/C copy \"C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\MKVToolNix\\MKVToolNix GUI.lnk\" \"C:\\Users\\%username%\\Desktop\\\"";
 
             if (ChckbxInstallMKVToolNix)
-                Process.Start(Exe, Arguments);
+                Process.Start(Exe, Arguments).WaitForExit(50000);
+                Process.Start(Exe, Arguments2);
         }
 
 
@@ -1472,9 +1483,11 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         {
             string Exe = "cmd.exe";
             string Arguments = "/C winget install --id=Tweaking4All.RenameMyTVSeries -e";
+            string Arguments2 = "/C copy \"C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Rename My TV Series\\Rename My TV Series.lnk\" \"C:\\Users\\%username%\\Desktop\\\"";
 
             if (ChckbxInstallRenameMyTVSeries)
-                Process.Start(Exe, Arguments);
+                Process.Start(Exe, Arguments).WaitForExit(500000);
+                Process.Start(Exe, Arguments2);
         }
 
 
@@ -1529,9 +1542,12 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         {
             string Exe = "cmd.exe";
             string Arguments = "/C winget install --id=Microsoft.VisualStudio.2022.Community -e";
+            string Arguments2 = "/C copy \"C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Visual Studio 2022.lnk\" \"C:\\Users\\%username%\\Desktop\\\"";
+
 
             if (ChckbxInstallVisualStudio2022Community)
-                Process.Start(Exe, Arguments);
+                Process.Start(Exe, Arguments).WaitForExit(500000);
+                Process.Start(Exe, Arguments2);
         }
 
 
