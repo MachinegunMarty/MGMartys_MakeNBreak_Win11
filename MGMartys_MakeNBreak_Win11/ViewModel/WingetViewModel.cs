@@ -34,7 +34,7 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         #region Runtimes
 
-        // Install .Net 3.1 Desktop Framework
+        // Install Microsoft .NET Windows Desktop Runtime 3.1
         private Boolean _chckbxInstallNet31;
         public Boolean ChckbxInstallNet31
         {
@@ -52,7 +52,7 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         public void InstallNet31()
         {
             string Exe = "cmd.exe";
-            string Arguments = "/C winget install --id=Microsoft.DotNet.AspNetCore.3_1  -e";
+            string Arguments = "/C winget install --id=Microsoft.DotNet.DesktopRuntime.3_1 -e";
 
             if (ChckbxInstallNet31)
                 Process.Start(Exe, Arguments);
@@ -109,7 +109,7 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
 
 
-        // Install .Net 5.0 Desktop Framework
+        // Install Microsoft .NET Windows Desktop Runtime 5.0
         private Boolean _chckbxInstallNet50;
         public Boolean ChckbxInstallNet50
         {
@@ -127,14 +127,14 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         public void InstallNet50()
         {
             string Exe = "cmd.exe";
-            string Arguments = "/C winget install --id=Microsoft.DotNet.AspNetCore.5 -e";
+            string Arguments = "/C winget install --id=Microsoft.DotNet.DesktopRuntime.5 -e";
 
             if (ChckbxInstallNet50)
                 Process.Start(Exe, Arguments);
         }
 
 
-        // Install .Net 6.0 Desktop Framework
+        // Install Microsoft .NET Windows Desktop Runtime 6.0
         private Boolean _chckbxInstallNet60;
         public Boolean ChckbxInstallNet60
         {
@@ -152,7 +152,7 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         public void InstallNet60()
         {
             string Exe = "cmd.exe";
-            string Arguments = "/C winget install --id=Microsoft.DotNet.AspNetCore.6 -e";
+            string Arguments = "/C winget install --id=Microsoft.DotNet.DesktopRuntime.6 -e";
 
             if (ChckbxInstallNet60)
                 Process.Start(Exe, Arguments);
@@ -497,7 +497,7 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         {
             string Exe = "cmd.exe";
             string Arguments = "/C winget install --id=Mozilla.Firefox -e";
-            string Addon1 = "/C \"%PROGRAMFILES%\\Mozilla Firefox\\firefox.exe\" \"https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/\"";
+            string Addon1 = "/C \"%PROGRAMFILES%\\Mozilla Firefox\\firefox.exe\" https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/";
 
             if (ChckbxInstallFirefox)
             {
