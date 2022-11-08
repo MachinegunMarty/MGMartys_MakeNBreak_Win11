@@ -59,6 +59,7 @@
                                                 <CheckBox Content="Turn 'Allow notifcations to play sounds' - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxSystemNotificationsAllowNotificationsToPlaySoundsOff}" Style="{StaticResource GeneralCheckboxStyle}"/>
                                                 <CheckBox Content="Turn 'Show notifications on the lock screen' - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxSystemNotificationsShowNotificationsOnTheLockScreenOff}" Style="{StaticResource GeneralCheckboxStyle}"/>
                                                 <CheckBox Content="Turn 'Show reminders and Incoming VOIP calls on the lock screen' - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxSystemNotificationsShowRemindersAndIncomingVOIPCallsOnTheLockScreen}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                                <CheckBox Content="Remove Notifications and Action Center - Policy" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxSystemNotificationsRemoveNotificationsAndActionCenter}" Style="{StaticResource GeneralCheckboxStyle}"/>
                                             </StackPanel>
                                             </StackPanel>
                                         </StackPanel>

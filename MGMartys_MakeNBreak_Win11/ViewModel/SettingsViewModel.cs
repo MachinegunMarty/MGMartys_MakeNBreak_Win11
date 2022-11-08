@@ -173,6 +173,42 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
 
 
+        // Checkbox - Remove Notifications and Action Center - Off - Command
+
+        private Boolean _chckbxSystemNotificationsRemoveNotificationsAndActionCenter;
+        public Boolean ChckbxSystemNotificationsRemoveNotificationsAndActionCenter
+        {
+            get => _chckbxSystemNotificationsRemoveNotificationsAndActionCenter;
+            set
+            {
+                if (_chckbxSystemNotificationsRemoveNotificationsAndActionCenter == value)
+                    return;
+
+                _chckbxSystemNotificationsRemoveNotificationsAndActionCenter = value;
+                OnPropertyChanged(nameof(ChckbxSystemNotificationsRemoveNotificationsAndActionCenter));
+                SystemNotificationsRemoveNotificationsAndActionCenter();
+            }
+        }
+
+        public void SystemNotificationsRemoveNotificationsAndActionCenter()
+        {
+            string Exe = "cmd.exe";
+            string RegistryPath = "HKCU\\SOFTWARE\\Policies\\Microsoft\\Windows\\Explorer";
+            string Name = "DisableNotificationCenter";
+            string Type = "REG_DWORD";
+            string Value = "1";
+            
+
+            string ArgsValue = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + " /f";
+            string ArgsDefault = "/C Reg delete " + RegistryPath + " /f";
+
+            if (ChckbxSystemNotificationsRemoveNotificationsAndActionCenter)
+                Process.Start(Exe, ArgsValue);
+            else
+                Process.Start(Exe, ArgsDefault);
+        }
+
+
         #endregion
 
         #region Power

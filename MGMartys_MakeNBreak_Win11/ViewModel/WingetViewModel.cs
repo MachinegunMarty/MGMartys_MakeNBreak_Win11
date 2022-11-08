@@ -31,6 +31,36 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
 
 
+        #region Update All Installed Apps
+
+        //  Button - Update All Installed Apps
+        private ICommand _btnUpdateAllInstalledApps;
+        public ICommand BtnUpdateAllInstalledApps
+        {
+            get
+            {
+                if (_btnUpdateAllInstalledApps == null)
+                {
+                    _btnUpdateAllInstalledApps = new RelayCommand(param => UpdateAllInstalledApps());
+                }
+                return _btnUpdateAllInstalledApps;
+            }
+        }
+
+        // Set Accent Color
+        public void UpdateAllInstalledApps()
+        {
+
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget upgrade --all";
+
+            
+                Process.Start(Exe, Arguments);
+
+        }
+
+        #endregion
+
 
         #region Runtimes
 
