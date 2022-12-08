@@ -552,7 +552,7 @@
 
                                                 <GroupBox Header="Downloads Folder" Foreground="Lime" Margin="3">
                                                     <StackPanel >
-                                                        <CheckBox Content="Let Apps acces your 'Documents Library' - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxAppPermissionsDownloadsFolderAllowAppsToAccesYourDownloadsFolder}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                                        <CheckBox Content="Let Apps acces your 'Downloads Folder' - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxAppPermissionsDownloadsFolderAllowAppsToAccesYourDownloadsFolder}" Style="{StaticResource GeneralCheckboxStyle}"/>
                                                     </StackPanel>
                                                 </GroupBox>
 
@@ -587,7 +587,7 @@
                                                     </StackPanel>
                                                 </GroupBox>
 
-                                                <GroupBox Header="Other Devices" Foreground="Lime" Margin="3">
+                                                    <GroupBox Header="Screenshots and apps" Foreground="Lime" Margin="3">
                                                     <StackPanel >
                                                         <CheckBox Content="Let Apps take 'Screenshots' of various windows and displays - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxAppPermissionsScreenshotsAndAppsLetAppsTakeScreenshotsOfVariousWindowsAndDisplays}" Style="{StaticResource GeneralCheckboxStyle}"/>
                                                         <CheckBox Content="Let desktop apps take 'Screenshots' of various windows and displays - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxAppPermissionsScreenshotsAndAppsLetDesktopAppsTakeScreenshotsOfVariousWindowsAndDisplays}" Style="{StaticResource GeneralCheckboxStyle}"/>
