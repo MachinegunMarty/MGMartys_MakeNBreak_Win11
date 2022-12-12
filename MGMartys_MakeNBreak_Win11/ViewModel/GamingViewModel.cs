@@ -162,10 +162,10 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
             string RegistryPath = "HKCU\\Software\\Microsoft\\DirectX\\UserGpuPreferences";
             string Name = "DirectXUserGlobalSettings";
             string Type = "REG_SZ";
-            string Value = "VRROptimizeEnable=1;";
-            string Default = "VRROptimizeEnable=0;";
-            string Value2 = "SwapEffectUpgradeEnable=1;";
-            string Default2 = "SwapEffectUpgradeEnable=0;";
+            string Value = "VRROptimizeEnable=0;";
+            string Default = "VRROptimizeEnable=1;";
+            string Value2 = "SwapEffectUpgradeEnable=0;";
+            string Default2 = "SwapEffectUpgradeEnable=1;";
 
             string ArgsValueValue2 = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + Value2 + " /f";
             string ArgsValueDefault2 = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + Default2 + " /f";
@@ -218,10 +218,10 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
             string RegistryPath = "HKCU\\Software\\Microsoft\\DirectX\\UserGpuPreferences";
             string Name = "DirectXUserGlobalSettings";
             string Type = "REG_SZ";
-            string Value = "SwapEffectUpgradeEnable=1;";
-            string Default = "SwapEffectUpgradeEnable=0;";
-            string Value2 = "VRROptimizeEnable=1;";
-            string Default2 = "VRROptimizeEnable=0;";
+            string Value = "SwapEffectUpgradeEnable=0;";
+            string Default = "SwapEffectUpgradeEnable=1;";
+            string Value2 = "VRROptimizeEnable=0;";
+            string Default2 = "VRROptimizeEnable=1;";
 
             string ArgsValueValue2 = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + Value2 + " /f";
             string ArgsValueDefault2 = "/C Reg Add " + RegistryPath + " /v " + Name + " /t " + Type + " /d " + Value + Default2 + " /f";

@@ -53,8 +53,8 @@
                             <Label Name="DefaultGraphicsSettings_Label" Content="Default Graphics Settings" HorizontalContentAlignment="Center" Foreground="Lime" Background="#190533" FontWeight="Bold" BorderThickness="1"/>
                             <StackPanel Name="DefaultGraphicsSettings_Content" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto" Width="Auto" Margin="5">
                                 <StackPanel Margin="5">
-                                        <CheckBox Content="Variable Refresh Rate - On" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxDefaultGraphicsSettingsVariableRefreshRate}" Style="{StaticResource GeneralCheckboxStyle}"/>
-                                        <CheckBox Content="Optimizations for windowed games - On" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxDefaultGraphicsSettingsOptimizationsForWindowedGames}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                        <CheckBox Content="Variable Refresh Rate - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxDefaultGraphicsSettingsVariableRefreshRate}" Style="{StaticResource GeneralCheckboxStyle}"/>
+                                        <CheckBox Content="Optimizations for windowed games - Off" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxDefaultGraphicsSettingsOptimizationsForWindowedGames}" Style="{StaticResource GeneralCheckboxStyle}"/>
                                         <CheckBox Content="Hardware-accelerated GPU scheduling - On" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxDefaultGraphicsSettingsHardwareAcceleratedGPUScheduling}" Style="{StaticResource GeneralCheckboxStyle}"/>
                                 </StackPanel>
                             </StackPanel>
