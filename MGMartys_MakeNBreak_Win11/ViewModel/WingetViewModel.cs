@@ -189,7 +189,7 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
 
 
-        // Install Eclipse Adoptium Temurin JRE 8
+        // Install Oracle Java 8
         private Boolean _chckbxInstallJava8;
         public Boolean ChckbxInstallJava8
         {
@@ -207,59 +207,9 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         public void InstallJava8()
         {
             string Exe = "cmd.exe";
-            string Arguments = "/C winget install --id=EclipseAdoptium.Temurin.8.JRE -e";
+            string Arguments = "/C winget install --id=Oracle.JavaRuntimeEnvironment  -e";
 
             if (ChckbxInstallJava8)
-                Process.Start(Exe, Arguments);
-        }
-
-
-        // Install Eclipse Adoptium Temurin JRE 11
-        private Boolean _chckbxInstallJava11;
-        public Boolean ChckbxInstallJava11
-        {
-            get => _chckbxInstallJava11;
-            set
-            {
-                if (_chckbxInstallJava11 == value)
-                    return;
-
-                _chckbxInstallJava11 = value;
-                OnPropertyChanged(nameof(ChckbxInstallJava11));
-                InstallJava11();
-            }
-        }
-        public void InstallJava11()
-        {
-            string Exe = "cmd.exe";
-            string Arguments = "/C winget install --id=EclipseAdoptium.Temurin.11.JRE -e";
-
-            if (ChckbxInstallJava11)
-                Process.Start(Exe, Arguments);
-        }
-
-
-        // Install Eclipse Adoptium Temurin JRE 17
-        private Boolean _chckbxInstallJava17;
-        public Boolean ChckbxInstallJava17
-        {
-            get => _chckbxInstallJava17;
-            set
-            {
-                if (_chckbxInstallJava17 == value)
-                    return;
-
-                _chckbxInstallJava17 = value;
-                OnPropertyChanged(nameof(ChckbxInstallJava17));
-                InstallJava17();
-            }
-        }
-        public void InstallJava17()
-        {
-            string Exe = "cmd.exe";
-            string Arguments = "/C winget install --id=EclipseAdoptium.Temurin.17.JRE -e";
-
-            if (ChckbxInstallJava17)
                 Process.Start(Exe, Arguments);
         }
 
