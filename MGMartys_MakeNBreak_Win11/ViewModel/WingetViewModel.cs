@@ -132,7 +132,7 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         public void InstallNet48()
         {
             string Exe = "cmd.exe";
-            string Arguments = "/C winget install --id=Microsoft.dotNetFramework -e";
+            string Arguments = "/C winget install --id=Microsoft.DotNet.Framework.DeveloperPack_4  -e";
 
             if (ChckbxInstallNet48)
                 Process.Start(Exe, Arguments);
