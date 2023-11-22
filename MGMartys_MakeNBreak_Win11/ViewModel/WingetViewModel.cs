@@ -189,6 +189,56 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
 
 
+        // Install Microsoft .NET Windows Desktop Runtime 7.0
+        private Boolean _chckbxInstallNet70;
+        public Boolean ChckbxInstallNet70
+        {
+            get => _chckbxInstallNet70;
+            set
+            {
+                if (_chckbxInstallNet70 == value)
+                    return;
+
+                _chckbxInstallNet70 = value;
+                OnPropertyChanged(nameof(ChckbxInstallNet70));
+                InstallNet70();
+            }
+        }
+        public void InstallNet70()
+        {
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget install --id=Microsoft.DotNet.DesktopRuntime.7 -e";
+
+            if (ChckbxInstallNet70)
+                Process.Start(Exe, Arguments);
+        }
+
+
+        // Install Microsoft .NET Windows Desktop Runtime 8.0
+        private Boolean _chckbxInstallNet80;
+        public Boolean ChckbxInstallNet80
+        {
+            get => _chckbxInstallNet80;
+            set
+            {
+                if (_chckbxInstallNet80 == value)
+                    return;
+
+                _chckbxInstallNet80 = value;
+                OnPropertyChanged(nameof(ChckbxInstallNet80));
+                InstallNet80();
+            }
+        }
+        public void InstallNet80()
+        {
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget install --id=Microsoft.DotNet.DesktopRuntime.8 -e";
+
+            if (ChckbxInstallNet80)
+                Process.Start(Exe, Arguments);
+        }
+
+
         // Install Oracle Java 8
         private Boolean _chckbxInstallJava8;
         public Boolean ChckbxInstallJava8
@@ -517,6 +567,30 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         #region Compression
 
+
+        // Install NanaZip
+        private Boolean _chckbxInstallNanaZip;
+        public Boolean ChckbxInstallNanaZip
+        {
+            get => _chckbxInstallNanaZip;
+            set
+            {
+                if (_chckbxInstallNanaZip == value)
+                    return;
+
+                _chckbxInstall7Zip = value;
+                OnPropertyChanged(nameof(ChckbxInstallNanaZip));
+                InstallNanaZip();
+            }
+        }
+        public void InstallNanaZip()
+        {
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget install --id=M2Team.NanaZip  -e";
+
+            if (ChckbxInstallNanaZip)
+                Process.Start(Exe, Arguments);
+        }
 
         // Install 7 Zip
         private Boolean _chckbxInstall7Zip;
@@ -956,7 +1030,7 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         public void InstallRufus()
         {
             string Exe = "cmd.exe";
-            string Arguments = "/C winget install --id=Rufus.Rufus -e";
+            string Arguments = "/C winget install --id=Rufus.Rufus  -e";
 
             Process.Start(Exe, Arguments);
         }
