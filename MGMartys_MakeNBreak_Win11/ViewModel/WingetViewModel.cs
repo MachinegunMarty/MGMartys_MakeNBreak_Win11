@@ -31,6 +31,39 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
 
 
+        #region Update Winget
+
+        //  Button - Update Winget
+        private ICommand _btnUpdateWinGet;
+        public ICommand BtnUpdateWinGet
+        {
+            get
+            {
+                if (_btnUpdateWinGet == null)
+                {
+                    _btnUpdateWinGet = new RelayCommand(param => UpdateWinGet());
+                }
+                return _btnUpdateWinGet;
+            }
+        }
+        public void UpdateWinGet()
+        {
+
+            string Exe = "powershell.exe";
+            string Arguments = "./Resources/Scripts/\"UpdateWinget.ps1\"";
+           
+
+
+            
+                Process.Start(Exe, Arguments);
+           
+
+
+        }
+
+        #endregion
+
+
         #region Update All Installed Apps
 
         //  Button - Update All Installed Apps
@@ -46,8 +79,6 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
                 return _btnUpdateAllInstalledApps;
             }
         }
-
-        // Set Accent Color
         public void UpdateAllInstalledApps()
         {
 
@@ -578,7 +609,7 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
                 if (_chckbxInstallNanaZip == value)
                     return;
 
-                _chckbxInstall7Zip = value;
+                _chckbxInstallNanaZip = value;
                 OnPropertyChanged(nameof(ChckbxInstallNanaZip));
                 InstallNanaZip();
             }
@@ -586,11 +617,12 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         public void InstallNanaZip()
         {
             string Exe = "cmd.exe";
-            string Arguments = "/C winget install --id=M2Team.NanaZip  -e";
+            string Arguments = "/C winget install --id=M2Team.NanaZip -e";
 
             if (ChckbxInstallNanaZip)
                 Process.Start(Exe, Arguments);
         }
+
 
         // Install 7 Zip
         private Boolean _chckbxInstall7Zip;

@@ -369,5 +369,9 @@
   <ItemGroup>
     <Resource Include="Resources\Icons\Java_Icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\NanaZip_Icon.png" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

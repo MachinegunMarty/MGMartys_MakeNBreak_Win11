@@ -36,7 +36,6 @@
                 <StackPanel Name="Programs_Page" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                     
                     <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-
                         <Button x:Name="BtnUpdateAllInstalledApps" Content="Update All Installed Apps" FontSize="13" FontWeight="Bold" Command="{Binding BtnUpdateAllInstalledApps}"/>
 
                         <Border Name="Runtime_Border" BorderThickness="1" BorderBrush="Lime" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="4">
