@@ -30,7 +30,7 @@
                    HorizontalAlignment="Center"
                    VerticalAlignment="Bottom"
                    Margin="0,50,0,50"
-                   Text="Windows 11 (22H2 Update)"/>
+                   Text="Windows 11 (23H2 Update)"/>
 
     </Grid>
 

@@ -7,9 +7,9 @@
         xmlns:styles="MGMartys_MakeNBreak_Win11.Resources.styles"
         xmlns:local="clr-namespace:MGMartys_MakeNBreak_Win11"
         mc:Ignorable="d"
-        Title="MG Marty's - Make N Break - Windows 11 (22H2)" 
-        Width="1280"
-        Height="800" 
+        Title="MG Marty's - Make N Break - Windows 11 (23H2) - v1.6" 
+        Width="1440"
+        Height="900" 
         x:Name="DashboardWindow"
         WindowStartupLocation="CenterScreen"
         WindowStyle="ThreeDBorderWindow"
@@ -261,7 +261,7 @@
                 BorderThickness="0,0,0,0"
                                    >
 
-                <TextBlock Text="MG Marty's - Make N Break - Windows 11 (22H2)"
+                <TextBlock Text="MG Marty's - Make N Break - Windows 11 (23H2) - v1.6"
                        Style="{StaticResource FooterStyle}"/>
 
             </Border>
