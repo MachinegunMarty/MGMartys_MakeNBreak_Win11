@@ -74,7 +74,6 @@
                                                 <CheckBox Content="When plugged in, turn off my screen after - Never" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxSystemPowerScreenAndSleepWhenPluggedInTurnOffMyScreenAfter}" Style="{StaticResource GeneralCheckboxStyle}"/>
                                                 <CheckBox Content="On battery power, put my device to sleep after - Never" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxSystemPowerScreenAndSleepOnBatteryPowerPutMyDeviceToSleepAfter}" Style="{StaticResource GeneralCheckboxStyle}"/>
                                                 <CheckBox Content="When plugged in, put my device to sleep after - Never" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxSystemPowerScreenAndSleepWhenPluggedInPutMyDeviceToSleepAfter}" Style="{StaticResource GeneralCheckboxStyle}"/>
-                                                <CheckBox Content="Optimize your device based on power use and performance - High Performance" Foreground="Lime" Margin="5" IsChecked="{Binding ChckbxSystemPowerModeOptimizeYourDeviceBasedOnPowerUseAndPerformance}" Style="{StaticResource GeneralCheckboxStyle}"/>
                                                 </StackPanel>
                                             </StackPanel>
                                         </StackPanel>

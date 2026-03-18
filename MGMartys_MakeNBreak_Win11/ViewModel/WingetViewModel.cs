@@ -63,6 +63,61 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         #endregion
 
+        #region Install Microsoft Store
+
+        //  Button - Install Microsoft Store
+        private ICommand _btnInstallMSStore;
+        public ICommand BtnInstallMSStore
+        {
+            get
+            {
+                if (_btnInstallMSStore == null)
+                {
+                    _btnInstallMSStore = new RelayCommand(param => InstallMSStore());
+                }
+                return _btnInstallMSStore;
+            }
+        }
+        public void InstallMSStore()
+        {
+
+            string Exe = "cmd.exe";
+            string Arguments = "/C wsreset -i";
+
+
+            Process.Start(Exe, Arguments);
+
+        }
+
+        #endregion
+
+        #region Install App Installer (WinGet)
+
+        //  Button - Install App Installer (WinGet)
+        private ICommand _btnInstallAppInstaller;
+        public ICommand BtnInstallAppInstaller
+        {
+            get
+            {
+                if (_btnInstallAppInstaller == null)
+                {
+                    _btnInstallAppInstaller = new RelayCommand(param => InstallAppInstaller());
+                }
+                return _btnInstallAppInstaller;
+            }
+        }
+        public void InstallAppInstaller()
+        {
+
+            string Exe = "cmd.exe";
+            string Arguments = "/C start /max https://apps.microsoft.com/detail/9nblggh4nns1";
+
+
+            Process.Start(Exe, Arguments);
+
+        }
+
+        #endregion
 
         #region Update All Installed Apps
 
@@ -270,6 +325,56 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
 
 
+        // Install Microsoft .NET Windows Desktop Runtime 9.0
+        private Boolean _chckbxInstallNet90;
+        public Boolean ChckbxInstallNet90
+        {
+            get => _chckbxInstallNet90;
+            set
+            {
+                if (_chckbxInstallNet90 == value)
+                    return;
+
+                _chckbxInstallNet90 = value;
+                OnPropertyChanged(nameof(ChckbxInstallNet90));
+                InstallNet90();
+            }
+        }
+        public void InstallNet90()
+        {
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget install --id Microsoft.DotNet.DesktopRuntime.9 -e";
+
+            if (ChckbxInstallNet90)
+                Process.Start(Exe, Arguments);
+        }
+
+
+        // Install Microsoft .NET Windows Desktop Runtime 10.0
+        private Boolean _chckbxInstallNet100;
+        public Boolean ChckbxInstallNet100
+        {
+            get => _chckbxInstallNet100;
+            set
+            {
+                if (_chckbxInstallNet100 == value)
+                    return;
+
+                _chckbxInstallNet100 = value;
+                OnPropertyChanged(nameof(ChckbxInstallNet100));
+                InstallNet100();
+            }
+        }
+        public void InstallNet100()
+        {
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget install --id Microsoft.DotNet.DesktopRuntime.10 -e";
+
+            if (ChckbxInstallNet100)
+                Process.Start(Exe, Arguments);
+        }
+
+
         // Install Oracle Java 8
         private Boolean _chckbxInstallJava8;
         public Boolean ChckbxInstallJava8
@@ -313,7 +418,7 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         public void InstallDirectX()
         {
             string Exe = "cmd.exe";
-            string Arguments = "/C winget install --id=Microsoft.DirectX -e";
+            string Arguments = "/C winget install -e --id Microsoft.DirectX";
 
             if (ChckbxInstallDirectX)
                 Process.Start(Exe, Arguments);
@@ -800,27 +905,27 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         #region Game Clients
 
                 
-        // Install EA App
-        private Boolean _chckbxInstallEAApp;
-        public Boolean ChckbxInstallEAApp
+        // Install Battle.Net
+        private Boolean _chckbxInstallBattleNet;
+        public Boolean ChckbxInstallBattleNet
         {
-            get => _chckbxInstallEAApp;
+            get => _chckbxInstallBattleNet;
             set
             {
-                if (_chckbxInstallEAApp == value)
+                if (_chckbxInstallBattleNet == value)
                     return;
 
-                _chckbxInstallEAApp = value;
-                OnPropertyChanged(nameof(ChckbxInstallEAApp));
-                InstallEAApp();
+                _chckbxInstallBattleNet = value;
+                OnPropertyChanged(nameof(ChckbxInstallBattleNet));
+                InstallBattleNet();
             }
         }
-        public void InstallEAApp()
+        public void InstallBattleNet()
         {
             string Exe = "cmd.exe";
-            string Arguments = "/C winget install --id=ElectronicArts.EADesktop  -e";
+            string Arguments = "/C winget install -e --id Blizzard.BattleNet --location \"C:\\Program Files (x86)\\Battle.net\"";
 
-            if (ChckbxInstallEAApp)
+            if (ChckbxInstallBattleNet)
                 Process.Start(Exe, Arguments);
         }
 
@@ -1136,6 +1241,31 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         #region Remote Management
 
 
+        // Install AnyDesk
+        private Boolean _chckbxInstallAnyDesk;
+        public Boolean ChckbxInstallAnyDesk
+        {
+            get => _chckbxInstallAnyDesk;
+            set
+            {
+                if (_chckbxInstallAnyDesk == value)
+                    return;
+
+                _chckbxInstallAnyDesk = value;
+                OnPropertyChanged(nameof(ChckbxInstallAnyDesk));
+                InstallAnyDesk();
+            }
+        }
+        public void InstallAnyDesk()
+        {
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget install --id=PuTTY.PuTTY -e";
+
+            if (ChckbxInstallAnyDesk)
+                Process.Start(Exe, Arguments);
+        }
+
+
         // Install Putty
         private Boolean _chckbxInstallPutty;
         public Boolean ChckbxInstallPutty
@@ -1384,7 +1514,7 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
 
 
-        // Install Horizon Client
+        // Install Omnissa Horizon Client
         private Boolean _chckbxInstallHorizonClient;
         public Boolean ChckbxInstallHorizonClient
         {
@@ -1402,7 +1532,7 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         public void InstallHorizonClient()
         {
             string Exe = "cmd.exe";
-            string Arguments = "/C winget install --id=VMware.HorizonClient -e";
+            string Arguments = "/C winget install -e --id Omnissa.HorizonClient";
 
             if (ChckbxInstallHorizonClient)
                 Process.Start(Exe, Arguments);
@@ -1436,6 +1566,31 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
             string Arguments = "/C winget install --id=Audacity.Audacity -e";
 
             if (ChckbxInstallAudacity)
+                Process.Start(Exe, Arguments);
+        }
+
+
+        // Install Mp3Tag
+        private Boolean _chckbxInstallMp3Tag;
+        public Boolean ChckbxInstallMp3Tag
+        {
+            get => _chckbxInstallMp3Tag;
+            set
+            {
+                if (_chckbxInstallMp3Tag == value)
+                    return;
+
+                _chckbxInstallMp3Tag = value;
+                OnPropertyChanged(nameof(ChckbxInstallMp3Tag));
+                InstallMp3Tag();
+            }
+        }
+        public void InstallMp3Tag()
+        {
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget install -e --id FlorianHeidenreich.Mp3tag";
+
+            if (ChckbxInstallMp3Tag)
                 Process.Start(Exe, Arguments);
         }
 
@@ -1541,12 +1696,37 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         public void InstallMKVToolNix()
         {
             string Exe = "cmd.exe";
-            string Arguments = "/C winget install --id=MKVToolNix.MKVToolNix -e";
+            string Arguments = "/C winget install -e --id MoritzBunkus.MKVToolNix";
             string Arguments2 = "/C copy \"C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\MKVToolNix\\MKVToolNix GUI.lnk\" \"C:\\Users\\%username%\\Desktop\\\"";
 
             if (ChckbxInstallMKVToolNix)
                 Process.Start(Exe, Arguments).WaitForExit(50000);
                 Process.Start(Exe, Arguments2);
+        }
+
+
+        // Install MKV Muxing Batch GUI
+        private Boolean _chckbxInstallMKVMuxingBatchGUI;
+        public Boolean ChckbxInstallMKVMuxingBatchGUI
+        {
+            get => _chckbxInstallMKVMuxingBatchGUI;
+            set
+            {
+                if (_chckbxInstallMKVMuxingBatchGUI == value)
+                    return;
+
+                _chckbxInstallMKVMuxingBatchGUI = value;
+                OnPropertyChanged(nameof(ChckbxInstallMKVMuxingBatchGUI));
+                InstallMKVMuxingBatchGUI();
+            }
+        }
+        public void InstallMKVMuxingBatchGUI()
+        {
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget install -e --id yaser01.MKVMuxingBatchGUI";
+
+            if (ChckbxInstallMKVMuxingBatchGUI)
+                Process.Start(Exe, Arguments);
         }
 
 
@@ -1576,6 +1756,29 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
                 Process.Start(Exe, Arguments2);
         }
 
+        // Install SubtitleEdit
+        private Boolean _chckbxInstallSubtitleEdit;
+        public Boolean ChckbxInstallSubtitleEdit
+        {
+            get => _chckbxInstallSubtitleEdit;
+            set
+            {
+                if (_chckbxInstallSubtitleEdit == value)
+                    return;
+
+                _chckbxInstallSubtitleEdit = value;
+                OnPropertyChanged(nameof(ChckbxInstallSubtitleEdit));
+                InstallSubtitleEdit();
+            }
+        }
+        public void InstallSubtitleEdit()
+        {
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget install -e --id Nikse.SubtitleEdit";
+
+            if (ChckbxInstallSubtitleEdit)
+                Process.Start(Exe, Arguments);
+        }
 
 
         #endregion
