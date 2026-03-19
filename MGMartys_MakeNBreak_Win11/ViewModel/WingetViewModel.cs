@@ -31,7 +31,7 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
 
 
-        #region Update Winget
+        #region Buttons
 
         //  Button - Update Winget
         private ICommand _btnUpdateWinGet;
@@ -61,10 +61,6 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         }
 
-        #endregion
-
-        #region Install Microsoft Store
-
         //  Button - Install Microsoft Store
         private ICommand _btnInstallMSStore;
         public ICommand BtnInstallMSStore
@@ -88,10 +84,6 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
             Process.Start(Exe, Arguments);
 
         }
-
-        #endregion
-
-        #region Install App Installer (WinGet)
 
         //  Button - Install App Installer (WinGet)
         private ICommand _btnInstallAppInstaller;
@@ -117,9 +109,53 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         }
 
-        #endregion
+        //  Button - Install Terminal App
+        private ICommand _btnInstallTerminalApp;
+        public ICommand BtnInstallTerminalApp
+        {
+            get
+            {
+                if (_btnInstallTerminalApp == null)
+                {
+                    _btnInstallTerminalApp = new RelayCommand(param => InstallTerminalApp());
+                }
+                return _btnInstallTerminalApp;
+            }
+        }
+        public void InstallTerminalApp()
+        {
 
-        #region Update All Installed Apps
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget install -e --id Microsoft.WindowsTerminal";
+
+
+            Process.Start(Exe, Arguments);
+
+        }
+
+        //  Button - Install Xbox App
+        private ICommand _btnInstallXboxApp;
+        public ICommand BtnInstallXboxApp
+        {
+            get
+            {
+                if (_btnInstallXboxApp == null)
+                {
+                    _btnInstallXboxApp = new RelayCommand(param => InstallXboxApp());
+                }
+                return _btnInstallXboxApp;
+            }
+        }
+        public void InstallXboxApp()
+        {
+
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget install -e --name Xbox --id 9MV0B5HZVK9Z --source msstore";
+
+
+            Process.Start(Exe, Arguments);
+
+        }
 
         //  Button - Update All Installed Apps
         private ICommand _btnUpdateAllInstalledApps;
@@ -140,42 +176,16 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
             string Exe = "cmd.exe";
             string Arguments = "/C winget upgrade --all";
 
-            
-                Process.Start(Exe, Arguments);
+
+            Process.Start(Exe, Arguments);
 
         }
 
         #endregion
-
-
+        
         #region Runtimes
 
-        // Install Microsoft .NET Windows Desktop Runtime 3.1
-        private Boolean _chckbxInstallNet31;
-        public Boolean ChckbxInstallNet31
-        {
-            get => _chckbxInstallNet31;
-            set
-            {
-                if (_chckbxInstallNet31 == value)
-                    return;
-
-                _chckbxInstallNet31 = value;
-                OnPropertyChanged(nameof(ChckbxInstallNet31));
-                InstallNet31();
-            }
-        }
-        public void InstallNet31()
-        {
-            string Exe = "cmd.exe";
-            string Arguments = "/C winget install --id=Microsoft.DotNet.DesktopRuntime.3_1 -e";
-
-            if (ChckbxInstallNet31)
-                Process.Start(Exe, Arguments);
-        }
-
-
-        // Install .Net 3.5 Framework
+        // Install .Net Framework 2,3 & 3.5
         private Boolean _chckbxInstallNet35;
         public Boolean ChckbxInstallNet35
         {
@@ -200,7 +210,7 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
 
 
-        // Install .Net 4.8 Framework
+        // Install .Net Framework 4.8
         private Boolean _chckbxInstallNet48;
         public Boolean ChckbxInstallNet48
         {
@@ -218,9 +228,36 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         public void InstallNet48()
         {
             string Exe = "cmd.exe";
-            string Arguments = "/C winget install --id=Microsoft.DotNet.Framework.DeveloperPack_4  -e";
+            string ArgumentsAdvSrvs = "/C dism /online /enable-feature /featurename:NetFx4-AdvSrvs /all";
+            string ArgumentsExtended = "/C dism /online /enable-feature /featurename:NetFx4Extended-ASPNET45 /all";
 
             if (ChckbxInstallNet48)
+                Process.Start(Exe, ArgumentsAdvSrvs).WaitForExit(50000);
+            Process.Start(Exe, ArgumentsExtended);
+        }
+
+
+        // Install Microsoft .NET Windows Desktop Runtime 3.1
+        private Boolean _chckbxInstallNet31;
+        public Boolean ChckbxInstallNet31
+        {
+            get => _chckbxInstallNet31;
+            set
+            {
+                if (_chckbxInstallNet31 == value)
+                    return;
+
+                _chckbxInstallNet31 = value;
+                OnPropertyChanged(nameof(ChckbxInstallNet31));
+                InstallNet31();
+            }
+        }
+        public void InstallNet31()
+        {
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget install --id=Microsoft.DotNet.DesktopRuntime.3_1 -e";
+
+            if (ChckbxInstallNet31)
                 Process.Start(Exe, Arguments);
         }
 
@@ -375,31 +412,6 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
 
 
-        // Install Oracle Java 8
-        private Boolean _chckbxInstallJava8;
-        public Boolean ChckbxInstallJava8
-        {
-            get => _chckbxInstallJava8;
-            set
-            {
-                if (_chckbxInstallJava8 == value)
-                    return;
-
-                _chckbxInstallJava8 = value;
-                OnPropertyChanged(nameof(ChckbxInstallJava8));
-                InstallJava8();
-            }
-        }
-        public void InstallJava8()
-        {
-            string Exe = "cmd.exe";
-            string Arguments = "/C winget install --id=Oracle.JavaRuntimeEnvironment  -e";
-
-            if (ChckbxInstallJava8)
-                Process.Start(Exe, Arguments);
-        }
-
-
         // Install DirectX Web Setup
         private Boolean _chckbxInstallDirectX;
         public Boolean ChckbxInstallDirectX
@@ -425,6 +437,31 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         }
 
 
+        // Install Oracle Java 8
+        private Boolean _chckbxInstallJava8;
+        public Boolean ChckbxInstallJava8
+        {
+            get => _chckbxInstallJava8;
+            set
+            {
+                if (_chckbxInstallJava8 == value)
+                    return;
+
+                _chckbxInstallJava8 = value;
+                OnPropertyChanged(nameof(ChckbxInstallJava8));
+                InstallJava8();
+            }
+        }
+        public void InstallJava8()
+        {
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget install --id=Oracle.JavaRuntimeEnvironment  -e";
+
+            if (ChckbxInstallJava8)
+                Process.Start(Exe, Arguments);
+        }
+
+        
         // Install Visual C++ 2005 (x86 + x64)
         private Boolean _chckbxInstallVisualC2005;
         public Boolean ChckbxInstallVisualC2005
@@ -590,8 +627,6 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         #endregion
 
-
-
         #region Browsers
 
        // Install Brave
@@ -701,7 +736,7 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         #endregion
 
-        #region Compression
+        #region Compress / Extract
 
 
         // Install NanaZip
@@ -900,8 +935,6 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         #endregion
 
-
-
         #region Game Clients
 
                 
@@ -924,10 +957,13 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         {
             string Exe = "cmd.exe";
             string Arguments = "/C winget install -e --id Blizzard.BattleNet --location \"C:\\Program Files (x86)\\Battle.net\"";
+            string Arguments2 = "/C copy \"C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Battle.net\\Battle.net.lnk\" \"C:\\Users\\%username%\\Desktop\\\"";
 
             if (ChckbxInstallBattleNet)
-                Process.Start(Exe, Arguments);
-        }
+            
+                Process.Start(Exe, Arguments).WaitForExit(50000);
+                Process.Start(Exe, Arguments2);
+            }
 
 
         // Install Epic Game Client
@@ -1080,12 +1116,10 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         public void InstallGIMP()
         {
             string Exe = "cmd.exe";
-            string Arguments = "/C winget install --id=GIMP.GIMP -e";
-            string Arguments2 = "/C copy \"C:\\Users\\%username%\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\GIMP 2.10.32.lnk\" \"C:\\Users\\%username%\\Desktop\\\"";
+            string Arguments = "/C winget install -e --id GIMP.GIMP.3";
 
             if (ChckbxInstallGIMP)
-                Process.Start(Exe, Arguments).WaitForExit(500000);
-                Process.Start(Exe, Arguments2);
+               Process.Start(Exe, Arguments);
         }
 
 
@@ -1206,6 +1240,60 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         #endregion
 
+        #region 3D Printing
+
+
+        // Install Bambu Studio
+        private Boolean _chckbxInstallBambuStudio;
+        public Boolean ChckbxInstallBambuStudio
+        {
+            get => _chckbxInstallBambuStudio;
+            set
+            {
+                if (_chckbxInstallBambuStudio == value)
+                    return;
+
+                _chckbxInstallBambuStudio = value;
+                OnPropertyChanged(nameof(ChckbxInstallBambuStudio));
+                InstallBambuStudio();
+            }
+        }
+        public void InstallBambuStudio()
+        {
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget install -e --id Bambulab.Bambustudio";
+
+            if (ChckbxInstallBambuStudio)
+                Process.Start(Exe, Arguments);
+        }
+
+
+        // Install Orca Slicer
+        private Boolean _chckbxInstallOrcaSlicer;
+        public Boolean ChckbxInstallOrcaSlicer
+        {
+            get => _chckbxInstallOrcaSlicer;
+            set
+            {
+                if (_chckbxInstallOrcaSlicer == value)
+                    return;
+
+                _chckbxInstallOrcaSlicer = value;
+                OnPropertyChanged(nameof(ChckbxInstallOrcaSlicer));
+                InstallOrcaSlicer();
+            }
+        }
+        public void InstallOrcaSlicer()
+        {
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget install -e --id SoftFever.OrcaSlicer";
+
+            if (ChckbxInstallOrcaSlicer)
+                Process.Start(Exe, Arguments);
+        }
+
+
+        #endregion
 
 
         #region Readers
@@ -1229,7 +1317,7 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         public void InstalliNFektNFOViewer()
         {
             string Exe = "cmd.exe";
-            string Arguments = "/C winget install --id=syndicode.iNFektNFOViewer -e";
+            string Arguments = "/C winget install -e --id syndicode.iNFekt";
 
             if (ChckbxInstalliNFektNFOViewer)
                 Process.Start(Exe, Arguments);
@@ -1259,7 +1347,7 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         public void InstallAnyDesk()
         {
             string Exe = "cmd.exe";
-            string Arguments = "/C winget install --id=PuTTY.PuTTY -e";
+            string Arguments = "/C winget install -e --id AnyDesk.AnyDesk";
 
             if (ChckbxInstallAnyDesk)
                 Process.Start(Exe, Arguments);
@@ -1483,6 +1571,60 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
 
         #endregion
 
+        #region WebCam
+
+
+        // Install Elgato CameraHub
+        private Boolean _chckbxInstallElgatoCameraHub;
+        public Boolean ChckbxInstallElgatoCameraHub
+        {
+            get => _chckbxInstallElgatoCameraHub;
+            set
+            {
+                if (_chckbxInstallElgatoCameraHub == value)
+                    return;
+
+                _chckbxInstallElgatoCameraHub = value;
+                OnPropertyChanged(nameof(ChckbxInstallElgatoCameraHub));
+                InstallElgatoCameraHub();
+            }
+        }
+        public void InstallElgatoCameraHub()
+        {
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget install -e --id Elgato.CameraHub";
+
+            if (ChckbxInstallElgatoCameraHub)
+                Process.Start(Exe, Arguments);
+        }
+
+
+        // Install Logitech Options+
+        private Boolean _chckbxInstallLogitechOptionsPlus;
+        public Boolean ChckbxInstallLogitechOptionsPlus
+        {
+            get => _chckbxInstallLogitechOptionsPlus;
+            set
+            {
+                if (_chckbxInstallLogitechOptionsPlus == value)
+                    return;
+
+                _chckbxInstallLogitechOptionsPlus = value;
+                OnPropertyChanged(nameof(ChckbxInstallLogitechOptionsPlus));
+                InstallLogitechOptionsPlus();
+            }
+        }
+        public void InstallLogitechOptionsPlus()
+        {
+            string Exe = "cmd.exe";
+            string Arguments = "/C winget install -e --id Logitech.OptionsPlus";
+
+            if (ChckbxInstallLogitechOptionsPlus)
+                Process.Start(Exe, Arguments);
+        }
+
+
+        #endregion
 
 
         #region Work
@@ -1697,7 +1839,7 @@ namespace MGMartys_MakeNBreak_Win11.ViewModel
         {
             string Exe = "cmd.exe";
             string Arguments = "/C winget install -e --id MoritzBunkus.MKVToolNix";
-            string Arguments2 = "/C copy \"C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\MKVToolNix\\MKVToolNix GUI.lnk\" \"C:\\Users\\%username%\\Desktop\\\"";
+            string Arguments2 = "/C copy \"C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\MKVToolNix\\MKVToolNix.lnk\" \"C:\\Users\\%username%\\Desktop\\\"";
 
             if (ChckbxInstallMKVToolNix)
                 Process.Start(Exe, Arguments).WaitForExit(50000);
